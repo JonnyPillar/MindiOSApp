@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0150E5A1A11483300D13D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E591A11483300D13D45 /* main.m */; };
+		F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E5C1A11483300D13D45 /* AppDelegate.m */; };
+		F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */; };
+		F0150E631A11483300D13D45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E621A11483300D13D45 /* ViewController.m */; };
+		F0150E661A11483300D13D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0150E641A11483300D13D45 /* Main.storyboard */; };
+		F0150E681A11483300D13D45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0150E671A11483300D13D45 /* Images.xcassets */; };
+		F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0150E691A11483300D13D45 /* LaunchScreen.xib */; };
+		F0150E771A11483300D13D45 /* MindAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E761A11483300D13D45 /* MindAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0150E711A11483300D13D45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0150E4C1A11483300D13D45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0150E531A11483300D13D45;
+			remoteInfo = MindApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F0150E541A11483300D13D45 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0150E581A11483300D13D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0150E591A11483300D13D45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0150E5B1A11483300D13D45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0150E5C1A11483300D13D45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0150E5F1A11483300D13D45 /* MindApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindApp.xcdatamodel; sourceTree = "<group>"; };
+		F0150E611A11483300D13D45 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F0150E621A11483300D13D45 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0150E651A11483300D13D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0150E671A11483300D13D45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0150E6A1A11483300D13D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F0150E701A11483300D13D45 /* MindAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0150E751A11483300D13D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0150E761A11483300D13D45 /* MindAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0150E511A11483300D13D45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0150E6D1A11483300D13D45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0150E4B1A11483300D13D45 = {
+			isa = PBXGroup;
+			children = (
+				F0150E561A11483300D13D45 /* MindApp */,
+				F0150E731A11483300D13D45 /* MindAppTests */,
+				F0150E551A11483300D13D45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0150E551A11483300D13D45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0150E541A11483300D13D45 /* MindApp.app */,
+				F0150E701A11483300D13D45 /* MindAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0150E561A11483300D13D45 /* MindApp */ = {
+			isa = PBXGroup;
+			children = (
+				F0150E5B1A11483300D13D45 /* AppDelegate.h */,
+				F0150E5C1A11483300D13D45 /* AppDelegate.m */,
+				F0150E611A11483300D13D45 /* ViewController.h */,
+				F0150E621A11483300D13D45 /* ViewController.m */,
+				F0150E641A11483300D13D45 /* Main.storyboard */,
+				F0150E671A11483300D13D45 /* Images.xcassets */,
+				F0150E691A11483300D13D45 /* LaunchScreen.xib */,
+				F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */,
+				F0150E571A11483300D13D45 /* Supporting Files */,
+			);
+			path = MindApp;
+			sourceTree = "<group>";
+		};
+		F0150E571A11483300D13D45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0150E581A11483300D13D45 /* Info.plist */,
+				F0150E591A11483300D13D45 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0150E731A11483300D13D45 /* MindAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0150E761A11483300D13D45 /* MindAppTests.m */,
+				F0150E741A11483300D13D45 /* Supporting Files */,
+			);
+			path = MindAppTests;
+			sourceTree = "<group>";
+		};
+		F0150E741A11483300D13D45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0150E751A11483300D13D45 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0150E531A11483300D13D45 /* MindApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0150E7A1A11483300D13D45 /* Build configuration list for PBXNativeTarget "MindApp" */;
+			buildPhases = (
+				F0150E501A11483300D13D45 /* Sources */,
+				F0150E511A11483300D13D45 /* Frameworks */,
+				F0150E521A11483300D13D45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MindApp;
+			productName = MindApp;
+			productReference = F0150E541A11483300D13D45 /* MindApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0150E6F1A11483300D13D45 /* MindAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0150E7D1A11483300D13D45 /* Build configuration list for PBXNativeTarget "MindAppTests" */;
+			buildPhases = (
+				F0150E6C1A11483300D13D45 /* Sources */,
+				F0150E6D1A11483300D13D45 /* Frameworks */,
+				F0150E6E1A11483300D13D45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0150E721A11483300D13D45 /* PBXTargetDependency */,
+			);
+			name = MindAppTests;
+			productName = MindAppTests;
+			productReference = F0150E701A11483300D13D45 /* MindAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0150E4C1A11483300D13D45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Jonny Pillar";
+				TargetAttributes = {
+					F0150E531A11483300D13D45 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					F0150E6F1A11483300D13D45 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = F0150E531A11483300D13D45;
+					};
+				};
+			};
+			buildConfigurationList = F0150E4F1A11483300D13D45 /* Build configuration list for PBXProject "MindApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0150E4B1A11483300D13D45;
+			productRefGroup = F0150E551A11483300D13D45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0150E531A11483300D13D45 /* MindApp */,
+				F0150E6F1A11483300D13D45 /* MindAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0150E521A11483300D13D45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
+				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
+				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0150E6E1A11483300D13D45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0150E501A11483300D13D45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
+				F0150E5A1A11483300D13D45 /* main.m in Sources */,
+				F0150E631A11483300D13D45 /* ViewController.m in Sources */,
+				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0150E6C1A11483300D13D45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0150E771A11483300D13D45 /* MindAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0150E721A11483300D13D45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0150E531A11483300D13D45 /* MindApp */;
+			targetProxy = F0150E711A11483300D13D45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0150E641A11483300D13D45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0150E651A11483300D13D45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0150E691A11483300D13D45 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0150E6A1A11483300D13D45 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0150E781A11483300D13D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F0150E791A11483300D13D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0150E7B1A11483300D13D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MindApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F0150E7C1A11483300D13D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MindApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F0150E7E1A11483300D13D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MindAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindApp.app/MindApp";
+			};
+			name = Debug;
+		};
+		F0150E7F1A11483300D13D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MindAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindApp.app/MindApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0150E4F1A11483300D13D45 /* Build configuration list for PBXProject "MindApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0150E781A11483300D13D45 /* Debug */,
+				F0150E791A11483300D13D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0150E7A1A11483300D13D45 /* Build configuration list for PBXNativeTarget "MindApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0150E7B1A11483300D13D45 /* Debug */,
+				F0150E7C1A11483300D13D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F0150E7D1A11483300D13D45 /* Build configuration list for PBXNativeTarget "MindAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0150E7E1A11483300D13D45 /* Debug */,
+				F0150E7F1A11483300D13D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F0150E5F1A11483300D13D45 /* MindApp.xcdatamodel */,
+			);
+			currentVersion = F0150E5F1A11483300D13D45 /* MindApp.xcdatamodel */;
+			path = MindApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F0150E4C1A11483300D13D45 /* Project object */;
+}

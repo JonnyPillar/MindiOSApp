@@ -10,12 +10,14 @@
 		F0150E5A1A11483300D13D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E591A11483300D13D45 /* main.m */; };
 		F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E5C1A11483300D13D45 /* AppDelegate.m */; };
 		F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */; };
-		F0150E631A11483300D13D45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E621A11483300D13D45 /* ViewController.m */; };
 		F0150E661A11483300D13D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0150E641A11483300D13D45 /* Main.storyboard */; };
 		F0150E681A11483300D13D45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0150E671A11483300D13D45 /* Images.xcassets */; };
 		F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0150E691A11483300D13D45 /* LaunchScreen.xib */; };
 		F0150E771A11483300D13D45 /* MindAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E761A11483300D13D45 /* MindAppTests.m */; };
-		F0C3A8A51A1915B900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8A41A1915B900EAA252 /* MediaModel.m */; };
+		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
+		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
+		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
+		F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B41A192D0F00EAA252 /* AudioFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +37,6 @@
 		F0150E5B1A11483300D13D45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0150E5C1A11483300D13D45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F0150E5F1A11483300D13D45 /* MindApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindApp.xcdatamodel; sourceTree = "<group>"; };
-		F0150E611A11483300D13D45 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F0150E621A11483300D13D45 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F0150E651A11483300D13D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0150E671A11483300D13D45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0150E6A1A11483300D13D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -44,8 +44,14 @@
 		F0150E751A11483300D13D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0150E761A11483300D13D45 /* MindAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindAppTests.m; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
-		F0C3A8A41A1915B900EAA252 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
+		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
+		F0C3A8AC1A191F5B00EAA252 /* AudioFile+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioFile+ext.h"; sourceTree = "<group>"; };
+		F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AudioFile+ext.m"; sourceTree = "<group>"; };
+		F0C3A8AF1A19225400EAA252 /* MediaListViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaListViewTableViewController.h; sourceTree = "<group>"; };
+		F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListViewTableViewController.m; sourceTree = "<group>"; };
+		F0C3A8B21A192CD900EAA252 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
+		F0C3A8B41A192D0F00EAA252 /* AudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */,
-				F0C3A8A31A1915B900EAA252 /* MediaModel.h */,
-				F0C3A8A41A1915B900EAA252 /* MediaModel.m */,
-				F0C3A8A61A19164700EAA252 /* MediaType.h */,
+				F0C3A8AA1A191D2500EAA252 /* Base Entities */,
+				F0C3A8A71A191D0E00EAA252 /* AudioFile.h */,
+				F0C3A8B41A192D0F00EAA252 /* AudioFile.m */,
+				F0C3A8AB1A191F0500EAA252 /* Extensions */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -148,8 +155,8 @@
 		F0C3A8A11A1914E400EAA252 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F0150E611A11483300D13D45 /* ViewController.h */,
-				F0150E621A11483300D13D45 /* ViewController.m */,
+				F0C3A8AF1A19225400EAA252 /* MediaListViewTableViewController.h */,
+				F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -159,6 +166,25 @@
 			children = (
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		F0C3A8AA1A191D2500EAA252 /* Base Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F0C3A8A61A19164700EAA252 /* MediaType.h */,
+				F0C3A8A31A1915B900EAA252 /* MediaModel.h */,
+				F0C3A8B21A192CD900EAA252 /* MediaModel.m */,
+			);
+			name = "Base Entities";
+			sourceTree = "<group>";
+		};
+		F0C3A8AB1A191F0500EAA252 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0C3A8AC1A191F5B00EAA252 /* AudioFile+ext.h */,
+				F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
+				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
-				F0C3A8A51A1915B900EAA252 /* MediaModel.m in Sources */,
-				F0150E631A11483300D13D45 /* ViewController.m in Sources */,
+				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
+				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,
+				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

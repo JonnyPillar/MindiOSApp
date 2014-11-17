@@ -1,5 +1,5 @@
 //
-//  MediaModel.m
+//  AudioFile.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 16/11/2014.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MediaModel.h"
+#import "AudioFile.h"
 
-@implementation MediaModel
+@implementation AudioFile
 
 @end

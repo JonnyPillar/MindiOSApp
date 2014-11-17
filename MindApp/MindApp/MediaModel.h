@@ -11,8 +11,8 @@
 
 @interface MediaModel : NSObject
 
-@property (nonatomic) int Id;
+@property (assign) NSInteger Id;
 @property (strong, nonatomic) NSString* Filename;
-@property (nonatomic) MediaType* MediaType;
-@property (strong, nonatomic) double
+@property (nonatomic) MediaType MediaType;
+
 @end

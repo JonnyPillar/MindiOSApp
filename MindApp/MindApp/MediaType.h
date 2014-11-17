@@ -9,9 +9,9 @@
 #ifndef MindApp_MediaType_h
 #define MindApp_MediaType_h
 
-typedef NS_ENUM(NSInteger, MediaType) {
+typedef NS_ENUM(int, MediaType) {
 	Audio,
 	Video
-}
+};
 
 #endif

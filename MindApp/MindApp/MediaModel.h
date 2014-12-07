@@ -14,5 +14,6 @@
 @property (assign) NSInteger Id;
 @property (strong, nonatomic) NSString* Filename;
 @property (nonatomic) MediaType MediaType;
+@property (strong, nonatomic) NSString* FileUrl;
 
 @end

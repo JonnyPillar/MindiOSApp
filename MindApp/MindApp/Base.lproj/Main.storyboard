@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PtB-B3-d4K">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Media List View Table View Controller-->
@@ -27,11 +28,166 @@
                     </tableView>
                     <connections>
                         <outlet property="mediaTableView" destination="vec-yJ-OXC" id="AoS-Ff-ZUm"/>
+                        <segue destination="HQO-lS-Wna" kind="showDetail" identifier="viewMediaItemSegue" id="n39-2j-eKc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmW-LO-L8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="507" y="-310"/>
+        </scene>
+        <!--Media Item View Controller-->
+        <scene sceneID="nN6-KA-oaY">
+            <objects>
+                <viewController id="HQO-lS-Wna" customClass="MediaItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YFx-Hn-3Sk"/>
+                        <viewControllerLayoutGuide type="bottom" id="fa7-rZ-LUX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L9d-Qv-8Xq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzd-be-8Lb">
+                                <rect key="frame" x="16" y="125" width="51" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="v5X-rj-71r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="v5X-rj-71r"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="v5X-rj-71r"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PHj-Kt-iXe">
+                                <rect key="frame" x="16" y="578" width="568" height="2"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="62" y="536" width="276" height="2"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="16" y="210" width="568" height="2"/>
+                                </variation>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2S-Tr-bvp">
+                                <rect key="frame" x="124" y="125" width="63" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="mLg-tM-fjT">
+                                        <variation key="widthClass=compact" constant="47"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mLg-tM-fjT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="mLg-tM-fjT"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFS-Un-IPq">
+                                <rect key="frame" x="163" y="28" width="201" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4C-aw-XTi">
+                                <rect key="frame" x="16" y="71" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="RcH-2h-kuc"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RcH-2h-kuc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="RcH-2h-kuc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="playAudioButton:" destination="HQO-lS-Wna" eventType="touchUpInside" id="xU7-dR-jvg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JFS-Un-IPq" firstAttribute="centerX" secondItem="PHj-Kt-iXe" secondAttribute="centerX" id="0vC-pe-18x"/>
+                            <constraint firstItem="JFS-Un-IPq" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" id="1jg-De-8VP"/>
+                            <constraint firstItem="Hzd-be-8Lb" firstAttribute="baseline" secondItem="T2S-Tr-bvp" secondAttribute="baseline" id="4Gn-yf-6MR"/>
+                            <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="PHj-Kt-iXe" secondAttribute="leading" id="7bk-g9-3fH"/>
+                            <constraint firstItem="PHj-Kt-iXe" firstAttribute="centerX" secondItem="L9d-Qv-8Xq" secondAttribute="centerX" id="E2k-6u-VXo"/>
+                            <constraint firstItem="T2S-Tr-bvp" firstAttribute="trailing" secondItem="PHj-Kt-iXe" secondAttribute="trailing" id="FFW-6i-S0v"/>
+                            <constraint firstItem="R4C-aw-XTi" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="8" symbolic="YES" id="XQ9-yR-FlO"/>
+                            <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="363" id="Ym6-Zd-wv0"/>
+                            <constraint firstItem="JFS-Un-IPq" firstAttribute="top" secondItem="YFx-Hn-3Sk" secondAttribute="bottom" constant="19" id="g5o-js-CV8"/>
+                            <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" constant="33" id="iIg-JT-oES"/>
+                            <constraint firstItem="PHj-Kt-iXe" firstAttribute="top" secondItem="Hzd-be-8Lb" secondAttribute="bottom" constant="21" id="rUa-Jf-gwh"/>
+                            <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="R4C-aw-XTi" secondAttribute="bottom" constant="299" id="vFf-bd-cdi"/>
+                            <constraint firstItem="R4C-aw-XTi" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leading" constant="185" id="wyR-nN-3UD">
+                                <variation key="widthClass=compact" constant="172"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0vC-pe-18x"/>
+                                <exclude reference="1jg-De-8VP"/>
+                                <exclude reference="g5o-js-CV8"/>
+                                <exclude reference="4Gn-yf-6MR"/>
+                                <exclude reference="7bk-g9-3fH"/>
+                                <exclude reference="iIg-JT-oES"/>
+                                <exclude reference="E2k-6u-VXo"/>
+                                <exclude reference="rUa-Jf-gwh"/>
+                                <exclude reference="XQ9-yR-FlO"/>
+                                <exclude reference="wyR-nN-3UD"/>
+                                <exclude reference="FFW-6i-S0v"/>
+                                <exclude reference="Ym6-Zd-wv0"/>
+                                <exclude reference="vFf-bd-cdi"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="0vC-pe-18x"/>
+                                <include reference="1jg-De-8VP"/>
+                                <include reference="g5o-js-CV8"/>
+                                <include reference="4Gn-yf-6MR"/>
+                                <include reference="7bk-g9-3fH"/>
+                                <include reference="iIg-JT-oES"/>
+                                <include reference="E2k-6u-VXo"/>
+                                <include reference="rUa-Jf-gwh"/>
+                                <include reference="XQ9-yR-FlO"/>
+                                <include reference="wyR-nN-3UD"/>
+                                <include reference="FFW-6i-S0v"/>
+                                <include reference="Ym6-Zd-wv0"/>
+                                <include reference="vFf-bd-cdi"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="audioFileLabel" destination="JFS-Un-IPq" id="RIg-YD-tlx"/>
+                        <outlet property="audioFileLengthLabel" destination="T2S-Tr-bvp" id="9sd-9l-43f"/>
+                        <outlet property="audioFileProgressPosition" destination="Hzd-be-8Lb" id="mZY-tK-fa8"/>
+                        <outlet property="audioProgressBar" destination="PHj-Kt-iXe" id="BhE-ht-vql"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZk-Ad-1wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="-311"/>
         </scene>
     </scenes>
 </document>

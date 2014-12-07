@@ -8,6 +8,7 @@
 
 #import "MediaListViewTableViewController.h"
 #import "AudioFile+ext.h"
+#import "MediaItemViewController.h"
 
 @interface MediaListViewTableViewController ()
 
@@ -19,7 +20,7 @@
     [super viewDidLoad];
 
 	NSString* str =
-	@"{ \"MediaFiles\": [ { \"FileName\": \"AudioFileOne.mp3\", \"MediaType\": 0, \"Id\": 1, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"AudioFileTwo.mp3\", \"MediaType\": 0, \"Id\": 2,\"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"AudioFileThree.mp3\", \"MediaType\": 0, \"Id\": 3, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\"} ] }";
+	@"{ \"MediaFiles\": [ { \"FileName\": \"AwardTour.mp3\",\"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/AwardTour.mp3\", \"MediaType\": 0, \"Id\": 1, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"Take Five\", \"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/Dave+Brubeck+-+Take+Five.mp3\", \"MediaType\": 0, \"Id\": 2,\"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"TayloySwift-ShakeItOff.mp3\", \"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/Taylor+Swift+-+Shake+It+Off.mp3\", \"MediaType\": 0, \"Id\": 3, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\"} ] }";
 	
 	str = [str stringByReplacingOccurrencesOfString:@"\\" withString:@""];
 	NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
@@ -74,6 +75,23 @@
 		cell.textLabel.text = [currentPlace Filename];
 	}
 	return(cell);
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+	
+	[self performSegueWithIdentifier:@"viewMediaItemSegue"
+							  sender:[_placesArray objectAtIndex:indexPath.row]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	// Make sure your segue name in storyboard is the same as this line
+	if ([[segue identifier] isEqualToString:@"viewMediaItemSegue"])
+	{
+		MediaItemViewController *vc = [segue destinationViewController];
+		[vc setAudioFile:sender];
+	}
 }
 
 @end

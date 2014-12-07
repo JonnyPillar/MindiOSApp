@@ -14,10 +14,22 @@
 		F0150E681A11483300D13D45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0150E671A11483300D13D45 /* Images.xcassets */; };
 		F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0150E691A11483300D13D45 /* LaunchScreen.xib */; };
 		F0150E771A11483300D13D45 /* MindAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E761A11483300D13D45 /* MindAppTests.m */; };
+		F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F086EC901A1A80A6000213FB /* MediaItemViewController.m */; };
+		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
+		F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */; };
+		F086EC971A1A96DF000213FB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC961A1A96DF000213FB /* Bolts.framework */; };
+		F086EC9F1A1A97E3000213FB /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC991A1A97E3000213FB /* Mantle.framework */; };
+		F086ECA01A1A97E3000213FB /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9A1A1A97E3000213FB /* Reachability.framework */; };
+		F086ECA11A1A97E3000213FB /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9B1A1A97E3000213FB /* TMCache.framework */; };
+		F086ECA21A1A97E3000213FB /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */; };
+		F086ECA31A1A97E3000213FB /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */; };
+		F086ECA41A1A9840000213FB /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC981A1A97E3000213FB /* GZIP.framework */; };
+		F086ECA61A1A9996000213FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F086ECA51A1A9996000213FB /* libz.dylib */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
 		F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B41A192D0F00EAA252 /* AudioFile.m */; };
+		F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E9B4A51A23B8F300F1D98F /* Resource.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +55,18 @@
 		F0150E701A11483300D13D45 /* MindAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0150E751A11483300D13D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0150E761A11483300D13D45 /* MindAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindAppTests.m; sourceTree = "<group>"; };
+		F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemViewController.h; sourceTree = "<group>"; };
+		F086EC901A1A80A6000213FB /* MediaItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemViewController.m; sourceTree = "<group>"; };
+		F086EC921A1A888B000213FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDKv2.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/frameworks/AWSiOSSDKv2.framework"; sourceTree = "<group>"; };
+		F086EC961A1A96DF000213FB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/Bolts-iOS/ios/Bolts.framework"; sourceTree = "<group>"; };
+		F086EC981A1A97E3000213FB /* GZIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GZIP.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/GZIP.framework"; sourceTree = "<group>"; };
+		F086EC991A1A97E3000213FB /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/Mantle.framework"; sourceTree = "<group>"; };
+		F086EC9A1A1A97E3000213FB /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/Reachability.framework"; sourceTree = "<group>"; };
+		F086EC9B1A1A97E3000213FB /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMCache.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/TMCache.framework"; sourceTree = "<group>"; };
+		F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
+		F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
+		F086ECA51A1A9996000213FB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -52,6 +76,7 @@
 		F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListViewTableViewController.m; sourceTree = "<group>"; };
 		F0C3A8B21A192CD900EAA252 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
 		F0C3A8B41A192D0F00EAA252 /* AudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFile.m; sourceTree = "<group>"; };
+		F0E9B4A51A23B8F300F1D98F /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resource.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +84,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F086ECA61A1A9996000213FB /* libz.dylib in Frameworks */,
+				F086ECA41A1A9840000213FB /* GZIP.framework in Frameworks */,
+				F086EC9F1A1A97E3000213FB /* Mantle.framework in Frameworks */,
+				F086ECA01A1A97E3000213FB /* Reachability.framework in Frameworks */,
+				F086ECA11A1A97E3000213FB /* TMCache.framework in Frameworks */,
+				F086ECA21A1A97E3000213FB /* UICKeyChainStore.framework in Frameworks */,
+				F086ECA31A1A97E3000213FB /* XMLDictionary.framework in Frameworks */,
+				F086EC971A1A96DF000213FB /* Bolts.framework in Frameworks */,
+				F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */,
+				F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +110,16 @@
 		F0150E4B1A11483300D13D45 = {
 			isa = PBXGroup;
 			children = (
+				F086ECA51A1A9996000213FB /* libz.dylib */,
+				F086EC981A1A97E3000213FB /* GZIP.framework */,
+				F086EC991A1A97E3000213FB /* Mantle.framework */,
+				F086EC9A1A1A97E3000213FB /* Reachability.framework */,
+				F086EC9B1A1A97E3000213FB /* TMCache.framework */,
+				F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */,
+				F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */,
+				F086EC961A1A96DF000213FB /* Bolts.framework */,
+				F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */,
+				F086EC921A1A888B000213FB /* AVFoundation.framework */,
 				F0150E561A11483300D13D45 /* MindApp */,
 				F0150E731A11483300D13D45 /* MindAppTests */,
 				F0150E551A11483300D13D45 /* Products */,
@@ -111,6 +156,7 @@
 				F0150E691A11483300D13D45 /* LaunchScreen.xib */,
 				F0150E581A11483300D13D45 /* Info.plist */,
 				F0150E591A11483300D13D45 /* main.m */,
+				F0E9B4A51A23B8F300F1D98F /* Resource.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,6 +203,8 @@
 			children = (
 				F0C3A8AF1A19225400EAA252 /* MediaListViewTableViewController.h */,
 				F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */,
+				F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */,
+				F086EC901A1A80A6000213FB /* MediaItemViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -267,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
 				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
@@ -289,6 +338,7 @@
 			files = (
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
+				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,
@@ -415,6 +465,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jonnypillar/Downloads/aws-ios-sdk-2.0.12/frameworks",
+					"/Users/jonnypillar/Downloads/Bolts-iOS/ios",
+					"/Users/jonnypillar/Downloads/aws-ios-sdk-2.0.12/third-party",
+				);
 				INFOPLIST_FILE = MindApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jonnypillar/Downloads/aws-ios-sdk-2.0.12/frameworks",
+					"/Users/jonnypillar/Downloads/Bolts-iOS/ios",
+					"/Users/jonnypillar/Downloads/aws-ios-sdk-2.0.12/third-party",
+				);
 				INFOPLIST_FILE = MindApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -15,7 +15,8 @@
 	if(self){
 		self.Id = [[data objectForKey:@"Id"] integerValue];
 		self.Filename = [data objectForKey:@"FileName"];
-		self.MediaType = [[data objectForKey:@"id"] intValue];
+		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
+		self.FileUrl = [data objectForKey:@"FileUrl"];
 	}
 	return self;
 }

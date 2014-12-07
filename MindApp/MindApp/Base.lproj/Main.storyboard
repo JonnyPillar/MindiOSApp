@@ -134,7 +134,7 @@
                             <constraint firstItem="PHj-Kt-iXe" firstAttribute="centerX" secondItem="L9d-Qv-8Xq" secondAttribute="centerX" id="E2k-6u-VXo"/>
                             <constraint firstItem="T2S-Tr-bvp" firstAttribute="trailing" secondItem="PHj-Kt-iXe" secondAttribute="trailing" id="FFW-6i-S0v"/>
                             <constraint firstItem="R4C-aw-XTi" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="8" symbolic="YES" id="XQ9-yR-FlO">
-                                <variation key="widthClass=compact" constant="15"/>
+                                <variation key="widthClass=compact" constant="38"/>
                             </constraint>
                             <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="363" id="Ym6-Zd-wv0">
                                 <variation key="widthClass=compact" constant="278"/>
@@ -143,7 +143,7 @@
                             <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" constant="33" id="iIg-JT-oES"/>
                             <constraint firstItem="PHj-Kt-iXe" firstAttribute="top" secondItem="Hzd-be-8Lb" secondAttribute="bottom" constant="21" id="rUa-Jf-gwh"/>
                             <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="R4C-aw-XTi" secondAttribute="bottom" constant="299" id="vFf-bd-cdi">
-                                <variation key="widthClass=compact" constant="207"/>
+                                <variation key="widthClass=compact" constant="184"/>
                             </constraint>
                             <constraint firstItem="R4C-aw-XTi" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leading" constant="185" id="wyR-nN-3UD">
                                 <variation key="widthClass=compact" constant="172"/>

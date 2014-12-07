@@ -7,7 +7,6 @@
 //
 
 #import "MediaItemViewController.h"
-#import <AVFoundation/AVFoundation.h>
 #import "TimerUtil.h"
 
 @interface MediaItemViewController ()

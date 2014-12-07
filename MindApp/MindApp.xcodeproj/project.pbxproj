@@ -113,7 +113,6 @@
 		F0150E4B1A11483300D13D45 = {
 			isa = PBXGroup;
 			children = (
-				F086ECA51A1A9996000213FB /* libz.dylib */,
 				F0150E561A11483300D13D45 /* MindApp */,
 				F0150E731A11483300D13D45 /* MindAppTests */,
 				F0150E551A11483300D13D45 /* Products */,
@@ -177,6 +176,7 @@
 		F09EA4E01A349DC9005A1F1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F086ECA51A1A9996000213FB /* libz.dylib */,
 				F086EC981A1A97E3000213FB /* GZIP.framework */,
 				F086EC991A1A97E3000213FB /* Mantle.framework */,
 				F086EC9A1A1A97E3000213FB /* Reachability.framework */,

@@ -96,13 +96,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFS-Un-IPq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFS-Un-IPq">
                                 <rect key="frame" x="163" y="28" width="201" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4C-aw-XTi">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4C-aw-XTi">
                                 <rect key="frame" x="16" y="71" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="RcH-2h-kuc"/>
@@ -133,46 +133,52 @@
                             <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="PHj-Kt-iXe" secondAttribute="leading" id="7bk-g9-3fH"/>
                             <constraint firstItem="PHj-Kt-iXe" firstAttribute="centerX" secondItem="L9d-Qv-8Xq" secondAttribute="centerX" id="E2k-6u-VXo"/>
                             <constraint firstItem="T2S-Tr-bvp" firstAttribute="trailing" secondItem="PHj-Kt-iXe" secondAttribute="trailing" id="FFW-6i-S0v"/>
-                            <constraint firstItem="R4C-aw-XTi" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="8" symbolic="YES" id="XQ9-yR-FlO"/>
-                            <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="363" id="Ym6-Zd-wv0"/>
+                            <constraint firstItem="R4C-aw-XTi" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="8" symbolic="YES" id="XQ9-yR-FlO">
+                                <variation key="widthClass=compact" constant="15"/>
+                            </constraint>
+                            <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="363" id="Ym6-Zd-wv0">
+                                <variation key="widthClass=compact" constant="278"/>
+                            </constraint>
                             <constraint firstItem="JFS-Un-IPq" firstAttribute="top" secondItem="YFx-Hn-3Sk" secondAttribute="bottom" constant="19" id="g5o-js-CV8"/>
                             <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" constant="33" id="iIg-JT-oES"/>
                             <constraint firstItem="PHj-Kt-iXe" firstAttribute="top" secondItem="Hzd-be-8Lb" secondAttribute="bottom" constant="21" id="rUa-Jf-gwh"/>
-                            <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="R4C-aw-XTi" secondAttribute="bottom" constant="299" id="vFf-bd-cdi"/>
+                            <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="R4C-aw-XTi" secondAttribute="bottom" constant="299" id="vFf-bd-cdi">
+                                <variation key="widthClass=compact" constant="207"/>
+                            </constraint>
                             <constraint firstItem="R4C-aw-XTi" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leading" constant="185" id="wyR-nN-3UD">
                                 <variation key="widthClass=compact" constant="172"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="0vC-pe-18x"/>
-                                <exclude reference="1jg-De-8VP"/>
-                                <exclude reference="g5o-js-CV8"/>
+                                <exclude reference="XQ9-yR-FlO"/>
+                                <exclude reference="wyR-nN-3UD"/>
                                 <exclude reference="4Gn-yf-6MR"/>
                                 <exclude reference="7bk-g9-3fH"/>
                                 <exclude reference="iIg-JT-oES"/>
+                                <exclude reference="0vC-pe-18x"/>
+                                <exclude reference="1jg-De-8VP"/>
+                                <exclude reference="g5o-js-CV8"/>
+                                <exclude reference="FFW-6i-S0v"/>
                                 <exclude reference="E2k-6u-VXo"/>
                                 <exclude reference="rUa-Jf-gwh"/>
-                                <exclude reference="XQ9-yR-FlO"/>
-                                <exclude reference="wyR-nN-3UD"/>
-                                <exclude reference="FFW-6i-S0v"/>
                                 <exclude reference="Ym6-Zd-wv0"/>
                                 <exclude reference="vFf-bd-cdi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="0vC-pe-18x"/>
-                                <include reference="1jg-De-8VP"/>
-                                <include reference="g5o-js-CV8"/>
+                                <include reference="XQ9-yR-FlO"/>
+                                <include reference="wyR-nN-3UD"/>
                                 <include reference="4Gn-yf-6MR"/>
                                 <include reference="7bk-g9-3fH"/>
                                 <include reference="iIg-JT-oES"/>
+                                <include reference="0vC-pe-18x"/>
+                                <include reference="1jg-De-8VP"/>
+                                <include reference="g5o-js-CV8"/>
+                                <include reference="FFW-6i-S0v"/>
                                 <include reference="E2k-6u-VXo"/>
                                 <include reference="rUa-Jf-gwh"/>
-                                <include reference="XQ9-yR-FlO"/>
-                                <include reference="wyR-nN-3UD"/>
-                                <include reference="FFW-6i-S0v"/>
                                 <include reference="Ym6-Zd-wv0"/>
                                 <include reference="vFf-bd-cdi"/>
                             </mask>
@@ -182,6 +188,7 @@
                         <outlet property="audioFileLabel" destination="JFS-Un-IPq" id="RIg-YD-tlx"/>
                         <outlet property="audioFileLengthLabel" destination="T2S-Tr-bvp" id="9sd-9l-43f"/>
                         <outlet property="audioFileProgressPosition" destination="Hzd-be-8Lb" id="mZY-tK-fa8"/>
+                        <outlet property="audioPlayButton" destination="R4C-aw-XTi" id="PcW-uv-tRa"/>
                         <outlet property="audioProgressBar" destination="PHj-Kt-iXe" id="BhE-ht-vql"/>
                     </connections>
                 </viewController>

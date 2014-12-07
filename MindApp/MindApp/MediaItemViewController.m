@@ -12,10 +12,12 @@
 @interface MediaItemViewController ()
 
 @property  float currentTime;
+@property (nonatomic, strong) NSTimer* audioTimer;
 
 @end
 
 @implementation MediaItemViewController
+
 
 
 - (void)viewDidLoad {
@@ -23,31 +25,20 @@
     if(_audioFile)
 	{
 		[_audioFileLabel setText:_audioFile.Filename];
+		NSURL *url = [self getUrlForMediaItem];
+		
+		self.audioPlayer = [[AVPlayer alloc]initWithURL:url];
+		
+		[self.audioFileLengthLabel setText:[self timeFormattedFromFloat: [self GetAudioTrackDuration]]];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(playerItemDidReachEnd:)
+													 name:AVPlayerItemDidPlayToEndTimeNotification
+												   object:[self.audioPlayer currentItem]];
 	}
-	
-	
-
 
 	[self.audioProgressBar setProgress:0.0f];
 	self.currentTime = 0;
-	
-	
-	NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Resource" ofType:@"plist"];
-	NSDictionary *contentArray = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [contentArray objectForKey:@"BaseUrl"], _audioFile.Filename]];
-	
-	self.audioPlayer = [[AVPlayer alloc]initWithURL:url];
-	
-	CMTime duration = self.audioPlayer.currentItem.asset.duration;
-	float seconds = CMTimeGetSeconds(duration);
-	
-	[self.audioFileLengthLabel setText:[self timeFormattedFromFloat: seconds]];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(playerItemDidReachEnd:)
-												 name:AVPlayerItemDidPlayToEndTimeNotification
-											   object:[self.audioPlayer currentItem]];
-	
 }
 
 
@@ -61,19 +52,14 @@
 
 -(void)playselectedsong
 {
-	[self.audioPlayer play];
-	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+	
 }
+
 
 -(void) updateProgress:(NSTimer *)timer
 {
-	CMTime duration = self.audioPlayer.currentItem.asset.duration;
-	float seconds = CMTimeGetSeconds(duration);
-	
-	float percentageComplete = (self.currentTime / seconds);
-	
-	
 	self.currentTime =  self.currentTime + 1.0f;
+	float percentageComplete = (self.currentTime / [self GetAudioTrackDuration]);
 	
 	[self.audioFileProgressPosition setText:[self timeFormattedFromFloat: self.currentTime]];
 	[self.audioProgressBar setProgress:percentageComplete animated:true];
@@ -98,9 +84,7 @@
 //}
 
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
-	
-	//  code here to play next sound file
-	
+	[self.audioTimer invalidate];
 }
 
 - (NSString *) timeFormattedFromFloat:(float)totalSecondsFloat
@@ -111,30 +95,51 @@
 
 -(NSString *)timeFormattedFromInt:(int)totalSecondsInt
 {
-	
 	int seconds = totalSecondsInt % 60;
 	int minutes = (totalSecondsInt / 60) % 60;
 	
 	return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
 }
 
+- (NSURL *)getUrlForMediaItem {
+	NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Resource" ofType:@"plist"];
+	NSDictionary *contentArray = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [contentArray objectForKey:@"BaseUrl"], _audioFile.Filename]];
+	return url;
+}
+
+- (float)GetAudioTrackDuration {
+	CMTime duration = self.audioPlayer.currentItem.asset.duration;
+	float seconds = CMTimeGetSeconds(duration);
+	return seconds;
+}
+
 - (IBAction)playAudioButton:(id)sender {
 
-	
-	
-	[self playselectedsong];
-//	if(_audioPlayer.playing)
-//	{
-//		[_audioPlayer stop];
-//	}
-//	else {
-//		[_audioPlayer play];
-//	}
+	if(self.audioPlayer.rate == 0.0) {
+		[self playAudio];
+	}
+	else{
+		[self pauseAudio];
+	}
 }
 
-- (IBAction)adjustVolume:(id)sender {
-	
-	
-	
+-(void) playAudio{
+	NSLog(@"Audio Player Playing");
+	[self.audioPlayer play];
+	_audioTimer = [NSTimer
+				   scheduledTimerWithTimeInterval:1
+				   target:self selector:@selector(updateProgress:)
+				   userInfo:nil repeats:YES];
+	[self.audioPlayButton setTitle:@"Pause" forState:UIControlStateNormal];
 }
+
+-(void) pauseAudio
+{
+	NSLog(@"Audio Player Paused");
+	[self.audioPlayer pause];
+	[self.audioTimer invalidate];
+	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
+}
+
 @end

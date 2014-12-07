@@ -8,6 +8,7 @@
 
 #import "MediaItemViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "TimerUtil.h"
 
 @interface MediaItemViewController ()
 
@@ -18,8 +19,6 @@
 
 @implementation MediaItemViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     if(_audioFile)
@@ -29,7 +28,7 @@
 		
 		self.audioPlayer = [[AVPlayer alloc]initWithURL:url];
 		
-		[self.audioFileLengthLabel setText:[self timeFormattedFromFloat: [self GetAudioTrackDuration]]];
+		[self.audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self GetAudioTrackDuration]]];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(playerItemDidReachEnd:)
@@ -41,64 +40,21 @@
 	self.currentTime = 0;
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
-
--(void)playselectedsong
-{
-	
-}
-
 
 -(void) updateProgress:(NSTimer *)timer
 {
 	self.currentTime =  self.currentTime + 1.0f;
 	float percentageComplete = (self.currentTime / [self GetAudioTrackDuration]);
 	
-	[self.audioFileProgressPosition setText:[self timeFormattedFromFloat: self.currentTime]];
+	[self.audioFileProgressPosition setText:[TimerUtil timeFormattedFromFloat: self.currentTime]];
 	[self.audioProgressBar setProgress:percentageComplete animated:true];
 }
 
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-//	
-//	if (object == self.audioPlayer && [keyPath isEqualToString:@"status"]) {
-//		if (self.audioPlayer.status == AVPlayerStatusFailed) {
-//			NSLog(@"AVPlayer Failed");
-//			
-//		} else if (self.audioPlayer.status == AVPlayerStatusReadyToPlay) {
-//			NSLog(@"AVPlayerStatusReadyToPlay");
-//			[self.self.audioPlayer play];
-//			
-//			
-//		} else if (self.audioPlayer.status == AVPlayerItemStatusUnknown) {
-//			NSLog(@"AVPlayer Unknown");
-//			
-//		}
-//	}
-//}
-
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
 	[self.audioTimer invalidate];
-}
-
-- (NSString *) timeFormattedFromFloat:(float)totalSecondsFloat
-{
-	int totalSecondsInt = (int) totalSecondsFloat;
-	return [self timeFormattedFromInt:totalSecondsInt];
-}
-
--(NSString *)timeFormattedFromInt:(int)totalSecondsInt
-{
-	int seconds = totalSecondsInt % 60;
-	int minutes = (totalSecondsInt / 60) % 60;
-	
-	return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
 }
 
 - (NSURL *)getUrlForMediaItem {

@@ -25,6 +25,7 @@
 		F086ECA31A1A97E3000213FB /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */; };
 		F086ECA41A1A9840000213FB /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC981A1A97E3000213FB /* GZIP.framework */; };
 		F086ECA61A1A9996000213FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F086ECA51A1A9996000213FB /* libz.dylib */; };
+		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
@@ -67,6 +68,8 @@
 		F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
 		F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
 		F086ECA51A1A9996000213FB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F09EA4E21A349E1C005A1F1C /* TimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUtil.h; sourceTree = "<group>"; };
+		F09EA4E31A349E1C005A1F1C /* TimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUtil.m; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -111,15 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				F086ECA51A1A9996000213FB /* libz.dylib */,
-				F086EC981A1A97E3000213FB /* GZIP.framework */,
-				F086EC991A1A97E3000213FB /* Mantle.framework */,
-				F086EC9A1A1A97E3000213FB /* Reachability.framework */,
-				F086EC9B1A1A97E3000213FB /* TMCache.framework */,
-				F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */,
-				F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */,
-				F086EC961A1A96DF000213FB /* Bolts.framework */,
-				F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */,
-				F086EC921A1A888B000213FB /* AVFoundation.framework */,
 				F0150E561A11483300D13D45 /* MindApp */,
 				F0150E731A11483300D13D45 /* MindAppTests */,
 				F0150E551A11483300D13D45 /* Products */,
@@ -138,6 +132,7 @@
 		F0150E561A11483300D13D45 /* MindApp */ = {
 			isa = PBXGroup;
 			children = (
+				F09EA4E11A349DDC005A1F1C /* Utils */,
 				F0C3A89F1A1914CD00EAA252 /* Model */,
 				F0C3A8A11A1914E400EAA252 /* Controller */,
 				F0C3A8A01A1914DD00EAA252 /* View */,
@@ -150,6 +145,7 @@
 		F0150E571A11483300D13D45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F09EA4E01A349DC9005A1F1C /* Frameworks */,
 				F0150E5B1A11483300D13D45 /* AppDelegate.h */,
 				F0150E5C1A11483300D13D45 /* AppDelegate.m */,
 				F0150E671A11483300D13D45 /* Images.xcassets */,
@@ -176,6 +172,32 @@
 				F0150E751A11483300D13D45 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F09EA4E01A349DC9005A1F1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F086EC981A1A97E3000213FB /* GZIP.framework */,
+				F086EC991A1A97E3000213FB /* Mantle.framework */,
+				F086EC9A1A1A97E3000213FB /* Reachability.framework */,
+				F086EC9B1A1A97E3000213FB /* TMCache.framework */,
+				F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */,
+				F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */,
+				F086EC961A1A96DF000213FB /* Bolts.framework */,
+				F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */,
+				F086EC921A1A888B000213FB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F09EA4E11A349DDC005A1F1C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F09EA4E21A349E1C005A1F1C /* TimerUtil.h */,
+				F09EA4E31A349E1C005A1F1C /* TimerUtil.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		F0C3A89F1A1914CD00EAA252 /* Model */ = {
@@ -339,6 +361,7 @@
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
+				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,

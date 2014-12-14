@@ -15,6 +15,8 @@
 		F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0150E691A11483300D13D45 /* LaunchScreen.xib */; };
 		F0150E771A11483300D13D45 /* MindAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E761A11483300D13D45 /* MindAppTests.m */; };
 		F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE01A3DC125002E2F3B /* LoginViewController.m */; };
+		F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */; };
+		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
 		F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F086EC901A1A80A6000213FB /* MediaItemViewController.m */; };
 		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
 		F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */; };
@@ -59,6 +61,10 @@
 		F0150E761A11483300D13D45 /* MindAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindAppTests.m; sourceTree = "<group>"; };
 		F02B0DDF1A3DC125002E2F3B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F02B0DE01A3DC125002E2F3B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F02B0DE31A3DC643002E2F3B /* LoginRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestModel.h; sourceTree = "<group>"; };
+		F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModel.m; sourceTree = "<group>"; };
+		F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationRequestModel.h; sourceTree = "<group>"; };
+		F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationRequestModel.m; sourceTree = "<group>"; };
 		F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemViewController.h; sourceTree = "<group>"; };
 		F086EC901A1A80A6000213FB /* MediaItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemViewController.m; sourceTree = "<group>"; };
 		F086EC921A1A888B000213FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -176,6 +182,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F02B0DE21A3DC61F002E2F3B /* Data Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				F02B0DE31A3DC643002E2F3B /* LoginRequestModel.h */,
+				F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */,
+				F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */,
+				F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */,
+			);
+			name = "Data Contracts";
+			sourceTree = "<group>";
+		};
 		F09EA4E01A349DC9005A1F1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +223,7 @@
 		F0C3A89F1A1914CD00EAA252 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F02B0DE21A3DC61F002E2F3B /* Data Contracts */,
 				F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */,
 				F0C3A8AA1A191D2500EAA252 /* Base Entities */,
 				F0C3A8A71A191D0E00EAA252 /* AudioFile.h */,
@@ -365,8 +383,10 @@
 			files = (
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
+				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
+				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,

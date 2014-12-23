@@ -9,16 +9,18 @@
 #import "MediaListViewTableViewController.h"
 #import "AudioFile+ext.h"
 #import "MediaItemViewController.h"
+#import "CommunicationsManager.h"
 
-@interface MediaListViewTableViewController ()
-
-@end
 
 @implementation MediaListViewTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	CommunicationsManager* comms = [CommunicationsManager new];
+	
+	[comms GetRequest:@"http://mind-1.apphb.com/api/media/getmediafiles" withParams:nil];
+	
 	NSString* str =
 	@"{ \"MediaFiles\": [ { \"FileName\": \"AwardTour.mp3\",\"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/AwardTour.mp3\", \"MediaType\": 0, \"Id\": 1, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"Take Five\", \"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/Dave+Brubeck+-+Take+Five.mp3\", \"MediaType\": 0, \"Id\": 2,\"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"TayloySwift-ShakeItOff.mp3\", \"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/Taylor+Swift+-+Shake+It+Off.mp3\", \"MediaType\": 0, \"Id\": 3, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\"} ] }";
 	

@@ -10,8 +10,13 @@
 
 @interface CommunicationsManager : NSObject
 
--(NSDictionary *) GetRequest:(NSString*) url withParams:(NSArray*) paramArray;
+@property BOOL Sucess;
+@property (nonatomic, strong) NSDictionary* ResponseDictionary;
+
+-(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray;
+
 -(NSDictionary *) PostWithParams:(NSString*) url withParams:(NSArray*) paramArray;
 -(NSDictionary *) PostWithBody:(NSString*) url withBody:(NSString*) body;
 -(NSDictionary *) Post:(NSString*) url withParams:(NSArray*) paramArray withBody:(NSString*) body;
+
 @end

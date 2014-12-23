@@ -9,24 +9,44 @@
 #import "MediaListViewTableViewController.h"
 #import "AudioFile+ext.h"
 #import "MediaItemViewController.h"
-#import "CommunicationsManager.h"
+#import "CommunicationGetRequestUtil.h"
 
 
 @implementation MediaListViewTableViewController
 
 - (void)viewDidLoad {
+	
     [super viewDidLoad];
+	_placesArray = [[NSMutableArray alloc] init];
+}
 
-	CommunicationsManager* comms = [CommunicationsManager new];
+-(void)viewWillAppear:(BOOL)animated{
 	
-	[comms GetRequest:@"http://mind-1.apphb.com/api/media/getmediafiles" withParams:nil];
+	[self getJsonData];
+}
+
+-(void) getJsonData{
 	
-	NSString* str =
-	@"{ \"MediaFiles\": [ { \"FileName\": \"AwardTour.mp3\",\"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/AwardTour.mp3\", \"MediaType\": 0, \"Id\": 1, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"Take Five\", \"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/Dave+Brubeck+-+Take+Five.mp3\", \"MediaType\": 0, \"Id\": 2,\"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\" }, { \"FileName\": \"TayloySwift-ShakeItOff.mp3\", \"FileUrl\": \"https://s3-eu-west-1.amazonaws.com/mindmediafiles/Taylor+Swift+-+Shake+It+Off.mp3\", \"MediaType\": 0, \"Id\": 3, \"CreatedDateTime\": \"2014-11-08T19: 44: 55.14\"} ] }";
-	
-	str = [str stringByReplacingOccurrencesOfString:@"\\" withString:@""];
-	NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
-	[self setupPlacesFromJSONArray:data];
+	[CommunicationGetRequestUtil GetRequest:@"http://mind-1.apphb.com/api/media/getmediafiles" withParams:nil completion:^(NSDictionary *json, BOOL success) {
+		if(success)
+		{
+			if([[json valueForKey:@"Success"] boolValue]){
+				NSDictionary* mediaFile = [json valueForKey:@"MediaFiles"];
+				
+				for (NSDictionary* key in mediaFile) {
+					[_placesArray addObject:[[AudioFile new] initWithJson:key]];
+				}
+				[self.mediaTableView reloadData];
+			}
+			else {
+				[self showAlertBoxWithTitle:@"An Error Occured At Server" withMessage:[json valueForKey:@"Message"]];
+			}
+		}
+		else
+		{
+			[self showAlertBoxWithTitle:@"An Error Occured At Client" withMessage:nil];
+		}
+	}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,28 +59,6 @@
 	return [_placesArray count];
 }
 
--(void)setupPlacesFromJSONArray:(NSData*)dataFromServerArray{
-	NSError *error;
-	_placesArray = [[NSMutableArray alloc] init];
-	
-	NSMutableDictionary *arrayFromServer = [[NSMutableDictionary alloc] init];
-	arrayFromServer = [NSJSONSerialization JSONObjectWithData:dataFromServerArray options:NSJSONReadingMutableContainers error:&error];
-	
-	if(error){
-		NSLog(@"error parsing the json data from server with error description - %@", [error localizedDescription]);
-	}
-	else {
-		
-		NSArray *mediaFileArray = [arrayFromServer objectForKey:@"MediaFiles"];
-		
-		for(NSDictionary *eachPlace in mediaFileArray)
-		{
-			AudioFile *place = [[AudioFile alloc]initWithJson:eachPlace];
-			[_placesArray addObject:place];
-		}
-	}
-}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MediaItem"];
@@ -70,17 +68,17 @@
 	}
 	
 	if([_placesArray count] == 0){
-		cell.textLabel.text = @"no places to show";
+		cell.textLabel.text = @"No Items to show";
 	}
-	else{
+	else
+	{
 		AudioFile *currentPlace = [_placesArray objectAtIndex:indexPath.row];
 		cell.textLabel.text = [currentPlace Filename];
 	}
 	return(cell);
 }
 
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
 	
 	[self performSegueWithIdentifier:@"viewMediaItemSegue"
 							  sender:[_placesArray objectAtIndex:indexPath.row]];
@@ -88,12 +86,20 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	// Make sure your segue name in storyboard is the same as this line
 	if ([[segue identifier] isEqualToString:@"viewMediaItemSegue"])
 	{
 		MediaItemViewController *vc = [segue destinationViewController];
 		[vc setAudioFile:sender];
 	}
+}
+
+-(void) showAlertBoxWithTitle:(NSString *) title withMessage:(NSString*) message{
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+													message:message
+												   delegate:self
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
 }
 
 @end

@@ -19,8 +19,7 @@
 
 -(id) init{
 	if ( self = [super init] ) {
-		_networkManager = [AFHTTPRequestOperationManager manager];
-		_networkManager.responseSerializer = [AFJSONResponseSerializer serializer];
+		[self initiliseManager];
 	}
 	return self;
 }
@@ -28,29 +27,52 @@
 -(id) initWithAuthorizationHeader:(NSString *) authorizationToken{
 	
 	if ( self = [super init] ) {
-		_networkManager = [AFHTTPRequestOperationManager manager];
-		_networkManager.responseSerializer = [AFJSONResponseSerializer serializer];
-		_networkManager.requestSerializer = [AFJSONRequestSerializer serializer];
+		[self initiliseManager];
+		
 		[_networkManager.requestSerializer setValue:@"Authorization" forHTTPHeaderField:authorizationToken];
 	}
 	
 	return self;
 }
 
--(NSDictionary *) GetRequest:(NSString*) url withParams:(NSArray*) paramArray{
+-(void) initiliseManager{
+	_networkManager = [AFHTTPRequestOperationManager manager];
+	_networkManager.responseSerializer = [AFJSONResponseSerializer serializer];
+	_networkManager.requestSerializer = [AFJSONRequestSerializer serializer];
 	
-	__block NSDictionary* responseJsonDictionary = [NSDictionary new];
+	_Sucess = NO;
+	_ResponseDictionary = [NSDictionary new];
+}
+
+-(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray completion:(void (^)(NSDictionary *json, BOOL success))completion{
 	
 	[_networkManager GET:url parameters:paramArray
 				 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-					responseJsonDictionary = responseObject;
+					 NSDictionary* responseJsonDictionary = responseObject;
+					 
+					 if (completion)
+						 completion(responseJsonDictionary, YES);
+					 
 					 NSLog(@"JSON: %@", responseObject);
 				 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+					 if(completion) completion(nil, NO);
 					 NSLog(@"Error: %@", error);
 				 }
 	 ];
-	
-	return responseJsonDictionary;
+}
+
+-(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray{
+
+	[self GetRequest:url withParams:paramArray completion:^(NSDictionary *json, BOOL success) {
+		if(success)
+		{
+			_Sucess = YES;
+			_ResponseDictionary = json;
+		}
+		else{
+			_Sucess = NO;
+		}
+	}];
 }
 
 -(NSDictionary *) PostWithParams:(NSString*) url withParams:(NSArray*) paramArray {

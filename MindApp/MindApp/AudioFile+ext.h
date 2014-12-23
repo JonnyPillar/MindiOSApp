@@ -11,5 +11,6 @@
 @interface AudioFile (ext)
 
 -(id) initWithJson: (NSDictionary*)data;
+-(id) initWithArray: (NSArray*)data;
 
 @end

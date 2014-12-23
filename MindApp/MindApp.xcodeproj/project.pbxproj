@@ -30,6 +30,7 @@
 		F086ECA41A1A9840000213FB /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC981A1A97E3000213FB /* GZIP.framework */; };
 		F086ECA61A1A9996000213FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F086ECA51A1A9996000213FB /* libz.dylib */; };
 		F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */; };
+		F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */; };
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
@@ -84,6 +85,8 @@
 		F086ECA51A1A9996000213FB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
 		F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
+		F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationGetRequestUtil.h; sourceTree = "<group>"; };
+		F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationGetRequestUtil.m; sourceTree = "<group>"; };
 		F09EA4E21A349E1C005A1F1C /* TimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUtil.h; sourceTree = "<group>"; };
 		F09EA4E31A349E1C005A1F1C /* TimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUtil.m; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 			children = (
 				F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */,
 				F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */,
+				F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */,
+				F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */,
+				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,

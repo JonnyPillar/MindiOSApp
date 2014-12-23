@@ -21,4 +21,12 @@
 	return self;
 }
 
+-(id) initWithArray:(NSArray *)data{
+	self = [super init];
+	if(self){
+
+	}
+	return self;
+}
+
 @end

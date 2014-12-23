@@ -11,6 +11,7 @@
 #import "MediaItemViewController.h"
 #import "CommunicationGetRequestUtil.h"
 #import "UIImageView+AFNetworking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation MediaListViewTableViewController
 
@@ -76,9 +77,11 @@
 		cell.textLabel.text = [currentPlace Filename];
 		NSURL* url =[currentPlace GetThumbnailUrlNsUrl];
 		
-		UIImage *placeholder = [UIImage imageNamed:@"playIcon.png"];
-		[cell.imageView setImage:placeholder];
-		[cell.imageView setImageWithURL:url];
+		[cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://mind.jonnypillar.co.uk/Windows_Media_Player_alt.png"] placeholderImage:[UIImage imageNamed:@"playIcon.png"]];
+		
+//		UIImage *placeholder = [UIImage imageNamed:@"playIcon.png"];
+//		[cell.imageView setImage:placeholder];
+//		[cell.imageView setImageWithURL:url];
 	}
 	return(cell);
 }

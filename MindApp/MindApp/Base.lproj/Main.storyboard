@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PtB-B3-d4K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0hi-aI-fFG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -461,6 +461,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqo-5f-2mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="507" y="386"/>
+        </scene>
+        <!--Media List View Collection View Controller-->
+        <scene sceneID="nK2-6d-NTn">
+            <objects>
+                <collectionViewController id="0hi-aI-fFG" customClass="MediaListViewCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="z65-Ky-05Z">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t6O-fL-Sll">
+                            <size key="itemSize" width="194" height="216"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mediaItemCell" id="XGY-fo-TIS" customClass="MediaListCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="194" height="216"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-uJ-I2U">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" red="0.058823533359999999" green="0.1960784495" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="pdC-uJ-I2U" secondAttribute="bottom" constant="56" id="0Mi-wC-qGd">
+                                        <variation key="widthClass=compact" constant="-24"/>
+                                    </constraint>
+                                    <constraint firstItem="pdC-uJ-I2U" firstAttribute="leading" secondItem="XGY-fo-TIS" secondAttribute="leading" id="3G4-KJ-tfc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="pdC-uJ-I2U" secondAttribute="trailing" constant="58" id="Eeb-1z-WRF">
+                                        <variation key="widthClass=compact" constant="-10"/>
+                                    </constraint>
+                                    <constraint firstItem="pdC-uJ-I2U" firstAttribute="top" secondItem="XGY-fo-TIS" secondAttribute="top" id="ZQn-JE-esg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="pdC-uJ-I2U"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="0Mi-wC-qGd"/>
+                                        <exclude reference="3G4-KJ-tfc"/>
+                                        <exclude reference="Eeb-1z-WRF"/>
+                                        <exclude reference="ZQn-JE-esg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="pdC-uJ-I2U"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="0Mi-wC-qGd"/>
+                                        <include reference="3G4-KJ-tfc"/>
+                                        <include reference="Eeb-1z-WRF"/>
+                                        <include reference="ZQn-JE-esg"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="imageView" destination="pdC-uJ-I2U" id="IN1-rt-Vaw"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="0hi-aI-fFG" id="cXX-QV-cqS"/>
+                            <outlet property="delegate" destination="0hi-aI-fFG" id="lJz-7t-qwY"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="mediaCollectionView" destination="z65-Ky-05Z" id="uTB-Om-oF7"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XF-Db-nUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="394"/>
         </scene>
     </scenes>
 </document>

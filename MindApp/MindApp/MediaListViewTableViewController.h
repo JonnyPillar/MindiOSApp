@@ -10,7 +10,7 @@
 
 @interface MediaListViewTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSMutableArray*placesArray;
+@property (strong, nonatomic) NSMutableArray*mediaItems;
 @property (strong, nonatomic) IBOutlet UITableView *mediaTableView;
 
 @end

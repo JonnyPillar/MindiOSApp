@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
 	
     [super viewDidLoad];
-	_placesArray = [[NSMutableArray alloc] init];
+	_mediaItems = [[NSMutableArray alloc] init];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -34,7 +34,7 @@
 				NSDictionary* mediaFile = [json valueForKey:@"MediaFiles"];
 				
 				for (NSDictionary* key in mediaFile) {
-					[_placesArray addObject:[[AudioFile new] initWithJson:key]];
+					[_mediaItems addObject:[[AudioFile new] initWithJson:key]];
 				}
 				[self.mediaTableView reloadData];
 			}
@@ -56,7 +56,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [_placesArray count];
+	return [_mediaItems count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,12 +67,12 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MediaItem"];
 	}
 	
-	if([_placesArray count] == 0){
+	if([_mediaItems count] == 0){
 		cell.textLabel.text = @"No Items to show";
 	}
 	else
 	{
-		AudioFile *currentPlace = [_placesArray objectAtIndex:indexPath.row];
+		AudioFile *currentPlace = [_mediaItems objectAtIndex:indexPath.row];
 		cell.textLabel.text = [currentPlace Filename];
 	}
 	return(cell);
@@ -81,7 +81,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
 	
 	[self performSegueWithIdentifier:@"viewMediaItemSegue"
-							  sender:[_placesArray objectAtIndex:indexPath.row]];
+							  sender:[_mediaItems objectAtIndex:indexPath.row]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

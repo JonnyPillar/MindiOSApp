@@ -10,7 +10,7 @@
 #import "AudioFile+ext.h"
 #import "MediaItemViewController.h"
 #import "CommunicationGetRequestUtil.h"
-
+#import "UIImageView+AFNetworking.h"
 
 @implementation MediaListViewTableViewController
 
@@ -74,6 +74,11 @@
 	{
 		AudioFile *currentPlace = [_mediaItems objectAtIndex:indexPath.row];
 		cell.textLabel.text = [currentPlace Filename];
+		NSURL* url =[currentPlace GetThumbnailUrlNsUrl];
+		
+		UIImage *placeholder = [UIImage imageNamed:@"playIcon.png"];
+		[cell.imageView setImage:placeholder];
+		[cell.imageView setImageWithURL:url];
 	}
 	return(cell);
 }

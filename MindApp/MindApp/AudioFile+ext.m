@@ -15,18 +15,25 @@
 	if(self){
 		self.Id = [[data objectForKey:@"Id"] integerValue];
 		self.Filename = [data objectForKey:@"FileName"];
-		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
 		self.FileUrl = [data objectForKey:@"FileUrl"];
+		self.Description = [data objectForKey:@"Description"];
+		self.ThumbnailUrl = [data objectForKey:@"ThumbnailUrl"];
+		self.ImageUrl = [data objectForKey:@"ImageUrl"];
+		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
 	}
 	return self;
 }
 
--(id) initWithArray:(NSArray *)data{
-	self = [super init];
-	if(self){
+-(NSURL *) GetFileUrlNsUrl{
+	return [[NSURL alloc] initFileURLWithPath:self.FileUrl];
+}
 
-	}
-	return self;
+-(NSURL *) GetThumbnailUrlNsUrl{
+	return [[NSURL alloc] initFileURLWithPath:self.ThumbnailUrl];
+}
+
+-(NSURL *) GetImageUrlNsUrl{
+	return [[NSURL alloc] initFileURLWithPath:self.ImageUrl];
 }
 
 @end

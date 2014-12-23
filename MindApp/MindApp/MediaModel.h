@@ -13,7 +13,10 @@
 
 @property (assign) NSInteger Id;
 @property (strong, nonatomic) NSString* Filename;
-@property (nonatomic) MediaType MediaType;
 @property (strong, nonatomic) NSString* FileUrl;
+@property (strong, nonatomic) NSString* Description;
+@property (strong, nonatomic) NSString* ThumbnailUrl;
+@property (strong, nonatomic) NSString* ImageUrl;
+@property (nonatomic) MediaType MediaType;
 
 @end

@@ -29,6 +29,7 @@
 		F086ECA31A1A97E3000213FB /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */; };
 		F086ECA41A1A9840000213FB /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC981A1A97E3000213FB /* GZIP.framework */; };
 		F086ECA61A1A9996000213FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F086ECA51A1A9996000213FB /* libz.dylib */; };
+		F08D6F621A4A03620032C90A /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F08D6F611A4A03620032C90A /* playIcon.png */; };
 		F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */; };
 		F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */; };
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
@@ -83,6 +84,7 @@
 		F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
 		F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
 		F086ECA51A1A9996000213FB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F08D6F611A4A03620032C90A /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
 		F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
 		F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
 		F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationGetRequestUtil.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		F0150E571A11483300D13D45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F08D6F601A4A034B0032C90A /* Icons */,
 				F09EA4E01A349DC9005A1F1C /* Frameworks */,
 				F0150E5B1A11483300D13D45 /* AppDelegate.h */,
 				F0150E5C1A11483300D13D45 /* AppDelegate.m */,
@@ -222,6 +225,14 @@
 				F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */,
 			);
 			name = "Data Contracts";
+			sourceTree = "<group>";
+		};
+		F08D6F601A4A034B0032C90A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				F08D6F611A4A03620032C90A /* playIcon.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		F0960B291A497AB80037D096 /* Communication */ = {
@@ -406,6 +417,7 @@
 			files = (
 				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
+				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
 				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
 			);

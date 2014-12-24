@@ -75,13 +75,8 @@
 	{
 		AudioFile *currentPlace = [_mediaItems objectAtIndex:indexPath.row];
 		cell.textLabel.text = [currentPlace Filename];
-		NSURL* url =[currentPlace GetThumbnailUrlNsUrl];
 		
 		[cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://mind.jonnypillar.co.uk/Windows_Media_Player_alt.png"] placeholderImage:[UIImage imageNamed:@"playIcon.png"]];
-		
-//		UIImage *placeholder = [UIImage imageNamed:@"playIcon.png"];
-//		[cell.imageView setImage:placeholder];
-//		[cell.imageView setImageWithURL:url];
 	}
 	return(cell);
 }

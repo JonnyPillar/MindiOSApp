@@ -25,15 +25,15 @@
 }
 
 -(NSURL *) GetFileUrlNsUrl{
-	return [[NSURL alloc] initFileURLWithPath:self.FileUrl];
+	return [[NSURL alloc] initWithString:self.FileUrl];
 }
 
 -(NSURL *) GetThumbnailUrlNsUrl{
-	return [[NSURL alloc] initFileURLWithPath:self.ThumbnailUrl];
+	return [[NSURL alloc] initWithString:self.ThumbnailUrl];
 }
 
 -(NSURL *) GetImageUrlNsUrl{
-	return [[NSURL alloc] initFileURLWithPath:self.ImageUrl];
+	return [[NSURL alloc] initWithString:self.ImageUrl];
 }
 
 @end

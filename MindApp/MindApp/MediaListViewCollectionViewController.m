@@ -20,6 +20,7 @@
 @implementation MediaListViewCollectionViewController 
 
 static NSString * const reuseIdentifier = @"MiMediaItemCell";
+static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,16 +49,16 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
 	
-	UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
-	datasetCell.backgroundColor = [UIColor blueColor]; // highlight selection
+	UICollectionViewCell *selectedCell =[collectionView cellForItemAtIndexPath:indexPath];
+	selectedCell.backgroundColor = [UIColor blueColor];
 	
 	[self performSegueWithIdentifier:@"viewMediaItemSegue" sender:[self getMediaFileAtIndex:indexPath]];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
-	datasetCell.backgroundColor = [UIColor clearColor]; // Default color
+	UICollectionViewCell *selectedCell =[collectionView cellForItemAtIndexPath:indexPath];
+	selectedCell.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark – UICollectionViewDelegateFlowLayout
@@ -86,20 +87,10 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 
 -(void) retreiveMediaItemData{
 	_mediaItems = [[NSMutableArray alloc] init];
-	[CommunicationGetRequestUtil GetRequest:@"http://mind-1.apphb.com/api/media/getmediafiles" withParams:nil completion:^(NSDictionary *json, BOOL success) {
+	[CommunicationGetRequestUtil GetRequest: getMediaFilesUrl withParams:nil completion:^(NSDictionary *json, BOOL success) {
 		if(success)
 		{
-			if([[json valueForKey:@"Success"] boolValue]){
-				NSDictionary* mediaFile = [json valueForKey:@"MediaFiles"];
-				
-				for (NSDictionary* key in mediaFile) {
-					[_mediaItems addObject:[[AudioFile new] initWithJson:key]];
-				}
-				[self.mediaCollectionView reloadData];
-			}
-			else {
-				[self showAlertBoxWithTitle:@"An Error Occured At Server" withMessage:[json valueForKey:@"Message"]];
-			}
+			[self processSuccessfulServerResponse:json];
 		}
 		else
 		{
@@ -108,12 +99,28 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 	}];
 }
 
+- (void)processSuccessfulServerResponse:(NSDictionary *)json {
+	if([[json valueForKey:@"Success"] boolValue]){
+		NSDictionary* mediaFile = [json valueForKey:@"MediaFiles"];
+		
+		for (NSDictionary* key in mediaFile) {
+			[_mediaItems addObject:[[AudioFile new] initWithJson:key]];
+		}
+		[self.mediaCollectionView reloadData];
+	}
+	else {
+		[self showAlertBoxWithTitle:@"An Error Occured At Server" withMessage:[json valueForKey:@"Message"]];
+	}
+}
+
 - (AudioFile *)getMediaFileAtIndex:(NSIndexPath *)indexPath {
+	
 	AudioFile* audioFile = _mediaItems [indexPath.row];
 	return audioFile;
 }
 
 - (void)setupCell:(AudioFile *)audioFile cell:(MIMediaListCollectionViewCell *)cell {
+	
 	[cell.imageView sd_setImageWithURL: audioFile.GetThumbnailUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
 	
 	[cell setBackgroundColor:[UIColor clearColor]];

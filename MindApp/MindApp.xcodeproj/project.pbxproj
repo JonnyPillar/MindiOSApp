@@ -34,6 +34,8 @@
 		F08D6F621A4A03620032C90A /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F08D6F611A4A03620032C90A /* playIcon.png */; };
 		F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */; };
 		F08D6F681A4A0A4C0032C90A /* MediaListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08D6F671A4A0A4C0032C90A /* MediaListCollectionViewCell.m */; };
+		F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */; };
+		F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */; };
 		F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */; };
 		F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */; };
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
@@ -97,6 +99,9 @@
 		F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListViewCollectionViewController.m; sourceTree = "<group>"; };
 		F08D6F661A4A0A4C0032C90A /* MediaListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaListCollectionViewCell.h; sourceTree = "<group>"; };
 		F08D6F671A4A0A4C0032C90A /* MediaListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListCollectionViewCell.m; sourceTree = "<group>"; };
+		F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaListCollectionViewCell.h; sourceTree = "<group>"; };
+		F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMediaListCollectionViewCell.m; sourceTree = "<group>"; };
+		F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMediaListCollectionViewCell.xib; sourceTree = "<group>"; };
 		F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
 		F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
 		F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationGetRequestUtil.h; sourceTree = "<group>"; };
@@ -304,6 +309,9 @@
 				F0150E641A11483300D13D45 /* Main.storyboard */,
 				F08D6F661A4A0A4C0032C90A /* MediaListCollectionViewCell.h */,
 				F08D6F671A4A0A4C0032C90A /* MediaListCollectionViewCell.m */,
+				F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */,
+				F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */,
+				F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -440,6 +448,7 @@
 				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
 				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
+				F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +516,7 @@
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
+				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

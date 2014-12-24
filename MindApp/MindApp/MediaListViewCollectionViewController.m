@@ -10,7 +10,7 @@
 #import "MediaItemViewController.h"
 #import "CommunicationGetRequestUtil.h"
 #import "AudioFile+ext.h"
-#import "MediaListCollectionViewCell.h"
+#import "MIMediaListCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -19,23 +19,20 @@
 
 @implementation MediaListViewCollectionViewController 
 
-static NSString * const reuseIdentifier = @"mediaItemCell";
+static NSString * const reuseIdentifier = @"MiMediaItemCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	[self.collectionView registerNib:[UINib nibWithNibName:@"MIMediaListCollectionViewCell" bundle:[NSBundle mainBundle]]
+		  forCellWithReuseIdentifier:reuseIdentifier];
+	
 	UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//	[flowLayout setItemSize:CGSizeMake(162, 162)];
+	
 	[flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
 	
 	[self.collectionView setCollectionViewLayout:flowLayout];
 	[self.collectionView setBackgroundColor:[UIColor redColor]];
-	[self.collectionView registerClass:[MediaListCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-	
-	[self getJsonData];
-}
-
--(void)viewWillAppear:(BOOL)animated{
 	
 	[self getJsonData];
 }
@@ -81,13 +78,13 @@ static NSString * const reuseIdentifier = @"mediaItemCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-    MediaListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"mediaItemCell" forIndexPath:indexPath];
+    MIMediaListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 	
 	[cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://mind.jonnypillar.co.uk/Windows_Media_Player_alt.png"]   placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
+
+	AudioFile* audioFile = _mediaItems [indexPath.row];
 	
-	[cell setBackgroundColor:[UIColor greenColor]];
-	[cell.title setText:@"Title"];
-	[cell.title setBackgroundColor:[UIColor yellowColor]];
+	[cell.titleLabel setText:audioFile.Filename];
     return cell;
 }
 
@@ -143,17 +140,13 @@ static NSString * const reuseIdentifier = @"mediaItemCell";
 #pragma mark – UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//	NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
-//	self.searchResults[searchTerm][indexPath.row];
-//	// 2
-//	CGSize retval = photo.thumbnail.size.width > 0 ? photo.thumbnail.size : CGSizeMake(100, 100);
-//	retval.height += 35; retval.width += 35; return retval;
+
 	return CGSizeMake(100, 100);
 }
 
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-	return UIEdgeInsetsMake(50, 20, 50, 20);
+	return UIEdgeInsetsMake(20, 20, 20, 20);
 }
 
 @end

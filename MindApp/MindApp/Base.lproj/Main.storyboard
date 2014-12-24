@@ -125,6 +125,9 @@
                                     <action selector="playAudioButton:" destination="HQO-lS-Wna" eventType="touchUpInside" id="xU7-dR-jvg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gb2-ix-dbS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -132,60 +135,79 @@
                             <constraint firstItem="JFS-Un-IPq" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" id="1jg-De-8VP"/>
                             <constraint firstItem="Hzd-be-8Lb" firstAttribute="baseline" secondItem="T2S-Tr-bvp" secondAttribute="baseline" id="4Gn-yf-6MR"/>
                             <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="PHj-Kt-iXe" secondAttribute="leading" id="7bk-g9-3fH"/>
+                            <constraint firstItem="gb2-ix-dbS" firstAttribute="centerX" secondItem="JFS-Un-IPq" secondAttribute="centerX" id="BLm-LM-mMu"/>
+                            <constraint firstItem="gb2-ix-dbS" firstAttribute="top" secondItem="JFS-Un-IPq" secondAttribute="bottom" constant="21" id="CN5-dJ-73a"/>
                             <constraint firstItem="PHj-Kt-iXe" firstAttribute="centerX" secondItem="L9d-Qv-8Xq" secondAttribute="centerX" id="E2k-6u-VXo"/>
                             <constraint firstItem="T2S-Tr-bvp" firstAttribute="trailing" secondItem="PHj-Kt-iXe" secondAttribute="trailing" id="FFW-6i-S0v"/>
                             <constraint firstItem="R4C-aw-XTi" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="8" symbolic="YES" id="XQ9-yR-FlO">
                                 <variation key="widthClass=compact" constant="38"/>
                             </constraint>
                             <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="PHj-Kt-iXe" secondAttribute="bottom" constant="363" id="Ym6-Zd-wv0">
-                                <variation key="widthClass=compact" constant="278"/>
+                                <variation key="widthClass=compact" constant="206"/>
                             </constraint>
+                            <constraint firstItem="T2S-Tr-bvp" firstAttribute="top" secondItem="gb2-ix-dbS" secondAttribute="bottom" constant="29" id="Zvk-Wt-3tA"/>
                             <constraint firstItem="JFS-Un-IPq" firstAttribute="top" secondItem="YFx-Hn-3Sk" secondAttribute="bottom" constant="19" id="g5o-js-CV8"/>
                             <constraint firstItem="Hzd-be-8Lb" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" constant="33" id="iIg-JT-oES"/>
                             <constraint firstItem="PHj-Kt-iXe" firstAttribute="top" secondItem="Hzd-be-8Lb" secondAttribute="bottom" constant="21" id="rUa-Jf-gwh"/>
+                            <constraint firstItem="gb2-ix-dbS" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leadingMargin" constant="64" id="uQA-GI-J5g"/>
                             <constraint firstItem="fa7-rZ-LUX" firstAttribute="top" secondItem="R4C-aw-XTi" secondAttribute="bottom" constant="299" id="vFf-bd-cdi">
-                                <variation key="widthClass=compact" constant="184"/>
+                                <variation key="widthClass=compact" constant="112"/>
                             </constraint>
                             <constraint firstItem="R4C-aw-XTi" firstAttribute="leading" secondItem="L9d-Qv-8Xq" secondAttribute="leading" constant="185" id="wyR-nN-3UD">
                                 <variation key="widthClass=compact" constant="172"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gb2-ix-dbS"/>
+                            </mask>
                             <mask key="constraints">
-                                <exclude reference="XQ9-yR-FlO"/>
-                                <exclude reference="wyR-nN-3UD"/>
-                                <exclude reference="4Gn-yf-6MR"/>
-                                <exclude reference="7bk-g9-3fH"/>
-                                <exclude reference="iIg-JT-oES"/>
                                 <exclude reference="0vC-pe-18x"/>
                                 <exclude reference="1jg-De-8VP"/>
                                 <exclude reference="g5o-js-CV8"/>
-                                <exclude reference="FFW-6i-S0v"/>
+                                <exclude reference="BLm-LM-mMu"/>
+                                <exclude reference="CN5-dJ-73a"/>
+                                <exclude reference="uQA-GI-J5g"/>
+                                <exclude reference="4Gn-yf-6MR"/>
+                                <exclude reference="7bk-g9-3fH"/>
+                                <exclude reference="iIg-JT-oES"/>
                                 <exclude reference="E2k-6u-VXo"/>
                                 <exclude reference="rUa-Jf-gwh"/>
+                                <exclude reference="FFW-6i-S0v"/>
+                                <exclude reference="Zvk-Wt-3tA"/>
+                                <exclude reference="XQ9-yR-FlO"/>
+                                <exclude reference="wyR-nN-3UD"/>
                                 <exclude reference="Ym6-Zd-wv0"/>
                                 <exclude reference="vFf-bd-cdi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="gb2-ix-dbS"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="XQ9-yR-FlO"/>
-                                <include reference="wyR-nN-3UD"/>
-                                <include reference="4Gn-yf-6MR"/>
-                                <include reference="7bk-g9-3fH"/>
-                                <include reference="iIg-JT-oES"/>
                                 <include reference="0vC-pe-18x"/>
                                 <include reference="1jg-De-8VP"/>
                                 <include reference="g5o-js-CV8"/>
-                                <include reference="FFW-6i-S0v"/>
+                                <include reference="BLm-LM-mMu"/>
+                                <include reference="CN5-dJ-73a"/>
+                                <include reference="uQA-GI-J5g"/>
+                                <include reference="4Gn-yf-6MR"/>
+                                <include reference="7bk-g9-3fH"/>
+                                <include reference="iIg-JT-oES"/>
                                 <include reference="E2k-6u-VXo"/>
                                 <include reference="rUa-Jf-gwh"/>
+                                <include reference="FFW-6i-S0v"/>
+                                <include reference="Zvk-Wt-3tA"/>
+                                <include reference="XQ9-yR-FlO"/>
+                                <include reference="wyR-nN-3UD"/>
                                 <include reference="Ym6-Zd-wv0"/>
                                 <include reference="vFf-bd-cdi"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="audioFileImageView" destination="gb2-ix-dbS" id="WzR-cF-zoJ"/>
                         <outlet property="audioFileLabel" destination="JFS-Un-IPq" id="RIg-YD-tlx"/>
                         <outlet property="audioFileLengthLabel" destination="T2S-Tr-bvp" id="9sd-9l-43f"/>
                         <outlet property="audioFileProgressPosition" destination="Hzd-be-8Lb" id="mZY-tK-fa8"/>

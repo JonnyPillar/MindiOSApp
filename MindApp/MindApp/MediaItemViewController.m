@@ -8,6 +8,8 @@
 
 #import "MediaItemViewController.h"
 #import "TimerUtil.h"
+#import "AudioFile+ext.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MediaItemViewController ()
 
@@ -22,52 +24,15 @@
     [super viewDidLoad];
     if(_audioFile)
 	{
-		[_audioFileLabel setText:_audioFile.Filename];
-		NSURL *url = [self getUrlForMediaItem];
-		
-		self.audioPlayer = [[AVPlayer alloc]initWithURL:url];
-		
-		[self.audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self GetAudioTrackDuration]]];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(playerItemDidReachEnd:)
-													 name:AVPlayerItemDidPlayToEndTimeNotification
-												   object:[self.audioPlayer currentItem]];
+		[self setupView];
 	}
-
-	[self.audioProgressBar setProgress:0.0f];
-	self.currentTime = 0;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
--(void) updateProgress:(NSTimer *)timer
-{
-	self.currentTime =  self.currentTime + 1.0f;
-	float percentageComplete = (self.currentTime / [self GetAudioTrackDuration]);
-	
-	[self.audioFileProgressPosition setText:[TimerUtil timeFormattedFromFloat: self.currentTime]];
-	[self.audioProgressBar setProgress:percentageComplete animated:true];
-}
-
-- (void)playerItemDidReachEnd:(NSNotification *)notification {
-	[self.audioTimer invalidate];
-}
-
-- (NSURL *)getUrlForMediaItem {
-	NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Resource" ofType:@"plist"];
-	NSDictionary *contentArray = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [contentArray objectForKey:@"BaseUrl"], _audioFile.Filename]];
-	return url;
-}
-
-- (float)GetAudioTrackDuration {
-	CMTime duration = self.audioPlayer.currentItem.asset.duration;
-	float seconds = CMTimeGetSeconds(duration);
-	return seconds;
-}
+#pragma mark - IBAction Methods
 
 - (IBAction)playAudioButton:(id)sender {
 
@@ -78,6 +43,37 @@
 		[self pauseAudio];
 	}
 }
+
+#pragma mark - Internal Methods
+
+- (void)setupView {
+	
+	_audioPlayer = [[AVPlayer alloc]initWithURL:_audioFile.GetFileUrlNsUrl];
+	[_audioFileLabel setText:_audioFile.Filename];
+	[_audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self GetAudioTrackDuration]]];
+	[_audioFileImageView sd_setImageWithURL:_audioFile.GetImageUrlNsUrl];
+	[_audioProgressBar setProgress:0.0f];
+	_currentTime = 0;
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(playerItemDidReachEnd:)
+												 name:AVPlayerItemDidPlayToEndTimeNotification
+											   object:[self.audioPlayer currentItem]];
+}
+
+- (float)updateTimeAndCalculatePercentage
+{
+	_currentTime =  self.currentTime + 1.0f;
+	return (_currentTime / [self GetAudioTrackDuration]);
+}
+
+-(void) updateProgress:(NSTimer *)timer
+{
+	float percentageComplete = [self updateTimeAndCalculatePercentage];
+	[_audioFileProgressPosition setText:[TimerUtil timeFormattedFromFloat: self.currentTime]];
+	[_audioProgressBar setProgress:percentageComplete animated:true];
+}
+
 
 -(void) playAudio{
 	NSLog(@"Audio Player Playing");
@@ -95,6 +91,15 @@
 	[self.audioPlayer pause];
 	[self.audioTimer invalidate];
 	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
+}
+
+- (void)playerItemDidReachEnd:(NSNotification *)notification {
+	[self.audioTimer invalidate];
+}
+
+- (float)GetAudioTrackDuration {
+	CMTime duration = self.audioPlayer.currentItem.asset.duration;
+	return CMTimeGetSeconds(duration);
 }
 
 @end

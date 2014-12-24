@@ -28,6 +28,10 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self retreiveMediaItemData];
 }
 
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

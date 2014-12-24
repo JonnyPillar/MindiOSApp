@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *audioProgressBar;
 @property (strong, nonatomic) IBOutlet UILabel *audioFileLengthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *audioFileProgressPosition;
+@property (strong, nonatomic) IBOutlet UIImageView *audioFileImageView;
 
 - (IBAction)playAudioButton:(id)sender;
 

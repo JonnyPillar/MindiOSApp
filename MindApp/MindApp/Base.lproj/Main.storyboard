@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZk-Ad-1wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="-311"/>
+            <point key="canvasLocation" x="2286" y="-281"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Dpb-X5-sQQ">
@@ -494,6 +494,7 @@
                     </collectionView>
                     <connections>
                         <outlet property="mediaCollectionView" destination="z65-Ky-05Z" id="uTB-Om-oF7"/>
+                        <segue destination="HQO-lS-Wna" kind="show" identifier="viewMediaItemSegue" id="TTt-RY-Ms1"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XF-Db-nUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,4 +502,7 @@
             <point key="canvasLocation" x="1458" y="396"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TTt-RY-Ms1"/>
+    </inferredMetricsTieBreakers>
 </document>

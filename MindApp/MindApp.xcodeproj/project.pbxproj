@@ -33,6 +33,7 @@
 		F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */; };
 		F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */; };
 		F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */; };
+		F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */; };
 		F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */; };
 		F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */; };
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
@@ -93,6 +94,8 @@
 		F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaListCollectionViewCell.h; sourceTree = "<group>"; };
 		F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMediaListCollectionViewCell.m; sourceTree = "<group>"; };
 		F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMediaListCollectionViewCell.xib; sourceTree = "<group>"; };
+		F0912AC71A4B23E200BD1A13 /* CommunicationPostRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationPostRequestUtil.h; sourceTree = "<group>"; };
+		F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationPostRequestUtil.m; sourceTree = "<group>"; };
 		F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
 		F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
 		F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationGetRequestUtil.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */,
 				F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */,
 				F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */,
+				F0912AC71A4B23E200BD1A13 /* CommunicationPostRequestUtil.h */,
+				F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
+				F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,

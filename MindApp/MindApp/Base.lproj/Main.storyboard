@@ -441,10 +441,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="6C4-Wq-b5r" id="6cr-dR-JcO"/>
                         <outlet property="loginEmailAddressTextField" destination="RcZ-kM-hH2" id="NWi-cj-0Nf"/>
                         <outlet property="loginPasswordTextField" destination="W3Y-YY-r9v" id="vn9-uj-Jhc"/>
-                        <outlet property="registerButton" destination="fSw-2s-2vc" id="JQv-1t-Zbr"/>
                         <outlet property="registerConfirmPasswordTextField" destination="JAl-yW-dvf" id="3Jj-qn-qun"/>
                         <outlet property="registerEmailAddressTextField" destination="oux-4v-Acr" id="Pcb-Nv-OS4"/>
                         <outlet property="registerPasswordTextField" destination="JAl-yW-dvf" id="0yL-1m-HQh"/>

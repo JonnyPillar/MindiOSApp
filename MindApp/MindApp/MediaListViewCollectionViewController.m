@@ -23,21 +23,68 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self setUpCollectionView];
+	[self retreiveMediaItemData];
+}
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _mediaItems.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    MIMediaListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+	[self setupCell:[self getMediaFileAtIndex:indexPath] cell:cell];
+    return cell;
+}
+
+#pragma mark <UICollectionViewDelegate>
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
 	
+	UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+	datasetCell.backgroundColor = [UIColor blueColor]; // highlight selection
+	
+	[self performSegueWithIdentifier:@"viewMediaItemSegue" sender:[self getMediaFileAtIndex:indexPath]];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+	
+	UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+	datasetCell.backgroundColor = [UIColor clearColor]; // Default color
+}
+
+#pragma mark – UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+	return CGSizeMake(100, 100);
+}
+
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+	return UIEdgeInsetsMake(20, 20, 20, 20);
+}
+
+#pragma mark - Internal Methods
+
+- (void)setUpCollectionView {
 	[self.collectionView registerNib:[UINib nibWithNibName:@"MIMediaListCollectionViewCell" bundle:[NSBundle mainBundle]]
 		  forCellWithReuseIdentifier:reuseIdentifier];
 	
 	UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-	
 	[flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-	
 	[self.collectionView setCollectionViewLayout:flowLayout];
 	[self.collectionView setBackgroundColor:[UIColor redColor]];
-	
-	[self getJsonData];
 }
 
--(void) getJsonData{
+-(void) retreiveMediaItemData{
 	_mediaItems = [[NSMutableArray alloc] init];
 	[CommunicationGetRequestUtil GetRequest:@"http://mind-1.apphb.com/api/media/getmediafiles" withParams:nil completion:^(NSDictionary *json, BOOL success) {
 		if(success)
@@ -61,50 +108,17 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 	}];
 }
 
-
-- (void)didReceiveMemoryWarning {
-}
-
-
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _mediaItems.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	
-    MIMediaListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-	
+- (AudioFile *)getMediaFileAtIndex:(NSIndexPath *)indexPath {
 	AudioFile* audioFile = _mediaItems [indexPath.row];
-	
+	return audioFile;
+}
+
+- (void)setupCell:(AudioFile *)audioFile cell:(MIMediaListCollectionViewCell *)cell {
 	[cell.imageView sd_setImageWithURL: audioFile.GetThumbnailUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
 	
 	[cell setBackgroundColor:[UIColor clearColor]];
 	[cell.selectedBackgroundView setBackgroundColor:[UIColor blueColor]];
-	
 	[cell.titleLabel setText:audioFile.Filename];
-    return cell;
-}
-
-#pragma mark <UICollectionViewDelegate>
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
-	
-	UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
-	datasetCell.backgroundColor = [UIColor blueColor]; // highlight selection
-	
-	[self performSegueWithIdentifier:@"viewMediaItemSegue" sender:[_mediaItems objectAtIndex:indexPath.row]];
-}
-
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-	
-	UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
-	datasetCell.backgroundColor = [UIColor clearColor]; // Default color
 }
 
 -(void) showAlertBoxWithTitle:(NSString *) title withMessage:(NSString*) message{
@@ -123,18 +137,6 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 		MediaItemViewController *vc = [segue destinationViewController];
 		[vc setAudioFile:sender];
 	}
-}
-
-#pragma mark – UICollectionViewDelegateFlowLayout
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-	return CGSizeMake(100, 100);
-}
-
-- (UIEdgeInsets)collectionView:
-(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-	return UIEdgeInsetsMake(20, 20, 20, 20);
 }
 
 @end

@@ -80,9 +80,13 @@ static NSString * const reuseIdentifier = @"MiMediaItemCell";
 	
     MIMediaListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 	
+	AudioFile* audioFile = _mediaItems [indexPath.row];
+	
+	[cell.imageView sd_setImageWithURL: audioFile.GetThumbnailUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
+	
 	[cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://mind.jonnypillar.co.uk/Windows_Media_Player_alt.png"]   placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
 
-	AudioFile* audioFile = _mediaItems [indexPath.row];
+	
 	
 	[cell.titleLabel setText:audioFile.Filename];
     return cell;

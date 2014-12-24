@@ -15,6 +15,8 @@
 		F0150E681A11483300D13D45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0150E671A11483300D13D45 /* Images.xcassets */; };
 		F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0150E691A11483300D13D45 /* LaunchScreen.xib */; };
 		F0150E771A11483300D13D45 /* MindAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E761A11483300D13D45 /* MindAppTests.m */; };
+		F015EAFD1A4AC18900636C92 /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F015EAFC1A4AC18900636C92 /* TestCollectionViewCell.m */; };
+		F015EB001A4AC21700636C92 /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F015EAFF1A4AC21700636C92 /* TestCollectionViewController.m */; };
 		F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE01A3DC125002E2F3B /* LoginViewController.m */; };
 		F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */; };
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
@@ -68,6 +70,10 @@
 		F0150E701A11483300D13D45 /* MindAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0150E751A11483300D13D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0150E761A11483300D13D45 /* MindAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindAppTests.m; sourceTree = "<group>"; };
+		F015EAFB1A4AC18900636C92 /* TestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		F015EAFC1A4AC18900636C92 /* TestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		F015EAFE1A4AC21700636C92 /* TestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
+		F015EAFF1A4AC21700636C92 /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
 		F02B0DDF1A3DC125002E2F3B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F02B0DE01A3DC125002E2F3B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F02B0DE31A3DC643002E2F3B /* LoginRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestModel.h; sourceTree = "<group>"; };
@@ -313,6 +319,10 @@
 				F02B0DE01A3DC125002E2F3B /* LoginViewController.m */,
 				F08D6F631A4A05510032C90A /* MediaListViewCollectionViewController.h */,
 				F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */,
+				F015EAFB1A4AC18900636C92 /* TestCollectionViewCell.h */,
+				F015EAFC1A4AC18900636C92 /* TestCollectionViewCell.m */,
+				F015EAFE1A4AC21700636C92 /* TestCollectionViewController.h */,
+				F015EAFF1A4AC21700636C92 /* TestCollectionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -482,6 +492,7 @@
 			files = (
 				F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */,
 				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
+				F015EAFD1A4AC18900636C92 /* TestCollectionViewCell.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
@@ -489,6 +500,7 @@
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
+				F015EB001A4AC21700636C92 /* TestCollectionViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,
 				F08D6F681A4A0A4C0032C90A /* MediaListCollectionViewCell.m in Sources */,

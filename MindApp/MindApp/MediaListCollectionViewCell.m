@@ -12,14 +12,19 @@
 
 -(id)initWithFrame:(CGRect)frame
 {
+	CGRect newframe = CGRectMake(0,0, 162, 162);
 	self = [super initWithFrame:frame];
 	
 	if(self)
 	{
-		self.imageView = [[UIImageView alloc] initWithFrame:frame];
+		self.title = [[UILabel alloc] initWithFrame:frame];
+		self.imageView = [[UIImageView alloc] initWithFrame:newframe];
+		self.title = [UILabel new];
+		self.imageView = [UIImageView new];
 		self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 		
 		[self.contentView addSubview:self.imageView];
+		[self.contentView addSubview:self.title];
 	}
 	
 	return self;

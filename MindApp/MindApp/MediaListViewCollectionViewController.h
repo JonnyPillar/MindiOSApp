@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MediaListViewCollectionViewController : UICollectionViewController
+@interface MediaListViewCollectionViewController : UICollectionViewController 
 
 @property (strong, nonatomic) NSMutableArray* mediaItems;
 @property (strong, nonatomic) IBOutlet UICollectionView *mediaCollectionView;

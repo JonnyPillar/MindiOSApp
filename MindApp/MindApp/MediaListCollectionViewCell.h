@@ -11,5 +11,6 @@
 @interface MediaListCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *title;
 
 @end

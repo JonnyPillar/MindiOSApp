@@ -1,43 +1,43 @@
 //
-//  MediaListViewCollectionViewController.m
+//  TestCollectionViewController.m
 //  MindApp
 //
-//  Created by Jonny Pillar on 23/12/2014.
+//  Created by Jonny Pillar on 24/12/2014.
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
-#import "MediaListViewCollectionViewController.h"
-#import "MediaItemViewController.h"
+#import "TestCollectionViewController.h"
 #import "CommunicationGetRequestUtil.h"
+#import "TestCollectionViewCell.h"
 #import "AudioFile+ext.h"
-#import "MediaListCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface TestCollectionViewController ()
 
 @end
 
-@implementation MediaListViewCollectionViewController 
+@implementation TestCollectionViewController
 
 static NSString * const reuseIdentifier = @"mediaItemCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Register cell classes
+	[self.collectionView registerClass:[TestCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 	
-	UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//	[flowLayout setItemSize:CGSizeMake(162, 162)];
-	[flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
 	
-	[self.collectionView setCollectionViewLayout:flowLayout];
-	[self.collectionView setBackgroundColor:[UIColor redColor]];
-	[self.collectionView registerClass:[MediaListCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    // Do any additional setup after loading the view.
 	
-	[self getJsonData];
+	
 }
 
--(void)viewWillAppear:(BOOL)animated{
-	
-	[self getJsonData];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void) getJsonData{
@@ -51,7 +51,7 @@ static NSString * const reuseIdentifier = @"mediaItemCell";
 				for (NSDictionary* key in mediaFile) {
 					[_mediaItems addObject:[[AudioFile new] initWithJson:key]];
 				}
-				[self.mediaCollectionView reloadData];
+				[self.testCollectionView reloadData];
 			}
 			else {
 				[self showAlertBoxWithTitle:@"An Error Occured At Server" withMessage:[json valueForKey:@"Message"]];
@@ -64,30 +64,41 @@ static NSString * const reuseIdentifier = @"mediaItemCell";
 	}];
 }
 
+/*
+#pragma mark - Navigation
 
-- (void)didReceiveMemoryWarning {
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+	return 1;
 }
 
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _mediaItems.count;
+	return _mediaItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-    MediaListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"mediaItemCell" forIndexPath:indexPath];
+	TestCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"mediaItemCell" forIndexPath:indexPath];
 	
-	[cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://mind.jonnypillar.co.uk/Windows_Media_Player_alt.png"]   placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
 	
-	[cell setBackgroundColor:[UIColor greenColor]];
-	[cell.title setText:@"Title"];
-	[cell.title setBackgroundColor:[UIColor yellowColor]];
+//		cell.image = [[UIImageView alloc]init];
+	[cell.image sd_setImageWithURL:[NSURL URLWithString:@"http://mind.jonnypillar.co.uk/Windows_Media_Player_alt.png"]   placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
+	
+//	[cell setBackgroundColor:[UIColor greenColor]];
+	
+	
+	cell.textLabel = [UILabel new];
+	[cell.textLabel setText:@"Hello"];
+	
     return cell;
 }
 
@@ -122,6 +133,11 @@ static NSString * const reuseIdentifier = @"mediaItemCell";
 }
 */
 
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+	return UIEdgeInsetsMake(50, 20, 50, 20);
+}
+
 -(void) showAlertBoxWithTitle:(NSString *) title withMessage:(NSString*) message{
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
 													message:message
@@ -129,31 +145,6 @@ static NSString * const reuseIdentifier = @"mediaItemCell";
 										  cancelButtonTitle:@"OK"
 										  otherButtonTitles:nil];
 	[alert show];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([[segue identifier] isEqualToString:@"viewMediaItemSegue"])
-	{
-		MediaItemViewController *vc = [segue destinationViewController];
-		[vc setAudioFile:sender];
-	}
-}
-
-#pragma mark – UICollectionViewDelegateFlowLayout
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//	NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
-//	self.searchResults[searchTerm][indexPath.row];
-//	// 2
-//	CGSize retval = photo.thumbnail.size.width > 0 ? photo.thumbnail.size : CGSizeMake(100, 100);
-//	retval.height += 35; retval.width += 35; return retval;
-	return CGSizeMake(100, 100);
-}
-
-- (UIEdgeInsets)collectionView:
-(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-	return UIEdgeInsetsMake(50, 20, 50, 20);
 }
 
 @end

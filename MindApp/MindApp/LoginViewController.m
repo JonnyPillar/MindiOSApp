@@ -10,6 +10,8 @@
 #import "LoginRequestModel.h"
 #import "RegistrationRequestModel.h"
 #import "CommunicationPostRequestUtil.h"
+#import "ResgistrationResponseModel.h"
+#import "MediaListViewCollectionViewController.h"
 
 @interface LoginViewController ()
 
@@ -21,6 +23,8 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self.loginEmailAddressTextField setText:@"test@test.com"];
+	[self.loginPasswordTextField setText:@"123456"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,7 +130,7 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 			if(success)
 			{
 				NSLog(@"Complete");
-				//				[self processSuccessfulServerResponse:json];
+				[self processSuccessfulServerResponse:json];
 			}
 			else
 			{
@@ -137,6 +141,22 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 	}
 }
 
+- (void)processSuccessfulServerResponse:(NSDictionary *)json {
+	if([[json valueForKey:@"Success"] boolValue]){
+		
+		ResgistrationResponseModel *registrationModel = [[ResgistrationResponseModel alloc] initWithDictionary:json];
+		if(registrationModel.Success) {
+			[self performSegueWithIdentifier:@"segueToMediaListView"
+									  sender:self];
+		}
+		else{
+			[self showErrorAlert:registrationModel.Message];
+		}
+	}
+	else {
+		[self showErrorAlert:@"An Error Occured At Server. Panic"];
+	}
+}
 
 - (IBAction)performRegistration:(id)sender {
 	if([self validateRegsitrationFields]){
@@ -146,4 +166,13 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 		registrationRequestModel.Password = self.registerPasswordTextField.text;
 	}
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([[segue identifier] isEqualToString:@"segueToMediaListView"])
+	{
+		MediaListViewCollectionViewController *vc = [segue destinationViewController];
+	}
+}
+
 @end

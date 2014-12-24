@@ -132,21 +132,21 @@
                                 <exclude reference="gb2-ix-dbS"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0vC-pe-18x"/>
-                                <exclude reference="1jg-De-8VP"/>
-                                <exclude reference="g5o-js-CV8"/>
                                 <exclude reference="BLm-LM-mMu"/>
                                 <exclude reference="CN5-dJ-73a"/>
                                 <exclude reference="uQA-GI-J5g"/>
+                                <exclude reference="XQ9-yR-FlO"/>
+                                <exclude reference="wyR-nN-3UD"/>
                                 <exclude reference="4Gn-yf-6MR"/>
                                 <exclude reference="7bk-g9-3fH"/>
                                 <exclude reference="iIg-JT-oES"/>
-                                <exclude reference="E2k-6u-VXo"/>
-                                <exclude reference="rUa-Jf-gwh"/>
+                                <exclude reference="0vC-pe-18x"/>
+                                <exclude reference="1jg-De-8VP"/>
+                                <exclude reference="g5o-js-CV8"/>
                                 <exclude reference="FFW-6i-S0v"/>
                                 <exclude reference="Zvk-Wt-3tA"/>
-                                <exclude reference="XQ9-yR-FlO"/>
-                                <exclude reference="wyR-nN-3UD"/>
+                                <exclude reference="E2k-6u-VXo"/>
+                                <exclude reference="rUa-Jf-gwh"/>
                                 <exclude reference="Ym6-Zd-wv0"/>
                                 <exclude reference="vFf-bd-cdi"/>
                             </mask>
@@ -156,21 +156,21 @@
                                 <include reference="gb2-ix-dbS"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0vC-pe-18x"/>
-                                <include reference="1jg-De-8VP"/>
-                                <include reference="g5o-js-CV8"/>
                                 <include reference="BLm-LM-mMu"/>
                                 <include reference="CN5-dJ-73a"/>
                                 <include reference="uQA-GI-J5g"/>
+                                <include reference="XQ9-yR-FlO"/>
+                                <include reference="wyR-nN-3UD"/>
                                 <include reference="4Gn-yf-6MR"/>
                                 <include reference="7bk-g9-3fH"/>
                                 <include reference="iIg-JT-oES"/>
-                                <include reference="E2k-6u-VXo"/>
-                                <include reference="rUa-Jf-gwh"/>
+                                <include reference="0vC-pe-18x"/>
+                                <include reference="1jg-De-8VP"/>
+                                <include reference="g5o-js-CV8"/>
                                 <include reference="FFW-6i-S0v"/>
                                 <include reference="Zvk-Wt-3tA"/>
-                                <include reference="XQ9-yR-FlO"/>
-                                <include reference="wyR-nN-3UD"/>
+                                <include reference="E2k-6u-VXo"/>
+                                <include reference="rUa-Jf-gwh"/>
                                 <include reference="Ym6-Zd-wv0"/>
                                 <include reference="vFf-bd-cdi"/>
                             </mask>
@@ -446,11 +446,12 @@
                         <outlet property="registerConfirmPasswordTextField" destination="JAl-yW-dvf" id="3Jj-qn-qun"/>
                         <outlet property="registerEmailAddressTextField" destination="oux-4v-Acr" id="Pcb-Nv-OS4"/>
                         <outlet property="registerPasswordTextField" destination="JAl-yW-dvf" id="0yL-1m-HQh"/>
+                        <segue destination="UhP-V1-0pJ" kind="show" identifier="segueToMediaListView" id="7du-16-8GA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqo-5f-2mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-240" y="-281"/>
+            <point key="canvasLocation" x="-216" y="-281"/>
         </scene>
         <!--Media List View Collection View Controller-->
         <scene sceneID="nK2-6d-NTn">

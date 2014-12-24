@@ -18,6 +18,8 @@
 		F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE01A3DC125002E2F3B /* LoginViewController.m */; };
 		F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */; };
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
+		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
+		F06F1AA11A4B51F7006B71B7 /* ResgistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* ResgistrationResponseModel.m */; };
 		F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F086EC901A1A80A6000213FB /* MediaItemViewController.m */; };
 		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
 		F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */; };
@@ -76,6 +78,10 @@
 		F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModel.m; sourceTree = "<group>"; };
 		F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationRequestModel.h; sourceTree = "<group>"; };
 		F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationRequestModel.m; sourceTree = "<group>"; };
+		F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
+		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
+		F06F1A9F1A4B51F7006B71B7 /* ResgistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResgistrationResponseModel.h; sourceTree = "<group>"; };
+		F06F1AA01A4B51F7006B71B7 /* ResgistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResgistrationResponseModel.m; sourceTree = "<group>"; };
 		F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemViewController.h; sourceTree = "<group>"; };
 		F086EC901A1A80A6000213FB /* MediaItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemViewController.m; sourceTree = "<group>"; };
 		F086EC921A1A888B000213FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -230,12 +236,24 @@
 		F02B0DE21A3DC61F002E2F3B /* Data Contracts */ = {
 			isa = PBXGroup;
 			children = (
+				F06F1A9B1A4B50C8006B71B7 /* BaseDataContacts */,
 				F02B0DE31A3DC643002E2F3B /* LoginRequestModel.h */,
 				F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */,
 				F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */,
 				F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */,
+				F06F1A9F1A4B51F7006B71B7 /* ResgistrationResponseModel.h */,
+				F06F1AA01A4B51F7006B71B7 /* ResgistrationResponseModel.m */,
 			);
 			name = "Data Contracts";
+			sourceTree = "<group>";
+		};
+		F06F1A9B1A4B50C8006B71B7 /* BaseDataContacts */ = {
+			isa = PBXGroup;
+			children = (
+				F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */,
+				F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */,
+			);
+			name = BaseDataContacts;
 			sourceTree = "<group>";
 		};
 		F08D6F601A4A034B0032C90A /* Icons */ = {
@@ -491,6 +509,7 @@
 			files = (
 				F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */,
 				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
+				F06F1AA11A4B51F7006B71B7 /* ResgistrationResponseModel.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */,
@@ -502,6 +521,7 @@
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
+				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
 				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,

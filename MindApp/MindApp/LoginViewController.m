@@ -9,12 +9,15 @@
 #import "LoginViewController.h"
 #import "LoginRequestModel.h"
 #import "RegistrationRequestModel.h"
+#import "CommunicationPostRequestUtil.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
+
+static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/LogIn";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -113,8 +116,27 @@
 		LoginRequestModel* loginRequestModel = [LoginRequestModel new];
 		loginRequestModel.EmailAddress = self.loginEmailAddressTextField.text;
 		loginRequestModel.Password = self.loginPasswordTextField.text;
+		
+		NSDictionary *temp = @{
+									@"EmailAddress" : self.loginEmailAddressTextField.text,
+									@"Password" : self.loginPasswordTextField.text,
+									};
+		
+		[CommunicationPostRequestUtil PostRequest:postLoginUrl withParams:nil withBody:temp completion:^(NSDictionary *json, BOOL success) {
+			if(success)
+			{
+				NSLog(@"Complete");
+				//				[self processSuccessfulServerResponse:json];
+			}
+			else
+			{
+				NSLog(@"Failed");
+				//				[self showAlertBoxWithTitle:@"An Error Occured At Client" withMessage:nil];
+			}
+		}];
 	}
 }
+
 
 - (IBAction)performRegistration:(id)sender {
 	if([self validateRegsitrationFields]){

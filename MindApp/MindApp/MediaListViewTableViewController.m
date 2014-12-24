@@ -15,6 +15,8 @@
 
 @implementation MediaListViewTableViewController
 
+static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
+
 - (void)viewDidLoad {
 	
     [super viewDidLoad];

@@ -43,6 +43,7 @@
 		F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */; };
 		F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */; };
 		F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */; };
+		F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
@@ -120,6 +121,8 @@
 		F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestDataContract.m; sourceTree = "<group>"; };
 		F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidationUtil.h; sourceTree = "<group>"; };
 		F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidationUtil.m; sourceTree = "<group>"; };
+		F0A3F3301A4DF0A90072CE33 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -204,7 +207,7 @@
 				F0960B291A497AB80037D096 /* Communication */,
 				F09EA4E11A349DDC005A1F1C /* Utils */,
 				F0C3A89F1A1914CD00EAA252 /* Model */,
-				F0C3A8A11A1914E400EAA252 /* Controller */,
+				F0C3A8A11A1914E400EAA252 /* Controllers */,
 				F0C3A8A01A1914DD00EAA252 /* View */,
 				F0C3A8A21A1914EF00EAA252 /* Services */,
 				F0150E571A11483300D13D45 /* Supporting Files */,
@@ -380,7 +383,7 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		F0C3A8A11A1914E400EAA252 /* Controller */ = {
+		F0C3A8A11A1914E400EAA252 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F0C3A8AF1A19225400EAA252 /* MediaListViewTableViewController.h */,
@@ -391,8 +394,10 @@
 				F02B0DE01A3DC125002E2F3B /* LoginViewController.m */,
 				F08D6F631A4A05510032C90A /* MediaListViewCollectionViewController.h */,
 				F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */,
+				F0A3F3301A4DF0A90072CE33 /* RegisterViewController.h */,
+				F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */,
 			);
-			name = Controller;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		F0C3A8A21A1914EF00EAA252 /* Services */ = {
@@ -566,6 +571,7 @@
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
+				F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */,
 				F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,

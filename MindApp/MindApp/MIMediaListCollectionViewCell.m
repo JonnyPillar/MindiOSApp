@@ -11,7 +11,6 @@
 @implementation MIMediaListCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 @end

@@ -10,8 +10,6 @@
 #import "MediaListViewCollectionViewController.h"
 #import "LoginRequestModel.h"
 #import "LoginResponseModel.h"
-#import "RegistrationRequestModel.h"
-#import "RegistrationResponseModel.h"
 #import "CommunicationPostRequestUtil.h"
 #import "InputValidationUtil.h"
 
@@ -22,16 +20,12 @@
 @implementation LoginViewController
 
 static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/LogIn";
-static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/SignUp";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self.loginEmailAddressTextField setText:@"test@test.com"];
 	[self.loginPasswordTextField setText:@"123456"];
-	
-	[self.registerEmailAddressTextField setText:@"user@user.com"];
-	[self.registerPasswordTextField setText:@"123"];
-	[self.registerConfirmPasswordTextField setText:@"123"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,26 +51,6 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	}];
 }
 
-- (IBAction)performRegistration:(id)sender {
-	if(![self validateRegsitrationFields]) return;
-	
-	RegistrationRequestModel *registrationRequestModel = [self createRegistrationModel];
-	
-	[CommunicationPostRequestUtil PostRequest:postRegisterUrl withParams:nil withBody:registrationRequestModel.GetResquestDictionary completion:^(NSDictionary *json, BOOL success) {
-		if(success)
-		{
-			NSLog(@"Complete");
-			[self processSuccessfulRegisterResponse:json];
-		}
-		else
-		{
-			NSLog(@"Failed");
-			[self showErrorAlert:@"An New Error Occured At Server. Panic"];
-		}
-	}];
-
-}
-
 #pragma mark Login Creation Methods
 
 - (LoginRequestModel *)createLoginModel {
@@ -84,14 +58,6 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	loginRequestModel.EmailAddress = self.loginEmailAddressTextField.text;
 	loginRequestModel.Password = self.loginPasswordTextField.text;
 	return loginRequestModel;
-}
-
-- (RegistrationRequestModel *)createRegistrationModel {
-	RegistrationRequestModel* registrationRequestModel = [RegistrationRequestModel new];
-	registrationRequestModel.EmailAddress = self.registerEmailAddressTextField.text;
-	registrationRequestModel.Password = self.registerPasswordTextField.text;
-	registrationRequestModel.DateOfBirth = @"2014-12-25T16:23:23.1986923+00:00";
-	return registrationRequestModel;
 }
 
 #pragma mark Successful Server Response Methods
@@ -109,19 +75,6 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	}
 }
 
-- (void)processSuccessfulRegisterResponse:(NSDictionary *)json {
-	RegistrationResponseModel *registrationModel = [[RegistrationResponseModel alloc] initWithDictionary:json];
-	
-	if(registrationModel.Success) {
-		[self performSegueWithIdentifier:@"segueToMediaListView"
-								  sender:self];
-	}
-	else{
-		[self showErrorAlert:registrationModel.Message];
-	}
-}
-
-
 #pragma mark Validation Methods
 
 - (BOOL) validateLoginFields {
@@ -133,31 +86,6 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	if(![InputValidationUtil validatePasswordField: _loginPasswordTextField])
 	{
 		[self showErrorAlert: @"Login Password Field Is Invalid"];
-	}
-	
-	return true;
-}
-
-- (BOOL) validateRegsitrationFields{
-	
-	if(![InputValidationUtil validateEmailField: _registerEmailAddressTextField])
-	{
-		[self showErrorAlert: @"Registration Email Field Is Invalid"];
-		return false;
-	}
-	if(![InputValidationUtil validatePasswordField: _registerPasswordTextField])
-	{
-		[self showErrorAlert: @"Registration Password Field Is Invalid" ];
-		return false;
-	}
-	if(![InputValidationUtil validatePasswordField: _registerConfirmPasswordTextField])
-	{
-		[self showErrorAlert: @"Registration Confirmation Password Field Is Invalid"];
-		return false;
-	}
-	if(![self.registerPasswordTextField.text isEqualToString:self.registerConfirmPasswordTextField.text]){
-		[self showErrorAlert: @"Registration Passwords Do Not Match"];
-		return false;
 	}
 	
 	return true;

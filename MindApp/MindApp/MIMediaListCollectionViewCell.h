@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MIMediaListCollectionViewCell : UICollectionViewCell
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 

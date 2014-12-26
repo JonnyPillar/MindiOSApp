@@ -45,7 +45,6 @@
 		F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */; };
 		F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
-		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
 		F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B41A192D0F00EAA252 /* AudioFile.m */; };
 		F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E9B4A51A23B8F300F1D98F /* Resource.plist */; };
@@ -128,8 +127,6 @@
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
 		F0C3A8AC1A191F5B00EAA252 /* AudioFile+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioFile+ext.h"; sourceTree = "<group>"; };
 		F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AudioFile+ext.m"; sourceTree = "<group>"; };
-		F0C3A8AF1A19225400EAA252 /* MediaListViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaListViewTableViewController.h; sourceTree = "<group>"; };
-		F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListViewTableViewController.m; sourceTree = "<group>"; };
 		F0C3A8B21A192CD900EAA252 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
 		F0C3A8B41A192D0F00EAA252 /* AudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFile.m; sourceTree = "<group>"; };
 		F0E9B4A51A23B8F300F1D98F /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resource.plist; sourceTree = "<group>"; };
@@ -360,6 +357,28 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		F0A3F3391A4DF8920072CE33 /* Login/Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F02B0DDF1A3DC125002E2F3B /* LoginViewController.h */,
+				F02B0DE01A3DC125002E2F3B /* LoginViewController.m */,
+				F0A3F3301A4DF0A90072CE33 /* RegisterViewController.h */,
+				F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */,
+			);
+			name = Login/Registration;
+			sourceTree = "<group>";
+		};
+		F0A3F33A1A4DF8A60072CE33 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */,
+				F086EC901A1A80A6000213FB /* MediaItemViewController.m */,
+				F08D6F631A4A05510032C90A /* MediaListViewCollectionViewController.h */,
+				F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
 		F0C3A89F1A1914CD00EAA252 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,16 +405,8 @@
 		F0C3A8A11A1914E400EAA252 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F0C3A8AF1A19225400EAA252 /* MediaListViewTableViewController.h */,
-				F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */,
-				F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */,
-				F086EC901A1A80A6000213FB /* MediaItemViewController.m */,
-				F02B0DDF1A3DC125002E2F3B /* LoginViewController.h */,
-				F02B0DE01A3DC125002E2F3B /* LoginViewController.m */,
-				F08D6F631A4A05510032C90A /* MediaListViewCollectionViewController.h */,
-				F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */,
-				F0A3F3301A4DF0A90072CE33 /* RegisterViewController.h */,
-				F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */,
+				F0A3F33A1A4DF8A60072CE33 /* Media */,
+				F0A3F3391A4DF8920072CE33 /* Login/Registration */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -582,7 +593,6 @@
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
-				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,
 				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,

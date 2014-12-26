@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
-#import "ResgistrationResponseModel.h"
+#import "RegistrationResponseModel.h"
 
-@implementation ResgistrationResponseModel
+@implementation RegistrationResponseModel
 
 -(id) initWithDictionary:(NSDictionary *)responseDictionary{
 	

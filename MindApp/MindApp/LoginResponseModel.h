@@ -1,15 +1,15 @@
 //
-//  ResgistrationResponseModel.h
+//  LoginResponseModel.h
 //  MindApp
 //
-//  Created by Jonny Pillar on 24/12/2014.
+//  Created by Jonny Pillar on 25/12/2014.
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "BaseResponseDataContract.h"
 
-@interface ResgistrationResponseModel : BaseResponseDataContract
+@interface LoginResponseModel : BaseResponseDataContract
 
 @property (nonatomic, strong) NSString* SessionId;
 

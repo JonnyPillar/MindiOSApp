@@ -19,7 +19,7 @@
 		F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */; };
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
-		F06F1AA11A4B51F7006B71B7 /* ResgistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* ResgistrationResponseModel.m */; };
+		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
 		F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F086EC901A1A80A6000213FB /* MediaItemViewController.m */; };
 		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
 		F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */; };
@@ -39,6 +39,10 @@
 		F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */; };
 		F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */; };
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
+		F0A137F91A4C70A200C64CE4 /* LoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */; };
+		F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */; };
+		F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */; };
+		F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B01A19225400EAA252 /* MediaListViewTableViewController.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
@@ -80,8 +84,8 @@
 		F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationRequestModel.m; sourceTree = "<group>"; };
 		F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
-		F06F1A9F1A4B51F7006B71B7 /* ResgistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResgistrationResponseModel.h; sourceTree = "<group>"; };
-		F06F1AA01A4B51F7006B71B7 /* ResgistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResgistrationResponseModel.m; sourceTree = "<group>"; };
+		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
+		F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationResponseModel.m; sourceTree = "<group>"; };
 		F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemViewController.h; sourceTree = "<group>"; };
 		F086EC901A1A80A6000213FB /* MediaItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemViewController.m; sourceTree = "<group>"; };
 		F086EC921A1A888B000213FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +112,14 @@
 		F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationGetRequestUtil.m; sourceTree = "<group>"; };
 		F09EA4E21A349E1C005A1F1C /* TimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUtil.h; sourceTree = "<group>"; };
 		F09EA4E31A349E1C005A1F1C /* TimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUtil.m; sourceTree = "<group>"; };
+		F0A137F71A4C70A200C64CE4 /* LoginResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResponseModel.h; sourceTree = "<group>"; };
+		F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResponseModel.m; sourceTree = "<group>"; };
+		F0A137FB1A4C861700C64CE4 /* JSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseSerializerWithData.h; sourceTree = "<group>"; };
+		F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseSerializerWithData.m; sourceTree = "<group>"; };
+		F0A3F3271A4DC0C70072CE33 /* BaseRequestDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestDataContract.h; sourceTree = "<group>"; };
+		F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestDataContract.m; sourceTree = "<group>"; };
+		F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidationUtil.h; sourceTree = "<group>"; };
+		F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidationUtil.m; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -237,12 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				F06F1A9B1A4B50C8006B71B7 /* BaseDataContacts */,
-				F02B0DE31A3DC643002E2F3B /* LoginRequestModel.h */,
-				F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */,
-				F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */,
-				F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */,
-				F06F1A9F1A4B51F7006B71B7 /* ResgistrationResponseModel.h */,
-				F06F1AA01A4B51F7006B71B7 /* ResgistrationResponseModel.m */,
+				F0A3F32A1A4DC2740072CE33 /* Requests */,
+				F0A3F32B1A4DC27B0072CE33 /* Responses */,
 			);
 			name = "Data Contracts";
 			sourceTree = "<group>";
@@ -252,6 +260,8 @@
 			children = (
 				F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */,
 				F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */,
+				F0A3F3271A4DC0C70072CE33 /* BaseRequestDataContract.h */,
+				F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */,
 			);
 			name = BaseDataContacts;
 			sourceTree = "<group>";
@@ -267,6 +277,7 @@
 		F0960B291A497AB80037D096 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
+				F0A137FA1A4C85DE00C64CE4 /* CustomResponseSerializers */,
 				F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */,
 				F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */,
 				F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */,
@@ -300,8 +311,50 @@
 			children = (
 				F09EA4E21A349E1C005A1F1C /* TimerUtil.h */,
 				F09EA4E31A349E1C005A1F1C /* TimerUtil.m */,
+				F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */,
+				F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		F0A137FA1A4C85DE00C64CE4 /* CustomResponseSerializers */ = {
+			isa = PBXGroup;
+			children = (
+				F0A137FB1A4C861700C64CE4 /* JSONResponseSerializerWithData.h */,
+				F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */,
+			);
+			name = CustomResponseSerializers;
+			sourceTree = "<group>";
+		};
+		F0A3F32A1A4DC2740072CE33 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F02B0DE31A3DC643002E2F3B /* LoginRequestModel.h */,
+				F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */,
+				F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */,
+				F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		F0A3F32B1A4DC27B0072CE33 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */,
+				F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */,
+				F0A137F71A4C70A200C64CE4 /* LoginResponseModel.h */,
+				F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */,
+			);
+			name = Responses;
+			sourceTree = "<group>";
+		};
+		F0A3F32F1A4DEC5E0072CE33 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F0C3A8A71A191D0E00EAA252 /* AudioFile.h */,
+				F0C3A8B41A192D0F00EAA252 /* AudioFile.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		F0C3A89F1A1914CD00EAA252 /* Model */ = {
@@ -310,8 +363,7 @@
 				F02B0DE21A3DC61F002E2F3B /* Data Contracts */,
 				F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */,
 				F0C3A8AA1A191D2500EAA252 /* Base Entities */,
-				F0C3A8A71A191D0E00EAA252 /* AudioFile.h */,
-				F0C3A8B41A192D0F00EAA252 /* AudioFile.m */,
+				F0A3F32F1A4DEC5E0072CE33 /* Entities */,
 				F0C3A8AB1A191F0500EAA252 /* Extensions */,
 			);
 			name = Model;
@@ -507,10 +559,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A137F91A4C70A200C64CE4 /* LoginResponseModel.m in Sources */,
 				F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */,
 				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
-				F06F1AA11A4B51F7006B71B7 /* ResgistrationResponseModel.m in Sources */,
+				F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
+				F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
@@ -523,8 +577,10 @@
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
 				F0C3A8B11A19225400EAA252 /* MediaListViewTableViewController.m in Sources */,
+				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
+				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

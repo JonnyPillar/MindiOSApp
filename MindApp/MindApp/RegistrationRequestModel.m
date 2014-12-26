@@ -10,4 +10,13 @@
 
 @implementation RegistrationRequestModel
 
+-(NSDictionary *) GetResquestDictionary{
+	NSDictionary* requestDictionary = @{
+										@"Username": self.EmailAddress,
+										@"Password": self.Password,
+										@"DateOfBirth": self.DateOfBirth
+										};
+	return requestDictionary;
+}
+
 @end

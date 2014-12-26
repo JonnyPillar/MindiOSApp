@@ -7,8 +7,8 @@
 //
 
 #import "MediaListViewTableViewController.h"
-#import "AudioFile+ext.h"
 #import "MediaItemViewController.h"
+#import "AudioFile+ext.h"
 #import "CommunicationGetRequestUtil.h"
 #import "UIImageView+AFNetworking.h"
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -30,7 +30,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 -(void) getJsonData{
 	
-	[CommunicationGetRequestUtil GetRequest:@"http://mind-1.apphb.com/api/media/getmediafiles" withParams:nil completion:^(NSDictionary *json, BOOL success) {
+	[CommunicationGetRequestUtil GetRequest:getMediaFilesUrl withParams:nil completion:^(NSDictionary *json, BOOL success) {
 		if(success)
 		{
 			if([[json valueForKey:@"Success"] boolValue]){

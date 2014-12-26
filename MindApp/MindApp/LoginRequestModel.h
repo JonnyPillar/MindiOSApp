@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseRequestDataContract.h"
 
-@interface LoginRequestModel : NSObject
+@interface LoginRequestModel : BaseRequestDataContract
 
 @property (nonatomic) NSString* EmailAddress;
 @property (nonatomic) NSString* Password;

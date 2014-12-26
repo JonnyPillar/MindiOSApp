@@ -10,4 +10,12 @@
 
 @implementation LoginRequestModel
 
+-(NSDictionary *) GetResquestDictionary{
+	NSDictionary* requestDictionary = @{
+										@"EmailAddress": self.EmailAddress,
+										@"Password": self.Password
+										};
+	return requestDictionary;
+}
+
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseRequestDataContract.h"
 
-@interface RegistrationRequestModel : NSObject
+@interface RegistrationRequestModel : BaseRequestDataContract
 
-@property (nonatomic) NSString* EmailAddress;
-@property (nonatomic) NSString* Password;
+@property (nonatomic, strong) NSString* EmailAddress;
+@property (nonatomic, strong) NSString* Password;
+@property (nonatomic, strong) NSString* DateOfBirth;
 
 @end

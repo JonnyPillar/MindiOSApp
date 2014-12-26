@@ -8,6 +8,7 @@
 
 #import "CommunicationPostRequestUtil.h"
 #import <AFNetworking.h>
+#import "JSONResponseSerializerWithData.h"
 
 @implementation CommunicationPostRequestUtil
 
@@ -15,18 +16,23 @@
 
 	
 	AFHTTPRequestOperationManager* networkManager = [AFHTTPRequestOperationManager manager];
-	networkManager.responseSerializer = [AFJSONResponseSerializer serializer];
+	networkManager.responseSerializer = [JSONResponseSerializerWithData serializer];
 	networkManager.requestSerializer = [AFJSONRequestSerializer serializer];
 	
 	[networkManager POST:url parameters:body
 				success:^(AFHTTPRequestOperation *operation, id responseObject) {
-					NSDictionary* responseJsonDictionary = responseObject;
 					
-					if (completion) completion(responseJsonDictionary, YES);
+					if (completion) completion(responseObject, YES);
 					
 					NSLog(@"JSON: %@", responseObject);
 				} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-					if(completion) completion(nil, NO);
+					
+					NSData* errorJsonData = [error.userInfo objectForKey:@"JSONResponseSerializerWithDataKey"];
+					
+					NSError *parsingError;
+					NSDictionary *errorInformationDictionary = [NSJSONSerialization JSONObjectWithData:errorJsonData options:0 error:&parsingError];
+					
+					if(completion) completion(errorInformationDictionary, [error localizedDescription]);
 					NSLog(@"Error: %@", error);
 				}
 	 ];

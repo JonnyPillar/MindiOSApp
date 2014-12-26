@@ -7,11 +7,13 @@
 //
 
 #import "LoginViewController.h"
-#import "LoginRequestModel.h"
-#import "RegistrationRequestModel.h"
-#import "CommunicationPostRequestUtil.h"
-#import "ResgistrationResponseModel.h"
 #import "MediaListViewCollectionViewController.h"
+#import "LoginRequestModel.h"
+#import "LoginResponseModel.h"
+#import "RegistrationRequestModel.h"
+#import "RegistrationResponseModel.h"
+#import "CommunicationPostRequestUtil.h"
+#import "InputValidationUtil.h"
 
 @interface LoginViewController ()
 
@@ -20,89 +22,148 @@
 @implementation LoginViewController
 
 static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/LogIn";
+static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/SignUp";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self.loginEmailAddressTextField setText:@"test@test.com"];
 	[self.loginPasswordTextField setText:@"123456"];
+	
+	[self.registerEmailAddressTextField setText:@"user@user.com"];
+	[self.registerPasswordTextField setText:@"123"];
+	[self.registerConfirmPasswordTextField setText:@"123"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (BOOL) validateLoginFields {
-
-	NSString* validationMessage = [NSString new];
+- (IBAction)performLogin:(id)sender {
+	if(![self validateLoginFields]) return;
 	
-	if([self textFieldIsNullOrEmpty:self.loginEmailAddressTextField])
-	{
-		validationMessage = @"Login Email Field Is Empty";
-	}
-	else
-	{
-		if(![self validateEmail:self.loginEmailAddressTextField.text]){
-			validationMessage = @"Login Email Field Is not Valid";
+	LoginRequestModel *loginRequestModel = [self createLoginModel];
+	
+	[CommunicationPostRequestUtil PostRequest:postLoginUrl withParams:nil withBody:loginRequestModel.GetResquestDictionary completion:^(NSDictionary *json, BOOL success) {
+		if(success)
+		{
+			NSLog(@"Complete");
+			[self processSuccessfulLoginResponse:json];
 		}
+		else
+		{
+			NSLog(@"Failed");
+			[self showErrorAlert:@"An New Error Occured At Server. Panic"];
+		}
+	}];
+}
+
+- (IBAction)performRegistration:(id)sender {
+	if(![self validateRegsitrationFields]) return;
+	
+	RegistrationRequestModel *registrationRequestModel = [self createRegistrationModel];
+	
+	[CommunicationPostRequestUtil PostRequest:postRegisterUrl withParams:nil withBody:registrationRequestModel.GetResquestDictionary completion:^(NSDictionary *json, BOOL success) {
+		if(success)
+		{
+			NSLog(@"Complete");
+			[self processSuccessfulRegisterResponse:json];
+		}
+		else
+		{
+			NSLog(@"Failed");
+			[self showErrorAlert:@"An New Error Occured At Server. Panic"];
+		}
+	}];
+
+}
+
+#pragma mark Login Creation Methods
+
+- (LoginRequestModel *)createLoginModel {
+	LoginRequestModel* loginRequestModel = [LoginRequestModel new];
+	loginRequestModel.EmailAddress = self.loginEmailAddressTextField.text;
+	loginRequestModel.Password = self.loginPasswordTextField.text;
+	return loginRequestModel;
+}
+
+- (RegistrationRequestModel *)createRegistrationModel {
+	RegistrationRequestModel* registrationRequestModel = [RegistrationRequestModel new];
+	registrationRequestModel.EmailAddress = self.registerEmailAddressTextField.text;
+	registrationRequestModel.Password = self.registerPasswordTextField.text;
+	registrationRequestModel.DateOfBirth = @"2014-12-25T16:23:23.1986923+00:00";
+	return registrationRequestModel;
+}
+
+#pragma mark Successful Server Response Methods
+
+- (void)processSuccessfulLoginResponse:(NSDictionary *)json {
+	
+	LoginResponseModel *loginModel = [[LoginResponseModel alloc] initWithDictionary:json];
+	if(loginModel.Success) {
+		
+		[self performSegueWithIdentifier:@"segueToMediaListView"
+								  sender:self];
+	}
+	else{
+		[self showErrorAlert:loginModel.Message];
+	}
+}
+
+- (void)processSuccessfulRegisterResponse:(NSDictionary *)json {
+	RegistrationResponseModel *registrationModel = [[RegistrationResponseModel alloc] initWithDictionary:json];
+	
+	if(registrationModel.Success) {
+		[self performSegueWithIdentifier:@"segueToMediaListView"
+								  sender:self];
+	}
+	else{
+		[self showErrorAlert:registrationModel.Message];
+	}
+}
+
+
+#pragma mark Validation Methods
+
+- (BOOL) validateLoginFields {
+	
+	if(![InputValidationUtil validateEmailField: _loginEmailAddressTextField])
+	{
+		[self showErrorAlert: @"Login Email Field Is Invalid"];
+	}
+	if(![InputValidationUtil validatePasswordField: _loginPasswordTextField])
+	{
+		[self showErrorAlert: @"Login Password Field Is Invalid"];
 	}
 	
-	if([self textFieldIsNullOrEmpty:self.loginPasswordTextField])
-	{
-		validationMessage = @"Login Password Field Is Empty";
-	}
-	
-	if(![validationMessage isEqualToString:@""])
-	{
-		[self showErrorAlert: validationMessage];
-		return false;
-	}
 	return true;
 }
 
 - (BOOL) validateRegsitrationFields{
 	
-	NSString* validationMessage = [NSString new];
-	
-	if([self textFieldIsNullOrEmpty:self.registerEmailAddressTextField])
+	if(![InputValidationUtil validateEmailField: _registerEmailAddressTextField])
 	{
-		validationMessage = @"Registration Email Field Is Empty";
-	}
-	else
-	{
-		if(![self validateEmail:self.loginEmailAddressTextField.text]){
-			validationMessage = @"Login Email Field Is not Valid";
-		}
-	}
-	
-	if([self textFieldIsNullOrEmpty:self.registerPasswordTextField])
-	{
-		validationMessage = @"Registration Password Field Is Empty";
-	}
-	
-	if(![self.registerPasswordTextField.text isEqualToString:self.registerConfirmPasswordTextField.text]){
-		validationMessage = @"Registration Passwords Do Not Match";
-	}
-	
-	if(![validationMessage isEqualToString:@""])
-	{
-		[self showErrorAlert: validationMessage];
+		[self showErrorAlert: @"Registration Email Field Is Invalid"];
 		return false;
 	}
+	if(![InputValidationUtil validatePasswordField: _registerPasswordTextField])
+	{
+		[self showErrorAlert: @"Registration Password Field Is Invalid" ];
+		return false;
+	}
+	if(![InputValidationUtil validatePasswordField: _registerConfirmPasswordTextField])
+	{
+		[self showErrorAlert: @"Registration Confirmation Password Field Is Invalid"];
+		return false;
+	}
+	if(![self.registerPasswordTextField.text isEqualToString:self.registerConfirmPasswordTextField.text]){
+		[self showErrorAlert: @"Registration Passwords Do Not Match"];
+		return false;
+	}
+	
 	return true;
 }
 
-- (BOOL)validateEmail:(NSString *)emailStr {
-	NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-	NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-	return [emailTest evaluateWithObject:emailStr];
-}
-
--(bool) textFieldIsNullOrEmpty:(UITextField *) textField{
-	
-	if(textField == nil) return true;
-	if([textField.text isEqualToString:@""]) return true;
-	return false;
-}
+#pragma mark UI Methods
 
 -(void) showErrorAlert:(NSString*) errorMessage
 {
@@ -114,64 +175,11 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 	[ErrorAlert show];
 }
 
-- (IBAction)performLogin:(id)sender {
-	if([self validateLoginFields]){
-		//Perform Login
-		LoginRequestModel* loginRequestModel = [LoginRequestModel new];
-		loginRequestModel.EmailAddress = self.loginEmailAddressTextField.text;
-		loginRequestModel.Password = self.loginPasswordTextField.text;
-		
-		NSDictionary *temp = @{
-									@"EmailAddress" : self.loginEmailAddressTextField.text,
-									@"Password" : self.loginPasswordTextField.text,
-									};
-		
-		[CommunicationPostRequestUtil PostRequest:postLoginUrl withParams:nil withBody:temp completion:^(NSDictionary *json, BOOL success) {
-			if(success)
-			{
-				NSLog(@"Complete");
-				[self processSuccessfulServerResponse:json];
-			}
-			else
-			{
-				NSLog(@"Failed");
-				//				[self showAlertBoxWithTitle:@"An Error Occured At Client" withMessage:nil];
-			}
-		}];
-	}
-}
-
-- (void)processSuccessfulServerResponse:(NSDictionary *)json {
-	if([[json valueForKey:@"Success"] boolValue]){
-		
-		ResgistrationResponseModel *registrationModel = [[ResgistrationResponseModel alloc] initWithDictionary:json];
-		if(registrationModel.Success) {
-			[self performSegueWithIdentifier:@"segueToMediaListView"
-									  sender:self];
-		}
-		else{
-			[self showErrorAlert:registrationModel.Message];
-		}
-	}
-	else {
-		[self showErrorAlert:@"An Error Occured At Server. Panic"];
-	}
-}
-
-- (IBAction)performRegistration:(id)sender {
-	if([self validateRegsitrationFields]){
-		//Perform Registration
-		RegistrationRequestModel* registrationRequestModel = [RegistrationRequestModel new];
-		registrationRequestModel.EmailAddress = self.registerEmailAddressTextField.text;
-		registrationRequestModel.Password = self.registerPasswordTextField.text;
-	}
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([[segue identifier] isEqualToString:@"segueToMediaListView"])
 	{
-		MediaListViewCollectionViewController *vc = [segue destinationViewController];
+		[segue destinationViewController];
 	}
 }
 

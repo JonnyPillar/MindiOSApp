@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *loginEmailAddressTextField;
 @property (strong, nonatomic) IBOutlet UITextField *loginPasswordTextField;
+
 @property (strong, nonatomic) IBOutlet UITextField *registerEmailAddressTextField;
 @property (strong, nonatomic) IBOutlet UITextField *registerPasswordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *registerConfirmPasswordTextField;

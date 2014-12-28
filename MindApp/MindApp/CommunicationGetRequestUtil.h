@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseCommunicationsUtil.h"
 
-@interface CommunicationGetRequestUtil : NSObject
+@interface CommunicationGetRequestUtil : BaseCommunicationsUtil
 
 +(void)GetRequest:(NSString*) url withParams:(NSArray*) paramArray completion:(void (^)(NSDictionary *json, BOOL success))completion;
 

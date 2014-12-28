@@ -24,6 +24,9 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	_audioPlayer = [AVPlayer new];
+	
 	[self setUpCollectionView];
 	[self retreiveMediaItemData];
 }
@@ -146,6 +149,8 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	if ([[segue identifier] isEqualToString:@"viewMediaItemSegue"])
 	{
 		MediaItemViewController *vc = [segue destinationViewController];
+		
+		[vc setAudioPlayer:_audioPlayer];
 		[vc setAudioFile:sender];
 	}
 }

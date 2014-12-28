@@ -22,10 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(_audioFile)
-	{
-		[self setupView];
-	}
+	[self setupView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +45,11 @@
 
 - (void)setupView {
 	
-	_audioPlayer = [[AVPlayer alloc]initWithURL:_audioFile.GetFileUrlNsUrl];
+	AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:_audioFile.GetFileUrlNsUrl];
+	[_audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
+	
+//	_audioPlayer = [_audioPlayer initWithURL:_audioFile.GetFileUrlNsUrl];
+	
 	[_audioFileLabel setText:_audioFile.Filename];
 	[_audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self GetAudioTrackDuration]]];
 	[_audioFileImageView sd_setImageWithURL:_audioFile.GetImageUrlNsUrl];

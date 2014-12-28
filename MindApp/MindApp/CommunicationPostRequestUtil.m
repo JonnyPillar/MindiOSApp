@@ -7,33 +7,22 @@
 //
 
 #import "CommunicationPostRequestUtil.h"
-#import <AFNetworking.h>
-#import "JSONResponseSerializerWithData.h"
+
 
 @implementation CommunicationPostRequestUtil
 
 +(void)PostRequest:(NSString*) url withParams:(NSArray*) paramArray withBody:(id) body completion:(void (^)(NSDictionary *json, BOOL success))completion{
-
 	
-	AFHTTPRequestOperationManager* networkManager = [AFHTTPRequestOperationManager manager];
-	networkManager.responseSerializer = [JSONResponseSerializerWithData serializer];
-	networkManager.requestSerializer = [AFJSONRequestSerializer serializer];
-	
+	AFHTTPRequestOperationManager* networkManager = [self createRequestManager];
+	NSLog(@"Starting Post Request");
 	[networkManager POST:url parameters:body
 				success:^(AFHTTPRequestOperation *operation, id responseObject) {
-					
+					NSLog(@"Successful Post Request");
 					if (completion) completion(responseObject, YES);
 					
-					NSLog(@"JSON: %@", responseObject);
 				} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-					
-					NSData* errorJsonData = [error.userInfo objectForKey:@"JSONResponseSerializerWithDataKey"];
-					
-					NSError *parsingError;
-					NSDictionary *errorInformationDictionary = [NSJSONSerialization JSONObjectWithData:errorJsonData options:0 error:&parsingError];
-					
-					if(completion) completion(errorInformationDictionary, [error localizedDescription]);
-					NSLog(@"Error: %@", error);
+					NSLog(@"Failed Post Request");
+					[super handelRequestError:error completion:completion];
 				}
 	 ];
 }

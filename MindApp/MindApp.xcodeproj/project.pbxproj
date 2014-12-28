@@ -20,6 +20,7 @@
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
 		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
+		F07B8BAA1A50254000632BF9 /* BaseCommunicationsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */; };
 		F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F086EC901A1A80A6000213FB /* MediaItemViewController.m */; };
 		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
 		F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */; };
@@ -86,6 +87,8 @@
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
 		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
 		F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationResponseModel.m; sourceTree = "<group>"; };
+		F07B8BA81A50254000632BF9 /* BaseCommunicationsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCommunicationsUtil.h; sourceTree = "<group>"; };
+		F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCommunicationsUtil.m; sourceTree = "<group>"; };
 		F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemViewController.h; sourceTree = "<group>"; };
 		F086EC901A1A80A6000213FB /* MediaItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemViewController.m; sourceTree = "<group>"; };
 		F086EC921A1A888B000213FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -201,6 +204,7 @@
 		F0150E561A11483300D13D45 /* MindApp */ = {
 			isa = PBXGroup;
 			children = (
+				F0A3F33B1A4DF9950072CE33 /* AudioPlayer */,
 				F0960B291A497AB80037D096 /* Communication */,
 				F09EA4E11A349DDC005A1F1C /* Utils */,
 				F0C3A89F1A1914CD00EAA252 /* Model */,
@@ -266,6 +270,15 @@
 			name = BaseDataContacts;
 			sourceTree = "<group>";
 		};
+		F07B8BAC1A5027AA00632BF9 /* BaseCommunicationUtil */ = {
+			isa = PBXGroup;
+			children = (
+				F07B8BA81A50254000632BF9 /* BaseCommunicationsUtil.h */,
+				F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */,
+			);
+			name = BaseCommunicationUtil;
+			sourceTree = "<group>";
+		};
 		F08D6F601A4A034B0032C90A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +290,7 @@
 		F0960B291A497AB80037D096 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
+				F07B8BAC1A5027AA00632BF9 /* BaseCommunicationUtil */,
 				F0A137FA1A4C85DE00C64CE4 /* CustomResponseSerializers */,
 				F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */,
 				F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */,
@@ -377,6 +391,13 @@
 				F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */,
 			);
 			name = Media;
+			sourceTree = "<group>";
+		};
+		F0A3F33B1A4DF9950072CE33 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AudioPlayer;
 			sourceTree = "<group>";
 		};
 		F0C3A89F1A1914CD00EAA252 /* Model */ = {
@@ -588,6 +609,7 @@
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
+				F07B8BAA1A50254000632BF9 /* BaseCommunicationsUtil.m in Sources */,
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,

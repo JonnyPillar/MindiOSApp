@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseCommunicationsUtil.h"
 
-@interface CommunicationPostRequestUtil : NSObject
+@interface CommunicationPostRequestUtil : BaseCommunicationsUtil
 
 +(void)PostRequest:(NSString*) url withParams:(NSArray*) paramArray withBody:(id) body completion:(void (^)(NSDictionary *json, BOOL success))completion;
 

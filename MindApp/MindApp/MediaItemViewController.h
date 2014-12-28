@@ -13,8 +13,8 @@
 @interface MediaItemViewController : UIViewController <AVAudioPlayerDelegate>
 
 @property AudioFile* audioFile;
-
 @property (strong, nonatomic) AVPlayer *audioPlayer;
+
 @property (strong, nonatomic) IBOutlet UIButton *audioPlayButton;
 @property (strong, nonatomic) IBOutlet UILabel *audioFileLabel;
 @property (strong, nonatomic) IBOutlet UIProgressView *audioProgressBar;

@@ -7,27 +7,20 @@
 //
 
 #import "CommunicationGetRequestUtil.h"
-#import <AFNetworking.h>
 
 @implementation CommunicationGetRequestUtil
 
 +(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray completion:(void (^)(NSDictionary *json, BOOL success))completion {
 	
-	AFHTTPRequestOperationManager* networkManager = [AFHTTPRequestOperationManager manager];
-	networkManager.responseSerializer = [AFJSONResponseSerializer serializer];
-	networkManager.requestSerializer = [AFJSONRequestSerializer serializer];
-	
+	AFHTTPRequestOperationManager* networkManager = [self createRequestManager];
+	NSLog(@"Starting Post Request");
 	[networkManager GET:url parameters:paramArray
 				 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-					 NSDictionary* responseJsonDictionary = responseObject;
-					 
-					 if (completion)
-						 completion(responseJsonDictionary, YES);
-					 
-					 NSLog(@"JSON: %@", responseObject);
+					 NSLog(@"Successful Post Request");
+					 if (completion) completion(responseObject, YES);
 				 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-					 if(completion) completion(nil, NO);
-					 NSLog(@"Error: %@", error);
+					 NSLog(@"Failed Post Request");
+					 [super handelRequestError:error completion:completion];
 				 }
 	 ];
 }

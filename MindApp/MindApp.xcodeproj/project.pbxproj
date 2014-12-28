@@ -208,12 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				F0A3F33B1A4DF9950072CE33 /* AudioPlayer */,
-				F0960B291A497AB80037D096 /* Communication */,
+				F0960B291A497AB80037D096 /* Comms */,
 				F09EA4E11A349DDC005A1F1C /* Utils */,
 				F0C3A89F1A1914CD00EAA252 /* Model */,
 				F0C3A8A11A1914E400EAA252 /* Controllers */,
 				F0C3A8A01A1914DD00EAA252 /* View */,
-				F0C3A8A21A1914EF00EAA252 /* Services */,
 				F0150E571A11483300D13D45 /* Supporting Files */,
 			);
 			path = MindApp;
@@ -290,7 +289,7 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
-		F0960B291A497AB80037D096 /* Communication */ = {
+		F0960B291A497AB80037D096 /* Comms */ = {
 			isa = PBXGroup;
 			children = (
 				F07B8BAC1A5027AA00632BF9 /* BaseCommunicationUtil */,
@@ -302,7 +301,7 @@
 				F0912AC71A4B23E200BD1A13 /* CommunicationPostRequestUtil.h */,
 				F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */,
 			);
-			name = Communication;
+			name = Comms;
 			sourceTree = "<group>";
 		};
 		F09EA4E01A349DC9005A1F1C /* Frameworks */ = {
@@ -435,13 +434,6 @@
 				F0A3F3391A4DF8920072CE33 /* Login/Registration */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		F0C3A8A21A1914EF00EAA252 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Services;
 			sourceTree = "<group>";
 		};
 		F0C3A8AA1A191D2500EAA252 /* Base Entities */ = {

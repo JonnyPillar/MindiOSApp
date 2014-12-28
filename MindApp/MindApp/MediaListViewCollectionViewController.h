@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "MIAudioPlayer.h"
 
 @interface MediaListViewCollectionViewController : UICollectionViewController 
 
 @property (strong, nonatomic) NSMutableArray* mediaItems;
 @property (strong, nonatomic) IBOutlet UICollectionView *mediaCollectionView;
 
-@property (strong, nonatomic) AVPlayer *audioPlayer;
+@property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 
 @end

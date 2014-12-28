@@ -10,19 +10,19 @@
 
 @protocol MIAudioPlayerDelegate;
 
-
 @interface MIAudioPlayer : AVPlayer
 
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 
+-(id) init;
 -(id) initWithDelegate:(id) delegate;
 
 -(void) playNewPlayerItem:(NSURL *) mediaItemUrl;
 -(void) playAudio;
 -(void) pauseAudio;
+-(BOOL) audioPlayerIsPlaying;
 
 @end
-
 
 @protocol MIAudioPlayerDelegate <NSObject>
 

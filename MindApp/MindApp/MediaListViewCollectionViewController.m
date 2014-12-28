@@ -12,6 +12,7 @@
 #import "AudioFile+ext.h"
 #import "MIMediaListCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "MIAudioPlayer.h"
 
 @interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -24,9 +25,10 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	_audioPlayer = [AVPlayer new];
-	
+	if(!_audioPlayer){
+		_audioPlayer = [[MIAudioPlayer alloc] init];
+	}
+
 	[self setUpCollectionView];
 	[self retreiveMediaItemData];
 }

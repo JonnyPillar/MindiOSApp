@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "AudioFile.h"
+#import "MIAudioPlayer.h"
 
-@interface MediaItemViewController : UIViewController <AVAudioPlayerDelegate>
+@interface MediaItemViewController : UIViewController <MIAudioPlayerDelegate>
 
 @property AudioFile* audioFile;
-@property (strong, nonatomic) AVPlayer *audioPlayer;
+@property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 
 @property (strong, nonatomic) IBOutlet UIButton *audioPlayButton;
 @property (strong, nonatomic) IBOutlet UILabel *audioFileLabel;

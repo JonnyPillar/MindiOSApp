@@ -7,16 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 
-@interface CommunicationsManager : NSObject
+@protocol CommunicationsManagerDelegate;
 
-@property BOOL Sucess;
-@property (nonatomic, strong) NSDictionary* ResponseDictionary;
+@interface CommunicationsManager : AFHTTPRequestOperationManager
+
+@property (nonatomic, strong) id<CommunicationsManagerDelegate> delegate;
+
+-(id) initWithDelegate:(id) delegate;
+
+-(void) setAuthorizationToken: (NSString*) authorizationToken;
+-(void) clearAuthorizationToken;
 
 -(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray;
+-(void) PostRequest:(NSString*) url withParams:(NSArray*) paramArray withBody:(id) body;
 
--(NSDictionary *) PostWithParams:(NSString*) url withParams:(NSArray*) paramArray;
--(NSDictionary *) PostWithBody:(NSString*) url withBody:(NSString*) body;
--(NSDictionary *) Post:(NSString*) url withParams:(NSArray*) paramArray withBody:(NSString*) body;
+@end
+
+@protocol CommunicationsManagerDelegate <NSObject>
+
+@required
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary;
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary;
+
+@optional
+-(void) showActivitySpinner;
+-(void) hideActivitySpinner;
 
 @end

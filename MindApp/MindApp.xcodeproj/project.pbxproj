@@ -21,9 +21,9 @@
 		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
 		F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */; };
 		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
+		F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
 		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
-		F07B8BAA1A50254000632BF9 /* BaseCommunicationsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */; };
 		F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */; };
 		F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F086EC901A1A80A6000213FB /* MediaItemViewController.m */; };
 		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
@@ -40,9 +40,7 @@
 		F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */; };
 		F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */; };
 		F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */; };
-		F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */; };
 		F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */; };
-		F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */; };
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
 		F0A137F91A4C70A200C64CE4 /* LoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */; };
 		F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */; };
@@ -94,12 +92,12 @@
 		F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheUtil.m; sourceTree = "<group>"; };
 		F04987E81A56F39900FC2D44 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		F04987E91A56F39900FC2D44 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		F04987EE1A570FAD00FC2D44 /* GetMediaFilesResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMediaFilesResponseModel.h; sourceTree = "<group>"; };
+		F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaFilesResponseModel.m; sourceTree = "<group>"; };
 		F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
 		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
 		F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationResponseModel.m; sourceTree = "<group>"; };
-		F07B8BA81A50254000632BF9 /* BaseCommunicationsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCommunicationsUtil.h; sourceTree = "<group>"; };
-		F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCommunicationsUtil.m; sourceTree = "<group>"; };
 		F07B8BAD1A5028ED00632BF9 /* MIAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayer.h; sourceTree = "<group>"; };
 		F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayer.m; sourceTree = "<group>"; };
 		F086EC8F1A1A80A6000213FB /* MediaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItemViewController.h; sourceTree = "<group>"; };
@@ -120,12 +118,8 @@
 		F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaListCollectionViewCell.h; sourceTree = "<group>"; };
 		F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMediaListCollectionViewCell.m; sourceTree = "<group>"; };
 		F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMediaListCollectionViewCell.xib; sourceTree = "<group>"; };
-		F0912AC71A4B23E200BD1A13 /* CommunicationPostRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationPostRequestUtil.h; sourceTree = "<group>"; };
-		F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationPostRequestUtil.m; sourceTree = "<group>"; };
 		F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
 		F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
-		F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationGetRequestUtil.h; sourceTree = "<group>"; };
-		F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationGetRequestUtil.m; sourceTree = "<group>"; };
 		F09EA4E21A349E1C005A1F1C /* TimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUtil.h; sourceTree = "<group>"; };
 		F09EA4E31A349E1C005A1F1C /* TimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUtil.m; sourceTree = "<group>"; };
 		F0A137F71A4C70A200C64CE4 /* LoginResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResponseModel.h; sourceTree = "<group>"; };
@@ -284,15 +278,6 @@
 			name = BaseDataContacts;
 			sourceTree = "<group>";
 		};
-		F07B8BAC1A5027AA00632BF9 /* BaseCommunicationUtil */ = {
-			isa = PBXGroup;
-			children = (
-				F07B8BA81A50254000632BF9 /* BaseCommunicationsUtil.h */,
-				F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */,
-			);
-			name = BaseCommunicationUtil;
-			sourceTree = "<group>";
-		};
 		F08D6F601A4A034B0032C90A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,14 +289,9 @@
 		F0960B291A497AB80037D096 /* Comms */ = {
 			isa = PBXGroup;
 			children = (
-				F07B8BAC1A5027AA00632BF9 /* BaseCommunicationUtil */,
 				F0A137FA1A4C85DE00C64CE4 /* CustomResponseSerializers */,
 				F0960B2A1A497ADE0037D096 /* CommunicationsManager.h */,
 				F0960B2B1A497ADE0037D096 /* CommunicationsManager.m */,
-				F0960B2D1A49CA140037D096 /* CommunicationGetRequestUtil.h */,
-				F0960B2E1A49CA140037D096 /* CommunicationGetRequestUtil.m */,
-				F0912AC71A4B23E200BD1A13 /* CommunicationPostRequestUtil.h */,
-				F0912AC81A4B23E200BD1A13 /* CommunicationPostRequestUtil.m */,
 			);
 			name = Comms;
 			sourceTree = "<group>";
@@ -376,6 +356,8 @@
 				F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */,
 				F0A137F71A4C70A200C64CE4 /* LoginResponseModel.h */,
 				F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */,
+				F04987EE1A570FAD00FC2D44 /* GetMediaFilesResponseModel.h */,
+				F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -615,7 +597,6 @@
 			files = (
 				F0A137F91A4C70A200C64CE4 /* LoginResponseModel.m in Sources */,
 				F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */,
-				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
 				F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */,
 				F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
@@ -623,20 +604,19 @@
 				F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */,
-				F0912AC91A4B23E200BD1A13 /* CommunicationPostRequestUtil.m in Sources */,
 				F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
-				F07B8BAA1A50254000632BF9 /* BaseCommunicationsUtil.m in Sources */,
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
 				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
+				F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
 				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,

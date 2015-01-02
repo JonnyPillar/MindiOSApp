@@ -12,6 +12,8 @@
 
 - (IBAction)performRegistration:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *registerActionButton;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UITextField *registerEmailAddressTextField;
 @property (strong, nonatomic) IBOutlet UITextField *registerPasswordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *registerConfirmPasswordTextField;

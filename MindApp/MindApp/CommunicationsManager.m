@@ -8,14 +8,15 @@
 
 #import "CommunicationsManager.h"
 #import <AFNetworking.h>
+#import "JSONResponseSerializerWithData.h"
 
 @interface CommunicationsManager ()
-
-@property (nonatomic, strong) AFHTTPRequestOperationManager* networkManager;
 
 @end
 
 @implementation CommunicationsManager
+
+static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 
 -(id) init{
 	if ( self = [super init] ) {
@@ -24,81 +25,69 @@
 	return self;
 }
 
--(id) initWithAuthorizationHeader:(NSString *) authorizationToken{
+-(id) initWithDelegate:(id) delegate{
 	
 	if ( self = [super init] ) {
 		[self initiliseManager];
-		
-		[_networkManager.requestSerializer setValue:@"Authorization" forHTTPHeaderField:authorizationToken];
+		self.delegate = delegate;
 	}
-	
 	return self;
 }
 
--(void) initiliseManager{
-	_networkManager = [AFHTTPRequestOperationManager manager];
-	_networkManager.responseSerializer = [AFJSONResponseSerializer serializer];
-	_networkManager.requestSerializer = [AFJSONRequestSerializer serializer];
-	
-	_Sucess = NO;
-	_ResponseDictionary = [NSDictionary new];
+-(void) setAuthorizationToken: (NSString*) authorizationToken{
+	[self.requestSerializer setValue:@"Authorization" forHTTPHeaderField:authorizationToken];
 }
 
--(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray completion:(void (^)(NSDictionary *json, BOOL success))completion{
+-(void) clearAuthorizationToken{
+	[self.requestSerializer setValue:@"Authorization" forHTTPHeaderField:nil];
+}
+
+-(void) initiliseManager{
+	self.responseSerializer = [JSONResponseSerializerWithData serializer];
+	self.requestSerializer = [AFJSONRequestSerializer serializer];
+}
+
+-(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray{
 	
-	[_networkManager GET:url parameters:paramArray
+	NSLog(@"Starting Get Request");
+	[self.delegate showActivitySpinner];
+	[self GET:url parameters:paramArray
+				success:^(AFHTTPRequestOperation *operation, id responseObject) {
+					NSLog(@"Successful Get Request");
+					[self.delegate hideActivitySpinner];
+					[self.delegate handleSuccessfulRequest:responseObject];
+				} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+					NSLog(@"Failed Get Request");
+					[self.delegate hideActivitySpinner];
+					[self.delegate handleFailedRequest:[self extractErrorResponse:error]];
+				}
+	 ];
+}
+
+-(void) PostRequest:(NSString*) url withParams:(NSArray*) paramArray withBody:(id) body{
+	
+	NSLog(@"Starting Post Request");
+	[self.delegate showActivitySpinner];
+	[self POST:url parameters:body
 				 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-					 NSDictionary* responseJsonDictionary = responseObject;
-					 
-					 if (completion)
-						 completion(responseJsonDictionary, YES);
-					 
-					 NSLog(@"JSON: %@", responseObject);
+					 NSLog(@"Successful Post Request");
+					 [self.delegate hideActivitySpinner];
+					 [self.delegate handleSuccessfulRequest:responseObject];
 				 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-					 if(completion) completion(nil, NO);
-					 NSLog(@"Error: %@", error);
+					 NSLog(@"Failed Post Request");
+					 [self.delegate hideActivitySpinner];
+					 [self.delegate handleFailedRequest:[self extractErrorResponse:error]];
 				 }
 	 ];
 }
 
--(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray{
-
-	[self GetRequest:url withParams:paramArray completion:^(NSDictionary *json, BOOL success) {
-		if(success)
-		{
-			_Sucess = YES;
-			_ResponseDictionary = json;
-		}
-		else{
-			_Sucess = NO;
-		}
-	}];
-}
-
--(NSDictionary *) PostWithParams:(NSString*) url withParams:(NSArray*) paramArray {
+- (NSDictionary*)extractErrorResponse:(NSError *)error {
 	
-	return [self Post:url withParams:paramArray withBody:nil];
-}
-
--(NSDictionary *) PostWithBody:(NSString*) url withBody:(NSString*) body {
+	NSData* errorJsonData = [error.userInfo objectForKey:mindErrorUserInfoKey];
+	NSError *parsingError;
+	NSLog(@"Error: %@", error);
 	
-	return [self Post:url withParams:nil withBody:body];
-}
-
--(NSDictionary *) Post:(NSString*) url withParams:(NSArray*) paramArray withBody:(NSString*) body{
-	
-	__block NSDictionary* responseJsonDictionary = [NSDictionary new];
-	
-	[_networkManager POST:url parameters:nil
-				  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-					  responseJsonDictionary = responseObject;
-					  NSLog(@"JSON: %@", responseObject);
-				  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-					  NSLog(@"Error: %@", error);
-				  }
-	 ];
-	
-	return responseJsonDictionary;
+	return [NSJSONSerialization JSONObjectWithData:errorJsonData options:0 error:&parsingError];
 }
 
 @end

@@ -8,14 +8,17 @@
 
 #import "MediaListViewCollectionViewController.h"
 #import "MediaItemViewController.h"
-#import "CommunicationGetRequestUtil.h"
 #import "AudioFile+ext.h"
 #import "MIMediaListCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MIAudioPlayer.h"
 #import "AccountViewController.h"
+#import "CommunicationsManager.h"
+#import "GetMediaFilesResponseModel.h"
 
-@interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CommunicationsManagerDelegate>
+
+@property (nonatomic,strong) CommunicationsManager* communicationManager;
 
 @end
 
@@ -83,6 +86,38 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	return UIEdgeInsetsMake(20, 20, 20, 20);
 }
 
+#pragma mark Communication Manager Delegate Methods
+
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
+	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
+	
+	if(responseModel.Success){
+		
+		_mediaItems = responseModel.MediaFiles;
+		[self.mediaCollectionView reloadData];
+	}
+	else {
+		[self showErrorAlert:responseModel.Message];
+	}
+}
+
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary{
+	
+	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
+	[self showErrorAlert:responseModel.Message];
+}
+
+-(void) showActivitySpinner
+{
+	[_activityIndicator setHidden:NO];
+	[_activityIndicator startAnimating];
+}
+
+-(void) hideActivitySpinner{
+	[_activityIndicator setHidden:YES];
+	[_activityIndicator stopAnimating];
+}
+
 #pragma mark - Internal Methods
 
 - (void)setUpCollectionView {
@@ -96,37 +131,13 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 -(void) retreiveMediaItemData{
-	_mediaItems = [[NSMutableArray alloc] init];
-	[CommunicationGetRequestUtil GetRequest: getMediaFilesUrl withParams:nil completion:^(NSDictionary *json, BOOL success) {
-		if(success)
-		{
-			[self processSuccessfulServerResponse:json];
-		}
-		else
-		{
-			[self showAlertBoxWithTitle:@"An Error Occured At Client" withMessage:nil];
-		}
-	}];
-}
-
-- (void)processSuccessfulServerResponse:(NSDictionary *)json {
-	if([[json valueForKey:@"Success"] boolValue]){
-		NSDictionary* mediaFile = [json valueForKey:@"MediaFiles"];
-		
-		for (NSDictionary* key in mediaFile) {
-			[_mediaItems addObject:[[AudioFile new] initWithJson:key]];
-		}
-		[self.mediaCollectionView reloadData];
-	}
-	else {
-		[self showAlertBoxWithTitle:@"An Error Occured At Server" withMessage:[json valueForKey:@"Message"]];
-	}
+	_mediaItems = [NSMutableArray new];
+	if(!_communicationManager) self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
+	[_communicationManager GetRequest:getMediaFilesUrl withParams:nil];
 }
 
 - (AudioFile *)getMediaFileAtIndex:(NSIndexPath *)indexPath {
-	
-	AudioFile* audioFile = _mediaItems [indexPath.row];
-	return audioFile;
+	return _mediaItems [indexPath.row];
 }
 
 - (void)setupCell:(AudioFile *)audioFile cell:(MIMediaListCollectionViewCell *)cell {
@@ -138,13 +149,14 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[cell.titleLabel setText:audioFile.Filename];
 }
 
--(void) showAlertBoxWithTitle:(NSString *) title withMessage:(NSString*) message{
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-													message:message
-												   delegate:self
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
-	[alert show];
+-(void) showErrorAlert:(NSString*) errorMessage
+{
+	UIAlertView *ErrorAlert = [[UIAlertView alloc] initWithTitle:@""
+														 message:errorMessage
+														delegate:nil
+											   cancelButtonTitle:@"OK"
+											   otherButtonTitles:nil, nil];
+	[ErrorAlert show];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -159,8 +171,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 - (IBAction)nowPlayingButtonAction:(id)sender {
-	
-	
-	[self performSegueWithIdentifier:@"viewMediaItemSegue" sender:nil];
+
+	//TODO
 }
 @end

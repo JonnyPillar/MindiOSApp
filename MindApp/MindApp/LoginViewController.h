@@ -12,6 +12,8 @@
 
 - (IBAction)performLogin:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *loginActionButton;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndiciator;
 @property (strong, nonatomic) IBOutlet UITextField *loginEmailAddressTextField;
 @property (strong, nonatomic) IBOutlet UITextField *loginPasswordTextField;
 

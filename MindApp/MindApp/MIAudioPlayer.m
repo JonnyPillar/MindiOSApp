@@ -68,7 +68,6 @@ static NSString * const urlScheme = @"stream";
 	if([FileCacheUtil doesCacheExistForHash: urlHash])
 	{
 		//TODO load from local file
-//		mediaItemAsset = [AVURLAsset URLAssetWithURL:[self getMediaUrlWithStreamingScheme:mediaItemUrl] options:nil];
 	}
 	else{
 		mediaItemAsset = [AVURLAsset URLAssetWithURL:[self getMediaUrlWithStreamingScheme:mediaItemUrl] options:nil];

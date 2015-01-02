@@ -521,9 +521,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="z7E-W1-YJH">
-                        <barButtonItem key="rightBarButtonItem" title="My Account" id="BOC-kM-2yi">
+                        <barButtonItem key="leftBarButtonItem" title="My Account" id="BOC-kM-2yi">
                             <connections>
                                 <segue destination="BH2-Qx-fkI" kind="show" identifier="viewMyAccount" id="H2u-7S-w6E"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Now Playing" id="mkz-WD-b28">
+                            <connections>
+                                <action selector="nowPlayingButtonAction:" destination="0hi-aI-fFG" id="Jhl-i8-zbQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

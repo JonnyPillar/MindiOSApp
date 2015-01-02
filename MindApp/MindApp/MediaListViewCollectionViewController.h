@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *mediaCollectionView;
 
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
+- (IBAction)nowPlayingButtonAction:(id)sender;
 
 @end

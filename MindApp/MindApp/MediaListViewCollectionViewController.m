@@ -156,11 +156,11 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 		[vc setAudioPlayer:_audioPlayer];
 		[vc setAudioFile:sender];
 	}
-	
-//	if ([[segue identifier] isEqualToString:@"viewMyAccount"])
-//	{
-//		AccountViewController *vc = [segue destinationViewController];
-//	}
 }
 
+- (IBAction)nowPlayingButtonAction:(id)sender {
+	
+	
+	[self performSegueWithIdentifier:@"viewMediaItemSegue" sender:nil];
+}
 @end

@@ -325,48 +325,6 @@
             </objects>
             <point key="canvasLocation" x="-240" y="-592"/>
         </scene>
-        <!--Cache Audio Player-->
-        <scene sceneID="jsU-tC-wzE">
-            <objects>
-                <viewController id="zzy-v1-ZlD" customClass="MICacheAudioPlayer" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MoQ-sg-Wtv"/>
-                        <viewControllerLayoutGuide type="bottom" id="NBG-HL-Jgj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ik2-d6-wHr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYV-o2-EVN">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="149" y="260" width="46" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="playSong:" destination="zzy-v1-ZlD" eventType="touchUpInside" id="Sd1-Kc-fhY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="dYV-o2-EVN"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="dYV-o2-EVN"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RKb-Yg-Bwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1192.5" y="-151"/>
-        </scene>
         <!--Register View Controller-->
         <scene sceneID="dJt-da-x5H">
             <objects>

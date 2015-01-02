@@ -51,7 +51,6 @@
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
 		F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B41A192D0F00EAA252 /* AudioFile.m */; };
-		F0D746801A5064AD00034B98 /* MICacheAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D7467F1A5064AD00034B98 /* MICacheAudioPlayer.m */; };
 		F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D746821A506F0100034B98 /* MIAudioPlayerCacheDelegate.m */; };
 		F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E9B4A51A23B8F300F1D98F /* Resource.plist */; };
 /* End PBXBuildFile section */
@@ -143,8 +142,6 @@
 		F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AudioFile+ext.m"; sourceTree = "<group>"; };
 		F0C3A8B21A192CD900EAA252 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
 		F0C3A8B41A192D0F00EAA252 /* AudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFile.m; sourceTree = "<group>"; };
-		F0D7467E1A5064AD00034B98 /* MICacheAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MICacheAudioPlayer.h; sourceTree = "<group>"; };
-		F0D7467F1A5064AD00034B98 /* MICacheAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MICacheAudioPlayer.m; sourceTree = "<group>"; };
 		F0D746811A506F0100034B98 /* MIAudioPlayerCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerCacheDelegate.h; sourceTree = "<group>"; };
 		F0D746821A506F0100034B98 /* MIAudioPlayerCacheDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerCacheDelegate.m; sourceTree = "<group>"; };
 		F0E9B4A51A23B8F300F1D98F /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resource.plist; sourceTree = "<group>"; };
@@ -416,8 +413,6 @@
 			children = (
 				F07B8BAD1A5028ED00632BF9 /* MIAudioPlayer.h */,
 				F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */,
-				F0D7467E1A5064AD00034B98 /* MICacheAudioPlayer.h */,
-				F0D7467F1A5064AD00034B98 /* MICacheAudioPlayer.m */,
 				F0D746811A506F0100034B98 /* MIAudioPlayerCacheDelegate.h */,
 				F0D746821A506F0100034B98 /* MIAudioPlayerCacheDelegate.m */,
 			);
@@ -618,7 +613,6 @@
 				F0960B2F1A49CA140037D096 /* CommunicationGetRequestUtil.m in Sources */,
 				F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */,
 				F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */,
-				F0D746801A5064AD00034B98 /* MICacheAudioPlayer.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */,
 				F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */,

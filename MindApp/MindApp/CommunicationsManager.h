@@ -28,7 +28,7 @@
 @protocol CommunicationsManagerDelegate <NSObject>
 
 @required
--(void) handleSuccess:(NSDictionary*) responseDictionary;
--(void) handleFailure:(NSDictionary*) responseDictionary;
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary;
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary;
 
 @end

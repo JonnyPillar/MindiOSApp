@@ -88,7 +88,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 #pragma mark Communication Manager Delegate Methods
 
--(void) handleSuccess:(NSDictionary*) responseDictionary{
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	
 	if(responseModel.Success){
@@ -101,7 +101,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	}
 }
 
--(void) handleFailure:(NSDictionary*) responseDictionary{
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary{
 	
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:responseModel.Message];

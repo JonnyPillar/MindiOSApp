@@ -54,10 +54,10 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 	[self GET:url parameters:paramArray
 				success:^(AFHTTPRequestOperation *operation, id responseObject) {
 					NSLog(@"Successful Get Request");
-					[self.delegate handleSuccess:responseObject];
+					[self.delegate handleSuccessfulRequest:responseObject];
 				} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 					NSLog(@"Failed Get Request");
-					[self.delegate handleFailure:[self extractErrorResponse:error]];
+					[self.delegate handleFailedRequest:[self extractErrorResponse:error]];
 				}
 	 ];
 }
@@ -68,10 +68,10 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 	[self POST:url parameters:body
 				 success:^(AFHTTPRequestOperation *operation, id responseObject) {
 					 NSLog(@"Successful Post Request");
-					 [self.delegate handleSuccess:responseObject];
+					 [self.delegate handleSuccessfulRequest:responseObject];
 				 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 					 NSLog(@"Failed Post Request");
-					 [self.delegate handleFailure:[self extractErrorResponse:error]];
+					 [self.delegate handleFailedRequest:[self extractErrorResponse:error]];
 				 }
 	 ];
 }

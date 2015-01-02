@@ -44,7 +44,7 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 
 #pragma mark Communication Manager Delegate Methods
 
--(void) handleSuccess:(NSDictionary*) responseDictionary{
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
 	LoginResponseModel *loginModel = [[LoginResponseModel alloc] initWithDictionary:responseDictionary];
 	if(loginModel.Success) {
 		[self performSegueWithIdentifier:@"segueToMediaListView" sender:self];
@@ -54,7 +54,7 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 	}
 }
 
--(void) handleFailure:(NSDictionary*) responseDictionary{
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary{
 	
 	LoginResponseModel *loginModel = [[LoginResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:loginModel.Message];

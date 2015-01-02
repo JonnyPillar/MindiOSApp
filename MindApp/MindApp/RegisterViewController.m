@@ -45,7 +45,7 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 
 #pragma mark Communication Manager Delegate Methods
 
--(void) handleSuccess:(NSDictionary*) responseDictionary{
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
 	RegistrationResponseModel *response = [[RegistrationResponseModel alloc] initWithDictionary:responseDictionary];
 	if(response.Success) {
 		[self performSegueWithIdentifier:@"segueToMediaListView" sender:self];
@@ -55,7 +55,7 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	}
 }
 
--(void) handleFailure:(NSDictionary*) responseDictionary{
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary{
 	
 	RegistrationResponseModel *response = [[RegistrationResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:response.Message];

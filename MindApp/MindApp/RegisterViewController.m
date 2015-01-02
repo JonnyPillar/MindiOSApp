@@ -39,7 +39,7 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	if(![self validateRegsitrationFields]) return;
 	
 	RegistrationRequestModel *registrationRequestModel = [self createRegistrationModel];
-	
+	[_registerActionButton setEnabled:NO];
 	[_communicationManager PostRequest:postRegisterUrl withParams:nil withBody:registrationRequestModel.GetResquestDictionary];
 }
 
@@ -59,6 +59,18 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	
 	RegistrationResponseModel *response = [[RegistrationResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:response.Message];
+}
+
+-(void) showActivitySpinner
+{
+	[_activityIndicator setHidden:NO];
+	[_activityIndicator startAnimating];
+}
+
+-(void) hideActivitySpinner{
+	[_activityIndicator setHidden:YES];
+	[_activityIndicator stopAnimating];
+	[_registerActionButton setEnabled:YES];
 }
 
 #pragma mark Login Creation Methods

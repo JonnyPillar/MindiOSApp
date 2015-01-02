@@ -31,7 +31,6 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 		[self initiliseManager];
 		self.delegate = delegate;
 	}
-	
 	return self;
 }
 
@@ -51,12 +50,15 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 -(void) GetRequest:(NSString*) url withParams:(NSArray*) paramArray{
 	
 	NSLog(@"Starting Get Request");
+	[self.delegate showActivitySpinner];
 	[self GET:url parameters:paramArray
 				success:^(AFHTTPRequestOperation *operation, id responseObject) {
 					NSLog(@"Successful Get Request");
+					[self.delegate hideActivitySpinner];
 					[self.delegate handleSuccessfulRequest:responseObject];
 				} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 					NSLog(@"Failed Get Request");
+					[self.delegate hideActivitySpinner];
 					[self.delegate handleFailedRequest:[self extractErrorResponse:error]];
 				}
 	 ];
@@ -65,12 +67,15 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 -(void) PostRequest:(NSString*) url withParams:(NSArray*) paramArray withBody:(id) body{
 	
 	NSLog(@"Starting Post Request");
+	[self.delegate showActivitySpinner];
 	[self POST:url parameters:body
 				 success:^(AFHTTPRequestOperation *operation, id responseObject) {
 					 NSLog(@"Successful Post Request");
+					 [self.delegate hideActivitySpinner];
 					 [self.delegate handleSuccessfulRequest:responseObject];
 				 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 					 NSLog(@"Failed Post Request");
+					 [self.delegate hideActivitySpinner];
 					 [self.delegate handleFailedRequest:[self extractErrorResponse:error]];
 				 }
 	 ];

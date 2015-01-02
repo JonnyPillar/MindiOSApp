@@ -107,6 +107,17 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self showErrorAlert:responseModel.Message];
 }
 
+-(void) showActivitySpinner
+{
+	[_activityIndicator setHidden:NO];
+	[_activityIndicator startAnimating];
+}
+
+-(void) hideActivitySpinner{
+	[_activityIndicator setHidden:YES];
+	[_activityIndicator stopAnimating];
+}
+
 #pragma mark - Internal Methods
 
 - (void)setUpCollectionView {

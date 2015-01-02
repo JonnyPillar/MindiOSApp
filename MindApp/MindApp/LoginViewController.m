@@ -37,9 +37,10 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 - (IBAction)performLogin:(id)sender {
 	if(![self validateLoginFields]) return;
 	
+	[_loginActionButton setEnabled:NO];
 	LoginRequestModel *loginRequestModel = [self createLoginModel];
-	
 	[_communicationManager PostRequest:postLoginUrl withParams:nil withBody:loginRequestModel.GetResquestDictionary];
+	
 }
 
 #pragma mark Communication Manager Delegate Methods
@@ -58,6 +59,18 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 	
 	LoginResponseModel *loginModel = [[LoginResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:loginModel.Message];
+	[_loginActionButton setEnabled:YES];
+}
+
+-(void) showActivitySpinner
+{
+	[_activityIndiciator setHidden:NO];
+	[_activityIndiciator startAnimating];
+}
+
+-(void) hideActivitySpinner{
+	[_activityIndiciator setHidden:YES];
+	[_activityIndiciator stopAnimating];
 }
 
 #pragma mark Login Creation Methods

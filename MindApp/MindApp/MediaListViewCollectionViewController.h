@@ -12,6 +12,7 @@
 
 @interface MediaListViewCollectionViewController : UICollectionViewController 
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSArray* mediaItems;
 @property (strong, nonatomic) IBOutlet UICollectionView *mediaCollectionView;
 

@@ -222,7 +222,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-YY-r9v">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-kM-hH2">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -238,6 +238,12 @@
                                     <action selector="performLogin:" destination="4uN-GP-oxd" eventType="touchUpInside" id="T2o-9t-MKb"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-VJ-uau">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="190" y="290" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -270,6 +276,7 @@
                                 <exclude reference="W3Y-YY-r9v"/>
                                 <exclude reference="RcZ-kM-hH2"/>
                                 <exclude reference="6C4-Wq-b5r"/>
+                                <exclude reference="NJT-VJ-uau"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="B3i-S7-nJZ"/>
@@ -296,6 +303,7 @@
                                 <include reference="W3Y-YY-r9v"/>
                                 <include reference="RcZ-kM-hH2"/>
                                 <include reference="6C4-Wq-b5r"/>
+                                <include reference="NJT-VJ-uau"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="B3i-S7-nJZ"/>
@@ -316,6 +324,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndiciator" destination="NJT-VJ-uau" id="TY9-fO-AwB"/>
+                        <outlet property="loginActionButton" destination="6C4-Wq-b5r" id="fro-zS-Ehq"/>
                         <outlet property="loginEmailAddressTextField" destination="RcZ-kM-hH2" id="NWi-cj-0Nf"/>
                         <outlet property="loginPasswordTextField" destination="W3Y-YY-r9v" id="vn9-uj-Jhc"/>
                         <segue destination="UhP-V1-0pJ" kind="show" identifier="segueToMediaListView" id="7du-16-8GA"/>
@@ -364,7 +374,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWg-Tj-FSF">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shV-wn-jR5">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -374,7 +384,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaW-S4-ONb">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJG-B2-VdE">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -385,6 +395,12 @@
                                     <action selector="performRegistration:" destination="uPf-Cx-NEW" eventType="touchUpInside" id="D6W-Zk-Glr"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="08n-KY-GOB">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="190" y="290" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -422,6 +438,7 @@
                                 <exclude reference="shV-wn-jR5"/>
                                 <exclude reference="XaW-S4-ONb"/>
                                 <exclude reference="tJG-B2-VdE"/>
+                                <exclude reference="08n-KY-GOB"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1j9-uv-kxy"/>
@@ -455,6 +472,7 @@
                                 <include reference="shV-wn-jR5"/>
                                 <include reference="XaW-S4-ONb"/>
                                 <include reference="tJG-B2-VdE"/>
+                                <include reference="08n-KY-GOB"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1j9-uv-kxy"/>
@@ -480,6 +498,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="08n-KY-GOB" id="ylV-mi-qhL"/>
+                        <outlet property="registerActionButton" destination="tJG-B2-VdE" id="AME-Ko-LNL"/>
                         <outlet property="registerConfirmPasswordTextField" destination="XaW-S4-ONb" id="X0N-m1-tWI"/>
                         <outlet property="registerEmailAddressTextField" destination="shV-wn-jR5" id="54g-7g-xZZ"/>
                         <outlet property="registerPasswordTextField" destination="AWg-Tj-FSF" id="teO-zu-z7s"/>
@@ -504,6 +524,10 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="BkI-gz-sos">
+                            <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MiMediaItemCell" id="XGY-fo-TIS" customClass="MIMediaListCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -533,6 +557,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="BkI-gz-sos" id="eba-Vg-qbn"/>
                         <outlet property="mediaCollectionView" destination="z65-Ky-05Z" id="uTB-Om-oF7"/>
                         <segue destination="HQO-lS-Wna" kind="show" identifier="viewMediaItemSegue" id="TTt-RY-Ms1"/>
                     </connections>
@@ -670,6 +695,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7du-16-8GA"/>
+        <segue reference="Hyq-5g-7Cv"/>
     </inferredMetricsTieBreakers>
 </document>

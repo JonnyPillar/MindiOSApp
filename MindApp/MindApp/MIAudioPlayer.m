@@ -94,7 +94,7 @@ static NSString * const urlScheme = @"stream";
 	[super replaceCurrentItemWithPlayerItem:playerItem];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(playerItemDidReachEnd:)
-												 name:AVPlayerItemDidPlayToEndTimeNotification
+												 name:AVPlayerItemDidPlayToEndTimeNotification 
 											   object:[super currentItem]];
 }
 
@@ -139,6 +139,12 @@ static NSString * const urlScheme = @"stream";
 
 -(void) updateUIForPause{
 	//Stub Methods
+}
+
+#pragma mark Control Centre Methods
+-(void) startBackgroundMode{
+	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+	[self becomeFirstResponder];
 }
 
 @end

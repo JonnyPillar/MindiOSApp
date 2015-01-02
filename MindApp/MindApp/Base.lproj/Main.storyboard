@@ -525,7 +525,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="BkI-gz-sos">
-                            <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <cells>
@@ -591,6 +591,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QZU-IH-ev4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VBm-av-34c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOH-qv-ajW">
@@ -658,11 +659,11 @@
                                 <exclude reference="9R3-Oi-xHn"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Tqs-GE-tek"/>
+                                <exclude reference="p7D-G8-kqS"/>
                                 <exclude reference="G14-10-iIS"/>
                                 <exclude reference="gIL-qk-uaH"/>
                                 <exclude reference="xn7-Ns-kqM"/>
-                                <exclude reference="Tqs-GE-tek"/>
-                                <exclude reference="p7D-G8-kqS"/>
                                 <exclude reference="Neq-PN-mYW"/>
                                 <exclude reference="WmH-bt-dcc"/>
                             </mask>
@@ -674,11 +675,11 @@
                                 <include reference="9R3-Oi-xHn"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Tqs-GE-tek"/>
+                                <include reference="p7D-G8-kqS"/>
                                 <include reference="G14-10-iIS"/>
                                 <include reference="gIL-qk-uaH"/>
                                 <include reference="xn7-Ns-kqM"/>
-                                <include reference="Tqs-GE-tek"/>
-                                <include reference="p7D-G8-kqS"/>
                                 <include reference="Neq-PN-mYW"/>
                                 <include reference="WmH-bt-dcc"/>
                             </mask>

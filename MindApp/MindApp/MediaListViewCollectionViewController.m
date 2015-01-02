@@ -35,6 +35,42 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 	[self setUpCollectionView];
 	[self retreiveMediaItemData];
+	[self startBackgroundMode];
+}
+
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	//End recieving events
+//	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+//	[self resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder {
+	return YES;
+}
+
+- (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
+	
+	if (receivedEvent.type == UIEventTypeRemoteControl) {
+		
+		switch (receivedEvent.subtype) {
+				
+			case UIEventSubtypeRemoteControlPause:
+				[self.audioPlayer pause];
+				break;
+				
+			case UIEventSubtypeRemoteControlPlay:
+				[self.audioPlayer pause];
+				break;
+				
+				
+			default:
+				break;
+		}
+	}
 }
 
 - (void)didReceiveMemoryWarning {

@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZk-Ad-1wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="-286"/>
+            <point key="canvasLocation" x="2232" y="67"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Dpb-X5-sQQ">
@@ -520,7 +520,13 @@
                             <outlet property="delegate" destination="0hi-aI-fFG" id="lJz-7t-qwY"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="z7E-W1-YJH"/>
+                    <navigationItem key="navigationItem" id="z7E-W1-YJH">
+                        <barButtonItem key="rightBarButtonItem" title="My Account" id="BOC-kM-2yi">
+                            <connections>
+                                <segue destination="BH2-Qx-fkI" kind="show" identifier="viewMyAccount" id="H2u-7S-w6E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mediaCollectionView" destination="z65-Ky-05Z" id="uTB-Om-oF7"/>
                         <segue destination="HQO-lS-Wna" kind="show" identifier="viewMediaItemSegue" id="TTt-RY-Ms1"/>
@@ -528,7 +534,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XF-Db-nUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="-286"/>
+            <point key="canvasLocation" x="1368" y="-281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q5k-e0-Lsj">
@@ -545,6 +551,117 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1a-6Y-cRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="651" y="-281"/>
+        </scene>
+        <!--Account View Controller-->
+        <scene sceneID="gfe-aB-DG0">
+            <objects>
+                <viewController id="BH2-Qx-fkI" customClass="AccountViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PBM-0i-q3f"/>
+                        <viewControllerLayoutGuide type="bottom" id="QZU-IH-ev4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VBm-av-34c">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOH-qv-ajW">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="erf-Hd-BlZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="erf-Hd-BlZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="erf-Hd-BlZ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKo-2P-aOY">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R3-Oi-xHn">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="YV3-fi-XZO"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YV3-fi-XZO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="YV3-fi-XZO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="logOut:" destination="BH2-Qx-fkI" eventType="touchUpInside" id="J6Z-Rj-dET"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xOH-qv-ajW" firstAttribute="leading" secondItem="VBm-av-34c" secondAttribute="leadingMargin" id="G14-10-iIS"/>
+                            <constraint firstItem="9R3-Oi-xHn" firstAttribute="centerX" secondItem="VBm-av-34c" secondAttribute="centerX" id="Neq-PN-mYW"/>
+                            <constraint firstItem="CKo-2P-aOY" firstAttribute="trailing" secondItem="VBm-av-34c" secondAttribute="trailingMargin" id="Tqs-GE-tek"/>
+                            <constraint firstItem="9R3-Oi-xHn" firstAttribute="top" secondItem="CKo-2P-aOY" secondAttribute="bottom" constant="63" id="WmH-bt-dcc"/>
+                            <constraint firstItem="xOH-qv-ajW" firstAttribute="baseline" secondItem="CKo-2P-aOY" secondAttribute="baseline" id="gIL-qk-uaH"/>
+                            <constraint firstItem="CKo-2P-aOY" firstAttribute="leading" secondItem="xOH-qv-ajW" secondAttribute="trailing" constant="8" symbolic="YES" id="p7D-G8-kqS"/>
+                            <constraint firstItem="xOH-qv-ajW" firstAttribute="top" secondItem="PBM-0i-q3f" secondAttribute="bottom" constant="24" id="xn7-Ns-kqM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xOH-qv-ajW"/>
+                                <exclude reference="CKo-2P-aOY"/>
+                                <exclude reference="9R3-Oi-xHn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="G14-10-iIS"/>
+                                <exclude reference="gIL-qk-uaH"/>
+                                <exclude reference="xn7-Ns-kqM"/>
+                                <exclude reference="Tqs-GE-tek"/>
+                                <exclude reference="p7D-G8-kqS"/>
+                                <exclude reference="Neq-PN-mYW"/>
+                                <exclude reference="WmH-bt-dcc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xOH-qv-ajW"/>
+                                <include reference="CKo-2P-aOY"/>
+                                <include reference="9R3-Oi-xHn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="G14-10-iIS"/>
+                                <include reference="gIL-qk-uaH"/>
+                                <include reference="xn7-Ns-kqM"/>
+                                <include reference="Tqs-GE-tek"/>
+                                <include reference="p7D-G8-kqS"/>
+                                <include reference="Neq-PN-mYW"/>
+                                <include reference="WmH-bt-dcc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="emailAddressLabel" destination="CKo-2P-aOY" id="nrD-XY-jyD"/>
+                        <outlet property="logOutButton" destination="9R3-Oi-xHn" id="2Nc-PV-Mj1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75E-Ak-MW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="-592"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

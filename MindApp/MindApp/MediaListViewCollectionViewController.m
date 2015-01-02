@@ -13,6 +13,7 @@
 #import "MIMediaListCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MIAudioPlayer.h"
+#import "AccountViewController.h"
 
 @interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -155,6 +156,11 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 		[vc setAudioPlayer:_audioPlayer];
 		[vc setAudioFile:sender];
 	}
+	
+//	if ([[segue identifier] isEqualToString:@"viewMyAccount"])
+//	{
+//		AccountViewController *vc = [segue destinationViewController];
+//	}
 }
 
 @end

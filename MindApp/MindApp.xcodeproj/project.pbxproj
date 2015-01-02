@@ -20,6 +20,7 @@
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
 		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
 		F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */; };
+		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
 		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
 		F07B8BAA1A50254000632BF9 /* BaseCommunicationsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BA91A50254000632BF9 /* BaseCommunicationsUtil.m */; };
@@ -91,6 +92,8 @@
 		F04987E31A56EBE400FC2D44 /* HashUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashUtil.m; sourceTree = "<group>"; };
 		F04987E51A56EE6700FC2D44 /* FileCacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCacheUtil.h; sourceTree = "<group>"; };
 		F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheUtil.m; sourceTree = "<group>"; };
+		F04987E81A56F39900FC2D44 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		F04987E91A56F39900FC2D44 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
 		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
@@ -386,15 +389,17 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
-		F0A3F3391A4DF8920072CE33 /* Login/Registration */ = {
+		F0A3F3391A4DF8920072CE33 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				F02B0DDF1A3DC125002E2F3B /* LoginViewController.h */,
 				F02B0DE01A3DC125002E2F3B /* LoginViewController.m */,
 				F0A3F3301A4DF0A90072CE33 /* RegisterViewController.h */,
 				F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */,
+				F04987E81A56F39900FC2D44 /* AccountViewController.h */,
+				F04987E91A56F39900FC2D44 /* AccountViewController.m */,
 			);
-			name = Login/Registration;
+			name = Account;
 			sourceTree = "<group>";
 		};
 		F0A3F33A1A4DF8A60072CE33 /* Media */ = {
@@ -446,7 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A3F33A1A4DF8A60072CE33 /* Media */,
-				F0A3F3391A4DF8920072CE33 /* Login/Registration */,
+				F0A3F3391A4DF8920072CE33 /* Account */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -636,6 +641,7 @@
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
 				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
+				F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

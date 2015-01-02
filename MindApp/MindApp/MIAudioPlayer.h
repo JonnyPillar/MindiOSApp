@@ -21,6 +21,7 @@
 -(void) playAudio;
 -(void) pauseAudio;
 -(BOOL) audioPlayerIsPlaying;
+-(float) getAudioTrackDuration;
 
 @end
 

@@ -1,19 +1,18 @@
 //
-//  MICacheAudioPlayer.m
+//  MIAudioPlayerCacheDelegate.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 28/12/2014.
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
-//  Source From http://vombat.tumblr.com/post/86294492874/caching-audio-streamed-using-avplayer
+//
 
-#import "MICacheAudioPlayer.h"
+#import "MIAudioPlayerCacheDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface MICacheAudioPlayer() <NSURLConnectionDataDelegate, AVAssetResourceLoaderDelegate>
+@interface MIAudioPlayerCacheDelegate ()
 
 @property (nonatomic, strong) NSMutableData *songData;
-@property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) NSMutableArray *pendingRequests;
 
 @property (nonatomic, strong) NSHTTPURLResponse *response;
@@ -21,30 +20,13 @@
 
 @end
 
-@implementation MICacheAudioPlayer
+@implementation MIAudioPlayerCacheDelegate
 
-- (NSURL *)songURL
-{
-	return [NSURL URLWithString:@"http://mind.jonnypillar.co.uk/AwardTour.mp3"];
-}
-
-- (NSURL *)songURLWithCustomScheme:(NSString *)scheme
-{
-	NSURLComponents *components = [[NSURLComponents alloc] initWithURL:[self songURL] resolvingAgainstBaseURL:NO];
-	components.scheme = scheme;
-	return [components URL];
-}
-
-- (IBAction)playSong:(id)sender
-{
-	AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[self songURLWithCustomScheme:@"streaming"] options:nil];
-	[asset.resourceLoader setDelegate:self queue:dispatch_get_main_queue()];
- 
-	self.pendingRequests = [NSMutableArray array];
- 
-	AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
-	self.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
-	[playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:NULL];
+-(id)init{
+	if ( self = [super init] ) {
+		self.pendingRequests = [NSMutableArray array];
+	}
+	return self;
 }
 
 #pragma mark - NSURLConnection delegate
@@ -164,14 +146,6 @@
 	[self.pendingRequests removeObject:loadingRequest];
 }
 
-#pragma KVO
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	if (self.player.currentItem.status == AVPlayerItemStatusReadyToPlay)
-	{
-		[self.player play];
-	}
-}
 
 @end

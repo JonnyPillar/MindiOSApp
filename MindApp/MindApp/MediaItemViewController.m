@@ -53,7 +53,6 @@
 - (void)setupStaticViews {
 	
 	[_audioFileLabel setText:_audioFile.Filename];
-	[_audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self.audioPlayer getAudioTrackDuration]]];
 	[_audioFileImageView sd_setImageWithURL:_audioFile.GetImageUrlNsUrl];
 	[self updateProgress];
 }
@@ -78,8 +77,6 @@
 	[_audioProgressBar setProgress:percentageComplete animated:true];
 }
 
-
-
 #pragma mark <MIAudioPlayerDelegate>
 
 -(void) updateUIForPlay{
@@ -90,6 +87,7 @@
 				   userInfo:nil repeats:YES];
 	
 	[self.audioPlayButton setTitle:@"Pause" forState:UIControlStateNormal];
+	[_audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self.audioPlayer getAudioTrackDuration]]];
 }
 
 -(void) updateUIForPause{

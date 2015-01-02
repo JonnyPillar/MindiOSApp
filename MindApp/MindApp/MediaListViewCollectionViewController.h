@@ -12,7 +12,7 @@
 
 @interface MediaListViewCollectionViewController : UICollectionViewController 
 
-@property (strong, nonatomic) NSMutableArray* mediaItems;
+@property (strong, nonatomic) NSArray* mediaItems;
 @property (strong, nonatomic) IBOutlet UICollectionView *mediaCollectionView;
 
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;

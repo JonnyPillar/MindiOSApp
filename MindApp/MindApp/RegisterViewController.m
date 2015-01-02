@@ -10,10 +10,12 @@
 #import "MediaListViewCollectionViewController.h"
 #import "RegistrationRequestModel.h"
 #import "RegistrationResponseModel.h"
-#import "CommunicationPostRequestUtil.h"
 #import "InputValidationUtil.h"
+#import "CommunicationsManager.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController () <CommunicationsManagerDelegate>
+
+@property (nonatomic,strong) CommunicationsManager* communicationManager;
 
 @end
 
@@ -26,6 +28,7 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	[self.registerEmailAddressTextField setText:@"user@user.com"];
 	[self.registerPasswordTextField setText:@"123"];
 	[self.registerConfirmPasswordTextField setText:@"123"];
+	self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,18 +40,25 @@ static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/
 	
 	RegistrationRequestModel *registrationRequestModel = [self createRegistrationModel];
 	
-	[CommunicationPostRequestUtil PostRequest:postRegisterUrl withParams:nil withBody:registrationRequestModel.GetResquestDictionary completion:^(NSDictionary *json, BOOL success) {
-		if(success)
-		{
-			NSLog(@"Complete");
-			[self processSuccessfulRegisterResponse:json];
-		}
-		else
-		{
-			NSLog(@"Failed");
-			[self showErrorAlert:@"An New Error Occured At Server. Panic"];
-		}
-	}];
+	[_communicationManager PostRequest:postRegisterUrl withParams:nil withBody:registrationRequestModel.GetResquestDictionary];
+}
+
+#pragma mark Communication Manager Delegate Methods
+
+-(void) handleSuccess:(NSDictionary*) responseDictionary{
+	RegistrationResponseModel *response = [[RegistrationResponseModel alloc] initWithDictionary:responseDictionary];
+	if(response.Success) {
+		[self performSegueWithIdentifier:@"segueToMediaListView" sender:self];
+	}
+	else{
+		[self showErrorAlert:response.Message];
+	}
+}
+
+-(void) handleFailure:(NSDictionary*) responseDictionary{
+	
+	RegistrationResponseModel *response = [[RegistrationResponseModel alloc] initWithDictionary:responseDictionary];
+	[self showErrorAlert:response.Message];
 }
 
 #pragma mark Login Creation Methods

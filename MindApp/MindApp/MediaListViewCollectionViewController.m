@@ -26,7 +26,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 - (void)viewDidLoad {
     [super viewDidLoad];
 	if(!_audioPlayer){
-		_audioPlayer = [[MIAudioPlayer alloc] init];
+		_audioPlayer = [MIAudioPlayer new];
 	}
 
 	[self setUpCollectionView];

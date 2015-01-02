@@ -53,7 +53,7 @@
 - (void)setupStaticViews {
 	
 	[_audioFileLabel setText:_audioFile.Filename];
-	[_audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self GetAudioTrackDuration]]];
+	[_audioFileLengthLabel setText:[TimerUtil timeFormattedFromFloat: [self.audioPlayer getAudioTrackDuration]]];
 	[_audioFileImageView sd_setImageWithURL:_audioFile.GetImageUrlNsUrl];
 	[self updateProgress];
 }
@@ -68,7 +68,7 @@
 - (float)updateTimeAndCalculatePercentage
 {
 	_currentTime =  CMTimeGetSeconds([_audioPlayer currentTime]);
-	return (_currentTime / [self GetAudioTrackDuration]);
+	return (_currentTime / [self.audioPlayer getAudioTrackDuration]);
 }
 
 -(void) updateProgress
@@ -78,10 +78,7 @@
 	[_audioProgressBar setProgress:percentageComplete animated:true];
 }
 
-- (float)GetAudioTrackDuration {
-	CMTime duration = self.audioPlayer.currentItem.asset.duration;
-	return CMTimeGetSeconds(duration);
-}
+
 
 #pragma mark <MIAudioPlayerDelegate>
 

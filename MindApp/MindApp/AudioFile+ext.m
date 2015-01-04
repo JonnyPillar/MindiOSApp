@@ -7,6 +7,9 @@
 //
 
 #import "AudioFile+ext.h"
+#import <MediaPlayer/MPMediaItem.h>
+
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation AudioFile (ext)
 
@@ -34,6 +37,20 @@
 
 -(NSURL *) GetImageUrlNsUrl{
 	return [[NSURL alloc] initWithString:self.ImageUrl];
+}
+
+-(NSMutableDictionary *) GetMPInfoCenterInformationDictionary{
+	NSMutableDictionary* informationDictionary = [NSMutableDictionary new];
+	
+	[informationDictionary setValue:self.Filename forKey:MPMediaItemPropertyTitle];
+	[informationDictionary setValue:@"Mind" forKey:MPMediaItemPropertyArtist];
+	
+	UIImageView *albumArtImg = [UIImageView new];
+	[albumArtImg sd_setImageWithURL:self.GetImageUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
+	
+	[informationDictionary setObject:[[MPMediaItemArtwork alloc] initWithImage:albumArtImg.image] forKey:MPMediaItemPropertyArtwork];
+	
+	return informationDictionary;
 }
 
 @end

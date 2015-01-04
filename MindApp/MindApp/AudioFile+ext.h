@@ -14,5 +14,6 @@
 -(NSURL *) GetFileUrlNsUrl;
 -(NSURL *) GetThumbnailUrlNsUrl;
 -(NSURL *) GetImageUrlNsUrl;
+-(NSMutableDictionary *) GetMPInfoCenterInformationDictionary;
 
 @end

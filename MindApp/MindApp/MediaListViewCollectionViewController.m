@@ -15,6 +15,7 @@
 #import "AccountViewController.h"
 #import "CommunicationsManager.h"
 #import "GetMediaFilesResponseModel.h"
+#import "RemoteEventUtil.h"
 
 @interface MediaListViewCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CommunicationsManagerDelegate>
 
@@ -39,13 +40,18 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 
+#pragma mark Control Centre Methods
+-(void) startBackgroundMode{
+	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+	[self becomeFirstResponder];
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	
-	//End recieving events
-//	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-//	[self resignFirstResponder];
+//	End recieving events
+	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+	[self resignFirstResponder];
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -54,23 +60,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 - (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
 	
-	if (receivedEvent.type == UIEventTypeRemoteControl) {
-		
-		switch (receivedEvent.subtype) {
-				
-			case UIEventSubtypeRemoteControlPause:
-				[self.audioPlayer pause];
-				break;
-				
-			case UIEventSubtypeRemoteControlPlay:
-				[self.audioPlayer pause];
-				break;
-				
-				
-			default:
-				break;
-		}
-	}
+	[RemoteEventUtil handleRemoteEvent:receivedEvent forPlayer:_audioPlayer];
 }
 
 - (void)didReceiveMemoryWarning {

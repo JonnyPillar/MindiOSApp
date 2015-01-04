@@ -18,6 +18,8 @@
 		F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE01A3DC125002E2F3B /* LoginViewController.m */; };
 		F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */; };
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
+		F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E21A598E2600C3C952 /* RemoteEventUtil.m */; };
+		F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E51A59984800C3C952 /* ControlCenterUtil.m */; };
 		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
 		F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */; };
 		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
@@ -86,6 +88,10 @@
 		F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModel.m; sourceTree = "<group>"; };
 		F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationRequestModel.h; sourceTree = "<group>"; };
 		F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationRequestModel.m; sourceTree = "<group>"; };
+		F04683E11A598E2600C3C952 /* RemoteEventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteEventUtil.h; sourceTree = "<group>"; };
+		F04683E21A598E2600C3C952 /* RemoteEventUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteEventUtil.m; sourceTree = "<group>"; };
+		F04683E41A59984800C3C952 /* ControlCenterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCenterUtil.h; sourceTree = "<group>"; };
+		F04683E51A59984800C3C952 /* ControlCenterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlCenterUtil.m; sourceTree = "<group>"; };
 		F04987E21A56EBE400FC2D44 /* HashUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashUtil.h; sourceTree = "<group>"; };
 		F04987E31A56EBE400FC2D44 /* HashUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashUtil.m; sourceTree = "<group>"; };
 		F04987E51A56EE6700FC2D44 /* FileCacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCacheUtil.h; sourceTree = "<group>"; };
@@ -325,6 +331,10 @@
 				F04987E31A56EBE400FC2D44 /* HashUtil.m */,
 				F04987E51A56EE6700FC2D44 /* FileCacheUtil.h */,
 				F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */,
+				F04683E11A598E2600C3C952 /* RemoteEventUtil.h */,
+				F04683E21A598E2600C3C952 /* RemoteEventUtil.m */,
+				F04683E41A59984800C3C952 /* ControlCenterUtil.h */,
+				F04683E51A59984800C3C952 /* ControlCenterUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -612,9 +622,11 @@
 				F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
+				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,
 				F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
+				F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */,
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,

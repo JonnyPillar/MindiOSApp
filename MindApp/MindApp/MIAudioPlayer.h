@@ -7,21 +7,23 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import "AudioFile+ext.h"
 
 @protocol MIAudioPlayerDelegate;
 
-@interface MIAudioPlayer : AVPlayer
+@interface MIAudioPlayer : AVPlayer <AVAudioSessionDelegate>
 
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 
 -(id) init;
 -(id) initWithDelegate:(id) delegate;
 
--(void) playNewPlayerItem:(NSURL *) mediaItemUrl;
+-(void) playNewPlayerItem:(AudioFile *) newAudioFile;
 -(void) playAudio;
 -(void) pauseAudio;
 -(BOOL) audioPlayerIsPlaying;
 -(float) getAudioTrackDuration;
+-(float)getAudioTrackElapsedTime;
 
 @end
 
@@ -30,5 +32,6 @@
 @required
 -(void) updateUIForPlay;
 -(void) updateUIForPause;
+-(void) updateUIProgress;
 
 @end

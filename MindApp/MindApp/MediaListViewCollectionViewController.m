@@ -48,8 +48,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	
-//	End recieving events
 	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
 	[self resignFirstResponder];
 }
@@ -197,7 +195,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 - (IBAction)nowPlayingButtonAction:(id)sender {
-
 	//TODO
 }
 @end

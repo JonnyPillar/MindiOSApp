@@ -23,14 +23,12 @@
 	[self setupAudioPlayer];
 	[self setupStaticViews];
 	[self toggleInterfaceIfAlreadyPlaying];
-//	[self startBackgroundMode];
-//	[self setupBackgroundTask];
+	[self startBackgroundMode];
 	
 	NSError *setCategoryErr = nil;
 	NSError *activationErr  = nil;
-	bool temp = [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: &setCategoryErr];
-	bool temp2 = [[AVAudioSession sharedInstance] setActive: YES error: &activationErr];
-
+	[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: &setCategoryErr];
+	[[AVAudioSession sharedInstance] setActive: YES error: &activationErr];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -41,8 +39,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-//	[mPlayer pause];
-//	[super viewWillDisappear:animated];
 	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
 	[self resignFirstResponder];
 }
@@ -61,21 +57,6 @@
 	else{
 		[_audioPlayer playAudio];
 	}
-}
-
--(void) setupBackgroundTask{
-	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-	
-	NSError *aError = nil;
-	[audioSession setCategory:AVAudioSessionCategoryPlayback error:&aError];
-	
-	if (aError) {
-		NSLog(@"set category error:%@",[aError description]);
-	}
-	
-	aError = nil;
-	[audioSession setActive:YES error:&aError];
 }
 
 #pragma mark - Internal Methods
@@ -130,14 +111,6 @@
 	[self becomeFirstResponder];
 }
 
-//- (void)viewWillDisappear:(BOOL)animated {
-//	[super viewWillDisappear:animated];
-//	
-//	//	End recieving events
-//	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-//	[self resignFirstResponder];
-//}
-
 - (BOOL)canBecomeFirstResponder {
 	return YES;
 }
@@ -146,6 +119,5 @@
 	
 	[RemoteEventUtil handleRemoteEvent:receivedEvent forPlayer:_audioPlayer];
 }
-
 
 @end

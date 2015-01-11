@@ -12,10 +12,12 @@
 #import "LoginResponseModel.h"
 #import "InputValidationUtil.h"
 #import "CommunicationsManager.h"
+#import "MindCoreData.h"
 
 @interface LoginViewController () <CommunicationsManagerDelegate>
 
 @property (nonatomic,strong) CommunicationsManager* communicationManager;
+@property (nonatomic, strong) MindCoreData* mindDatabase;
 
 @end
 
@@ -25,6 +27,7 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self setupCoreData];
 	[self.loginEmailAddressTextField setText:@"test@test.com"];
 	[self.loginPasswordTextField setText:@"123456"];
 	self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
@@ -41,6 +44,14 @@ static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/Log
 	LoginRequestModel *loginRequestModel = [self createLoginModel];
 	[_communicationManager PostRequest:postLoginUrl withParams:nil withBody:loginRequestModel.GetResquestDictionary];
 	
+}
+
+#pragma mark Mind Database
+
+-(void) setupCoreData{
+	if(!self.mindDatabase){
+		self.mindDatabase = [MindCoreData new];
+	}
 }
 
 #pragma mark Communication Manager Delegate Methods

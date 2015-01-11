@@ -18,12 +18,18 @@
 		F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE01A3DC125002E2F3B /* LoginViewController.m */; };
 		F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */; };
 		F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */; };
+		F0346D9C1A62A8A50071921D /* MindCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346D9B1A62A8A50071921D /* MindCoreData.m */; };
+		F0346DA21A62ADB20071921D /* User+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DA11A62ADB20071921D /* User+Create.m */; };
+		F0346DA61A62B2880071921D /* User+Retrieve.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DA51A62B2880071921D /* User+Retrieve.m */; };
+		F0346DA91A62BC730071921D /* User+Update.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DA81A62BC730071921D /* User+Update.m */; };
+		F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DAB1A62BDC30071921D /* User+Delete.m */; };
 		F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E21A598E2600C3C952 /* RemoteEventUtil.m */; };
 		F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E51A59984800C3C952 /* ControlCenterUtil.m */; };
 		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
 		F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */; };
 		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
 		F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */; };
+		F052C0A51A5C614A00B300A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F052C0A41A5C614A00B300A5 /* User.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
 		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
 		F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */; };
@@ -88,6 +94,16 @@
 		F02B0DE41A3DC643002E2F3B /* LoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModel.m; sourceTree = "<group>"; };
 		F02B0DE61A3DC656002E2F3B /* RegistrationRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationRequestModel.h; sourceTree = "<group>"; };
 		F02B0DE71A3DC656002E2F3B /* RegistrationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationRequestModel.m; sourceTree = "<group>"; };
+		F0346D9A1A62A8A50071921D /* MindCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MindCoreData.h; sourceTree = "<group>"; };
+		F0346D9B1A62A8A50071921D /* MindCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MindCoreData.m; sourceTree = "<group>"; };
+		F0346DA01A62ADB20071921D /* User+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Create.h"; sourceTree = "<group>"; };
+		F0346DA11A62ADB20071921D /* User+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Create.m"; sourceTree = "<group>"; };
+		F0346DA41A62B2880071921D /* User+Retrieve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Retrieve.h"; sourceTree = "<group>"; };
+		F0346DA51A62B2880071921D /* User+Retrieve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Retrieve.m"; sourceTree = "<group>"; };
+		F0346DA71A62BC730071921D /* User+Update.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Update.h"; sourceTree = "<group>"; };
+		F0346DA81A62BC730071921D /* User+Update.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Update.m"; sourceTree = "<group>"; };
+		F0346DAA1A62BDC30071921D /* User+Delete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Delete.h"; sourceTree = "<group>"; };
+		F0346DAB1A62BDC30071921D /* User+Delete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Delete.m"; sourceTree = "<group>"; };
 		F04683E11A598E2600C3C952 /* RemoteEventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteEventUtil.h; sourceTree = "<group>"; };
 		F04683E21A598E2600C3C952 /* RemoteEventUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteEventUtil.m; sourceTree = "<group>"; };
 		F04683E41A59984800C3C952 /* ControlCenterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCenterUtil.h; sourceTree = "<group>"; };
@@ -100,6 +116,8 @@
 		F04987E91A56F39900FC2D44 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		F04987EE1A570FAD00FC2D44 /* GetMediaFilesResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMediaFilesResponseModel.h; sourceTree = "<group>"; };
 		F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaFilesResponseModel.m; sourceTree = "<group>"; };
+		F052C0A31A5C614A00B300A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F052C0A41A5C614A00B300A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
 		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
@@ -219,6 +237,7 @@
 		F0150E561A11483300D13D45 /* MindApp */ = {
 			isa = PBXGroup;
 			children = (
+				F052C0A61A5C61C700B300A5 /* CoreData */,
 				F0A3F33B1A4DF9950072CE33 /* AudioPlayer */,
 				F0960B291A497AB80037D096 /* Comms */,
 				F09EA4E11A349DDC005A1F1C /* Utils */,
@@ -271,6 +290,33 @@
 				F0A3F32B1A4DC27B0072CE33 /* Responses */,
 			);
 			name = "Data Contracts";
+			sourceTree = "<group>";
+		};
+		F0346DA31A62B1D70071921D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				F052C0A31A5C614A00B300A5 /* User.h */,
+				F052C0A41A5C614A00B300A5 /* User.m */,
+				F0346DA01A62ADB20071921D /* User+Create.h */,
+				F0346DA11A62ADB20071921D /* User+Create.m */,
+				F0346DA41A62B2880071921D /* User+Retrieve.h */,
+				F0346DA51A62B2880071921D /* User+Retrieve.m */,
+				F0346DA71A62BC730071921D /* User+Update.h */,
+				F0346DA81A62BC730071921D /* User+Update.m */,
+				F0346DAA1A62BDC30071921D /* User+Delete.h */,
+				F0346DAB1A62BDC30071921D /* User+Delete.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		F052C0A61A5C61C700B300A5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */,
+				F0346D9A1A62A8A50071921D /* MindCoreData.h */,
+				F0346D9B1A62A8A50071921D /* MindCoreData.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		F06F1A9B1A4B50C8006B71B7 /* BaseDataContacts */ = {
@@ -375,6 +421,8 @@
 		F0A3F32F1A4DEC5E0072CE33 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F0C3A8AA1A191D2500EAA252 /* Base Entities */,
+				F0346DA31A62B1D70071921D /* User */,
 				F0C3A8A71A191D0E00EAA252 /* AudioFile.h */,
 				F0C3A8B41A192D0F00EAA252 /* AudioFile.m */,
 			);
@@ -420,8 +468,6 @@
 			isa = PBXGroup;
 			children = (
 				F02B0DE21A3DC61F002E2F3B /* Data Contracts */,
-				F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */,
-				F0C3A8AA1A191D2500EAA252 /* Base Entities */,
 				F0A3F32F1A4DEC5E0072CE33 /* Entities */,
 				F0C3A8AB1A191F0500EAA252 /* Extensions */,
 			);
@@ -622,7 +668,9 @@
 				F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
+				F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */,
 				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,
+				F0346D9C1A62A8A50071921D /* MindCoreData.m in Sources */,
 				F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
@@ -630,15 +678,19 @@
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,
+				F052C0A51A5C614A00B300A5 /* User.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
 				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
 				F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */,
+				F0346DA21A62ADB20071921D /* User+Create.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
 				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,
+				F0346DA61A62B2880071921D /* User+Retrieve.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
 				F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */,
+				F0346DA91A62BC730071921D /* User+Update.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

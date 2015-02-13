@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString* Description;
 @property (strong, nonatomic) NSString* ThumbnailUrl;
 @property (strong, nonatomic) NSString* ImageUrl;
+@property (strong, nonatomic) NSString* Duration;
 @property (nonatomic) MediaType MediaType;
 
 @end

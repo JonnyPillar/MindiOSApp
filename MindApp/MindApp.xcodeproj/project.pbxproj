@@ -23,6 +23,8 @@
 		F0346DA61A62B2880071921D /* User+Retrieve.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DA51A62B2880071921D /* User+Retrieve.m */; };
 		F0346DA91A62BC730071921D /* User+Update.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DA81A62BC730071921D /* User+Update.m */; };
 		F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DAB1A62BDC30071921D /* User+Delete.m */; };
+		F038385C1A8EA8B300337038 /* MIMediaItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */; };
+		F038385D1A8EA8B300337038 /* MIMediaItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */; };
 		F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E21A598E2600C3C952 /* RemoteEventUtil.m */; };
 		F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E51A59984800C3C952 /* ControlCenterUtil.m */; };
 		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
@@ -104,6 +106,9 @@
 		F0346DA81A62BC730071921D /* User+Update.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Update.m"; sourceTree = "<group>"; };
 		F0346DAA1A62BDC30071921D /* User+Delete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Delete.h"; sourceTree = "<group>"; };
 		F0346DAB1A62BDC30071921D /* User+Delete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Delete.m"; sourceTree = "<group>"; };
+		F03838591A8EA8B300337038 /* MIMediaItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaItemTableViewCell.h; sourceTree = "<group>"; };
+		F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMediaItemTableViewCell.m; sourceTree = "<group>"; };
+		F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMediaItemTableViewCell.xib; sourceTree = "<group>"; };
 		F04683E11A598E2600C3C952 /* RemoteEventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteEventUtil.h; sourceTree = "<group>"; };
 		F04683E21A598E2600C3C952 /* RemoteEventUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteEventUtil.m; sourceTree = "<group>"; };
 		F04683E41A59984800C3C952 /* ControlCenterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCenterUtil.h; sourceTree = "<group>"; };
@@ -481,6 +486,9 @@
 				F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */,
 				F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */,
 				F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */,
+				F03838591A8EA8B300337038 /* MIMediaItemTableViewCell.h */,
+				F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */,
+				F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -600,6 +608,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F038385D1A8EA8B300337038 /* MIMediaItemTableViewCell.xib in Resources */,
 				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
 				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
@@ -677,6 +686,7 @@
 				F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */,
 				F02B0DE11A3DC125002E2F3B /* LoginViewController.m in Sources */,
 				F0150E5A1A11483300D13D45 /* main.m in Sources */,
+				F038385C1A8EA8B300337038 /* MIMediaItemTableViewCell.m in Sources */,
 				F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */,
 				F052C0A51A5C614A00B300A5 /* User.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,

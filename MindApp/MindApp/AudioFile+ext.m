@@ -23,6 +23,7 @@
 		self.ThumbnailUrl = [data objectForKey:@"ThumbnailUrl"];
 		self.ImageUrl = [data objectForKey:@"ImageUrl"];
 		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
+		self.Duration = [data objectForKey:@"Duration"];
 	}
 	return self;
 }

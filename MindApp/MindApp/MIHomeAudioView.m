@@ -1,21 +1,21 @@
 //
-//  MIHomeView.m
+//  MIHomeAudioView.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 22/02/2015.
 //  Copyright (c) 2015 Jonny Pillar. All rights reserved.
 //
 
-#import "MIHomeView.h"
+#import "MIHomeAudioView.h"
 
-@interface MIHomeView ()
+@interface MIHomeAudioView ()
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
 
 @end
 
-@implementation MIHomeView
+@implementation MIHomeAudioView
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -40,7 +40,7 @@
 	_customConstraints = [[NSMutableArray alloc] init];
 	
 	UIView *view = nil;
-	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeView"
+	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeAudioView"
 													 owner:self
 												   options:nil];
 	for (id object in objects) {

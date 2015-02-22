@@ -24,6 +24,7 @@
 		self.ImageUrl = [data objectForKey:@"ImageUrl"];
 		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
 		self.Duration = [data objectForKey:@"Duration"];
+		self.Title = [data objectForKey:@"Title"];
 	}
 	return self;
 }

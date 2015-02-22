@@ -519,10 +519,13 @@
                         <viewControllerLayoutGuide type="bottom" id="e1R-Db-zbG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OLj-FX-vNk" customClass="MIHomeView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="homeView" destination="OLj-FX-vNk" id="ZNP-8L-2Ea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGB-Gv-L6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

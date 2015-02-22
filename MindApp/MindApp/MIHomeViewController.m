@@ -8,29 +8,105 @@
 
 #import "MIHomeViewController.h"
 #import "MIHomeView.h"
+#import "CommunicationsManager.h"
+#import "AudioFile.h"
+#import "GetMediaFilesResponseModel.h"
 
-@interface MIHomeViewController ()
+@interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate>
+
+@property (nonatomic,strong) CommunicationsManager* communicationManager;
+@property (strong, nonatomic) NSArray* mediaItems;
 
 @end
+
+static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
 
 @implementation MIHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self retreiveMediaItemData];
+	[self.homeView.mediaTrackTableView setDelegate:self];
+	[self.homeView.mediaTrackTableView setDataSource:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) retreiveMediaItemData{
+	_mediaItems = [NSMutableArray new];
+	if(!_communicationManager) self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
+	[_communicationManager GetRequest:getMediaFilesUrl withParams:nil];
 }
-*/
+
+#pragma UITableViewDelegate UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return _mediaItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	static NSString *CellIdentifier = @"Cell";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+									   reuseIdentifier:CellIdentifier];
+	}
+
+	AudioFile* audioFile =[_mediaItems objectAtIndex:indexPath.row];
+	cell.textLabel.text = audioFile.Title;
+
+	return cell;
+}
+
+#pragma mark Communication Manager Delegate Methods
+
+-(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
+	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
+	
+	if(responseModel.Success){
+		
+		_mediaItems = responseModel.MediaFiles;
+		[self.homeView.mediaTrackTableView reloadData];
+	}
+	else {
+		[self showErrorAlert:responseModel.Message];
+	}
+}
+
+-(void) handleFailedRequest:(NSDictionary*) responseDictionary{
+	
+	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
+	[self showErrorAlert:responseModel.Message];
+}
+
+-(void) showActivitySpinner
+{
+//	[_activityIndicator setHidden:NO];
+//	[_activityIndicator startAnimating];
+}
+
+-(void) hideActivitySpinner{
+//	[_activityIndicator setHidden:YES];
+//	[_activityIndicator stopAnimating];
+}
+
+-(void) showErrorAlert:(NSString*) errorMessage
+{
+	UIAlertView *ErrorAlert = [[UIAlertView alloc] initWithTitle:@""
+														 message:errorMessage
+														delegate:nil
+											   cancelButtonTitle:@"OK"
+											   otherButtonTitles:nil, nil];
+	[ErrorAlert show];
+}
+	
 
 @end

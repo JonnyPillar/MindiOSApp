@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIHomeView.h"
 
 @interface MIHomeViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet MIHomeView *homeView;
 
 @end

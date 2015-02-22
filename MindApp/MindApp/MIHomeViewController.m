@@ -11,6 +11,7 @@
 #import "CommunicationsManager.h"
 #import "AudioFile.h"
 #import "GetMediaFilesResponseModel.h"
+#import "MIHomeTableViewCell.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate>
 
@@ -54,15 +55,16 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	
 	static NSString *CellIdentifier = @"Cell";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	MIHomeTableViewCell *cell = (MIHomeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-									   reuseIdentifier:CellIdentifier];
+		cell = [[[NSBundle mainBundle] loadNibNamed:@"MIHomeTableViewCell" owner:self options:nil] lastObject];
+
 	}
-
+	
 	AudioFile* audioFile =[_mediaItems objectAtIndex:indexPath.row];
-	cell.textLabel.text = audioFile.Title;
-
+	[cell.audiFileTitle setText:audioFile.Title];
+	[cell.audioFileDuration setText:audioFile.Duration];
+	
 	return cell;
 }
 

@@ -32,6 +32,8 @@
 		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
 		F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */; };
 		F052C0A51A5C614A00B300A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F052C0A41A5C614A00B300A5 /* User.m */; };
+		F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */; };
+		F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F06755281A9A2E2400DE09D9 /* MIHomeTableViewCell.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
 		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
 		F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */; };
@@ -126,6 +128,9 @@
 		F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaFilesResponseModel.m; sourceTree = "<group>"; };
 		F052C0A31A5C614A00B300A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F052C0A41A5C614A00B300A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiHomeTableViewCell.xib; sourceTree = "<group>"; };
+		F06755271A9A2E2400DE09D9 /* MIHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeTableViewCell.h; sourceTree = "<group>"; };
+		F06755281A9A2E2400DE09D9 /* MIHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeTableViewCell.m; sourceTree = "<group>"; };
 		F06F1A9C1A4B5103006B71B7 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
 		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
@@ -492,6 +497,9 @@
 				F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */,
 				F0A7EE4E1A9A0F5100B14FDD /* MIHomeView.h */,
 				F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */,
+				F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */,
+				F06755271A9A2E2400DE09D9 /* MIHomeTableViewCell.h */,
+				F06755281A9A2E2400DE09D9 /* MIHomeTableViewCell.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -650,6 +658,7 @@
 				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
 				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
+				F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
 				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
 				F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */,
@@ -710,6 +719,7 @@
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */,
 				F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */,
+				F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */,
 				F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */,

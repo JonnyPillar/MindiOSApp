@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIColour.h"
 
 @interface MIHomeAudioView : UIView
+
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
+
+- (IBAction)audioPlayButton:(id)sender;
+- (void) updateBackgroundColour: (UIColor*) colour;
+
+@property (strong, nonatomic) IBOutlet UILabel *audioCurrentPositionLabel;
 
 @end

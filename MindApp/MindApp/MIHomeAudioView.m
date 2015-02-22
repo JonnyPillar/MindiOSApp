@@ -80,4 +80,10 @@
 	[super updateConstraints];
 }
 
+- (IBAction)audioPlayButton:(id)sender {
+}
+
+- (void) updateBackgroundColour: (UIColor*) colour{
+	[self.backgroundView setBackgroundColor:colour];
+}
 @end

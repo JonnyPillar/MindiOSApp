@@ -4,7 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIHomeAudioView">
+            <connections>
+                <outlet property="audioCurrentPositionLabel" destination="7M6-jx-T5j" id="a9E-f2-3LZ"/>
+                <outlet property="backgroundView" destination="iN0-l3-epB" id="Oqh-BS-2Wb"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -36,6 +41,9 @@
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="177" y="50" width="30" height="30"/>
                     </variation>
+                    <connections>
+                        <action selector="audioPlayButton:" destination="-1" eventType="touchUpInside" id="eax-FR-2s9"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIHomeAudioView.h"
 
 @interface MIHomeView : UIView
 
-@property (strong, nonatomic) IBOutlet UIView *audioPlayerView;
+@property (strong, nonatomic) IBOutlet MIHomeAudioView *audioPlayerView;
+
 @property (strong, nonatomic) IBOutlet UITableView *mediaTrackTableView;
 
 //+(id) HomeView;

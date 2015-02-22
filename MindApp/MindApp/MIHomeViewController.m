@@ -12,6 +12,7 @@
 #import "AudioFile.h"
 #import "GetMediaFilesResponseModel.h"
 #import "MIHomeTableViewCell.h"
+#import "MIColour.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate>
 
@@ -29,6 +30,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self retreiveMediaItemData];
 	[self.homeView.mediaTrackTableView setDelegate:self];
 	[self.homeView.mediaTrackTableView setDataSource:self];
+	[self.homeView.audioPlayerView updateBackgroundColour:[MIColour Pink]];
 }
 
 - (void)didReceiveMemoryWarning {

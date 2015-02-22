@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIHomeView">
             <connections>
-                <outlet property="audioPlayerView" destination="HJw-Na-cyL" id="vzB-sw-jGe"/>
+                <outlet property="audioPlayerView" destination="HJw-Na-cyL" id="aau-D8-VTD"/>
                 <outlet property="mediaTrackTableView" destination="s1e-Qq-F1D" id="JEf-gd-IpZ"/>
             </connections>
         </placeholder>

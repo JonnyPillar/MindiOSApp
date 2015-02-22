@@ -57,6 +57,9 @@
 		F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */; };
 		F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */; };
 		F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */; };
+		F0A7EE4A1A9A0CE800B14FDD /* MIHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */; };
+		F0A7EE501A9A0F5100B14FDD /* MIHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */; };
+		F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A7EE521A9A0FCD00B14FDD /* MIHomeViewController.m */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
 		F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B41A192D0F00EAA252 /* AudioFile.m */; };
@@ -161,6 +164,11 @@
 		F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidationUtil.m; sourceTree = "<group>"; };
 		F0A3F3301A4DF0A90072CE33 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeView.xib; sourceTree = "<group>"; };
+		F0A7EE4E1A9A0F5100B14FDD /* MIHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeView.h; sourceTree = "<group>"; };
+		F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeView.m; sourceTree = "<group>"; };
+		F0A7EE511A9A0FCD00B14FDD /* MIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeViewController.h; sourceTree = "<group>"; };
+		F0A7EE521A9A0FCD00B14FDD /* MIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeViewController.m; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -469,6 +477,38 @@
 			name = AudioPlayer;
 			sourceTree = "<group>";
 		};
+		F0A7EE4B1A9A0D6F00B14FDD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0A7EE511A9A0FCD00B14FDD /* MIHomeViewController.h */,
+				F0A7EE521A9A0FCD00B14FDD /* MIHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		F0A7EE4C1A9A0D7500B14FDD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */,
+				F0A7EE4E1A9A0F5100B14FDD /* MIHomeView.h */,
+				F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		F0A7EE4D1A9A0D7C00B14FDD /* OldMedia */ = {
+			isa = PBXGroup;
+			children = (
+				F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */,
+				F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */,
+				F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */,
+				F03838591A8EA8B300337038 /* MIMediaItemTableViewCell.h */,
+				F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */,
+				F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */,
+			);
+			name = OldMedia;
+			sourceTree = "<group>";
+		};
 		F0C3A89F1A1914CD00EAA252 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,12 +523,8 @@
 			isa = PBXGroup;
 			children = (
 				F0150E641A11483300D13D45 /* Main.storyboard */,
-				F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */,
-				F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */,
-				F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */,
-				F03838591A8EA8B300337038 /* MIMediaItemTableViewCell.h */,
-				F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */,
-				F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */,
+				F0A7EE4D1A9A0D7C00B14FDD /* OldMedia */,
+				F0A7EE4C1A9A0D7500B14FDD /* Home */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -496,6 +532,7 @@
 		F0C3A8A11A1914E400EAA252 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F0A7EE4B1A9A0D6F00B14FDD /* Home */,
 				F0A3F33A1A4DF8A60072CE33 /* Media */,
 				F0A3F3391A4DF8920072CE33 /* Account */,
 			);
@@ -609,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F038385D1A8EA8B300337038 /* MIMediaItemTableViewCell.xib in Resources */,
+				F0A7EE4A1A9A0CE800B14FDD /* MIHomeView.xib in Resources */,
 				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
 				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
@@ -680,6 +718,7 @@
 				F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */,
 				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,
 				F0346D9C1A62A8A50071921D /* MindCoreData.m in Sources */,
+				F0A7EE501A9A0F5100B14FDD /* MIHomeView.m in Sources */,
 				F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
@@ -697,6 +736,7 @@
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
 				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,
+				F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */,
 				F0346DA61A62B2880071921D /* User+Retrieve.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
 				F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */,

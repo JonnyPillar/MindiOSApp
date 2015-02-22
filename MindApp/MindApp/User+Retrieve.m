@@ -21,7 +21,7 @@
 	else if([retreivedUsers count] == 1){
 		//User Found
 		NSManagedObject* retrievedUser = retreivedUsers[0];
-		super = retreivedUsers[0];
+//		super = retreivedUsers[0];
 		self.emailAddress = [retrievedUser valueForKey:@"emailAddress"];
 		self.sessionToken = [retrievedUser valueForKey:@"sessionToken"];
 	}

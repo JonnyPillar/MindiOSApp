@@ -57,12 +57,12 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	
 	MIHomeTableViewCell *cell = (MIHomeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[NSBundle mainBundle] loadNibNamed:@"MIHomeTableViewCell" owner:self options:nil] lastObject];
-
+		cell = [[MIHomeTableViewCell alloc] init];
 	}
 	
 	AudioFile* audioFile =[_mediaItems objectAtIndex:indexPath.row];
-	[cell.audiFileTitle setText:audioFile.Title];
+//	[cell.textLabel setText:audioFile.Title];
+	[cell.audioFileTitle setText:audioFile.Title];
 	[cell.audioFileDuration setText:audioFile.Duration];
 	
 	return cell;

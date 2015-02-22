@@ -17,10 +17,6 @@
 
 @implementation MIHomeTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
@@ -48,7 +44,7 @@
 	_customConstraints = [[NSMutableArray alloc] init];
 	
 	UIView *view = nil;
-	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeTableViewCell"
+	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell"
 													 owner:self
 												   options:nil];
 	for (id object in objects) {

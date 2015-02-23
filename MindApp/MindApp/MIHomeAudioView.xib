@@ -15,43 +15,65 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-jx-T5j">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- : -- : --" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-jx-T5j">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="sCf-iq-pgb"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="55" y="54" width="100" height="21"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="sCf-iq-pgb"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="sCf-iq-pgb"/>
+                        </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-b0-b5H">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-b0-b5H">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="113" y="83" width="30" height="21"/>
-                    </variation>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-1z-86o">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <state key="normal" title="Play">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="177" y="50" width="30" height="30"/>
-                    </variation>
                     <connections>
                         <action selector="audioPlayButton:" destination="-1" eventType="touchUpInside" id="eax-FR-2s9"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.058823533359999999" green="0.1960784495" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="7M6-jx-T5j" firstAttribute="baseline" secondItem="2XQ-1z-86o" secondAttribute="baseline" id="1ON-3s-1h9"/>
+                <constraint firstItem="7M6-jx-T5j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="54" id="Jee-g8-0k9"/>
+                <constraint firstItem="2XQ-1z-86o" firstAttribute="leading" secondItem="7M6-jx-T5j" secondAttribute="trailing" constant="34" id="NHG-Do-K2E">
+                    <variation key="widthClass=compact" constant="42"/>
+                </constraint>
+                <constraint firstItem="7M6-jx-T5j" firstAttribute="trailing" secondItem="qMd-b0-b5H" secondAttribute="trailing" id="Wcr-GR-zGG"/>
+                <constraint firstItem="7M6-jx-T5j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="55" id="mQq-tG-1Fz"/>
+                <constraint firstItem="qMd-b0-b5H" firstAttribute="top" secondItem="7M6-jx-T5j" secondAttribute="bottom" constant="8" symbolic="YES" id="sSz-6r-vbX"/>
+            </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="7M6-jx-T5j"/>
                     <exclude reference="qMd-b0-b5H"/>
                     <exclude reference="2XQ-1z-86o"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="1ON-3s-1h9"/>
+                    <exclude reference="Jee-g8-0k9"/>
+                    <exclude reference="Wcr-GR-zGG"/>
+                    <exclude reference="mQq-tG-1Fz"/>
+                    <exclude reference="sSz-6r-vbX"/>
+                    <exclude reference="NHG-Do-K2E"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -59,6 +81,14 @@
                     <include reference="7M6-jx-T5j"/>
                     <include reference="qMd-b0-b5H"/>
                     <include reference="2XQ-1z-86o"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="1ON-3s-1h9"/>
+                    <include reference="Jee-g8-0k9"/>
+                    <include reference="Wcr-GR-zGG"/>
+                    <include reference="mQq-tG-1Fz"/>
+                    <include reference="sSz-6r-vbX"/>
+                    <include reference="NHG-Do-K2E"/>
                 </mask>
             </variation>
         </view>

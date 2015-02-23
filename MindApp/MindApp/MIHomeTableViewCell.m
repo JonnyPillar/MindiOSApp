@@ -60,6 +60,15 @@
 		[self addSubview:view];
 		[self setNeedsUpdateConstraints];
 	}
+	
+	[self setupCellIcon];
+}
+
+-(void) setupCellIcon{
+//	self.cellIcon = [[UIView alloc] initWithFrame:CGRectMake(10,20,100,100)];
+	self.cellIcon.alpha = 1;
+	self.cellIcon.layer.cornerRadius = 37.5;
+	self.cellIcon.backgroundColor = [UIColor redColor];
 }
 
 - (void)updateConstraints

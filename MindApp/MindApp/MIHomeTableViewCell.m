@@ -7,6 +7,7 @@
 //
 
 #import "MIHomeTableViewCell.h"
+#import "BezierPathUtil.h"
 
 @interface MIHomeTableViewCell ()
 
@@ -64,11 +65,15 @@
 	[self setupCellIcon];
 }
 
+-(void) addCellIConWithColour: (UIColor *) cellColor{
+	
+}
+
 -(void) setupCellIcon{
-//	self.cellIcon = [[UIView alloc] initWithFrame:CGRectMake(10,20,100,100)];
-	self.cellIcon.alpha = 1;
-	self.cellIcon.layer.cornerRadius = 37.5;
-	self.cellIcon.backgroundColor = [UIColor redColor];
+	
+	[self.cellIcon.layer addSublayer:[BezierPathUtil GetCircleCaShapeLayerWithX:38 WithY:38 WithRadius:33 WithColour:[UIColor redColor]]];
+	
+	[self.cellIcon.layer addSublayer:[BezierPathUtil GetCircleCaShapeLayerWithX:38 WithY:38 WithRadius:5 WithColour:[UIColor whiteColor]]];
 }
 
 - (void)updateConstraints

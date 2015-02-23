@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Jonny Pillar. All rights reserved.
 //
 
-#import "MIColour.h"
+#import "MIColourUtil.h"
 
-@implementation MIColour
+@implementation MIColourUtil
 
 +(UIColor *) Pink{
 	return [self GenerateRGBRed:231 Green:31 Blue:123];

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MIColour : NSObject
+@interface MIColourUtil : NSObject
 
 +(UIColor *) Pink;
 +(UIColor *) Purple;

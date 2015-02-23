@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MIColour.h"
+#import "MIColourUtil.h"
 
 @interface MIHomeAudioView : UIView
 

@@ -31,6 +31,7 @@
 		F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */; };
 		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
 		F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */; };
+		F04AF9161A9B599B00CB2664 /* BezierPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04AF9151A9B599B00CB2664 /* BezierPathUtil.m */; };
 		F052C0A51A5C614A00B300A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F052C0A41A5C614A00B300A5 /* User.m */; };
 		F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */; };
 		F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F06755281A9A2E2400DE09D9 /* MIHomeTableViewCell.m */; };
@@ -69,7 +70,7 @@
 		F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E9B4A51A23B8F300F1D98F /* Resource.plist */; };
 		F0E9E4F11A9A75F9001DE877 /* MIHomeAudioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E9E4F01A9A75F9001DE877 /* MIHomeAudioView.xib */; };
 		F0E9E4F41A9A768D001DE877 /* MIHomeAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E9E4F31A9A768D001DE877 /* MIHomeAudioView.m */; };
-		F0E9E4F71A9A7AE8001DE877 /* MIColour.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E9E4F61A9A7AE8001DE877 /* MIColour.m */; };
+		F0E9E4F71A9A7AE8001DE877 /* MIColourUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E9E4F61A9A7AE8001DE877 /* MIColourUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		F04987E91A56F39900FC2D44 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		F04987EE1A570FAD00FC2D44 /* GetMediaFilesResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMediaFilesResponseModel.h; sourceTree = "<group>"; };
 		F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaFilesResponseModel.m; sourceTree = "<group>"; };
+		F04AF9141A9B599B00CB2664 /* BezierPathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathUtil.h; sourceTree = "<group>"; };
+		F04AF9151A9B599B00CB2664 /* BezierPathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathUtil.m; sourceTree = "<group>"; };
 		F052C0A31A5C614A00B300A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F052C0A41A5C614A00B300A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiHomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -190,8 +193,8 @@
 		F0E9E4F01A9A75F9001DE877 /* MIHomeAudioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeAudioView.xib; sourceTree = "<group>"; };
 		F0E9E4F21A9A768D001DE877 /* MIHomeAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeAudioView.h; sourceTree = "<group>"; };
 		F0E9E4F31A9A768D001DE877 /* MIHomeAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeAudioView.m; sourceTree = "<group>"; };
-		F0E9E4F51A9A7AE8001DE877 /* MIColour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColour.h; sourceTree = "<group>"; };
-		F0E9E4F61A9A7AE8001DE877 /* MIColour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColour.m; sourceTree = "<group>"; };
+		F0E9E4F51A9A7AE8001DE877 /* MIColourUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColourUtil.h; sourceTree = "<group>"; };
+		F0E9E4F61A9A7AE8001DE877 /* MIColourUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColourUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,7 +266,6 @@
 		F0150E561A11483300D13D45 /* MindApp */ = {
 			isa = PBXGroup;
 			children = (
-				F0E9E4F81A9A7B4A001DE877 /* Colours */,
 				F052C0A61A5C61C700B300A5 /* CoreData */,
 				F0A3F33B1A4DF9950072CE33 /* AudioPlayer */,
 				F0960B291A497AB80037D096 /* Comms */,
@@ -396,6 +398,7 @@
 		F09EA4E11A349DDC005A1F1C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F0E9E4F81A9A7B4A001DE877 /* Colours */,
 				F09EA4E21A349E1C005A1F1C /* TimerUtil.h */,
 				F09EA4E31A349E1C005A1F1C /* TimerUtil.m */,
 				F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */,
@@ -408,6 +411,8 @@
 				F04683E21A598E2600C3C952 /* RemoteEventUtil.m */,
 				F04683E41A59984800C3C952 /* ControlCenterUtil.h */,
 				F04683E51A59984800C3C952 /* ControlCenterUtil.m */,
+				F04AF9141A9B599B00CB2664 /* BezierPathUtil.h */,
+				F04AF9151A9B599B00CB2664 /* BezierPathUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -581,8 +586,8 @@
 		F0E9E4F81A9A7B4A001DE877 /* Colours */ = {
 			isa = PBXGroup;
 			children = (
-				F0E9E4F51A9A7AE8001DE877 /* MIColour.h */,
-				F0E9E4F61A9A7AE8001DE877 /* MIColour.m */,
+				F0E9E4F51A9A7AE8001DE877 /* MIColourUtil.h */,
+				F0E9E4F61A9A7AE8001DE877 /* MIColourUtil.m */,
 			);
 			name = Colours;
 			sourceTree = "<group>";
@@ -741,12 +746,13 @@
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
 				F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */,
 				F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */,
+				F04AF9161A9B599B00CB2664 /* BezierPathUtil.m in Sources */,
 				F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
 				F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */,
 				F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
-				F0E9E4F71A9A7AE8001DE877 /* MIColour.m in Sources */,
+				F0E9E4F71A9A7AE8001DE877 /* MIColourUtil.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */,
 				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,

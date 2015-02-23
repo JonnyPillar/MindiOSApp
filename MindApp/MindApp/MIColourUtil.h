@@ -12,10 +12,33 @@
 @interface MIColourUtil : NSObject
 
 +(UIColor *) Pink;
++(UIColor *) PinkMedium;
++(UIColor *) PinkLight;
++(UIColor *) Pink:(float) opacity;
+
 +(UIColor *) Purple;
++(UIColor *) PurpleMedium;
++(UIColor *) PurpleLight;
++(UIColor *) Purple:(float) opacity;
+
 +(UIColor *) Blue;
++(UIColor *) BlueMedium;
++(UIColor *) BlueLight;
++(UIColor *) Blue: (float) opacity;
+
 +(UIColor *) Orange;
++(UIColor *) OrangeMedium;
++(UIColor *) OrangeLight;
++(UIColor *) Orange: (float) opacity;
+
 +(UIColor *) Red;
++(UIColor *) RedMedium;
++(UIColor *) RedLight;
++(UIColor *) Red: (float) opacity;
+
 +(UIColor *) Green;
++(UIColor *) GreenMedium;
++(UIColor *) GreenLight;
++(UIColor *) Green: (float) opacity;
 
 @end

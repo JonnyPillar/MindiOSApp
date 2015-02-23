@@ -8,6 +8,8 @@
 
 #import "MIHomeTableViewCell.h"
 #import "BezierPathUtil.h"
+#import "MIColourUtil.h"
+#import "ShapeUtil.h"
 
 @interface MIHomeTableViewCell ()
 
@@ -61,19 +63,41 @@
 		[self addSubview:view];
 		[self setNeedsUpdateConstraints];
 	}
-	
-	[self setupCellIcon];
 }
 
 -(void) addCellIConWithColour: (UIColor *) cellColor{
+
+	CAShapeLayer *circle =[ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:20 y:38 x:38 strokeColour:[MIColourUtil Red] lineWidth:25];
+	[self.cellIcon.layer addSublayer:circle];
 	
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:35 y:38 x:38 strokeColour:[MIColourUtil RedLight] lineWidth:5];
+	[self.cellIcon.layer addSublayer:outerCircle];
+	
+	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:5 y:38 x:38 strokeColour:[MIColourUtil RedLight] lineWidth:5];
+	[self.cellIcon.layer addSublayer:innerCircle];
+	
+	CAShapeLayer *progressCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:35 y:38 x:38 strokeColour:[MIColourUtil RedMedium] lineWidth:5];
+
+	[self AddAnimationTo:progressCircle];
+	
+	[self.cellIcon.layer addSublayer:progressCircle];
 }
 
--(void) setupCellIcon{
+- (void)AddAnimationTo:(CAShapeLayer *)progressCircle {
+	// Configure animation
+	CABasicAnimation *drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+	drawAnimation.duration            = 10.0; // "animate over 10 seconds or so.."
+	drawAnimation.repeatCount         = 1.0;  // Animate only once..
 	
-	[self.cellIcon.layer addSublayer:[BezierPathUtil GetCircleCaShapeLayerWithX:38 WithY:38 WithRadius:33 WithColour:[UIColor redColor]]];
+	// Animate from no part of the stroke being drawn to the entire stroke being drawn
+	drawAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+	drawAnimation.toValue   = [NSNumber numberWithFloat:1.0f];
 	
-	[self.cellIcon.layer addSublayer:[BezierPathUtil GetCircleCaShapeLayerWithX:38 WithY:38 WithRadius:5 WithColour:[UIColor whiteColor]]];
+	// Experiment with timing to get the appearence to look the way you want
+	drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+	
+	// Add the animation to the circle
+	[progressCircle addAnimation:drawAnimation forKey:@"drawCircleAnimation"];
 }
 
 - (void)updateConstraints

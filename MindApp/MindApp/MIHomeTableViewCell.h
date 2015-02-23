@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *audioFileTitle;
 @property (strong, nonatomic) IBOutlet UIView *cellIcon;
 
+-(void) addCellIConWithColour: (UIColor *) cellColor;
+
 @end

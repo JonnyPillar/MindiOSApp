@@ -32,6 +32,7 @@
 		F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E91A56F39900FC2D44 /* AccountViewController.m */; };
 		F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */; };
 		F04AF9161A9B599B00CB2664 /* BezierPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04AF9151A9B599B00CB2664 /* BezierPathUtil.m */; };
+		F04AF91D1A9B81A300CB2664 /* ShapeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04AF91C1A9B81A300CB2664 /* ShapeUtil.m */; };
 		F052C0A51A5C614A00B300A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F052C0A41A5C614A00B300A5 /* User.m */; };
 		F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */; };
 		F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F06755281A9A2E2400DE09D9 /* MIHomeTableViewCell.m */; };
@@ -132,6 +133,8 @@
 		F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaFilesResponseModel.m; sourceTree = "<group>"; };
 		F04AF9141A9B599B00CB2664 /* BezierPathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathUtil.h; sourceTree = "<group>"; };
 		F04AF9151A9B599B00CB2664 /* BezierPathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathUtil.m; sourceTree = "<group>"; };
+		F04AF91B1A9B81A300CB2664 /* ShapeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeUtil.h; sourceTree = "<group>"; };
+		F04AF91C1A9B81A300CB2664 /* ShapeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeUtil.m; sourceTree = "<group>"; };
 		F052C0A31A5C614A00B300A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F052C0A41A5C614A00B300A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F06755251A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiHomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -338,6 +341,15 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		F04AF91A1A9B819400CB2664 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				F04AF91B1A9B81A300CB2664 /* ShapeUtil.h */,
+				F04AF91C1A9B81A300CB2664 /* ShapeUtil.m */,
+			);
+			name = Shape;
+			sourceTree = "<group>";
+		};
 		F052C0A61A5C61C700B300A5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +410,7 @@
 		F09EA4E11A349DDC005A1F1C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F04AF91A1A9B819400CB2664 /* Shape */,
 				F0E9E4F81A9A7B4A001DE877 /* Colours */,
 				F09EA4E21A349E1C005A1F1C /* TimerUtil.h */,
 				F09EA4E31A349E1C005A1F1C /* TimerUtil.m */,
@@ -779,6 +792,7 @@
 				F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */,
 				F0346DA61A62B2880071921D /* User+Retrieve.m in Sources */,
 				F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */,
+				F04AF91D1A9B81A300CB2664 /* ShapeUtil.m in Sources */,
 				F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */,
 				F0346DA91A62BC730071921D /* User+Update.m in Sources */,
 			);

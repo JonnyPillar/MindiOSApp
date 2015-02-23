@@ -66,7 +66,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 //	[cell.textLabel setText:audioFile.Title];
 	[cell.audioFileTitle setText:audioFile.Title];
 	[cell.audioFileDuration setText:audioFile.Duration];
-	
+	[cell addCellIConWithColour:[MIColourUtil Blue]];
 	return cell;
 }
 

@@ -21,24 +21,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-Gb-c0E">
                         <rect key="frame" x="24" y="11" width="42" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="156" id="VSu-v3-fQH">
-                                <variation key="widthClass=compact" constant="134"/>
-                            </constraint>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="VSu-v3-fQH"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="VSu-v3-fQH"/>
-                            </mask>
-                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f3-Ry-qJX">
                         <rect key="frame" x="24" y="64" width="116" height="21"/>
@@ -58,8 +43,8 @@
                     </label>
                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWI-LT-UHs">
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="Ovd-9P-0wJ"/>
-                            <constraint firstAttribute="height" constant="75" id="m2z-1v-Na0"/>
+                            <constraint firstAttribute="width" constant="65" id="Ovd-9P-0wJ"/>
+                            <constraint firstAttribute="height" constant="65" id="m2z-1v-Na0"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -88,13 +73,17 @@
                     </constraint>
                     <constraint firstAttribute="trailing" secondItem="3e9-Gb-c0E" secondAttribute="trailing" id="M2d-Eg-i5v"/>
                     <constraint firstItem="3e9-Gb-c0E" firstAttribute="leading" secondItem="WWI-LT-UHs" secondAttribute="trailing" constant="30" id="Qmd-ot-G8c"/>
-                    <constraint firstItem="WWI-LT-UHs" firstAttribute="top" secondItem="HC4-GU-7iB" secondAttribute="topMargin" constant="7" id="bCZ-Og-AMW"/>
+                    <constraint firstItem="WWI-LT-UHs" firstAttribute="top" secondItem="HC4-GU-7iB" secondAttribute="topMargin" constant="7" id="bCZ-Og-AMW">
+                        <variation key="widthClass=compact" constant="10"/>
+                    </constraint>
                     <constraint firstItem="3e9-Gb-c0E" firstAttribute="leading" secondItem="WWI-LT-UHs" secondAttribute="trailing" constant="8" symbolic="YES" id="lUs-kW-Uit">
                         <variation key="widthClass=compact" constant="30"/>
                     </constraint>
                     <constraint firstItem="7f3-Ry-qJX" firstAttribute="leading" secondItem="HC4-GU-7iB" secondAttribute="leadingMargin" constant="-9" id="ulP-Oh-hgi"/>
                     <constraint firstItem="7f3-Ry-qJX" firstAttribute="baseline" secondItem="3e9-Gb-c0E" secondAttribute="baseline" id="xdf-Hu-fP6"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="WWI-LT-UHs" secondAttribute="bottom" constant="3" id="z6Q-YY-tM2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="WWI-LT-UHs" secondAttribute="bottom" constant="3" id="z6Q-YY-tM2">
+                        <variation key="widthClass=compact" constant="10"/>
+                    </constraint>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -131,7 +120,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="321.5" y="228"/>
+            <point key="canvasLocation" x="321.5" y="227"/>
         </tableViewCell>
     </objects>
 </document>

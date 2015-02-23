@@ -30,7 +30,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self retreiveMediaItemData];
 	[self.homeView.mediaTrackTableView setDelegate:self];
 	[self.homeView.mediaTrackTableView setDataSource:self];
-	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil Pink]];
+	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +66,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 //	[cell.textLabel setText:audioFile.Title];
 	[cell.audioFileTitle setText:audioFile.Title];
 	[cell.audioFileDuration setText:audioFile.Duration];
-	[cell addCellIConWithColour:[MIColourUtil Blue]];
+	[cell addCellIconWithColour:[MIColourUtil Blue]];
 	return cell;
 }
 

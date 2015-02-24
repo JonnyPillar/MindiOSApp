@@ -1,21 +1,30 @@
 //
-//  MIHomeAudioView.m
+//  MIHomeAudioPlayButton.m
 //  MindApp
 //
-//  Created by Jonny Pillar on 22/02/2015.
+//  Created by Jonny Pillar on 24/02/2015.
 //  Copyright (c) 2015 Jonny Pillar. All rights reserved.
 //
 
-#import "MIHomeAudioView.h"
+#import "MIHomeAudioPlayButton.h"
+#import "ShapeUtil.h"
+#import "MIColourUtil.h"
 
-@interface MIHomeAudioView ()
+@interface MIHomeAudioPlayButton ()
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
 
 @end
 
-@implementation MIHomeAudioView
+@implementation MIHomeAudioPlayButton
+
+- (void)drawRect:(CGRect)rect {
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+	CGContextAddEllipseInRect(ctx, rect);
+	CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor blueColor] CGColor]));
+	CGContextFillPath(ctx);
+}
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -40,7 +49,7 @@
 	_customConstraints = [[NSMutableArray alloc] init];
 	
 	UIView *view = nil;
-	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeAudioView"
+	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeAudioPlayButton"
 													 owner:self
 												   options:nil];
 	for (id object in objects) {
@@ -51,6 +60,13 @@
 	}
 	
 	if (view != nil) {
+		
+//		CGRect temp = self.layer.frame;
+//		
+//		CAShapeLayer *circle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0,0,100,100) Radius:30 y:0 x:0 strokeColour:[MIColourUtil Pink] lineWidth:60];
+//		
+//		[self.layer addSublayer:circle];
+//		
 		_containerView = view;
 		view.translatesAutoresizingMaskIntoConstraints = NO;
 		[self addSubview:view];
@@ -80,14 +96,7 @@
 	[super updateConstraints];
 }
 
-- (IBAction)audioPlayButton:(id)sender {
+- (IBAction)audioButton_Click:(id)sender {
 }
 
-- (void) updateBackgroundColour: (UIColor*) colour{
-	[self.backgroundView setBackgroundColor:colour];
-}
-
--(void) updatePlayButtonBackgroundColour: (UIColor*)colour{
-//	[self.audioPlayButton ]
-}
 @end

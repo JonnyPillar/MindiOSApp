@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3902A1F4DE8A94D5C2E8ADB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB99D38ACBAD2EDC63F3923 /* libPods.a */; };
+		F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */; };
+		F00EBDBC1A9D15CA0088A211 /* MIHomeAudioPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */; };
 		F0150E5A1A11483300D13D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E591A11483300D13D45 /* main.m */; };
 		F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E5C1A11483300D13D45 /* AppDelegate.m */; };
 		F0150E601A11483300D13D45 /* MindApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0150E5E1A11483300D13D45 /* MindApp.xcdatamodeld */; };
@@ -88,6 +90,9 @@
 		6849B07F1B0C8938F344F2E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		79A70C9DFA872F376A617139 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ECB99D38ACBAD2EDC63F3923 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeAudioPlayButton.xib; sourceTree = "<group>"; };
+		F00EBDBA1A9D15CA0088A211 /* MIHomeAudioPlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeAudioPlayButton.h; sourceTree = "<group>"; };
+		F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeAudioPlayButton.m; sourceTree = "<group>"; };
 		F0150E541A11483300D13D45 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0150E581A11483300D13D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0150E591A11483300D13D45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -530,6 +535,9 @@
 				F0E9E4F01A9A75F9001DE877 /* MIHomeAudioView.xib */,
 				F0E9E4F21A9A768D001DE877 /* MIHomeAudioView.h */,
 				F0E9E4F31A9A768D001DE877 /* MIHomeAudioView.m */,
+				F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */,
+				F00EBDBA1A9D15CA0088A211 /* MIHomeAudioPlayButton.h */,
+				F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -699,6 +707,7 @@
 				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
 				F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
+				F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */,
 				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
 				F0E9E4F11A9A75F9001DE877 /* MIHomeAudioView.xib in Resources */,
 				F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */,
@@ -785,6 +794,7 @@
 				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
 				F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */,
 				F0346DA21A62ADB20071921D /* User+Create.m in Sources */,
+				F00EBDBC1A9D15CA0088A211 /* MIHomeAudioPlayButton.m in Sources */,
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0E9E4F41A9A768D001DE877 /* MIHomeAudioView.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,

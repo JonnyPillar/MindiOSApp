@@ -17,5 +17,6 @@
 - (void) updateBackgroundColour: (UIColor*) colour;
 
 @property (strong, nonatomic) IBOutlet UILabel *audioCurrentPositionLabel;
+@property (strong, nonatomic) IBOutlet MIHomeAudioPlayButton *audioPlayButton;
 
 @end

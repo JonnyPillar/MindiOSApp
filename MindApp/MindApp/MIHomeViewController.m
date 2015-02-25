@@ -23,7 +23,7 @@
 #import "MIColourUtil.h"
 #import "MIAudioPlayer.h"
 
-@interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate>
+@interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
 @property (nonatomic,strong) CommunicationsManager* communicationManager;
 @property (strong, nonatomic) NSArray* mediaItems;
@@ -60,6 +60,10 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self.homeView.mediaTrackTableView setDelegate:self];
 	[self.homeView.mediaTrackTableView setDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
+//	[self addObserver:self.homeView.audioPlayerView.audioPlayButton forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
+ 
+	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+	
 }
 
 -(void) retreiveMediaItemData{
@@ -103,6 +107,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	else {
 		[_audioPlayer playNewPlayerItem:selectedCell.cellAudioFile];
 		[_audioPlayer playAudio];
+		[self updateUIForPlay];
 	}
 }
 
@@ -138,6 +143,22 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 //	[_activityIndicator stopAnimating];
 }
 
+#pragma MiAudioPlayer Delegate Methods
+
+-(void) updateUIForPlay{
+	[self.homeView updateUIForPlay];
+}
+-(void) updateUIForPause{
+	[self.homeView updateUIForPause];
+}
+
+-(void) updateUIProgress{
+	
+}
+
+
+
+
 -(void) showErrorAlert:(NSString*) errorMessage
 {
 	UIAlertView *ErrorAlert = [[UIAlertView alloc] initWithTitle:@""
@@ -147,6 +168,23 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 											   otherButtonTitles:nil, nil];
 	[ErrorAlert show];
 }
-	
+
+-(void) buttonClicked:(id)sender{
+	NSLog(@"State Change");
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if ([keyPath isEqualToString:@"selected"])
+	{
+		NSLog(@"State Change");
+	}
+	else
+		[super observeValueForKeyPath:keyPath
+							 ofObject:object
+							   change:change
+							  context:context];
+}
+
 
 @end

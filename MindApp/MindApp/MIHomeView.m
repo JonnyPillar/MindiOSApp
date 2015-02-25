@@ -80,4 +80,11 @@
 	[super updateConstraints];
 }
 
+- (void) updateUIForPlay{
+	[self.audioPlayerView updateUIForPlay];
+}
+- (void) updateUIForPause{
+	[self.audioPlayerView updateUIForPause];
+}
+
 @end

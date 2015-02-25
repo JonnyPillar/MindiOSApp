@@ -90,4 +90,14 @@
 -(void) updatePlayButtonBackgroundColour: (UIColor*)colour{
 //	[self.audioPlayButton ]
 }
+
+
+-(void) updateUIForPlay{
+	[self.audioPlayButton setTitle:@"Pause" forState:UIControlStateNormal];
+}
+
+-(void) updateUIForPause{
+	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
+}
+
 @end

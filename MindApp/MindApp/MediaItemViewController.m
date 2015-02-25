@@ -94,7 +94,6 @@
 }
 
 -(void) updateUIForPause{
-
 	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
 }
 
@@ -119,5 +118,7 @@
 	
 	[RemoteEventUtil handleRemoteEvent:receivedEvent forPlayer:_audioPlayer];
 }
+
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MIColourUtil.h"
+#import "MIHomeAudioPlayButton.h"
 
 @interface MIHomeAudioView : UIView
 
@@ -15,8 +16,11 @@
 
 - (IBAction)audioPlayButton:(id)sender;
 - (void) updateBackgroundColour: (UIColor*) colour;
+- (void) updateUIForPlay;
+- (void) updateUIForPause;
 
 @property (strong, nonatomic) IBOutlet UILabel *audioCurrentPositionLabel;
 @property (strong, nonatomic) IBOutlet UIButton *audioPlayButton;
 
+@property (strong, nonatomic) IBOutlet MIHomeAudioPlayButton *playbutton;
 @end

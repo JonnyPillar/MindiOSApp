@@ -83,7 +83,6 @@ static NSString * const urlScheme = @"stream";
 		
 		AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:mediaItemAsset];
 		[self setAudioPlayerItem:playerItem];
-//		[
 		[self updateControlCenter];
 	}
 }

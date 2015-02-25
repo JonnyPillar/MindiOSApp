@@ -6,6 +6,14 @@
 //  Copyright (c) 2015 Jonny Pillar. All rights reserved.
 //
 
+//Audio Player
+//
+//Play/Pause button clicked
+//TableViewCell Clicked
+//Update UI
+
+
+
 #import "MIHomeViewController.h"
 #import "MIHomeView.h"
 #import "CommunicationsManager.h"
@@ -13,11 +21,14 @@
 #import "GetMediaFilesResponseModel.h"
 #import "MIHomeTableViewCell.h"
 #import "MIColourUtil.h"
+#import "MIAudioPlayer.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate>
 
 @property (nonatomic,strong) CommunicationsManager* communicationManager;
 @property (strong, nonatomic) NSArray* mediaItems;
+
+@property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 
 @end
 
@@ -27,14 +38,28 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+		[self setUpHomeView];
+	[self setUpMediaAudio];
 	[self retreiveMediaItemData];
-	[self.homeView.mediaTrackTableView setDelegate:self];
-	[self.homeView.mediaTrackTableView setDataSource:self];
-	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma SetUp Methods
+
+-(void)setUpMediaAudio{
+	if(!_audioPlayer){
+		_audioPlayer = [MIAudioPlayer new];
+	}
+}
+
+- (void)setUpHomeView {
+	[self.homeView.mediaTrackTableView setDelegate:self];
+	[self.homeView.mediaTrackTableView setDataSource:self];
+	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
 }
 
 -(void) retreiveMediaItemData{
@@ -59,15 +84,26 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	
 	MIHomeTableViewCell *cell = (MIHomeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[MIHomeTableViewCell alloc] init];
+		cell = [[[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell" owner:self options:nil] lastObject];
 	}
 	
 	AudioFile* audioFile =[_mediaItems objectAtIndex:indexPath.row];
-//	[cell.textLabel setText:audioFile.Title];
-	[cell.audioFileTitle setText:audioFile.Title];
-	[cell.audioFileDuration setText:audioFile.Duration];
+	cell.cellAudioFile = audioFile;
 	[cell addCellIconWithColour:[MIColourUtil Blue]];
 	return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"Audio Cell Selected");
+	MIHomeTableViewCell *selectedCell = (MIHomeTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+	if(!selectedCell){
+		NSLog(@"No Audio File In Selected Cell");
+	}
+	else {
+		[_audioPlayer playNewPlayerItem:selectedCell.cellAudioFile];
+		[_audioPlayer playAudio];
+	}
 }
 
 #pragma mark Communication Manager Delegate Methods

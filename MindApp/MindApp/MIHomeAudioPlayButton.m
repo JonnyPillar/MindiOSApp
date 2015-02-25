@@ -97,6 +97,8 @@
 }
 
 - (IBAction)audioButton_Click:(id)sender {
+	NSLog(@"Audio Button Pressed");
+	
 }
 
 @end

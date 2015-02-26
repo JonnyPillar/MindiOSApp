@@ -8,6 +8,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "AudioFile+ext.h"
+#import "MIAudioPlayerProgress.h"
 
 @protocol MIAudioPlayerDelegate;
 
@@ -23,7 +24,9 @@
 -(void) pauseAudio;
 -(BOOL) audioPlayerIsPlaying;
 -(float) getAudioTrackDuration;
--(float)getAudioTrackElapsedTime;
+-(float) getAudioTrackElapsedTime;
+-(float) getAudioTrackPlaybackPercentage;
+-(MIAudioPlayerProgress*) getAudioProgress;
 
 @end
 

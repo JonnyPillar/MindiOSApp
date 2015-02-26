@@ -46,32 +46,32 @@
 
 - (void)commonInit
 {
-	_customConstraints = [[NSMutableArray alloc] init];
-	
-	UIView *view = nil;
-	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeAudioPlayButton"
-													 owner:self
-												   options:nil];
-	for (id object in objects) {
-		if ([object isKindOfClass:[UIView class]]) {
-			view = object;
-			break;
-		}
-	}
-	
-	if (view != nil) {
-		
-//		CGRect temp = self.layer.frame;
+//	_customConstraints = [[NSMutableArray alloc] init];
+//	
+//	UIView *view = nil;
+//	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"MIHomeAudioPlayButton"
+//													 owner:self
+//												   options:nil];
+//	for (id object in objects) {
+//		if ([object isKindOfClass:[UIView class]]) {
+//			view = object;
+//			break;
+//		}
+//	}
+//	
+//	if (view != nil) {
 //		
-//		CAShapeLayer *circle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0,0,100,100) Radius:30 y:0 x:0 strokeColour:[MIColourUtil Pink] lineWidth:60];
-//		
-//		[self.layer addSublayer:circle];
-//		
-		_containerView = view;
-		view.translatesAutoresizingMaskIntoConstraints = NO;
-		[self addSubview:view];
-		[self setNeedsUpdateConstraints];
-	}
+////		CGRect temp = self.layer.frame;
+////		
+////		CAShapeLayer *circle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0,0,100,100) Radius:30 y:0 x:0 strokeColour:[MIColourUtil Pink] lineWidth:60];
+////		
+////		[self.layer addSublayer:circle];
+////		
+//		_containerView = view;
+//		view.translatesAutoresizingMaskIntoConstraints = NO;
+//		[self addSubview:view];
+//		[self setNeedsUpdateConstraints];
+//	}
 }
 
 - (void)updateConstraints

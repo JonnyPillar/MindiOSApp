@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MIHomeAudioView.h"
+#import "MIAudioPlayerProgress.h"
 
 @interface MIHomeView : UIView
 
@@ -16,5 +17,6 @@
 
 - (void) updateUIForPlay;
 - (void) updateUIForPause;
+- (void) updateUIProgress: (MIAudioPlayerProgress*) progress;
 
 @end

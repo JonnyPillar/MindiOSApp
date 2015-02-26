@@ -87,4 +87,8 @@
 	[self.audioPlayerView updateUIForPause];
 }
 
+-(void) updateUIProgress: (MIAudioPlayerProgress*) progress{
+	[self.audioPlayerView.audioCurrentPositionLabel setText:progress.AudioRemaining];
+}
+
 @end

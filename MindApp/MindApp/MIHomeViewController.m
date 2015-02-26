@@ -34,6 +34,8 @@
 
 static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
 
+
+
 @implementation MIHomeViewController
 
 - (void)viewDidLoad {
@@ -53,6 +55,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 -(void)setUpMediaAudio{
 	if(!_audioPlayer){
 		_audioPlayer = [MIAudioPlayer new];
+		[_audioPlayer setDelegate:self];
 	}
 }
 
@@ -60,7 +63,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self.homeView.mediaTrackTableView setDelegate:self];
 	[self.homeView.mediaTrackTableView setDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
-//	[self addObserver:self.homeView.audioPlayerView.audioPlayButton forKeyPath:@"state" options:NSKeyValueObservingOptionNew context:nil];
  
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -146,14 +148,17 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 #pragma MiAudioPlayer Delegate Methods
 
 -(void) updateUIForPlay{
+	NSLog(@"Update UI For Play");
 	[self.homeView updateUIForPlay];
 }
 -(void) updateUIForPause{
+	NSLog(@"Update UI For Pause");
 	[self.homeView updateUIForPause];
 }
 
 -(void) updateUIProgress{
-	
+//	NSLog(@"Update UI Progress");
+	[self.homeView updateUIProgress:[_audioPlayer getAudioProgress]];
 }
 
 
@@ -170,7 +175,13 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 -(void) buttonClicked:(id)sender{
-	NSLog(@"State Change");
+	if([_audioPlayer audioPlayerIsPlaying]) {
+		[_audioPlayer pauseAudio];
+	}
+	else{
+		[_audioPlayer playAudio];
+	}
+
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -186,5 +197,9 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 							  context:context];
 }
 
+#pragma MIHomeAudioViewDelegate
+
+-(void) audioPlayButton_Triggered{
+	}
 
 @end

@@ -9,7 +9,6 @@
 #import "MIHomeAudioView.h"
 
 @interface MIHomeAudioView ()
-
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
 
@@ -80,9 +79,6 @@
 	[super updateConstraints];
 }
 
-- (IBAction)audioPlayButton:(id)sender {
-}
-
 - (void) updateBackgroundColour: (UIColor*) colour{
 	[self.backgroundView setBackgroundColor:colour];
 }
@@ -99,5 +95,6 @@
 -(void) updateUIForPause{
 	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
 }
+
 
 @end

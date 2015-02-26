@@ -27,6 +27,7 @@
 		F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */ = {isa = PBXBuildFile; fileRef = F0346DAB1A62BDC30071921D /* User+Delete.m */; };
 		F038385C1A8EA8B300337038 /* MIMediaItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */; };
 		F038385D1A8EA8B300337038 /* MIMediaItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */; };
+		F044C8521A9F9F60008A8F9A /* MIAudioPlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = F044C8511A9F9F60008A8F9A /* MIAudioPlayerProgress.m */; };
 		F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E21A598E2600C3C952 /* RemoteEventUtil.m */; };
 		F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E51A59984800C3C952 /* ControlCenterUtil.m */; };
 		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
@@ -124,6 +125,8 @@
 		F03838591A8EA8B300337038 /* MIMediaItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaItemTableViewCell.h; sourceTree = "<group>"; };
 		F038385A1A8EA8B300337038 /* MIMediaItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMediaItemTableViewCell.m; sourceTree = "<group>"; };
 		F038385B1A8EA8B300337038 /* MIMediaItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMediaItemTableViewCell.xib; sourceTree = "<group>"; };
+		F044C8501A9F9F60008A8F9A /* MIAudioPlayerProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerProgress.h; sourceTree = "<group>"; };
+		F044C8511A9F9F60008A8F9A /* MIAudioPlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerProgress.m; sourceTree = "<group>"; };
 		F04683E11A598E2600C3C952 /* RemoteEventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteEventUtil.h; sourceTree = "<group>"; };
 		F04683E21A598E2600C3C952 /* RemoteEventUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteEventUtil.m; sourceTree = "<group>"; };
 		F04683E41A59984800C3C952 /* ControlCenterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCenterUtil.h; sourceTree = "<group>"; };
@@ -510,6 +513,8 @@
 				F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */,
 				F0D746811A506F0100034B98 /* MIAudioPlayerCacheDelegate.h */,
 				F0D746821A506F0100034B98 /* MIAudioPlayerCacheDelegate.m */,
+				F044C8501A9F9F60008A8F9A /* MIAudioPlayerProgress.h */,
+				F044C8511A9F9F60008A8F9A /* MIAudioPlayerProgress.m */,
 			);
 			name = AudioPlayer;
 			sourceTree = "<group>";
@@ -791,6 +796,7 @@
 				F052C0A51A5C614A00B300A5 /* User.m in Sources */,
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
+				F044C8521A9F9F60008A8F9A /* MIAudioPlayerProgress.m in Sources */,
 				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
 				F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */,
 				F0346DA21A62ADB20071921D /* User+Create.m in Sources */,

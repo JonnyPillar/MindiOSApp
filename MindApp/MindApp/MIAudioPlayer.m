@@ -163,6 +163,32 @@ static NSString * const urlScheme = @"stream";
 	return CMTimeGetSeconds(self.currentItem.currentTime);
 }
 
+-(float) getAudioTrackRemainingTime{
+	return [self getAudioTrackDuration] - [self getAudioTrackElapsedTime];
+}
+
+-(float) getAudioTrackPlaybackPercentage{
+	return ([self getAudioTrackElapsedTime] / [self getAudioTrackDuration]);
+}
+
+-(MIAudioPlayerProgress*) getAudioProgress{
+	MIAudioPlayerProgress* currentProgress = [MIAudioPlayerProgress new];
+	
+	NSDateFormatter *dateFormatter = [NSDateFormatter new];
+	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+	[dateFormatter setDateFormat:@"HH:mm:ss"];
+	
+	NSDate* d = [NSDate dateWithTimeIntervalSince1970:[self getAudioTrackElapsedTime]];
+	currentProgress.AudioCurrentTime = [dateFormatter stringFromDate:d];
+	
+	d = [NSDate dateWithTimeIntervalSince1970:[self getAudioTrackRemainingTime]];
+	currentProgress.AudioRemaining = [dateFormatter stringFromDate:d];
+	
+	currentProgress.AudioProgressPercentage = [self getAudioTrackPlaybackPercentage];
+	
+	return currentProgress;
+}
+
 -(void) updateProgressMethods{
 	[self updateControlCenterElapsedTime];
 	[self.delegate updateUIProgress];

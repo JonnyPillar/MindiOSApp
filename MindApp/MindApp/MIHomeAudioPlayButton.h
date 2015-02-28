@@ -11,6 +11,6 @@
 
 @interface MIHomeAudioPlayButton : UIButton
 
-@property (strong, nonatomic) MIColour* buttonColour;
+-(void) updateColourScheme:(MIColour*) colourScheme;
 
 @end

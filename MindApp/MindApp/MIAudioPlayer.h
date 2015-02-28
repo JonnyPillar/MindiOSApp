@@ -9,6 +9,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AudioFile+ext.h"
 #import "MIAudioPlayerProgress.h"
+#import "MIAudioPlayerItemInformation.h"
 
 @protocol MIAudioPlayerDelegate;
 
@@ -33,6 +34,8 @@
 @protocol MIAudioPlayerDelegate <NSObject>
 
 @required
+
+-(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
 -(void) updateUIForPlay;
 -(void) updateUIForPause;
 -(void) updateUIProgress;

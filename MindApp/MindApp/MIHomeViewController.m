@@ -6,14 +6,6 @@
 //  Copyright (c) 2015 Jonny Pillar. All rights reserved.
 //
 
-//Audio Player
-//
-//Play/Pause button clicked
-//TableViewCell Clicked
-//Update UI
-
-
-
 #import "MIHomeViewController.h"
 #import "MIHomeView.h"
 #import "CommunicationsManager.h"
@@ -34,8 +26,6 @@
 @end
 
 static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
-
-
 
 @implementation MIHomeViewController
 
@@ -145,6 +135,11 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 
 #pragma MiAudioPlayer Delegate Methods
 
+-(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
+	NSLog(@"Update UI For New Item");
+	[self.homeView updateUIForNewItem:itemInformation];
+}
+
 -(void) updateUIForPlay{
 	NSLog(@"Update UI For Play");
 	[self.homeView updateUIForPlay];
@@ -155,7 +150,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 -(void) updateUIProgress{
-//	NSLog(@"Update UI Progress");
 	[self.homeView updateUIProgress:[_audioPlayer getAudioProgress]];
 }
 
@@ -191,10 +185,5 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 							   change:change
 							  context:context];
 }
-
-#pragma MIHomeAudioViewDelegate
-
--(void) audioPlayButton_Triggered{
-	}
 
 @end

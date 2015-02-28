@@ -93,4 +93,8 @@
 	[self.audioPlayerView.audioCurrentPositionLabel setText:progress.AudioRemaining];
 }
 
+- (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
+	[self.audioPlayerView updateUIForNewItem:itemInformation];
+}
+
 @end

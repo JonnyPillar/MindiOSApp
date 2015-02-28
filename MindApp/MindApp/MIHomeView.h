@@ -10,6 +10,7 @@
 #import "MIHomeAudioView.h"
 #import "MIAudioPlayerProgress.h"
 #import "MIColour.h"
+#import "MIAudioPlayerItemInformation.h"
 
 @interface MIHomeView : UIView
 
@@ -20,5 +21,6 @@
 - (void) updateUIForPlay;
 - (void) updateUIForPause;
 - (void) updateUIProgress: (MIAudioPlayerProgress*) progress;
+- (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
 
 @end

@@ -20,6 +20,7 @@
 		F003EC501AA2780800B7EDC2 /* mindLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC4F1AA2780800B7EDC2 /* mindLogo.png */; };
 		F003EC521AA27A7D00B7EDC2 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC511AA27A7D00B7EDC2 /* playButton.png */; };
 		F003EC541AA2817500B7EDC2 /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC531AA2817500B7EDC2 /* playIcon.png */; };
+		F003EC571AA283F300B7EDC2 /* MIAudioPlayerItemInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC561AA283F300B7EDC2 /* MIAudioPlayerItemInformation.m */; };
 		F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */; };
 		F00EBDBC1A9D15CA0088A211 /* MIHomeAudioPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */; };
 		F0150E5A1A11483300D13D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E591A11483300D13D45 /* main.m */; };
@@ -122,6 +123,8 @@
 		F003EC4F1AA2780800B7EDC2 /* mindLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mindLogo.png; sourceTree = "<group>"; };
 		F003EC511AA27A7D00B7EDC2 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		F003EC531AA2817500B7EDC2 /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
+		F003EC551AA283F300B7EDC2 /* MIAudioPlayerItemInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerItemInformation.h; sourceTree = "<group>"; };
+		F003EC561AA283F300B7EDC2 /* MIAudioPlayerItemInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerItemInformation.m; sourceTree = "<group>"; };
 		F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeAudioPlayButton.xib; sourceTree = "<group>"; };
 		F00EBDBA1A9D15CA0088A211 /* MIHomeAudioPlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeAudioPlayButton.h; sourceTree = "<group>"; };
 		F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeAudioPlayButton.m; sourceTree = "<group>"; };
@@ -569,6 +572,8 @@
 				F0D746821A506F0100034B98 /* MIAudioPlayerCacheDelegate.m */,
 				F044C8501A9F9F60008A8F9A /* MIAudioPlayerProgress.h */,
 				F044C8511A9F9F60008A8F9A /* MIAudioPlayerProgress.m */,
+				F003EC551AA283F300B7EDC2 /* MIAudioPlayerItemInformation.h */,
+				F003EC561AA283F300B7EDC2 /* MIAudioPlayerItemInformation.m */,
 			);
 			name = AudioPlayer;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F0E9E4F71A9A7AE8001DE877 /* MIColourUtil.m in Sources */,
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
+				F003EC571AA283F300B7EDC2 /* MIAudioPlayerItemInformation.m in Sources */,
 				F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */,
 				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,
 				F003EC471AA25C4800B7EDC2 /* MIGreen.m in Sources */,

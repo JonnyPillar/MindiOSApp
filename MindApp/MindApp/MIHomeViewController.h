@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MIHomeView.h"
+#import "MIAudioPlayerItemInformation.h"
 
 @interface MIHomeViewController : UIViewController
 

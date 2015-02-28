@@ -9,8 +9,10 @@
 #import "MIHomeAudioView.h"
 
 @interface MIHomeAudioView ()
+
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
+
 
 @end
 
@@ -79,7 +81,7 @@
 	[super updateConstraints];
 }
 
-- (void) updateBackgroundColour: (UIColor*) colour{
+- (void) updateBackgroundColour: (UIColor*) colour{ //TODO Remove
 	[self.backgroundView setBackgroundColor:colour];
 }
 
@@ -89,15 +91,16 @@
 
 
 -(void) updateUIForPlay{
-//	[self.audioPlayButton setTitle:@"Pause" forState:UIControlStateNormal];
 	[self.audioPlayButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
 }
 
 -(void) updateUIForPause{
 	
 	[self.audioPlayButton setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
-	
-//	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
+}
+
+- (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
+	[self setBackgroundColor:[itemInformation.itemColour Light]];
 }
 
 - (IBAction)audioPlayButton:(id)sender{

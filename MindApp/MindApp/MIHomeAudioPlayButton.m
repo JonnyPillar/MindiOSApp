@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
+@property (strong, nonatomic) MIColour* buttonColour;
 
 @end
 
@@ -84,6 +85,11 @@
 //	else {
 //		self.backgroundColor = [UIColor greenColor];
 //	}
+}
+
+-(void) updateColourScheme:(MIColour*) colourScheme{
+	self.buttonColour = colourScheme;
+	[self setNeedsDisplay];
 }
 
 @end

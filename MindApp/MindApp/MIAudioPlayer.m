@@ -49,8 +49,6 @@ static NSString * const urlScheme = @"stream";
 	}
 }
 
-
-
 - (NSURL *)getMediaUrlWithStreamingScheme:(NSURL *)mediaItemUrl
 {
 	NSURLComponents *components = [[NSURLComponents alloc] initWithURL:mediaItemUrl resolvingAgainstBaseURL:NO];
@@ -85,6 +83,8 @@ static NSString * const urlScheme = @"stream";
 		AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:mediaItemAsset];
 		[self setAudioPlayerItem:playerItem];
 		[self updateControlCenter];
+		[self updateUIForNewItem:[[MIAudioPlayerItemInformation alloc] initWithAudioFile:newAudioFile]];
+		 
 	}
 }
 
@@ -198,6 +198,10 @@ static NSString * const urlScheme = @"stream";
 }
 
 -(void) updateUIProgress{
+	//Stub Method
+}
+
+-(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation {
 	//Stub Method
 }
 

@@ -22,6 +22,7 @@
 #import "MIHomeTableViewCell.h"
 #import "MIColourUtil.h"
 #import "MIAudioPlayer.h"
+#import "MIColourFactory.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
@@ -95,7 +96,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	
 	AudioFile* audioFile =[_mediaItems objectAtIndex:indexPath.row];
 	cell.cellAudioFile = audioFile;
-	[cell addCellIconWithColour:[MIColourUtil Blue]];
+	[cell addCellIconWithColour:[MIColourFactory GetColourFromString:audioFile.BaseColour]];
 	return cell;
 }
 

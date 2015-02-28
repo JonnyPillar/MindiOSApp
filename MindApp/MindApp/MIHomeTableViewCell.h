@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioFile.h"
+#import "MIColour.h"
 
 @interface MIHomeTableViewCell : UITableViewCell
 
@@ -17,6 +18,6 @@
 
 @property (strong,nonatomic) AudioFile *cellAudioFile;
 
--(void) addCellIconWithColour: (UIColor *) cellColor;
+-(void) addCellIconWithColour: (MIColour *) cellColor;
 
 @end

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3902A1F4DE8A94D5C2E8ADB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB99D38ACBAD2EDC63F3923 /* libPods.a */; };
+		F003EC321AA25A1A00B7EDC2 /* MIColourFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC311AA25A1A00B7EDC2 /* MIColourFactory.m */; };
+		F003EC381AA25B0C00B7EDC2 /* MIPink.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC371AA25B0C00B7EDC2 /* MIPink.m */; };
+		F003EC3B1AA25B8D00B7EDC2 /* MIRed.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC3A1AA25B8D00B7EDC2 /* MIRed.m */; };
+		F003EC3E1AA25BCA00B7EDC2 /* MIBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC3D1AA25BCA00B7EDC2 /* MIBlue.m */; };
+		F003EC411AA25BF700B7EDC2 /* MIPurple.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC401AA25BF700B7EDC2 /* MIPurple.m */; };
+		F003EC441AA25C2400B7EDC2 /* MIOrange.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC431AA25C2400B7EDC2 /* MIOrange.m */; };
+		F003EC471AA25C4800B7EDC2 /* MIGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC461AA25C4800B7EDC2 /* MIGreen.m */; };
+		F003EC4A1AA2608A00B7EDC2 /* MIColour.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC491AA2608A00B7EDC2 /* MIColour.m */; };
 		F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */; };
 		F00EBDBC1A9D15CA0088A211 /* MIHomeAudioPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */; };
 		F0150E5A1A11483300D13D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E591A11483300D13D45 /* main.m */; };
@@ -91,6 +99,22 @@
 		6849B07F1B0C8938F344F2E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		79A70C9DFA872F376A617139 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ECB99D38ACBAD2EDC63F3923 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F003EC301AA25A1A00B7EDC2 /* MIColourFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColourFactory.h; sourceTree = "<group>"; };
+		F003EC311AA25A1A00B7EDC2 /* MIColourFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColourFactory.m; sourceTree = "<group>"; };
+		F003EC331AA25A2D00B7EDC2 /* MIColour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColour.h; sourceTree = "<group>"; };
+		F003EC361AA25B0C00B7EDC2 /* MIPink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPink.h; sourceTree = "<group>"; };
+		F003EC371AA25B0C00B7EDC2 /* MIPink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIPink.m; sourceTree = "<group>"; };
+		F003EC391AA25B8D00B7EDC2 /* MIRed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRed.h; sourceTree = "<group>"; };
+		F003EC3A1AA25B8D00B7EDC2 /* MIRed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRed.m; sourceTree = "<group>"; };
+		F003EC3C1AA25BCA00B7EDC2 /* MIBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIBlue.h; sourceTree = "<group>"; };
+		F003EC3D1AA25BCA00B7EDC2 /* MIBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIBlue.m; sourceTree = "<group>"; };
+		F003EC3F1AA25BF700B7EDC2 /* MIPurple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPurple.h; sourceTree = "<group>"; };
+		F003EC401AA25BF700B7EDC2 /* MIPurple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIPurple.m; sourceTree = "<group>"; };
+		F003EC421AA25C2400B7EDC2 /* MIOrange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOrange.h; sourceTree = "<group>"; };
+		F003EC431AA25C2400B7EDC2 /* MIOrange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOrange.m; sourceTree = "<group>"; };
+		F003EC451AA25C4800B7EDC2 /* MIGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIGreen.h; sourceTree = "<group>"; };
+		F003EC461AA25C4800B7EDC2 /* MIGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGreen.m; sourceTree = "<group>"; };
+		F003EC491AA2608A00B7EDC2 /* MIColour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColour.m; sourceTree = "<group>"; };
 		F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeAudioPlayButton.xib; sourceTree = "<group>"; };
 		F00EBDBA1A9D15CA0088A211 /* MIHomeAudioPlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeAudioPlayButton.h; sourceTree = "<group>"; };
 		F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeAudioPlayButton.m; sourceTree = "<group>"; };
@@ -252,6 +276,27 @@
 				ECB99D38ACBAD2EDC63F3923 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F003EC481AA25C7100B7EDC2 /* MIColour */ = {
+			isa = PBXGroup;
+			children = (
+				F003EC331AA25A2D00B7EDC2 /* MIColour.h */,
+				F003EC491AA2608A00B7EDC2 /* MIColour.m */,
+				F003EC361AA25B0C00B7EDC2 /* MIPink.h */,
+				F003EC371AA25B0C00B7EDC2 /* MIPink.m */,
+				F003EC391AA25B8D00B7EDC2 /* MIRed.h */,
+				F003EC3A1AA25B8D00B7EDC2 /* MIRed.m */,
+				F003EC3C1AA25BCA00B7EDC2 /* MIBlue.h */,
+				F003EC3D1AA25BCA00B7EDC2 /* MIBlue.m */,
+				F003EC3F1AA25BF700B7EDC2 /* MIPurple.h */,
+				F003EC401AA25BF700B7EDC2 /* MIPurple.m */,
+				F003EC421AA25C2400B7EDC2 /* MIOrange.h */,
+				F003EC431AA25C2400B7EDC2 /* MIOrange.m */,
+				F003EC451AA25C4800B7EDC2 /* MIGreen.h */,
+				F003EC461AA25C4800B7EDC2 /* MIGreen.m */,
+			);
+			name = MIColour;
 			sourceTree = "<group>";
 		};
 		F0150E4B1A11483300D13D45 = {
@@ -614,6 +659,9 @@
 			children = (
 				F0E9E4F51A9A7AE8001DE877 /* MIColourUtil.h */,
 				F0E9E4F61A9A7AE8001DE877 /* MIColourUtil.m */,
+				F003EC301AA25A1A00B7EDC2 /* MIColourFactory.h */,
+				F003EC311AA25A1A00B7EDC2 /* MIColourFactory.m */,
+				F003EC481AA25C7100B7EDC2 /* MIColour */,
 			);
 			name = Colours;
 			sourceTree = "<group>";
@@ -768,6 +816,8 @@
 			files = (
 				F0A137F91A4C70A200C64CE4 /* LoginResponseModel.m in Sources */,
 				F0960B2C1A497ADE0037D096 /* CommunicationsManager.m in Sources */,
+				F003EC381AA25B0C00B7EDC2 /* MIPink.m in Sources */,
+				F003EC3B1AA25B8D00B7EDC2 /* MIRed.m in Sources */,
 				F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */,
 				F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
@@ -783,9 +833,11 @@
 				F086EC911A1A80A6000213FB /* MediaItemViewController.m in Sources */,
 				F0346DAC1A62BDC30071921D /* User+Delete.m in Sources */,
 				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,
+				F003EC471AA25C4800B7EDC2 /* MIGreen.m in Sources */,
 				F0346D9C1A62A8A50071921D /* MindCoreData.m in Sources */,
 				F0A7EE501A9A0F5100B14FDD /* MIHomeView.m in Sources */,
 				F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */,
+				F003EC321AA25A1A00B7EDC2 /* MIColourFactory.m in Sources */,
 				F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */,
 				F02B0DE51A3DC643002E2F3B /* LoginRequestModel.m in Sources */,
 				F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */,
@@ -797,6 +849,7 @@
 				F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */,
 				F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */,
 				F044C8521A9F9F60008A8F9A /* MIAudioPlayerProgress.m in Sources */,
+				F003EC4A1AA2608A00B7EDC2 /* MIColour.m in Sources */,
 				F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */,
 				F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */,
 				F0346DA21A62ADB20071921D /* User+Create.m in Sources */,
@@ -804,6 +857,8 @@
 				F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */,
 				F0E9E4F41A9A768D001DE877 /* MIHomeAudioView.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
+				F003EC441AA25C2400B7EDC2 /* MIOrange.m in Sources */,
+				F003EC3E1AA25BCA00B7EDC2 /* MIBlue.m in Sources */,
 				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,
 				F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */,
 				F0346DA61A62B2880071921D /* User+Retrieve.m in Sources */,
@@ -811,6 +866,7 @@
 				F04AF91D1A9B81A300CB2664 /* ShapeUtil.m in Sources */,
 				F04987EA1A56F39900FC2D44 /* AccountViewController.m in Sources */,
 				F0346DA91A62BC730071921D /* User+Update.m in Sources */,
+				F003EC411AA25BF700B7EDC2 /* MIPurple.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

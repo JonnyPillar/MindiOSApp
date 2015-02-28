@@ -96,5 +96,9 @@
 	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
 }
 
+- (IBAction)audioPlayButton:(id)sender{
+	//TODO Remove
+}
+
 
 @end

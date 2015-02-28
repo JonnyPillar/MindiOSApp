@@ -12,6 +12,7 @@
 #import "FileCacheUtil.h"
 #import "ControlCenterUtil.h"
 #import <UIKit/UIKit.h>
+#import "TimerUtil.h"
 
 @interface MIAudioPlayer () <MIAudioPlayerDelegate>
 
@@ -174,16 +175,8 @@ static NSString * const urlScheme = @"stream";
 -(MIAudioPlayerProgress*) getAudioProgress{
 	MIAudioPlayerProgress* currentProgress = [MIAudioPlayerProgress new];
 	
-	NSDateFormatter *dateFormatter = [NSDateFormatter new];
-	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-	[dateFormatter setDateFormat:@"HH:mm:ss"];
-	
-	NSDate* d = [NSDate dateWithTimeIntervalSince1970:[self getAudioTrackElapsedTime]];
-	currentProgress.AudioCurrentTime = [dateFormatter stringFromDate:d];
-	
-	d = [NSDate dateWithTimeIntervalSince1970:[self getAudioTrackRemainingTime]];
-	currentProgress.AudioRemaining = [dateFormatter stringFromDate:d];
-	
+	currentProgress.AudioCurrentTime = [TimerUtil timeFormattedFromInt:[self getAudioTrackElapsedTime] ];
+	currentProgress.AudioRemaining = [TimerUtil timeFormattedFromInt:[self getAudioTrackRemainingTime] ];
 	currentProgress.AudioProgressPercentage = [self getAudioTrackPlaybackPercentage];
 	
 	return currentProgress;

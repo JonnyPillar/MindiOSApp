@@ -10,6 +10,4 @@
 
 @interface MIHomeAudioPlayButton : UIButton
 
-- (IBAction)audioButton_Click:(id)sender;
-
 @end

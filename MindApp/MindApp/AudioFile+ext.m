@@ -25,6 +25,8 @@
 		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
 		self.Duration = [data objectForKey:@"Duration"];
 		self.Title = [data objectForKey:@"Title"];
+		self.BaseColour = [data objectForKey:@"BaseColour"];
+		if(!self.BaseColour) self.BaseColour = @"Green";
 	}
 	return self;
 }

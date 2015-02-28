@@ -36,7 +36,7 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-b0-b5H">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-b0-b5H">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,8 +46,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="Mcl-uv-hmh"/>
-                        <constraint firstAttribute="width" constant="100" id="uBb-SM-Qj9"/>
+                        <constraint firstAttribute="height" constant="100" id="Mcl-uv-hmh">
+                            <variation key="widthClass=compact" constant="120"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="150" id="uBb-SM-Qj9">
+                            <variation key="widthClass=compact" constant="120"/>
+                        </constraint>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -71,11 +75,13 @@
                 <constraint firstItem="7M6-jx-T5j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="54" id="Jee-g8-0k9">
                     <variation key="widthClass=compact" constant="64"/>
                 </constraint>
-                <constraint firstItem="9s5-WL-yFY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="150" id="LhK-z1-TtZ"/>
                 <constraint firstItem="7M6-jx-T5j" firstAttribute="trailing" secondItem="qMd-b0-b5H" secondAttribute="trailing" id="Wcr-GR-zGG"/>
-                <constraint firstItem="7M6-jx-T5j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="55" id="mQq-tG-1Fz"/>
+                <constraint firstAttribute="centerX" secondItem="9s5-WL-yFY" secondAttribute="centerX" id="kPY-s0-bPV"/>
+                <constraint firstItem="7M6-jx-T5j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="55" id="mQq-tG-1Fz">
+                    <variation key="widthClass=compact" constant="24"/>
+                </constraint>
                 <constraint firstItem="9s5-WL-yFY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="qaz-mo-yjv">
-                    <variation key="widthClass=compact" constant="38"/>
+                    <variation key="widthClass=compact" constant="31"/>
                 </constraint>
                 <constraint firstItem="qMd-b0-b5H" firstAttribute="top" secondItem="7M6-jx-T5j" secondAttribute="bottom" constant="8" symbolic="YES" id="sSz-6r-vbX"/>
             </constraints>
@@ -90,7 +96,7 @@
                     <exclude reference="Wcr-GR-zGG"/>
                     <exclude reference="mQq-tG-1Fz"/>
                     <exclude reference="sSz-6r-vbX"/>
-                    <exclude reference="LhK-z1-TtZ"/>
+                    <exclude reference="kPY-s0-bPV"/>
                     <exclude reference="qaz-mo-yjv"/>
                 </mask>
             </variation>
@@ -105,7 +111,7 @@
                     <include reference="Wcr-GR-zGG"/>
                     <include reference="mQq-tG-1Fz"/>
                     <include reference="sSz-6r-vbX"/>
-                    <include reference="LhK-z1-TtZ"/>
+                    <include reference="kPY-s0-bPV"/>
                     <include reference="qaz-mo-yjv"/>
                 </mask>
             </variation>

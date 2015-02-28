@@ -8,7 +8,7 @@
 
 #import "MIHomeAudioPlayButton.h"
 #import "ShapeUtil.h"
-#import "MIColourUtil.h"
+#import "MIRed.h"
 
 @interface MIHomeAudioPlayButton ()
 
@@ -19,10 +19,17 @@
 
 @implementation MIHomeAudioPlayButton
 
+-(MIColour*) GetButtonColour{
+	if(!_buttonColour){
+		return [MIRed new];
+	}
+	else return _buttonColour;
+}
+
 - (void)drawRect:(CGRect)rect {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextAddEllipseInRect(ctx, rect);
-	CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor blueColor] CGColor]));
+	CGContextSetFillColor(ctx, CGColorGetComponents([[[self GetButtonColour] Medium] CGColor]));
 	CGContextFillPath(ctx);
 }
 
@@ -30,6 +37,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if (self) {
+		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 	}
 	return self;
 }
@@ -38,6 +46,7 @@
 {
 	self = [super initWithFrame:frame];
 	if (self) {
+		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 	}
 	return self;
 }
@@ -68,7 +77,7 @@
 	[super setHighlighted:highlighted];
 	
 	NSLog(@"Highlighted Changed");
-//	
+	
 //	if (highlighted) {
 //		self.backgroundColor = [UIColor redColor];
 //	}

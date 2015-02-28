@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "MIHomeAudioView.h"
 #import "MIAudioPlayerProgress.h"
+#import "MIColour.h"
 
 @interface MIHomeView : UIView
 
 @property (strong, nonatomic) IBOutlet MIHomeAudioView *audioPlayerView;
 @property (strong, nonatomic) IBOutlet UITableView *mediaTrackTableView;
+@property (strong, nonatomic) MIColour* viewColour;
 
 - (void) updateUIForPlay;
 - (void) updateUIForPause;

@@ -16,6 +16,10 @@
 		F003EC441AA25C2400B7EDC2 /* MIOrange.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC431AA25C2400B7EDC2 /* MIOrange.m */; };
 		F003EC471AA25C4800B7EDC2 /* MIGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC461AA25C4800B7EDC2 /* MIGreen.m */; };
 		F003EC4A1AA2608A00B7EDC2 /* MIColour.m in Sources */ = {isa = PBXBuildFile; fileRef = F003EC491AA2608A00B7EDC2 /* MIColour.m */; };
+		F003EC4E1AA275C200B7EDC2 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC4D1AA275C200B7EDC2 /* pauseButton.png */; };
+		F003EC501AA2780800B7EDC2 /* mindLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC4F1AA2780800B7EDC2 /* mindLogo.png */; };
+		F003EC521AA27A7D00B7EDC2 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC511AA27A7D00B7EDC2 /* playButton.png */; };
+		F003EC541AA2817500B7EDC2 /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F003EC531AA2817500B7EDC2 /* playIcon.png */; };
 		F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */; };
 		F00EBDBC1A9D15CA0088A211 /* MIHomeAudioPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */; };
 		F0150E5A1A11483300D13D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0150E591A11483300D13D45 /* main.m */; };
@@ -61,7 +65,6 @@
 		F086ECA31A1A97E3000213FB /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */; };
 		F086ECA41A1A9840000213FB /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC981A1A97E3000213FB /* GZIP.framework */; };
 		F086ECA61A1A9996000213FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F086ECA51A1A9996000213FB /* libz.dylib */; };
-		F08D6F621A4A03620032C90A /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F08D6F611A4A03620032C90A /* playIcon.png */; };
 		F08D6F651A4A05510032C90A /* MediaListViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */; };
 		F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0912AC31A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m */; };
 		F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0912AC41A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib */; };
@@ -115,6 +118,10 @@
 		F003EC451AA25C4800B7EDC2 /* MIGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIGreen.h; sourceTree = "<group>"; };
 		F003EC461AA25C4800B7EDC2 /* MIGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGreen.m; sourceTree = "<group>"; };
 		F003EC491AA2608A00B7EDC2 /* MIColour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColour.m; sourceTree = "<group>"; };
+		F003EC4D1AA275C200B7EDC2 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		F003EC4F1AA2780800B7EDC2 /* mindLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mindLogo.png; sourceTree = "<group>"; };
+		F003EC511AA27A7D00B7EDC2 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
+		F003EC531AA2817500B7EDC2 /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
 		F00EBDB81A9D15360088A211 /* MIHomeAudioPlayButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeAudioPlayButton.xib; sourceTree = "<group>"; };
 		F00EBDBA1A9D15CA0088A211 /* MIHomeAudioPlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeAudioPlayButton.h; sourceTree = "<group>"; };
 		F00EBDBB1A9D15CA0088A211 /* MIHomeAudioPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeAudioPlayButton.m; sourceTree = "<group>"; };
@@ -190,7 +197,6 @@
 		F086EC9C1A1A97E3000213FB /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
 		F086EC9D1A1A97E3000213FB /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.12/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
 		F086ECA51A1A9996000213FB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		F08D6F611A4A03620032C90A /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
 		F08D6F631A4A05510032C90A /* MediaListViewCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaListViewCollectionViewController.h; sourceTree = "<group>"; };
 		F08D6F641A4A05510032C90A /* MediaListViewCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListViewCollectionViewController.m; sourceTree = "<group>"; };
 		F0912AC21A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaListCollectionViewCell.h; sourceTree = "<group>"; };
@@ -337,7 +343,7 @@
 		F0150E571A11483300D13D45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F08D6F601A4A034B0032C90A /* Icons */,
+				F08D6F601A4A034B0032C90A /* Images */,
 				F09EA4E01A349DC9005A1F1C /* Frameworks */,
 				F0150E5B1A11483300D13D45 /* AppDelegate.h */,
 				F0150E5C1A11483300D13D45 /* AppDelegate.m */,
@@ -424,12 +430,15 @@
 			name = BaseDataContacts;
 			sourceTree = "<group>";
 		};
-		F08D6F601A4A034B0032C90A /* Icons */ = {
+		F08D6F601A4A034B0032C90A /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				F08D6F611A4A03620032C90A /* playIcon.png */,
+				F003EC531AA2817500B7EDC2 /* playIcon.png */,
+				F003EC511AA27A7D00B7EDC2 /* playButton.png */,
+				F003EC4F1AA2780800B7EDC2 /* mindLogo.png */,
+				F003EC4D1AA275C200B7EDC2 /* pauseButton.png */,
 			);
-			name = Icons;
+			name = Images;
 			sourceTree = "<group>";
 		};
 		F0960B291A497AB80037D096 /* Comms */ = {
@@ -753,16 +762,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F003EC521AA27A7D00B7EDC2 /* playButton.png in Resources */,
+				F003EC501AA2780800B7EDC2 /* mindLogo.png in Resources */,
 				F038385D1A8EA8B300337038 /* MIMediaItemTableViewCell.xib in Resources */,
 				F0A7EE4A1A9A0CE800B14FDD /* MIHomeView.xib in Resources */,
 				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
-				F08D6F621A4A03620032C90A /* playIcon.png in Resources */,
 				F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
 				F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */,
 				F0150E681A11483300D13D45 /* Images.xcassets in Resources */,
 				F0E9E4F11A9A75F9001DE877 /* MIHomeAudioView.xib in Resources */,
+				F003EC4E1AA275C200B7EDC2 /* pauseButton.png in Resources */,
+				F003EC541AA2817500B7EDC2 /* playIcon.png in Resources */,
 				F0912AC61A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIColour.h"
 
 @interface MIHomeAudioPlayButton : UIButton
+
+@property (strong, nonatomic) MIColour* buttonColour;
 
 @end

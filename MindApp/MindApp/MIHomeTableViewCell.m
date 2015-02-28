@@ -10,11 +10,13 @@
 #import "BezierPathUtil.h"
 #import "MIColourUtil.h"
 #import "ShapeUtil.h"
+#import "MIColourFactory.h"
 
 @interface MIHomeTableViewCell ()
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
+@property (nonatomic,strong) MIColour* cellColour;
 
 @end
 
@@ -29,20 +31,21 @@
 	_cellAudioFile = cellAudioFile;
 	[self.audioFileTitle setText:_cellAudioFile.Title];
 	[self.audioFileDuration setText:_cellAudioFile.Duration];
+	self.cellColour = [MIColourFactory GetColourFromString: cellAudioFile.BaseColour];
 }
 
--(void) addCellIconWithColour: (MIColour *) cellColor{
+-(void) updateCellIcon{
 	
-	CAShapeLayer *circle =[ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:17 y:32 x:32 strokeColour:[cellColor Dark] lineWidth:21];
+	CAShapeLayer *circle =[ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:17 y:32 x:32 strokeColour:[_cellColour Dark] lineWidth:21];
 	[self.cellIcon.layer addSublayer:circle];
 	
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[cellColor Light]lineWidth:5];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[_cellColour Light]lineWidth:5];
 	[self.cellIcon.layer addSublayer:outerCircle];
 	
-	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:5 y:32 x:32 strokeColour:[cellColor Light] lineWidth:5];
+	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:5 y:32 x:32 strokeColour:[_cellColour Light] lineWidth:5];
 	[self.cellIcon.layer addSublayer:innerCircle];
 	
-	CAShapeLayer *progressCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[cellColor Medium] lineWidth:5];
+	CAShapeLayer *progressCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[_cellColour Medium] lineWidth:5];
 
 	[self AddAnimationTo:progressCircle];
 	

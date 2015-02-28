@@ -89,11 +89,15 @@
 
 
 -(void) updateUIForPlay{
-	[self.audioPlayButton setTitle:@"Pause" forState:UIControlStateNormal];
+//	[self.audioPlayButton setTitle:@"Pause" forState:UIControlStateNormal];
+	[self.audioPlayButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
 }
 
 -(void) updateUIForPause{
-	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
+	
+	[self.audioPlayButton setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+	
+//	[self.audioPlayButton setTitle:@"Play" forState:UIControlStateNormal];
 }
 
 - (IBAction)audioPlayButton:(id)sender{

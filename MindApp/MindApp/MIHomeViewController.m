@@ -44,7 +44,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 		[self setUpHomeView];
 	[self setUpMediaAudio];
 	[self retreiveMediaItemData];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +65,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
  
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-	
 }
 
 -(void) retreiveMediaItemData{
@@ -96,7 +94,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	
 	AudioFile* audioFile =[_mediaItems objectAtIndex:indexPath.row];
 	cell.cellAudioFile = audioFile;
-	[cell addCellIconWithColour:[MIColourFactory GetColourFromString:audioFile.BaseColour]];
+	[cell updateCellIcon];
 	return cell;
 }
 
@@ -110,7 +108,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	else {
 		[_audioPlayer playNewPlayerItem:selectedCell.cellAudioFile];
 		[_audioPlayer playAudio];
-		[self updateUIForPlay];
 	}
 }
 
@@ -161,9 +158,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 //	NSLog(@"Update UI Progress");
 	[self.homeView updateUIProgress:[_audioPlayer getAudioProgress]];
 }
-
-
-
 
 -(void) showErrorAlert:(NSString*) errorMessage
 {

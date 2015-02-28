@@ -18,6 +18,6 @@
 
 @property (strong,nonatomic) AudioFile *cellAudioFile;
 
--(void) addCellIconWithColour: (MIColour *) cellColor;
+-(void) updateCellIcon;
 
 @end

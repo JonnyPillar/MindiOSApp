@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
 
-
 @end
 
 @implementation MIHomeAudioView
@@ -89,14 +88,13 @@
 //	[self.audioPlayButton ]
 }
 
-
 -(void) updateUIForPlay{
-	[self.audioPlayButton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+	[self.playbutton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
 }
 
 -(void) updateUIForPause{
 	
-	[self.audioPlayButton setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+	[self.playbutton setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 }
 
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{

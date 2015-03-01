@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIHomeAudioView">
             <connections>
                 <outlet property="audioCurrentPositionLabel" destination="7M6-jx-T5j" id="a9E-f2-3LZ"/>
-                <outlet property="audioPlayButton" destination="9s5-WL-yFY" id="Uu2-rI-VKq"/>
                 <outlet property="backgroundView" destination="iN0-l3-epB" id="Oqh-BS-2Wb"/>
                 <outlet property="playbutton" destination="9s5-WL-yFY" id="Y4Y-I7-zZL"/>
             </connections>

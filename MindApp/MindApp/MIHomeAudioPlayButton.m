@@ -30,7 +30,10 @@
 - (void)drawRect:(CGRect)rect {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextAddEllipseInRect(ctx, rect);
-	CGContextSetFillColor(ctx, CGColorGetComponents([[[self GetButtonColour] Medium] CGColor]));
+	if([self isHighlighted]){
+		CGContextSetFillColor(ctx, CGColorGetComponents([[[self GetButtonColour] Dark] CGColor]));
+	}
+	else CGContextSetFillColor(ctx, CGColorGetComponents([[[self GetButtonColour] Medium] CGColor]));
 	CGContextFillPath(ctx);
 }
 
@@ -76,7 +79,7 @@
 
 - (void) setHighlighted:(BOOL)highlighted {
 	[super setHighlighted:highlighted];
-	
+	[self setNeedsDisplay];
 	NSLog(@"Highlighted Changed");
 	
 //	if (highlighted) {

@@ -22,7 +22,6 @@
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
 
 @property (strong, nonatomic) IBOutlet UILabel *audioCurrentPositionLabel;
-@property (strong, nonatomic) IBOutlet UIButton *audioPlayButton;
 
 @property (strong, nonatomic) IBOutlet MIHomeAudioPlayButton *playbutton;
 

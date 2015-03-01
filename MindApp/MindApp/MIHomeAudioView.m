@@ -100,7 +100,8 @@
 }
 
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
-	[self setBackgroundColor:[itemInformation.itemColour Light]];
+	[_containerView setBackgroundColor:[itemInformation.itemColour Medium]];
+	[self.playbutton updateColourScheme:itemInformation.itemColour];
 }
 
 - (IBAction)audioPlayButton:(id)sender{

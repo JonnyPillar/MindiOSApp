@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSMutableArray *customConstraints;
 @property (strong, nonatomic) MIColour* buttonColour;
+@property float currentProgress;
+@property float totalDurationInSeconds;
 
 @end
 
@@ -43,6 +45,7 @@
 	if (self) {
 		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 		[self addButtonBorder];
+		self.totalDurationInSeconds = 999;
 	}
 	return self;
 }
@@ -53,6 +56,7 @@
 	if (self) {
 		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 		[self addButtonBorder];
+		self.totalDurationInSeconds = 999;
 	}
 	return self;
 }
@@ -72,12 +76,43 @@
 
 -(void) addButtonBorder{
 	//TODO remove CGRECTMAKE
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 120, 120) Radius:62 y:0 x:0 strokeColour:[UIColor whiteColor]lineWidth:5];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 120, 120) Radius:62 y:0 x:0 strokeColour:[UIColor whiteColor]lineWidth:7];
 	[self.layer addSublayer:outerCircle];
 }
 
--(void) updateCellIcon{
+-(void) updateProgress:(MIAudioPlayerProgress*) progressInformation{
+	
+	if(self.totalDurationInSeconds != progressInformation.AudioTotalTime){
+		self.totalDurationInSeconds = progressInformation.AudioTotalTime;
+	}
+	
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 120, 120) Radius:62 y:0 x:0 strokeColour:[UIColor blackColor]lineWidth:7];
+	
+	[self AddAnimationTo:outerCircle withProgress:progressInformation];
+	[self setCurrentProgress:progressInformation.AudioProgressPercentage];
+	NSLog(@"Current Progress Percent: %f", self.currentProgress);
+	[self.layer addSublayer:outerCircle];
+}
 
+- (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
+	[self updateColourScheme:itemInformation.itemColour];
+}
+
+- (void)AddAnimationTo:(CAShapeLayer *)progressCircle withProgress: (MIAudioPlayerProgress*) progress {
+	// Configure animation
+	CABasicAnimation *drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+	drawAnimation.duration            = self.totalDurationInSeconds; // "animate over 10 seconds or so.."
+	drawAnimation.repeatCount         = 1.0;  // Animate only once..
+	
+	// Animate from no part of the stroke being drawn to the entire stroke being drawn
+	drawAnimation.fromValue = [NSNumber numberWithFloat:self.currentProgress];
+	drawAnimation.toValue   = [NSNumber numberWithFloat:progress.AudioProgressPercentage];
+	
+	// Experiment with timing to get the appearence to look the way you want
+	drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+	
+	// Add the animation to the circle
+	[progressCircle addAnimation:drawAnimation forKey:@"drawCircleAnimation"];
 }
 
 @end

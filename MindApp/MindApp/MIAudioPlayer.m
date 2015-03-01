@@ -178,6 +178,7 @@ static NSString * const urlScheme = @"stream";
 	currentProgress.AudioCurrentTime = [TimerUtil timeFormattedFromInt:[self getAudioTrackElapsedTime] ];
 	currentProgress.AudioRemaining = [TimerUtil timeFormattedFromInt:[self getAudioTrackRemainingTime] ];
 	currentProgress.AudioProgressPercentage = [self getAudioTrackPlaybackPercentage];
+	currentProgress.AudioTotalTime = [self getAudioTrackDuration];
 	
 	return currentProgress;
 }

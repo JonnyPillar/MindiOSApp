@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MIColour.h"
+#import "MIAudioPlayerProgress.h"
+#import "MIAudioPlayerItemInformation.h"
 
 @interface MIHomeAudioPlayButton : UIButton
 
--(void) updateColourScheme:(MIColour*) colourScheme;
--(void) updateCellIcon;
+- (void) updateColourScheme:(MIColour*) colourScheme;
+- (void) updateProgress:(MIAudioPlayerProgress*) progressInformation;
+- (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
 
 @end

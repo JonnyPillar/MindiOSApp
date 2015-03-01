@@ -13,5 +13,6 @@
 @property float AudioProgressPercentage;
 @property (strong, nonatomic) NSString* AudioCurrentTime;
 @property (strong, nonatomic) NSString* AudioRemaining;
+@property float AudioTotalTime;
 
 @end

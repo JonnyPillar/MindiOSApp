@@ -10,6 +10,7 @@
 #import "MIColourUtil.h"
 #import "MIHomeAudioPlayButton.h"
 #import "MIAudioPlayerItemInformation.h"
+#import "MIAudioPlayerProgress.h"
 
 @interface MIHomeAudioView : UIView
 
@@ -20,6 +21,7 @@
 - (void) updateUIForPlay;
 - (void) updateUIForPause;
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
+-(void) updateUIProgress: (MIAudioPlayerProgress*) progress;
 
 @property (strong, nonatomic) IBOutlet UILabel *audioCurrentPositionLabel;
 

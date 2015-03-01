@@ -56,6 +56,7 @@
 		[self addSubview:view];
 		[self setNeedsUpdateConstraints];
 	}
+	[self.playbutton updateCellIcon];
 }
 
 - (void)updateConstraints
@@ -100,11 +101,15 @@
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
 	[_containerView setBackgroundColor:[itemInformation.itemColour Medium]];
 	[self.playbutton updateColourScheme:itemInformation.itemColour];
+	[self.playbutton updateCellIcon];
+}
+
+-(void) updateUIProgress: (MIAudioPlayerProgress*) progress{
+	[self.audioCurrentPositionLabel setText:progress.AudioRemaining];
 }
 
 - (IBAction)audioPlayButton:(id)sender{
 	//TODO Remove
 }
-
 
 @end

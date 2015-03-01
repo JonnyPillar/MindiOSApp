@@ -90,7 +90,7 @@
 }
 
 -(void) updateUIProgress: (MIAudioPlayerProgress*) progress{
-	[self.audioPlayerView.audioCurrentPositionLabel setText:progress.AudioRemaining];
+	[self.audioPlayerView updateUIProgress:progress];
 }
 
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{

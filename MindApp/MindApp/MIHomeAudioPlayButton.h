@@ -12,5 +12,6 @@
 @interface MIHomeAudioPlayButton : UIButton
 
 -(void) updateColourScheme:(MIColour*) colourScheme;
+-(void) updateCellIcon;
 
 @end

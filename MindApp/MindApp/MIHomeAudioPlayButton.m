@@ -9,10 +9,10 @@
 #import "MIHomeAudioPlayButton.h"
 #import "ShapeUtil.h"
 #import "MIRed.h"
+#import "ShapeUtil.h"
 
 @interface MIHomeAudioPlayButton ()
 
-@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray *customConstraints;
 @property (strong, nonatomic) MIColour* buttonColour;
 
@@ -42,6 +42,7 @@
 	self = [super initWithCoder:aDecoder];
 	if (self) {
 		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+		[self addButtonBorder];
 	}
 	return self;
 }
@@ -51,48 +52,32 @@
 	self = [super initWithFrame:frame];
 	if (self) {
 		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+		[self addButtonBorder];
 	}
 	return self;
-}
-
-- (void)updateConstraints
-{
-	[self removeConstraints:self.customConstraints];
-	[self.customConstraints removeAllObjects];
-	
-	if (self.containerView != nil) {
-		UIView *view = self.containerView;
-		NSDictionary *views = NSDictionaryOfVariableBindings(view);
-		
-		[self.customConstraints addObjectsFromArray:
-		 [NSLayoutConstraint constraintsWithVisualFormat:
-		  @"H:|[view]|" options:0 metrics:nil views:views]];
-		[self.customConstraints addObjectsFromArray:
-		 [NSLayoutConstraint constraintsWithVisualFormat:
-		  @"V:|[view]|" options:0 metrics:nil views:views]];
-		
-		[self addConstraints:self.customConstraints];
-	}
-	
-	[super updateConstraints];
 }
 
 - (void) setHighlighted:(BOOL)highlighted {
 	[super setHighlighted:highlighted];
 	[self setNeedsDisplay];
 	NSLog(@"Highlighted Changed");
-	
-//	if (highlighted) {
-//		self.backgroundColor = [UIColor redColor];
-//	}
-//	else {
-//		self.backgroundColor = [UIColor greenColor];
-//	}
 }
 
 -(void) updateColourScheme:(MIColour*) colourScheme{
-	self.buttonColour = colourScheme;
-	[self setNeedsDisplay];
+	if(self.buttonColour != colourScheme){
+		self.buttonColour = colourScheme;
+		[self setNeedsDisplay];
+	}
+}
+
+-(void) addButtonBorder{
+	//TODO remove CGRECTMAKE
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 120, 120) Radius:62 y:0 x:0 strokeColour:[UIColor whiteColor]lineWidth:5];
+	[self.layer addSublayer:outerCircle];
+}
+
+-(void) updateCellIcon{
+
 }
 
 @end

@@ -7,19 +7,16 @@
 //
 
 #import "MIHomeViewController.h"
-#import "MIHomeView.h"
+#import "MIAudioPlayer.h"
 #import "CommunicationsManager.h"
-#import "AudioFile.h"
 #import "GetMediaFilesResponseModel.h"
 #import "MIHomeTableViewCell.h"
 #import "MIColourUtil.h"
-#import "MIAudioPlayer.h"
-#import "MIColourFactory.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
 @property (strong, nonatomic) NSArray* mediaItems;
-@property (strong, nonatomic) CommunicationsManager* communicationManager;
+@property (strong,  nonatomic) CommunicationsManager* communicationManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 
 @end
@@ -49,10 +46,9 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 }
 
 - (void)setUpHomeView {
-	[self.homeView.mediaTrackTableView setDelegate:self];
-	[self.homeView.mediaTrackTableView setDataSource:self];
+	[self.homeView setMediaTableViewDelegate:self];
+	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
- 
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -106,7 +102,6 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	
 	if(responseModel.Success){
-		
 		_mediaItems = responseModel.MediaFiles;
 		[self.audioPlayer playNewPlayerItem:[_mediaItems firstObject]];
 		[self.homeView.mediaTrackTableView reloadData];
@@ -179,11 +174,12 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	{
 		NSLog(@"State Change");
 	}
-	else
+	else{
 		[super observeValueForKeyPath:keyPath
 							 ofObject:object
 							   change:change
 							  context:context];
+	}
 }
 
 @end

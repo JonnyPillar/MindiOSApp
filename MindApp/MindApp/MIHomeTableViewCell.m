@@ -7,10 +7,9 @@
 //
 
 #import "MIHomeTableViewCell.h"
-#import "BezierPathUtil.h"
+#import "MIColourFactory.h"
 #import "MIColourUtil.h"
 #import "ShapeUtil.h"
-#import "MIColourFactory.h"
 
 @interface MIHomeTableViewCell ()
 

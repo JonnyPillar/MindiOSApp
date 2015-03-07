@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet MIHomeAudioView *audioPlayerView;
 @property (strong, nonatomic) IBOutlet UITableView *mediaTrackTableView;
 
+- (void) setMediaTableViewDelegate:(id) delegate;
+- (void) setMediaTableViewDataSource:(id) dataSourceDelegate;
 - (void) updateUIForPlay;
 - (void) updateUIForPause;
 - (void) updateUIProgress: (MIAudioPlayerProgress*) progress;

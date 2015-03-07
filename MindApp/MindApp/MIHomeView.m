@@ -35,6 +35,14 @@
 	return self;
 }
 
+- (void) setMediaTableViewDelegate:(id) delegate{
+	[self.mediaTrackTableView setDelegate:delegate];
+}
+
+- (void) setMediaTableViewDataSource:(id) dataSourceDelegate{
+	[self.mediaTrackTableView setDataSource:dataSourceDelegate];
+}
+
 - (void)commonInit
 {
 	_customConstraints = [[NSMutableArray alloc] init];

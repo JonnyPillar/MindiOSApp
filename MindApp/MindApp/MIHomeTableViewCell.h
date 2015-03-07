@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioFile.h"
-#import "MIColour.h"
 
 @interface MIHomeTableViewCell : UITableViewCell
 

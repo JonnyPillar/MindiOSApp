@@ -85,7 +85,6 @@
 }
 
 -(void) updatePlayButtonBackgroundColour: (UIColor*)colour{
-//	[self.audioPlayButton ]
 }
 
 -(void) updateUIForPlay{

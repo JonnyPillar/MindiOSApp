@@ -92,22 +92,22 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="5LJ-Yz-3jv"/>
                         <exclude reference="WnS-YO-aU8"/>
                         <exclude reference="m7Y-lS-xbm"/>
                         <exclude reference="xnd-CA-YjG"/>
                         <exclude reference="R42-AW-eqL"/>
                         <exclude reference="cWG-OP-vnT"/>
+                        <exclude reference="5LJ-Yz-3jv"/>
                     </mask>
                 </variation>
                 <variation key="widthClass=compact">
                     <mask key="constraints">
-                        <include reference="5LJ-Yz-3jv"/>
                         <include reference="WnS-YO-aU8"/>
                         <include reference="m7Y-lS-xbm"/>
                         <include reference="xnd-CA-YjG"/>
                         <include reference="R42-AW-eqL"/>
                         <include reference="cWG-OP-vnT"/>
+                        <include reference="5LJ-Yz-3jv"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

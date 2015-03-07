@@ -20,32 +20,55 @@
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="88" id="sCf-iq-pgb"/>
+                        <constraint firstAttribute="height" constant="28" id="wVb-pD-b52"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="sCf-iq-pgb"/>
+                            <exclude reference="wVb-pD-b52"/>
                         </mask>
                     </variation>
                     <variation key="widthClass=compact">
                         <mask key="constraints">
                             <include reference="sCf-iq-pgb"/>
+                            <include reference="wVb-pD-b52"/>
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-b0-b5H">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-b0-b5H">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3rd-rH-HdH"/>
+                        <constraint firstAttribute="width" constant="48" id="PKV-1l-n7Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3rd-rH-HdH"/>
+                            <exclude reference="PKV-1l-n7Z"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="3rd-rH-HdH"/>
+                            <include reference="PKV-1l-n7Z"/>
+                        </mask>
+                    </variation>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVJ-mW-bZj" customClass="MIHomeAudioPlayButton">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="V0l-XJ-Gi7"/>
-                        <constraint firstAttribute="height" constant="120" id="n5a-Ar-kkM"/>
+                        <constraint firstAttribute="width" constant="120" id="V0l-XJ-Gi7">
+                            <variation key="widthClass=compact" constant="100"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="120" id="n5a-Ar-kkM">
+                            <variation key="widthClass=compact" constant="100"/>
+                        </constraint>
                     </constraints>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,13 +94,15 @@
                     <variation key="widthClass=compact" constant="64"/>
                 </constraint>
                 <constraint firstItem="TVJ-mW-bZj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="SZ0-td-LUI">
-                    <variation key="widthClass=compact" constant="28"/>
+                    <variation key="widthClass=compact" constant="41"/>
                 </constraint>
                 <constraint firstItem="7M6-jx-T5j" firstAttribute="trailing" secondItem="qMd-b0-b5H" secondAttribute="trailing" id="Wcr-GR-zGG"/>
                 <constraint firstItem="7M6-jx-T5j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="55" id="mQq-tG-1Fz">
                     <variation key="widthClass=compact" constant="24"/>
                 </constraint>
-                <constraint firstItem="qMd-b0-b5H" firstAttribute="top" secondItem="7M6-jx-T5j" secondAttribute="bottom" constant="8" symbolic="YES" id="sSz-6r-vbX"/>
+                <constraint firstItem="qMd-b0-b5H" firstAttribute="top" secondItem="7M6-jx-T5j" secondAttribute="bottom" constant="8" symbolic="YES" id="sSz-6r-vbX">
+                    <variation key="widthClass=compact" constant="-1"/>
+                </constraint>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -109,6 +134,7 @@
                     <include reference="SZ0-td-LUI"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="403" y="279"/>
         </view>
     </objects>
 </document>

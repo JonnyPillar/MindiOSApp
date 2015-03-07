@@ -8,7 +8,7 @@
 
 #import "MIHomeAudioPlayButton.h"
 #import "ShapeUtil.h"
-#import "MIRed.h"
+#import "MIPink.h"
 #import "ShapeUtil.h"
 
 @interface MIHomeAudioPlayButton ()
@@ -24,7 +24,7 @@
 
 -(MIColour*) GetButtonColour{
 	if(!_buttonColour){
-		return [MIRed new];
+		return [MIPink new];
 	}
 	else return _buttonColour;
 }
@@ -70,13 +70,17 @@
 -(void) updateColourScheme:(MIColour*) colourScheme{
 	if(self.buttonColour != colourScheme){
 		self.buttonColour = colourScheme;
+		for (CALayer *layer in self.layer.sublayers) {
+			[layer removeAllAnimations];
+		}
 		[self setNeedsDisplay];
+		[self addButtonBorder];
 	}
 }
 
 -(void) addButtonBorder{
 	//TODO remove CGRECTMAKE
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 120, 120) Radius:62 y:0 x:0 strokeColour:[UIColor whiteColor]lineWidth:7];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 100, 100) Radius:52 y:0 x:0 strokeColour:[[self GetButtonColour] Light] lineWidth:7];
 	[self.layer addSublayer:outerCircle];
 }
 
@@ -86,7 +90,7 @@
 		self.totalDurationInSeconds = progressInformation.AudioTotalTime;
 	}
 	
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 120, 120) Radius:62 y:0 x:0 strokeColour:[UIColor blackColor]lineWidth:7];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 100, 100) Radius:52 y:0 x:0 strokeColour:[UIColor whiteColor]lineWidth:7];
 	
 	[self AddAnimationTo:outerCircle withProgress:progressInformation];
 	[self setCurrentProgress:progressInformation.AudioProgressPercentage];

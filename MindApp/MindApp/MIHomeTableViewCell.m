@@ -30,7 +30,9 @@
 -(void) setCellAudioFile:(AudioFile *)cellAudioFile{
 	_cellAudioFile = cellAudioFile;
 	[self.audioFileTitle setText:_cellAudioFile.Title];
+	[self.audioFileTitle setTextColor:[MIColourUtil Grey]];
 	[self.audioFileDuration setText:_cellAudioFile.Duration];
+	[self.audioFileDuration setTextColor:[MIColourUtil Grey]];
 	self.cellColour = [MIColourFactory GetColourFromString: cellAudioFile.BaseColour];
 }
 
@@ -39,17 +41,17 @@
 	CAShapeLayer *circle =[ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:17 y:32 x:32 strokeColour:[_cellColour Dark] lineWidth:21];
 	[self.cellIcon.layer addSublayer:circle];
 	
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[_cellColour Light]lineWidth:5];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:28 y:32 x:32 strokeColour:[_cellColour Light]lineWidth:3];
 	[self.cellIcon.layer addSublayer:outerCircle];
 	
 	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:5 y:32 x:32 strokeColour:[_cellColour Light] lineWidth:5];
 	[self.cellIcon.layer addSublayer:innerCircle];
 	
-	CAShapeLayer *progressCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[_cellColour Medium] lineWidth:5];
-
-	[self AddAnimationTo:progressCircle];
-	
-	[self.cellIcon.layer addSublayer:progressCircle];
+//	CAShapeLayer *progressCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:30 y:32 x:32 strokeColour:[_cellColour Medium] lineWidth:5];
+//
+//	[self AddAnimationTo:progressCircle];
+//	
+//	[self.cellIcon.layer addSublayer:progressCircle];
 }
 
 - (void)AddAnimationTo:(CAShapeLayer *)progressCircle {

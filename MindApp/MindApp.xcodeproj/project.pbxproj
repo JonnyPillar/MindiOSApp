@@ -73,6 +73,7 @@
 		F09EA4E41A349E1C005A1F1C /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F09EA4E31A349E1C005A1F1C /* TimerUtil.m */; };
 		F0A137F91A4C70A200C64CE4 /* LoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */; };
 		F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */; };
+		F0A175AB1AAB1261002DB000 /* MIGrey.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A175AA1AAB1261002DB000 /* MIGrey.m */; };
 		F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */; };
 		F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */; };
 		F0A3F3321A4DF0A90072CE33 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3311A4DF0A90072CE33 /* RegisterViewController.m */; };
@@ -213,6 +214,8 @@
 		F0A137F81A4C70A200C64CE4 /* LoginResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResponseModel.m; sourceTree = "<group>"; };
 		F0A137FB1A4C861700C64CE4 /* JSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseSerializerWithData.h; sourceTree = "<group>"; };
 		F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseSerializerWithData.m; sourceTree = "<group>"; };
+		F0A175A91AAB1261002DB000 /* MIGrey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIGrey.h; sourceTree = "<group>"; };
+		F0A175AA1AAB1261002DB000 /* MIGrey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGrey.m; sourceTree = "<group>"; };
 		F0A3F3271A4DC0C70072CE33 /* BaseRequestDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestDataContract.h; sourceTree = "<group>"; };
 		F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestDataContract.m; sourceTree = "<group>"; };
 		F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidationUtil.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				F003EC431AA25C2400B7EDC2 /* MIOrange.m */,
 				F003EC451AA25C4800B7EDC2 /* MIGreen.h */,
 				F003EC461AA25C4800B7EDC2 /* MIGreen.m */,
+				F0A175A91AAB1261002DB000 /* MIGrey.h */,
+				F0A175AA1AAB1261002DB000 /* MIGrey.m */,
 			);
 			name = MIColour;
 			sourceTree = "<group>";
@@ -876,6 +881,7 @@
 				F0E9E4F41A9A768D001DE877 /* MIHomeAudioView.m in Sources */,
 				F0912AC51A4AFE6B00BD1A13 /* MIMediaListCollectionViewCell.m in Sources */,
 				F003EC441AA25C2400B7EDC2 /* MIOrange.m in Sources */,
+				F0A175AB1AAB1261002DB000 /* MIGrey.m in Sources */,
 				F003EC3E1AA25BCA00B7EDC2 /* MIBlue.m in Sources */,
 				F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */,
 				F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */,

@@ -41,4 +41,9 @@
 +(UIColor *) GreenLight;
 +(UIColor *) Green: (float) opacity;
 
++(UIColor *) Grey;
++(UIColor *) GreyMedium;
++(UIColor *) GreyLight;
++(UIColor *) Grey: (float) opacity;
+
 @end

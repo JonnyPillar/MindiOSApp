@@ -18,9 +18,8 @@
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
-@property (nonatomic,strong) CommunicationsManager* communicationManager;
 @property (strong, nonatomic) NSArray* mediaItems;
-
+@property (strong, nonatomic) CommunicationsManager* communicationManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 
 @end
@@ -109,6 +108,7 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 	if(responseModel.Success){
 		
 		_mediaItems = responseModel.MediaFiles;
+		[self.audioPlayer playNewPlayerItem:[_mediaItems firstObject]];
 		[self.homeView.mediaTrackTableView reloadData];
 	}
 	else {

@@ -80,6 +80,7 @@
 		F0A7EE4A1A9A0CE800B14FDD /* MIHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */; };
 		F0A7EE501A9A0F5100B14FDD /* MIHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */; };
 		F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A7EE521A9A0FCD00B14FDD /* MIHomeViewController.m */; };
+		F0AE6D2E1AAB90AC006F8689 /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AE6D2D1AAB90AC006F8689 /* menuButton.png */; };
 		F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8AD1A191F5B00EAA252 /* AudioFile+ext.m */; };
 		F0C3A8B31A192CD900EAA252 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B21A192CD900EAA252 /* MediaModel.m */; };
 		F0C3A8B51A192D0F00EAA252 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C3A8B41A192D0F00EAA252 /* AudioFile.m */; };
@@ -227,6 +228,7 @@
 		F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeView.m; sourceTree = "<group>"; };
 		F0A7EE511A9A0FCD00B14FDD /* MIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeViewController.h; sourceTree = "<group>"; };
 		F0A7EE521A9A0FCD00B14FDD /* MIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeViewController.m; sourceTree = "<group>"; };
+		F0AE6D2D1AAB90AC006F8689 /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
 		F0C3A8A31A1915B900EAA252 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
 		F0C3A8A61A19164700EAA252 /* MediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
 		F0C3A8A71A191D0E00EAA252 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -351,7 +353,7 @@
 		F0150E571A11483300D13D45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F08D6F601A4A034B0032C90A /* Images */,
+				F08D6F601A4A034B0032C90A /* Assets */,
 				F09EA4E01A349DC9005A1F1C /* Frameworks */,
 				F0150E5B1A11483300D13D45 /* AppDelegate.h */,
 				F0150E5C1A11483300D13D45 /* AppDelegate.m */,
@@ -438,15 +440,16 @@
 			name = BaseDataContacts;
 			sourceTree = "<group>";
 		};
-		F08D6F601A4A034B0032C90A /* Images */ = {
+		F08D6F601A4A034B0032C90A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F0AE6D2D1AAB90AC006F8689 /* menuButton.png */,
 				F003EC531AA2817500B7EDC2 /* playIcon.png */,
 				F003EC511AA27A7D00B7EDC2 /* playButton.png */,
 				F003EC4F1AA2780800B7EDC2 /* mindLogo.png */,
 				F003EC4D1AA275C200B7EDC2 /* pauseButton.png */,
 			);
-			name = Images;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		F0960B291A497AB80037D096 /* Comms */ = {
@@ -778,6 +781,7 @@
 				F0A7EE4A1A9A0CE800B14FDD /* MIHomeView.xib in Resources */,
 				F0E9B4A61A23B8F300F1D98F /* Resource.plist in Resources */,
 				F0150E661A11483300D13D45 /* Main.storyboard in Resources */,
+				F0AE6D2E1AAB90AC006F8689 /* menuButton.png in Resources */,
 				F06755261A9A2C8E00DE09D9 /* MiHomeTableViewCell.xib in Resources */,
 				F0150E6B1A11483300D13D45 /* LaunchScreen.xib in Resources */,
 				F00EBDB91A9D15360088A211 /* MIHomeAudioPlayButton.xib in Resources */,

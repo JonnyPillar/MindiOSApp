@@ -84,7 +84,6 @@ static NSString * const urlScheme = @"stream";
 		[self setAudioPlayerItem:playerItem];
 		[self updateControlCenter];
 		[self.delegate updateUIForNewItem:[[MIAudioPlayerItemInformation alloc] initWithAudioFile:newAudioFile]];
-		 
 	}
 }
 

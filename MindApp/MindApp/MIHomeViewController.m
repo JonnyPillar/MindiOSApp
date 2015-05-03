@@ -30,6 +30,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[self setUpHomeView];
 	[self setUpMediaAudio];
 	[self setUpPullToRefresh];
+	_mediaItems = [NSMutableArray new];
 	[self retreiveMediaItemData];
 }
 
@@ -55,7 +56,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 
 -(void)setUpPullToRefresh{
 	self.refreshControl = [[UIRefreshControl alloc] init];
-	self.refreshControl.backgroundColor = [UIColor purpleColor];
+	self.refreshControl.backgroundColor = [MIColourUtil PinkLight];
 	self.refreshControl.tintColor = [UIColor whiteColor];
 	[self.refreshControl addTarget:self
 							action:@selector(retreiveMediaItemData)
@@ -66,7 +67,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 
 -(void) retreiveMediaItemData{
 	NSLog(@"Retreiving Media Items");
-	_mediaItems = [NSMutableArray new];
 	if(!_communicationManager) self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
 	[_communicationManager GetRequest:getMediaFilesUrl withParams:nil];
 }
@@ -76,7 +76,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	if ([_mediaItems count] > 0) {
 		return 1;
-		
 	}
 	else {
 		UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 102)];

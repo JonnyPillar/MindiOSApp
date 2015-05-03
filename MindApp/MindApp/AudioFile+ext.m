@@ -50,9 +50,10 @@
 	[informationDictionary setValue:@"Mind" forKey:MPMediaItemPropertyArtist];
 	
 	UIImageView *albumArtImg = [UIImageView new];
-	[albumArtImg sd_setImageWithURL:self.GetImageUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
+	[albumArtImg setImage:[UIImage imageNamed:@"mindLogo.png"]];
+//	[albumArtImg sd_setImageWithURL:self.GetImageUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
 	
-	[informationDictionary setObject:[[MPMediaItemArtwork alloc] initWithImage:albumArtImg.image] forKey:MPMediaItemPropertyArtwork];
+	[informationDictionary setObject:[[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"mindLogo.png"]] forKey:MPMediaItemPropertyArtwork];
 	
 	return informationDictionary;
 }

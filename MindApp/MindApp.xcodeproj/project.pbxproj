@@ -34,7 +34,6 @@
 		F044C8521A9F9F60008A8F9A /* MIAudioPlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = F044C8511A9F9F60008A8F9A /* MIAudioPlayerProgress.m */; };
 		F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E21A598E2600C3C952 /* RemoteEventUtil.m */; };
 		F04683E61A59984800C3C952 /* ControlCenterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04683E51A59984800C3C952 /* ControlCenterUtil.m */; };
-		F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E31A56EBE400FC2D44 /* HashUtil.m */; };
 		F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */; };
 		F04987F01A570FAD00FC2D44 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04987EF1A570FAD00FC2D44 /* GetMediaFilesResponseModel.m */; };
 		F04AF9161A9B599B00CB2664 /* BezierPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F04AF9151A9B599B00CB2664 /* BezierPathUtil.m */; };
@@ -43,6 +42,7 @@
 		F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F06755281A9A2E2400DE09D9 /* MIHomeTableViewCell.m */; };
 		F06F1A9E1A4B5103006B71B7 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */; };
 		F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */; };
+		F0792E141AF6C8F2005FC5DC /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0792E131AF6C8F2005FC5DC /* HashUtil.m */; };
 		F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */; };
 		F086EC931A1A888B000213FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC921A1A888B000213FB /* AVFoundation.framework */; };
 		F086EC951A1A8BC4000213FB /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F086EC941A1A8BC4000213FB /* AWSiOSSDKv2.framework */; };
@@ -60,7 +60,6 @@
 		F0A137FD1A4C861700C64CE4 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A137FC1A4C861700C64CE4 /* JSONResponseSerializerWithData.m */; };
 		F0A175AB1AAB1261002DB000 /* MIGrey.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A175AA1AAB1261002DB000 /* MIGrey.m */; };
 		F0A3F3291A4DC0C70072CE33 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */; };
-		F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */; };
 		F0A7EE4A1A9A0CE800B14FDD /* MIHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */; };
 		F0A7EE501A9A0F5100B14FDD /* MIHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */; };
 		F0A7EE531A9A0FCD00B14FDD /* MIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A7EE521A9A0FCD00B14FDD /* MIHomeViewController.m */; };
@@ -135,8 +134,6 @@
 		F04683E21A598E2600C3C952 /* RemoteEventUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteEventUtil.m; sourceTree = "<group>"; };
 		F04683E41A59984800C3C952 /* ControlCenterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCenterUtil.h; sourceTree = "<group>"; };
 		F04683E51A59984800C3C952 /* ControlCenterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlCenterUtil.m; sourceTree = "<group>"; };
-		F04987E21A56EBE400FC2D44 /* HashUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashUtil.h; sourceTree = "<group>"; };
-		F04987E31A56EBE400FC2D44 /* HashUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashUtil.m; sourceTree = "<group>"; };
 		F04987E51A56EE6700FC2D44 /* FileCacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCacheUtil.h; sourceTree = "<group>"; };
 		F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheUtil.m; sourceTree = "<group>"; };
 		F04987EE1A570FAD00FC2D44 /* GetMediaFilesResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMediaFilesResponseModel.h; sourceTree = "<group>"; };
@@ -152,6 +149,8 @@
 		F06F1A9D1A4B5103006B71B7 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
 		F06F1A9F1A4B51F7006B71B7 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
 		F06F1AA01A4B51F7006B71B7 /* RegistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationResponseModel.m; sourceTree = "<group>"; };
+		F0792E121AF6C8F2005FC5DC /* HashUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashUtil.h; sourceTree = "<group>"; };
+		F0792E131AF6C8F2005FC5DC /* HashUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashUtil.m; sourceTree = "<group>"; };
 		F07B8BAD1A5028ED00632BF9 /* MIAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayer.h; sourceTree = "<group>"; };
 		F07B8BAE1A5028ED00632BF9 /* MIAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayer.m; sourceTree = "<group>"; };
 		F086EC921A1A888B000213FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -176,8 +175,6 @@
 		F0A175AA1AAB1261002DB000 /* MIGrey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGrey.m; sourceTree = "<group>"; };
 		F0A3F3271A4DC0C70072CE33 /* BaseRequestDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestDataContract.h; sourceTree = "<group>"; };
 		F0A3F3281A4DC0C70072CE33 /* BaseRequestDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestDataContract.m; sourceTree = "<group>"; };
-		F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidationUtil.h; sourceTree = "<group>"; };
-		F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidationUtil.m; sourceTree = "<group>"; };
 		F0A7EE491A9A0CE800B14FDD /* MIHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIHomeView.xib; sourceTree = "<group>"; };
 		F0A7EE4E1A9A0F5100B14FDD /* MIHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeView.h; sourceTree = "<group>"; };
 		F0A7EE4F1A9A0F5100B14FDD /* MIHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeView.m; sourceTree = "<group>"; };
@@ -414,12 +411,10 @@
 				F0E9E4F81A9A7B4A001DE877 /* Colours */,
 				F09EA4E21A349E1C005A1F1C /* TimerUtil.h */,
 				F09EA4E31A349E1C005A1F1C /* TimerUtil.m */,
-				F0A3F32C1A4DC3CA0072CE33 /* InputValidationUtil.h */,
-				F0A3F32D1A4DC3CA0072CE33 /* InputValidationUtil.m */,
-				F04987E21A56EBE400FC2D44 /* HashUtil.h */,
-				F04987E31A56EBE400FC2D44 /* HashUtil.m */,
 				F04987E51A56EE6700FC2D44 /* FileCacheUtil.h */,
 				F04987E61A56EE6700FC2D44 /* FileCacheUtil.m */,
+				F0792E121AF6C8F2005FC5DC /* HashUtil.h */,
+				F0792E131AF6C8F2005FC5DC /* HashUtil.m */,
 				F04683E11A598E2600C3C952 /* RemoteEventUtil.h */,
 				F04683E21A598E2600C3C952 /* RemoteEventUtil.m */,
 				F04683E41A59984800C3C952 /* ControlCenterUtil.h */,
@@ -731,8 +726,6 @@
 				F06F1AA11A4B51F7006B71B7 /* RegistrationResponseModel.m in Sources */,
 				F04987E71A56EE6700FC2D44 /* FileCacheUtil.m in Sources */,
 				F0150E5D1A11483300D13D45 /* AppDelegate.m in Sources */,
-				F0A3F32E1A4DC3CA0072CE33 /* InputValidationUtil.m in Sources */,
-				F04987E41A56EBE400FC2D44 /* HashUtil.m in Sources */,
 				F04AF9161A9B599B00CB2664 /* BezierPathUtil.m in Sources */,
 				F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
@@ -741,6 +734,7 @@
 				F0E9E4F71A9A7AE8001DE877 /* MIColourUtil.m in Sources */,
 				F003EC571AA283F300B7EDC2 /* MIAudioPlayerItemInformation.m in Sources */,
 				F04683E31A598E2600C3C952 /* RemoteEventUtil.m in Sources */,
+				F0792E141AF6C8F2005FC5DC /* HashUtil.m in Sources */,
 				F003EC471AA25C4800B7EDC2 /* MIGreen.m in Sources */,
 				F0A7EE501A9A0F5100B14FDD /* MIHomeView.m in Sources */,
 				F0D746831A506F0100034B98 /* MIAudioPlayerCacheDelegate.m in Sources */,

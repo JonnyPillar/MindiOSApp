@@ -18,7 +18,7 @@
 @property (strong, nonatomic) NSArray* mediaItems;
 @property (strong,  nonatomic) CommunicationsManager* communicationManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
-
+@property (strong, nonatomic) UIRefreshControl* refreshControl;
 @end
 
 static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/getmediafiles";
@@ -29,6 +29,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
     [super viewDidLoad];
 	[self setUpHomeView];
 	[self setUpMediaAudio];
+	[self setUpPullToRefresh];
 	[self retreiveMediaItemData];
 }
 
@@ -52,7 +53,19 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(void)setUpPullToRefresh{
+	self.refreshControl = [[UIRefreshControl alloc] init];
+	self.refreshControl.backgroundColor = [UIColor purpleColor];
+	self.refreshControl.tintColor = [UIColor whiteColor];
+	[self.refreshControl addTarget:self
+							action:@selector(retreiveMediaItemData)
+				  forControlEvents:UIControlEventValueChanged];
+	[self.homeView.mediaTrackTableView addSubview: self.refreshControl];
+
+}
+
 -(void) retreiveMediaItemData{
+	NSLog(@"Retreiving Media Items");
 	_mediaItems = [NSMutableArray new];
 	if(!_communicationManager) self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
 	[_communicationManager GetRequest:getMediaFilesUrl withParams:nil];
@@ -61,28 +74,23 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 #pragma UITableViewDelegate UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if (_mediaItems) {
+	if ([_mediaItems count] > 0) {
 		return 1;
 		
-	} else {
-		
-		// Display a message when the table is empty
-		UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+	}
+	else {
+		UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 102)];
 		
 		messageLabel.text = @"No data is currently available. Please pull down to refresh.";
 		messageLabel.textColor = [UIColor blackColor];
 		messageLabel.numberOfLines = 0;
 		messageLabel.textAlignment = NSTextAlignmentCenter;
-		messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
 		[messageLabel sizeToFit];
 		
 		self.homeView.mediaTrackTableView.backgroundView = messageLabel;
 		self.homeView.mediaTrackTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-		
+		return 0;
 	}
-	
-	return 0;
-	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -120,6 +128,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 #pragma mark Communication Manager Delegate Methods
 
 -(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
+	[self.refreshControl endRefreshing];
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	
 	if(responseModel.Success){
@@ -133,7 +142,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 }
 
 -(void) handleFailedRequest:(NSDictionary*) responseDictionary{
-	
+	[self.refreshControl endRefreshing];
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:responseModel.Message];
 }

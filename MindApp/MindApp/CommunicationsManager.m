@@ -84,10 +84,19 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 - (NSDictionary*)extractErrorResponse:(NSError *)error {
 	
 	NSData* errorJsonData = [error.userInfo objectForKey:mindErrorUserInfoKey];
-	NSError *parsingError;
-	NSLog(@"Error: %@", error);
-	
-	return [NSJSONSerialization JSONObjectWithData:errorJsonData options:0 error:&parsingError];
+	if(errorJsonData)
+	{
+		NSError *parsingError;
+		NSLog(@"Error: %@", error);
+		return [NSJSONSerialization JSONObjectWithData:errorJsonData options:0 error:&parsingError];
+	}
+	else {
+		errorJsonData = [error.userInfo objectForKey:NSLocalizedDescriptionKey];
+		NSLog(@"Error: %@", errorJsonData);
+		NSMutableDictionary* errorDitionary = [NSMutableDictionary new];
+		[errorDitionary setValue:errorJsonData forKey:@"Message"];
+		return errorDitionary;
+	}
 }
 
 @end

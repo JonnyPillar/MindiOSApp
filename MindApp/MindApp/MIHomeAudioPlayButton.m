@@ -95,7 +95,7 @@
 	[self setCurrentProgress:progressInformation.AudioProgressPercentage];
 	NSLog(@"Current Progress Percent: %f", self.currentProgress);
 	[self.layer addSublayer:outerCircle];
-}
+} 
 
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
 	[self updateColourScheme:itemInformation.itemColour];

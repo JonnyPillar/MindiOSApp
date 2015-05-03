@@ -26,7 +26,7 @@
 @implementation MediaListViewCollectionViewController 
 
 static NSString * const reuseIdentifier = @"MiMediaItemCell";
-static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
+static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/getmediafiles";
 
 - (void)viewDidLoad {
     [super viewDidLoad];

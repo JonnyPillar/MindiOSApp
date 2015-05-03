@@ -84,9 +84,6 @@
 	[self.backgroundView setBackgroundColor:colour];
 }
 
--(void) updatePlayButtonBackgroundColour: (UIColor*)colour{
-}
-
 -(void) updateUIForPlay{
 	[self.playbutton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
 }

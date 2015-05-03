@@ -174,6 +174,13 @@ static NSString * const urlScheme = @"stream";
 -(MIAudioPlayerProgress*) getAudioProgress{
 	MIAudioPlayerProgress* currentProgress = [MIAudioPlayerProgress new];
 	
+	AVPlayerStatus status = self.status;
+	NSError* temp = self.error;
+
+	if(status == AVPlayerStatusFailed){
+		NSLog(@"Audio Player: AVPlayerStatusFailed");
+	}
+	
 	currentProgress.AudioCurrentTime = [TimerUtil timeFormattedFromInt:[self getAudioTrackElapsedTime] ];
 	currentProgress.AudioRemaining = [TimerUtil timeFormattedFromInt:[self getAudioTrackRemainingTime] ];
 	currentProgress.AudioProgressPercentage = [self getAudioTrackPlaybackPercentage];

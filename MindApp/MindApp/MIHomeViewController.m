@@ -21,13 +21,13 @@
 
 @end
 
-static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/getmediafiles";
+static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/getmediafiles";
 
 @implementation MIHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-		[self setUpHomeView];
+	[self setUpHomeView];
 	[self setUpMediaAudio];
 	[self retreiveMediaItemData];
 }
@@ -61,6 +61,27 @@ static NSString * const getMediaFilesUrl = @"http://mind-1.apphb.com/api/media/g
 #pragma UITableViewDelegate UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	if (_mediaItems) {
+		return 1;
+		
+	} else {
+		
+		// Display a message when the table is empty
+		UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+		
+		messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+		messageLabel.textColor = [UIColor blackColor];
+		messageLabel.numberOfLines = 0;
+		messageLabel.textAlignment = NSTextAlignmentCenter;
+		messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+		[messageLabel sizeToFit];
+		
+		self.homeView.mediaTrackTableView.backgroundView = messageLabel;
+		self.homeView.mediaTrackTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+		
+	}
+	
+	return 0;
 	return 1;
 }
 

@@ -19,7 +19,7 @@
 
 @end
 
-static NSString * const postRegisterUrl = @"http://mind-1.apphb.com/api/Account/SignUp";
+static NSString * const postRegisterUrl = @"https://mind-1.apphb.com/api/Account/SignUp";
 
 @implementation RegisterViewController
 

@@ -23,7 +23,7 @@
 
 @implementation LoginViewController
 
-static NSString * const postLoginUrl = @"http://mind-1.apphb.com/api/Account/LogIn";
+static NSString * const postLoginUrl = @"https://mind-1.apphb.com/api/Account/LogIn";
 
 - (void)viewDidLoad {
     [super viewDidLoad];

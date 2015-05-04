@@ -60,9 +60,11 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="60B-sO-uod">
                             <variation key="widthClass=compact" constant="30"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
                         <constraint firstAttribute="height" constant="50" id="xzf-QL-GBt">
                             <variation key="widthClass=compact" constant="30"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
                     </constraints>
                     <state key="normal" title="Button" image="menuButton.png">
@@ -86,9 +88,11 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="Igz-xC-QpZ">
                             <variation key="widthClass=compact" constant="30"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
                         <constraint firstAttribute="height" constant="50" id="RTU-bo-xdP">
                             <variation key="widthClass=compact" constant="30"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
                     </constraints>
                     <state key="normal" title="Button" image="informationIcon.png">
@@ -150,6 +154,9 @@
                     <exclude reference="Rcu-ka-PlO"/>
                     <exclude reference="hU4-jZ-6Z5"/>
                     <exclude reference="zUw-eR-xD2"/>
+                    <exclude reference="RPu-NA-32k"/>
+                    <exclude reference="je6-T0-J9B"/>
+                    <exclude reference="pfy-C8-QqI"/>
                     <exclude reference="2K7-ke-T2R"/>
                     <exclude reference="58X-oW-tlj"/>
                     <exclude reference="HIi-RQ-cit"/>
@@ -161,9 +168,6 @@
                     <exclude reference="wA5-QA-akd"/>
                     <exclude reference="xCM-vP-YIS"/>
                     <exclude reference="yfL-jg-yIF"/>
-                    <exclude reference="RPu-NA-32k"/>
-                    <exclude reference="je6-T0-J9B"/>
-                    <exclude reference="pfy-C8-QqI"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -197,11 +201,11 @@
                     <include reference="hij-Ap-y99"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="cQJ-Wc-fOD"/>
-                    <exclude reference="hlV-eM-2g2"/>
                     <include reference="RPu-NA-32k"/>
                     <include reference="je6-T0-J9B"/>
                     <exclude reference="pfy-C8-QqI"/>
+                    <exclude reference="cQJ-Wc-fOD"/>
+                    <exclude reference="hlV-eM-2g2"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="390" y="-93"/>

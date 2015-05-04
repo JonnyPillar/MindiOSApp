@@ -112,7 +112,7 @@ static NSString * const urlScheme = @"stream";
 	_audioTimer = [NSTimer
 				   scheduledTimerWithTimeInterval:1
 				   target:self selector:@selector(updateProgressMethods)
-				   userInfo:nil repeats:YES];
+    userInfo:nil repeats:YES];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(playerItemDidReachEnd:)
 												 name:AVPlayerItemDidPlayToEndTimeNotification
@@ -152,11 +152,16 @@ static NSString * const urlScheme = @"stream";
 }
 
 -(float) getAudioTrackRemainingTime{
-	return [self getAudioTrackDuration] - [self getAudioTrackElapsedTime];
+    float timeRemaining = [self getAudioTrackDuration] - [self getAudioTrackElapsedTime];
+    if(isnan(timeRemaining)) timeRemaining = 0;
+    return timeRemaining;
 }
 
 -(float) getAudioTrackPlaybackPercentage{
-	return ([self getAudioTrackElapsedTime] / [self getAudioTrackDuration]);
+
+    float currentPercentage = [self getAudioTrackElapsedTime] / [self getAudioTrackDuration];
+    if(isnan(currentPercentage)) currentPercentage = 0.001;
+    return currentPercentage;
 }
 
 -(MIAudioPlayerProgress*) getAudioProgress{
@@ -173,6 +178,12 @@ static NSString * const urlScheme = @"stream";
 -(void) updateProgressMethods{
 	[self updateControlCenterElapsedTime];
 	[self.delegate updateUIProgress];
+    if(![self audioPlayerIsPlaying]){
+        _audioTimer = [NSTimer
+                scheduledTimerWithTimeInterval:1
+                                        target:self selector:@selector(updateProgressMethods)
+                                      userInfo:nil repeats:NO];
+    }
 }
 
 #pragma mark <MIAudioPlayerDelegate>

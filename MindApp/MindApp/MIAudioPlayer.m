@@ -34,13 +34,6 @@ static NSString * const urlScheme = @"stream";
 	return self;
 }
 
--(id) initWithDelegate:(id) delegate{
-	if(!(self = [super init])){}
-	self.delegate = delegate;
-	[self setUpCacheDelegate];
-	return self;
-}
-
 - (void)setUpCacheDelegate {
 	if(!self.audioPlayerCacheDelegate) {
 		self.audioPlayerCacheDelegate = [MIAudioPlayerCacheDelegate new];
@@ -140,13 +133,6 @@ static NSString * const urlScheme = @"stream";
 
 -(bool) isNewAudioFile:(AudioFile *) newAudioFile{
 	return ![_audioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
-}
-
-- (bool)isNewMediaItem:(AVPlayerItem *)playerItem {
-	AVURLAsset *asset1 = (AVURLAsset *)[super.currentItem asset];
-	AVURLAsset *asset2 = (AVURLAsset *)[playerItem asset];
-	
-	return ![asset1.URL isEqual: asset2.URL];
 }
 
 -(BOOL) audioPlayerHasPlayerItem{

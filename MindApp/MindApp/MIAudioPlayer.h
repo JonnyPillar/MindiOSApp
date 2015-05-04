@@ -18,7 +18,6 @@
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 
 -(id) init;
--(id) initWithDelegate:(id) delegate;
 
 -(void) playNewPlayerItem:(AudioFile *) newAudioFile;
 -(void) playAudio;

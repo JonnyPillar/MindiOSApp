@@ -7,7 +7,6 @@
 //
 
 #import "CommunicationsManager.h"
-#import <AFNetworking.h>
 #import "JSONResponseSerializerWithData.h"
 
 @interface CommunicationsManager ()

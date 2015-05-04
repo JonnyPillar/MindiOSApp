@@ -7,8 +7,6 @@
 //
 
 #import "MIAudioPlayerCacheDelegate.h"
-#import <AVFoundation/AVFoundation.h>
-#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface MIAudioPlayerCacheDelegate ()
 

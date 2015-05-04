@@ -22,7 +22,7 @@
 	
 	MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
 	NSMutableDictionary *playingInfo = [NSMutableDictionary dictionaryWithDictionary:center.nowPlayingInfo];
-	[playingInfo setObject:durationInSeconds forKey:MPMediaItemPropertyPlaybackDuration];
+	playingInfo[MPMediaItemPropertyPlaybackDuration] = durationInSeconds;
 	center.nowPlayingInfo = playingInfo;
 }
 
@@ -30,7 +30,7 @@
 	
 	MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
 	NSMutableDictionary *playingInfo = [NSMutableDictionary dictionaryWithDictionary:center.nowPlayingInfo];
-	[playingInfo setObject:currentPositionInSeconds forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+	playingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = currentPositionInSeconds;
 	center.nowPlayingInfo = playingInfo;
 }
 

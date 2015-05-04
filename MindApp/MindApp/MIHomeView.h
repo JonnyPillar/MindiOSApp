@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) IBOutlet MIHomeAudioView *audioPlayerView;
 @property (strong, nonatomic) IBOutlet UITableView *mediaTrackTableView;
+@property (strong, nonatomic) IBOutlet UIButton *menuButton;
+@property (strong, nonatomic) IBOutlet UIButton *informationButton;
 
 - (void) setMediaTableViewDelegate:(id) delegate;
 - (void) setMediaTableViewDataSource:(id) dataSourceDelegate;

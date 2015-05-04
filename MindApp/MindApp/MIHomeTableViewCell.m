@@ -33,6 +33,10 @@
 	[self.audioFileDuration setText:_cellAudioFile.Duration];
 	[self.audioFileDuration setTextColor:[MIColourUtil Grey]];
 	self.cellColour = [MIColourFactory GetColourFromString: cellAudioFile.BaseColour];
+
+    UIView* backgroundView = [UIView new];
+    backgroundView.backgroundColor = self.cellColour.Light;
+    [self setSelectedBackgroundView:backgroundView];
 }
 
 -(void) updateCellIcon{

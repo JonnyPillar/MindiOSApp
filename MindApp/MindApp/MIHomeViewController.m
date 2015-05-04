@@ -51,7 +51,9 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[self.homeView setMediaTableViewDelegate:self];
 	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
-	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.homeView.menuButton addTarget:self action:@selector(menuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.homeView.informationButton addTarget:self action:@selector(informationButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)setUpPullToRefresh{
@@ -187,7 +189,15 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[ErrorAlert show];
 }
 
--(void) buttonClicked:(id)sender{
+-(void)menuButtonClicked:(id)sender{
+    NSLog(@"Menu Button Clicked");
+}
+
+-(void)informationButtonClicked:(id)sender{
+    NSLog(@"Information Button Clicked");
+}
+
+-(void)audioPlayerPlayButtonClicked:(id)sender{
 	if([_audioPlayer audioPlayerIsPlaying]) {
 		[_audioPlayer pauseAudio];
 	}
@@ -209,5 +219,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 							  context:context];
 	}
 }
+
 
 @end

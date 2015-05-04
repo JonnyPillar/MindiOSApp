@@ -23,6 +23,7 @@
 -(void) playNewPlayerItem:(AudioFile *) newAudioFile;
 -(void) playAudio;
 -(void) pauseAudio;
+-(BOOL) audioPlayerHasPlayerItem;
 -(BOOL) audioPlayerIsPlaying;
 -(float) getAudioTrackDuration;
 -(float) getAudioTrackElapsedTime;

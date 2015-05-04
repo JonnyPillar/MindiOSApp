@@ -151,6 +151,10 @@ static NSString * const urlScheme = @"stream";
 	return ![asset1.URL isEqual: asset2.URL];
 }
 
+-(BOOL) audioPlayerHasPlayerItem{
+	return self.currentItem !=  nil;
+}
+
 -(BOOL) audioPlayerIsPlaying{
 	return super.rate != 0.0;
 }

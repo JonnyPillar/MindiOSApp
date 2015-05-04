@@ -888,6 +888,7 @@
 					"/Users/jonnypillar/Downloads/aws-ios-sdk-2.0.12/third-party",
 				);
 				INFOPLIST_FILE = MindApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -905,6 +906,7 @@
 					"/Users/jonnypillar/Downloads/aws-ios-sdk-2.0.12/third-party",
 				);
 				INFOPLIST_FILE = MindApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

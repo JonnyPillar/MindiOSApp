@@ -10,7 +10,6 @@
 
 /// NSError userInfo key that will contain response data
 static NSString * const JSONResponseSerializerWithDataKey = @"mindResponseSerializerKey";
-
 @interface JSONResponseSerializerWithData : AFJSONResponseSerializer
 
 @end

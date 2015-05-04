@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "MIAudioPlayer.h"
 #import "MIAudioPlayerCacheDelegate.h"
 #import "HashUtil.h"
 #import "FileCacheUtil.h"
 #import "ControlCenterUtil.h"
-#import <UIKit/UIKit.h>
 #import "TimerUtil.h"
 
 @interface MIAudioPlayer () <MIAudioPlayerDelegate>
@@ -31,7 +31,6 @@ static NSString * const urlScheme = @"stream";
 	if(!(self = [super init])) {}
 	self.delegate = self;
 	[self setUpCacheDelegate];
-//	[self setupBackgroundTask];
 	return self;
 }
 
@@ -39,7 +38,6 @@ static NSString * const urlScheme = @"stream";
 	if(!(self = [super init])){}
 	self.delegate = delegate;
 	[self setUpCacheDelegate];
-//	[self setupBackgroundTask];
 	return self;
 }
 

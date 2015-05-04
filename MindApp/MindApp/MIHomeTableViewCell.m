@@ -13,8 +13,6 @@
 
 @interface MIHomeTableViewCell ()
 
-@property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) NSMutableArray *customConstraints;
 @property (nonatomic,strong) MIColour* cellColour;
 
 @end
@@ -49,19 +47,9 @@
 	
 	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:5 y:32 x:32 strokeColour:[_cellColour Light] lineWidth:5];
 	[self.cellIcon.layer addSublayer:innerCircle];
-}
 
-- (void)AddAnimationTo:(CAShapeLayer *)progressCircle {
-	CABasicAnimation *drawAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-	drawAnimation.duration            = 10.0; // "animate over 10 seconds or so.."
-	drawAnimation.repeatCount         = 1.0;  // Animate only once..
-	
-	drawAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-	drawAnimation.toValue   = [NSNumber numberWithFloat:1.0f];
-	
-	drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-	
-	[progressCircle addAnimation:drawAnimation forKey:@"drawCircleAnimation"];
+    CAShapeLayer *centerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:2 y:32 x:32 strokeColour:[UIColor whiteColor] lineWidth:3];
+    [self.cellIcon.layer addSublayer:centerCircle];
 }
 
 @end

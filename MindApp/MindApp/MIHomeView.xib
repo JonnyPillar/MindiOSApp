@@ -22,7 +22,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="R6F-O7-ikD">
-                            <variation key="widthClass=compact" constant="162"/>
+                            <variation key="widthClass=compact" constant="182"/>
+                            <variation key="heightClass=regular-widthClass=compact" constant="175"/>
                         </constraint>
                     </constraints>
                     <variation key="default">
@@ -122,7 +123,9 @@
                 <constraint firstItem="HJw-Na-cyL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8FV-cJ-gV4"/>
                 <constraint firstAttribute="trailing" secondItem="HJw-Na-cyL" secondAttribute="trailing" id="AL2-ra-jHb"/>
                 <constraint firstItem="s1e-Qq-F1D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EpN-dn-iAS"/>
-                <constraint firstItem="s1e-Qq-F1D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="162" id="Gd1-ia-9o7"/>
+                <constraint firstItem="s1e-Qq-F1D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="162" id="Gd1-ia-9o7">
+                    <variation key="heightClass=regular-widthClass=compact" constant="175"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="HJw-Na-cyL" secondAttribute="trailing" id="HIi-RQ-cit"/>
                 <constraint firstItem="HJw-Na-cyL" firstAttribute="trailing" secondItem="s1e-Qq-F1D" secondAttribute="trailing" id="Jd9-Su-CbS"/>
                 <constraint firstItem="hij-Ap-y99" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="RPu-NA-32k"/>

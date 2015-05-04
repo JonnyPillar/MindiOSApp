@@ -79,7 +79,7 @@
 
 -(void) addButtonBorder{
 	//TODO remove CGRECTMAKE
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 100, 100) Radius:52 y:0 x:0 strokeColour:[[self GetButtonColour] Light] lineWidth:7];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 100, 100) Radius:51 y:0 x:0 strokeColour:[[self GetButtonColour] Light] lineWidth:4];
 	[self.layer addSublayer:outerCircle];
 }
 

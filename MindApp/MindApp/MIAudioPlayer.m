@@ -112,7 +112,7 @@ static NSString * const urlScheme = @"stream";
 	_audioTimer = [NSTimer
 				   scheduledTimerWithTimeInterval:1
 				   target:self selector:@selector(updateProgressMethods)
-    userInfo:nil repeats:YES];
+                    userInfo:nil repeats:YES];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(playerItemDidReachEnd:)
 												 name:AVPlayerItemDidPlayToEndTimeNotification
@@ -179,10 +179,10 @@ static NSString * const urlScheme = @"stream";
 	[self updateControlCenterElapsedTime];
 	[self.delegate updateUIProgress];
     if(![self audioPlayerIsPlaying]){
-        _audioTimer = [NSTimer
-                scheduledTimerWithTimeInterval:1
-                                        target:self selector:@selector(updateProgressMethods)
-                                      userInfo:nil repeats:NO];
+    _audioTimer = [NSTimer
+            scheduledTimerWithTimeInterval:1
+                                    target:self selector:@selector(updateProgressMethods)
+                                  userInfo:nil repeats:NO];
     }
 }
 

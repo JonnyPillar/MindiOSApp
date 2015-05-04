@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIHomeAudioView">
@@ -97,9 +98,7 @@
                     <variation key="widthClass=compact" constant="41"/>
                 </constraint>
                 <constraint firstItem="7M6-jx-T5j" firstAttribute="trailing" secondItem="qMd-b0-b5H" secondAttribute="trailing" id="Wcr-GR-zGG"/>
-                <constraint firstItem="7M6-jx-T5j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="55" id="mQq-tG-1Fz">
-                    <variation key="widthClass=compact" constant="24"/>
-                </constraint>
+                <constraint firstItem="TVJ-mW-bZj" firstAttribute="leading" secondItem="7M6-jx-T5j" secondAttribute="trailing" constant="38" id="pab-iN-ihI"/>
                 <constraint firstItem="qMd-b0-b5H" firstAttribute="top" secondItem="7M6-jx-T5j" secondAttribute="bottom" constant="8" symbolic="YES" id="sSz-6r-vbX">
                     <variation key="widthClass=compact" constant="-1"/>
                 </constraint>
@@ -113,10 +112,10 @@
                 <mask key="constraints">
                     <exclude reference="Jee-g8-0k9"/>
                     <exclude reference="Wcr-GR-zGG"/>
-                    <exclude reference="mQq-tG-1Fz"/>
                     <exclude reference="sSz-6r-vbX"/>
                     <exclude reference="1h4-wA-L35"/>
                     <exclude reference="SZ0-td-LUI"/>
+                    <exclude reference="pab-iN-ihI"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -128,10 +127,10 @@
                 <mask key="constraints">
                     <include reference="Jee-g8-0k9"/>
                     <include reference="Wcr-GR-zGG"/>
-                    <include reference="mQq-tG-1Fz"/>
                     <include reference="sSz-6r-vbX"/>
                     <include reference="1h4-wA-L35"/>
                     <include reference="SZ0-td-LUI"/>
+                    <include reference="pab-iN-ihI"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="403" y="279"/>

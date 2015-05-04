@@ -60,7 +60,7 @@
 	
 	if (view != nil) {
 		_containerView = view;
-		view.translatesAutoresizingMaskIntoConstraints = NO;
+		view.translatesAutoresizingMaskIntoConstraints = YES;
 		[self addSubview:view];
 		[self setNeedsUpdateConstraints];
 	}

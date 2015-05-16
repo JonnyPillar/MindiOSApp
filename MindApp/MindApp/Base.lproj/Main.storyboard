@@ -21,11 +21,52 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="homeView" destination="OLj-FX-vNk" id="ZNP-8L-2Ea"/>
+                        <segue destination="P2j-2h-R2b" kind="show" identifier="show_information_page" id="dYB-k5-j2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGB-Gv-L6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="537"/>
+            <point key="canvasLocation" x="385.5" y="537"/>
+        </scene>
+        <!--Information View Controller-->
+        <scene sceneID="lR6-bF-1cb">
+            <objects>
+                <viewController id="P2j-2h-R2b" customClass="MIInformationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bar-ww-TaP"/>
+                        <viewControllerLayoutGuide type="bottom" id="y8t-Rt-BPH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PL6-r7-6RM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STI-Ly-uXm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="STI-Ly-uXm"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="STI-Ly-uXm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="informationWebView" destination="STI-Ly-uXm" id="DMv-Th-385"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaS-jc-hV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239" y="537"/>
         </scene>
     </scenes>
 </document>

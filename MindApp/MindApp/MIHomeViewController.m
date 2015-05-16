@@ -12,6 +12,8 @@
 #import "GetMediaFilesResponseModel.h"
 #import "MIHomeTableViewCell.h"
 #import "MIColourUtil.h"
+#import "MIInformationViewController.h"
+#import "MIColourFactory.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
@@ -121,6 +123,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	else {
 		[_audioPlayer playNewPlayerItem:selectedCell.cellAudioFile];
 		[_audioPlayer playAudio];
+		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: selectedCell.cellAudioFile.BaseColour].Light;
 	}
 }
 
@@ -218,6 +221,16 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 							   change:change
 							  context:context];
 	}
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	
+	if ([[segue identifier] isEqualToString:@"show_information_page"])
+	{
+		MIInformationViewController* iVC = [segue destinationViewController];
+	}
+	
+	
 }
 
 

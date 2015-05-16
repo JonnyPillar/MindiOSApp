@@ -74,6 +74,7 @@
 		F0E9E4F11A9A75F9001DE877 /* MIHomeAudioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E9E4F01A9A75F9001DE877 /* MIHomeAudioView.xib */; };
 		F0E9E4F41A9A768D001DE877 /* MIHomeAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E9E4F31A9A768D001DE877 /* MIHomeAudioView.m */; };
 		F0E9E4F71A9A7AE8001DE877 /* MIColourUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E9E4F61A9A7AE8001DE877 /* MIColourUtil.m */; };
+		F0FDA6691B07E319004A1FE5 /* MIInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FDA6681B07E319004A1FE5 /* MIInformationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,8 @@
 		F0E9E4F31A9A768D001DE877 /* MIHomeAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeAudioView.m; sourceTree = "<group>"; };
 		F0E9E4F51A9A7AE8001DE877 /* MIColourUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColourUtil.h; sourceTree = "<group>"; };
 		F0E9E4F61A9A7AE8001DE877 /* MIColourUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColourUtil.m; sourceTree = "<group>"; };
+		F0FDA6671B07E319004A1FE5 /* MIInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationViewController.h; sourceTree = "<group>"; };
+		F0FDA6681B07E319004A1FE5 /* MIInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A7EE4B1A9A0D6F00B14FDD /* Home */,
+				F0FDA66A1B07E372004A1FE5 /* Information */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -573,6 +577,15 @@
 				F003EC481AA25C7100B7EDC2 /* MIColour */,
 			);
 			name = Colours;
+			sourceTree = "<group>";
+		};
+		F0FDA66A1B07E372004A1FE5 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				F0FDA6671B07E319004A1FE5 /* MIInformationViewController.h */,
+				F0FDA6681B07E319004A1FE5 /* MIInformationViewController.m */,
+			);
+			name = Information;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -737,6 +750,7 @@
 				F04AF9161A9B599B00CB2664 /* BezierPathUtil.m in Sources */,
 				F06755291A9A2E2400DE09D9 /* MIHomeTableViewCell.m in Sources */,
 				F0C3A8AE1A191F5B00EAA252 /* AudioFile+ext.m in Sources */,
+				F0FDA6691B07E319004A1FE5 /* MIInformationViewController.m in Sources */,
 				F07B8BAF1A5028ED00632BF9 /* MIAudioPlayer.m in Sources */,
 				F02B0DE81A3DC656002E2F3B /* RegistrationRequestModel.m in Sources */,
 				F0E9E4F71A9A7AE8001DE877 /* MIColourUtil.m in Sources */,

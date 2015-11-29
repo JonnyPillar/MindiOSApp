@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		513DCCCCBEA43B72D7E29851 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FECC3213E7402344E3EE9F36 /* libPods.a */; };
+		F0ED98DA1C0B969F004CA752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98D91C0B969F004CA752 /* main.m */; };
+		F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DC1C0B969F004CA752 /* AppDelegate.m */; };
+		F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DF1C0B969F004CA752 /* ViewController.m */; };
+		F0ED98E31C0B969F004CA752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0ED98E11C0B969F004CA752 /* Main.storyboard */; };
+		F0ED98E51C0B969F004CA752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0ED98E41C0B969F004CA752 /* Assets.xcassets */; };
+		F0ED98F31C0B969F004CA752 /* MindAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98F21C0B969F004CA752 /* MindAppTests.m */; };
+		F0ED98FF1C0B97EF004CA752 /* mindLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F0ED98FE1C0B97EF004CA752 /* mindLogo.png */; };
+		F0ED99011C0B9912004CA752 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0ED99001C0B9912004CA752 /* LaunchScreen.xib */; };
+		F0ED990B1C0B99F6004CA752 /* MIAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */; };
+		F0ED990C1C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99061C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m */; };
+		F0ED990D1C0B99F6004CA752 /* MIAudioPlayerItemInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99081C0B99F6004CA752 /* MIAudioPlayerItemInformation.m */; };
+		F0ED990E1C0B99F6004CA752 /* MIAudioPlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED990A1C0B99F6004CA752 /* MIAudioPlayerProgress.m */; };
+		F0ED99121C0B9A56004CA752 /* MIColour.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99111C0B9A56004CA752 /* MIColour.m */; };
+		F0ED99411C0B9B81004CA752 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED993B1C0B9B81004CA752 /* AudioFile.m */; };
+		F0ED99421C0B9B81004CA752 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED993D1C0B9B81004CA752 /* AudioFile+ext.m */; };
+		F0ED99431C0B9B81004CA752 /* MediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED993F1C0B9B81004CA752 /* MediaModel.m */; };
+		F0ED994C1C0B9C2D004CA752 /* MIColourFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99491C0B9C2D004CA752 /* MIColourFactory.m */; };
+		F0ED994D1C0B9C2D004CA752 /* MIColourUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED994B1C0B9C2D004CA752 /* MIColourUtil.m */; };
+		F0ED995E1C0B9C7F004CA752 /* MIBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99511C0B9C7F004CA752 /* MIBlue.m */; };
+		F0ED995F1C0B9C7F004CA752 /* MIGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99531C0B9C7F004CA752 /* MIGreen.m */; };
+		F0ED99601C0B9C7F004CA752 /* MIGrey.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99551C0B9C7F004CA752 /* MIGrey.m */; };
+		F0ED99611C0B9C7F004CA752 /* MIOrange.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99571C0B9C7F004CA752 /* MIOrange.m */; };
+		F0ED99621C0B9C7F004CA752 /* MIPink.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99591C0B9C7F004CA752 /* MIPink.m */; };
+		F0ED99631C0B9C7F004CA752 /* MIPurple.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED995B1C0B9C7F004CA752 /* MIPurple.m */; };
+		F0ED99641C0B9C7F004CA752 /* MIRed.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED995D1C0B9C7F004CA752 /* MIRed.m */; };
+		F0ED99671C0B9CA8004CA752 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99661C0B9CA8004CA752 /* HashUtil.m */; };
+		F0ED996A1C0B9CC9004CA752 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99691C0B9CC9004CA752 /* FileCacheUtil.m */; };
+		F0ED996D1C0B9CF3004CA752 /* ControlCenterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED996C1C0B9CF3004CA752 /* ControlCenterUtil.m */; };
+		F0ED99701C0B9D0B004CA752 /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED996F1C0B9D0B004CA752 /* TimerUtil.m */; };
+		F0ED99761C0BA70B004CA752 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99731C0BA70B004CA752 /* CommunicationsManager.m */; };
+		F0ED99771C0BA70B004CA752 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99751C0BA70B004CA752 /* JSONResponseSerializerWithData.m */; };
+		F0ED997E1C0BA9C6004CA752 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED997B1C0BA9C6004CA752 /* BaseRequestDataContract.m */; };
+		F0ED997F1C0BA9C6004CA752 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED997D1C0BA9C6004CA752 /* BaseResponseDataContract.m */; };
+		F0ED99891C0BAA04004CA752 /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99821C0BAA04004CA752 /* LoginRequestModel.m */; };
+		F0ED998A1C0BAA04004CA752 /* LoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99841C0BAA04004CA752 /* LoginResponseModel.m */; };
+		F0ED998B1C0BAA04004CA752 /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99861C0BAA04004CA752 /* RegistrationRequestModel.m */; };
+		F0ED998C1C0BAA04004CA752 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99881C0BAA04004CA752 /* RegistrationResponseModel.m */; };
+		F0ED998F1C0BAA9E004CA752 /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0ED998E1C0BAA9E004CA752 /* Resource.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0ED98EF1C0B969F004CA752 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0ED98CD1C0B969F004CA752 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0ED98D41C0B969F004CA752;
+			remoteInfo = MindApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EEB082B7F164FA3E58D04E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F0ED98D51C0B969F004CA752 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0ED98D91C0B969F004CA752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0ED98DB1C0B969F004CA752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F0ED98DC1C0B969F004CA752 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F0ED98DE1C0B969F004CA752 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F0ED98DF1C0B969F004CA752 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0ED98E21C0B969F004CA752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0ED98E41C0B969F004CA752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0ED98E91C0B969F004CA752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0ED98EE1C0B969F004CA752 /* MindAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0ED98F21C0B969F004CA752 /* MindAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MindAppTests.m; sourceTree = "<group>"; };
+		F0ED98F41C0B969F004CA752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0ED98FE1C0B97EF004CA752 /* mindLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mindLogo.png; sourceTree = "<group>"; };
+		F0ED99001C0B9912004CA752 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		F0ED99031C0B99F6004CA752 /* MIAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayer.h; sourceTree = "<group>"; };
+		F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayer.m; sourceTree = "<group>"; };
+		F0ED99051C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerCacheDelegate.h; sourceTree = "<group>"; };
+		F0ED99061C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerCacheDelegate.m; sourceTree = "<group>"; };
+		F0ED99071C0B99F6004CA752 /* MIAudioPlayerItemInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerItemInformation.h; sourceTree = "<group>"; };
+		F0ED99081C0B99F6004CA752 /* MIAudioPlayerItemInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerItemInformation.m; sourceTree = "<group>"; };
+		F0ED99091C0B99F6004CA752 /* MIAudioPlayerProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerProgress.h; sourceTree = "<group>"; };
+		F0ED990A1C0B99F6004CA752 /* MIAudioPlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerProgress.m; sourceTree = "<group>"; };
+		F0ED99101C0B9A56004CA752 /* MIColour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColour.h; sourceTree = "<group>"; };
+		F0ED99111C0B9A56004CA752 /* MIColour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColour.m; sourceTree = "<group>"; };
+		F0ED993A1C0B9B81004CA752 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
+		F0ED993B1C0B9B81004CA752 /* AudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFile.m; sourceTree = "<group>"; };
+		F0ED993C1C0B9B81004CA752 /* AudioFile+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioFile+ext.h"; sourceTree = "<group>"; };
+		F0ED993D1C0B9B81004CA752 /* AudioFile+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AudioFile+ext.m"; sourceTree = "<group>"; };
+		F0ED993E1C0B9B81004CA752 /* MediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaModel.h; sourceTree = "<group>"; };
+		F0ED993F1C0B9B81004CA752 /* MediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaModel.m; sourceTree = "<group>"; };
+		F0ED99401C0B9B81004CA752 /* MediaType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaType.h; sourceTree = "<group>"; };
+		F0ED99481C0B9C2D004CA752 /* MIColourFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColourFactory.h; sourceTree = "<group>"; };
+		F0ED99491C0B9C2D004CA752 /* MIColourFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColourFactory.m; sourceTree = "<group>"; };
+		F0ED994A1C0B9C2D004CA752 /* MIColourUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColourUtil.h; sourceTree = "<group>"; };
+		F0ED994B1C0B9C2D004CA752 /* MIColourUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColourUtil.m; sourceTree = "<group>"; };
+		F0ED99501C0B9C7F004CA752 /* MIBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIBlue.h; sourceTree = "<group>"; };
+		F0ED99511C0B9C7F004CA752 /* MIBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIBlue.m; sourceTree = "<group>"; };
+		F0ED99521C0B9C7F004CA752 /* MIGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIGreen.h; sourceTree = "<group>"; };
+		F0ED99531C0B9C7F004CA752 /* MIGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGreen.m; sourceTree = "<group>"; };
+		F0ED99541C0B9C7F004CA752 /* MIGrey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIGrey.h; sourceTree = "<group>"; };
+		F0ED99551C0B9C7F004CA752 /* MIGrey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGrey.m; sourceTree = "<group>"; };
+		F0ED99561C0B9C7F004CA752 /* MIOrange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOrange.h; sourceTree = "<group>"; };
+		F0ED99571C0B9C7F004CA752 /* MIOrange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOrange.m; sourceTree = "<group>"; };
+		F0ED99581C0B9C7F004CA752 /* MIPink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPink.h; sourceTree = "<group>"; };
+		F0ED99591C0B9C7F004CA752 /* MIPink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIPink.m; sourceTree = "<group>"; };
+		F0ED995A1C0B9C7F004CA752 /* MIPurple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPurple.h; sourceTree = "<group>"; };
+		F0ED995B1C0B9C7F004CA752 /* MIPurple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIPurple.m; sourceTree = "<group>"; };
+		F0ED995C1C0B9C7F004CA752 /* MIRed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRed.h; sourceTree = "<group>"; };
+		F0ED995D1C0B9C7F004CA752 /* MIRed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRed.m; sourceTree = "<group>"; };
+		F0ED99651C0B9CA8004CA752 /* HashUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashUtil.h; sourceTree = "<group>"; };
+		F0ED99661C0B9CA8004CA752 /* HashUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashUtil.m; sourceTree = "<group>"; };
+		F0ED99681C0B9CC9004CA752 /* FileCacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCacheUtil.h; sourceTree = "<group>"; };
+		F0ED99691C0B9CC9004CA752 /* FileCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheUtil.m; sourceTree = "<group>"; };
+		F0ED996B1C0B9CF3004CA752 /* ControlCenterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCenterUtil.h; sourceTree = "<group>"; };
+		F0ED996C1C0B9CF3004CA752 /* ControlCenterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlCenterUtil.m; sourceTree = "<group>"; };
+		F0ED996E1C0B9D0B004CA752 /* TimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUtil.h; sourceTree = "<group>"; };
+		F0ED996F1C0B9D0B004CA752 /* TimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUtil.m; sourceTree = "<group>"; };
+		F0ED99721C0BA70B004CA752 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
+		F0ED99731C0BA70B004CA752 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
+		F0ED99741C0BA70B004CA752 /* JSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseSerializerWithData.h; sourceTree = "<group>"; };
+		F0ED99751C0BA70B004CA752 /* JSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseSerializerWithData.m; sourceTree = "<group>"; };
+		F0ED997A1C0BA9C6004CA752 /* BaseRequestDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestDataContract.h; sourceTree = "<group>"; };
+		F0ED997B1C0BA9C6004CA752 /* BaseRequestDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestDataContract.m; sourceTree = "<group>"; };
+		F0ED997C1C0BA9C6004CA752 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
+		F0ED997D1C0BA9C6004CA752 /* BaseResponseDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseDataContract.m; sourceTree = "<group>"; };
+		F0ED99811C0BAA04004CA752 /* LoginRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestModel.h; sourceTree = "<group>"; };
+		F0ED99821C0BAA04004CA752 /* LoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModel.m; sourceTree = "<group>"; };
+		F0ED99831C0BAA04004CA752 /* LoginResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResponseModel.h; sourceTree = "<group>"; };
+		F0ED99841C0BAA04004CA752 /* LoginResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResponseModel.m; sourceTree = "<group>"; };
+		F0ED99851C0BAA04004CA752 /* RegistrationRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationRequestModel.h; sourceTree = "<group>"; };
+		F0ED99861C0BAA04004CA752 /* RegistrationRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationRequestModel.m; sourceTree = "<group>"; };
+		F0ED99871C0BAA04004CA752 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
+		F0ED99881C0BAA04004CA752 /* RegistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationResponseModel.m; sourceTree = "<group>"; };
+		F0ED998E1C0BAA9E004CA752 /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resource.plist; sourceTree = "<group>"; };
+		F29EF9AFA7DD7E52DFB7F61C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FECC3213E7402344E3EE9F36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0ED98D21C0B969F004CA752 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513DCCCCBEA43B72D7E29851 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0ED98EB1C0B969F004CA752 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BB1BF6EC50D41CE4DFA0A56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F29EF9AFA7DD7E52DFB7F61C /* Pods.debug.xcconfig */,
+				2EEB082B7F164FA3E58D04E3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E05141D728763B2F28442747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FECC3213E7402344E3EE9F36 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0ED98CC1C0B969F004CA752 = {
+			isa = PBXGroup;
+			children = (
+				F0ED98D71C0B969F004CA752 /* MindApp */,
+				F0ED98F11C0B969F004CA752 /* MindAppTests */,
+				F0ED98D61C0B969F004CA752 /* Products */,
+				9BB1BF6EC50D41CE4DFA0A56 /* Pods */,
+				E05141D728763B2F28442747 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F0ED98D61C0B969F004CA752 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED98D51C0B969F004CA752 /* MindApp.app */,
+				F0ED98EE1C0B969F004CA752 /* MindAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0ED98D71C0B969F004CA752 /* MindApp */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99711C0BA6E8004CA752 /* Comms */,
+				F0ED99021C0B99BF004CA752 /* AudioPlayer */,
+				F0ED990F1C0B9A39004CA752 /* Utils */,
+				F0ED99441C0B9B97004CA752 /* Model */,
+				F0ED98DB1C0B969F004CA752 /* AppDelegate.h */,
+				F0ED98DC1C0B969F004CA752 /* AppDelegate.m */,
+				F0ED98DE1C0B969F004CA752 /* ViewController.h */,
+				F0ED98DF1C0B969F004CA752 /* ViewController.m */,
+				F0ED98E11C0B969F004CA752 /* Main.storyboard */,
+				F0ED98E91C0B969F004CA752 /* Info.plist */,
+				F0ED98D81C0B969F004CA752 /* Supporting Files */,
+			);
+			path = MindApp;
+			sourceTree = "<group>";
+		};
+		F0ED98D81C0B969F004CA752 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED98FD1C0B97B4004CA752 /* Assets */,
+				F0ED99001C0B9912004CA752 /* LaunchScreen.xib */,
+				F0ED98D91C0B969F004CA752 /* main.m */,
+				F0ED998E1C0BAA9E004CA752 /* Resource.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0ED98F11C0B969F004CA752 /* MindAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED98F21C0B969F004CA752 /* MindAppTests.m */,
+				F0ED98F41C0B969F004CA752 /* Info.plist */,
+			);
+			path = MindAppTests;
+			sourceTree = "<group>";
+		};
+		F0ED98FD1C0B97B4004CA752 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED98E41C0B969F004CA752 /* Assets.xcassets */,
+				F0ED98FE1C0B97EF004CA752 /* mindLogo.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		F0ED99021C0B99BF004CA752 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99031C0B99F6004CA752 /* MIAudioPlayer.h */,
+				F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */,
+				F0ED99051C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.h */,
+				F0ED99061C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m */,
+				F0ED99071C0B99F6004CA752 /* MIAudioPlayerItemInformation.h */,
+				F0ED99081C0B99F6004CA752 /* MIAudioPlayerItemInformation.m */,
+				F0ED99091C0B99F6004CA752 /* MIAudioPlayerProgress.h */,
+				F0ED990A1C0B99F6004CA752 /* MIAudioPlayerProgress.m */,
+			);
+			name = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		F0ED990F1C0B9A39004CA752 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED994E1C0B9C36004CA752 /* Colour */,
+				F0ED996E1C0B9D0B004CA752 /* TimerUtil.h */,
+				F0ED996F1C0B9D0B004CA752 /* TimerUtil.m */,
+				F0ED996B1C0B9CF3004CA752 /* ControlCenterUtil.h */,
+				F0ED996C1C0B9CF3004CA752 /* ControlCenterUtil.m */,
+				F0ED99681C0B9CC9004CA752 /* FileCacheUtil.h */,
+				F0ED99691C0B9CC9004CA752 /* FileCacheUtil.m */,
+				F0ED99651C0B9CA8004CA752 /* HashUtil.h */,
+				F0ED99661C0B9CA8004CA752 /* HashUtil.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F0ED99441C0B9B97004CA752 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99781C0BA807004CA752 /* Data Contracts */,
+				F0ED99451C0B9BA1004CA752 /* Entities */,
+				F0ED99471C0B9BCC004CA752 /* Extensions */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F0ED99451C0B9BA1004CA752 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99461C0B9BAA004CA752 /* BaseEntities */,
+				F0ED993A1C0B9B81004CA752 /* AudioFile.h */,
+				F0ED993B1C0B9B81004CA752 /* AudioFile.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		F0ED99461C0B9BAA004CA752 /* BaseEntities */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99401C0B9B81004CA752 /* MediaType.h */,
+				F0ED993E1C0B9B81004CA752 /* MediaModel.h */,
+				F0ED993F1C0B9B81004CA752 /* MediaModel.m */,
+			);
+			name = BaseEntities;
+			sourceTree = "<group>";
+		};
+		F0ED99471C0B9BCC004CA752 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED993C1C0B9B81004CA752 /* AudioFile+ext.h */,
+				F0ED993D1C0B9B81004CA752 /* AudioFile+ext.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F0ED994E1C0B9C36004CA752 /* Colour */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED994F1C0B9C51004CA752 /* MIColour */,
+				F0ED99481C0B9C2D004CA752 /* MIColourFactory.h */,
+				F0ED99491C0B9C2D004CA752 /* MIColourFactory.m */,
+				F0ED994A1C0B9C2D004CA752 /* MIColourUtil.h */,
+				F0ED994B1C0B9C2D004CA752 /* MIColourUtil.m */,
+				F0ED99101C0B9A56004CA752 /* MIColour.h */,
+				F0ED99111C0B9A56004CA752 /* MIColour.m */,
+			);
+			name = Colour;
+			sourceTree = "<group>";
+		};
+		F0ED994F1C0B9C51004CA752 /* MIColour */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99501C0B9C7F004CA752 /* MIBlue.h */,
+				F0ED99511C0B9C7F004CA752 /* MIBlue.m */,
+				F0ED99521C0B9C7F004CA752 /* MIGreen.h */,
+				F0ED99531C0B9C7F004CA752 /* MIGreen.m */,
+				F0ED99541C0B9C7F004CA752 /* MIGrey.h */,
+				F0ED99551C0B9C7F004CA752 /* MIGrey.m */,
+				F0ED99561C0B9C7F004CA752 /* MIOrange.h */,
+				F0ED99571C0B9C7F004CA752 /* MIOrange.m */,
+				F0ED99581C0B9C7F004CA752 /* MIPink.h */,
+				F0ED99591C0B9C7F004CA752 /* MIPink.m */,
+				F0ED995A1C0B9C7F004CA752 /* MIPurple.h */,
+				F0ED995B1C0B9C7F004CA752 /* MIPurple.m */,
+				F0ED995C1C0B9C7F004CA752 /* MIRed.h */,
+				F0ED995D1C0B9C7F004CA752 /* MIRed.m */,
+			);
+			name = MIColour;
+			sourceTree = "<group>";
+		};
+		F0ED99711C0BA6E8004CA752 /* Comms */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99721C0BA70B004CA752 /* CommunicationsManager.h */,
+				F0ED99731C0BA70B004CA752 /* CommunicationsManager.m */,
+				F0ED99741C0BA70B004CA752 /* JSONResponseSerializerWithData.h */,
+				F0ED99751C0BA70B004CA752 /* JSONResponseSerializerWithData.m */,
+			);
+			name = Comms;
+			sourceTree = "<group>";
+		};
+		F0ED99781C0BA807004CA752 /* Data Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99791C0BA9AA004CA752 /* BaseDataContracts */,
+				F0ED998D1C0BAA2E004CA752 /* Responses */,
+				F0ED99801C0BA9D8004CA752 /* Requests */,
+			);
+			name = "Data Contracts";
+			sourceTree = "<group>";
+		};
+		F0ED99791C0BA9AA004CA752 /* BaseDataContracts */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED997A1C0BA9C6004CA752 /* BaseRequestDataContract.h */,
+				F0ED997B1C0BA9C6004CA752 /* BaseRequestDataContract.m */,
+				F0ED997C1C0BA9C6004CA752 /* BaseResponseDataContract.h */,
+				F0ED997D1C0BA9C6004CA752 /* BaseResponseDataContract.m */,
+			);
+			name = BaseDataContracts;
+			sourceTree = "<group>";
+		};
+		F0ED99801C0BA9D8004CA752 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99811C0BAA04004CA752 /* LoginRequestModel.h */,
+				F0ED99821C0BAA04004CA752 /* LoginRequestModel.m */,
+				F0ED99851C0BAA04004CA752 /* RegistrationRequestModel.h */,
+				F0ED99861C0BAA04004CA752 /* RegistrationRequestModel.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		F0ED998D1C0BAA2E004CA752 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED99831C0BAA04004CA752 /* LoginResponseModel.h */,
+				F0ED99841C0BAA04004CA752 /* LoginResponseModel.m */,
+				F0ED99871C0BAA04004CA752 /* RegistrationResponseModel.h */,
+				F0ED99881C0BAA04004CA752 /* RegistrationResponseModel.m */,
+			);
+			name = Responses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0ED98D41C0B969F004CA752 /* MindApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0ED98F71C0B969F004CA752 /* Build configuration list for PBXNativeTarget "MindApp" */;
+			buildPhases = (
+				DA1F04B87CA5AA448B022499 /* Check Pods Manifest.lock */,
+				F0ED98D11C0B969F004CA752 /* Sources */,
+				F0ED98D21C0B969F004CA752 /* Frameworks */,
+				F0ED98D31C0B969F004CA752 /* Resources */,
+				AE71DFC25ACC955BC1F39BE6 /* Embed Pods Frameworks */,
+				8AFFD86F7CB5948C079EEE79 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MindApp;
+			productName = MindApp;
+			productReference = F0ED98D51C0B969F004CA752 /* MindApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0ED98ED1C0B969F004CA752 /* MindAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0ED98FA1C0B969F004CA752 /* Build configuration list for PBXNativeTarget "MindAppTests" */;
+			buildPhases = (
+				F0ED98EA1C0B969F004CA752 /* Sources */,
+				F0ED98EB1C0B969F004CA752 /* Frameworks */,
+				F0ED98EC1C0B969F004CA752 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0ED98F01C0B969F004CA752 /* PBXTargetDependency */,
+			);
+			name = MindAppTests;
+			productName = MindAppTests;
+			productReference = F0ED98EE1C0B969F004CA752 /* MindAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0ED98CD1C0B969F004CA752 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Mind In Salford";
+				TargetAttributes = {
+					F0ED98D41C0B969F004CA752 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9592QCXLQ4;
+					};
+					F0ED98ED1C0B969F004CA752 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = F0ED98D41C0B969F004CA752;
+					};
+				};
+			};
+			buildConfigurationList = F0ED98D01C0B969F004CA752 /* Build configuration list for PBXProject "MindApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0ED98CC1C0B969F004CA752;
+			productRefGroup = F0ED98D61C0B969F004CA752 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0ED98D41C0B969F004CA752 /* MindApp */,
+				F0ED98ED1C0B969F004CA752 /* MindAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0ED98D31C0B969F004CA752 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0ED99011C0B9912004CA752 /* LaunchScreen.xib in Resources */,
+				F0ED98FF1C0B97EF004CA752 /* mindLogo.png in Resources */,
+				F0ED98E51C0B969F004CA752 /* Assets.xcassets in Resources */,
+				F0ED998F1C0BAA9E004CA752 /* Resource.plist in Resources */,
+				F0ED98E31C0B969F004CA752 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0ED98EC1C0B969F004CA752 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AFFD86F7CB5948C079EEE79 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE71DFC25ACC955BC1F39BE6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA1F04B87CA5AA448B022499 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0ED98D11C0B969F004CA752 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0ED998A1C0BAA04004CA752 /* LoginResponseModel.m in Sources */,
+				F0ED99891C0BAA04004CA752 /* LoginRequestModel.m in Sources */,
+				F0ED99671C0B9CA8004CA752 /* HashUtil.m in Sources */,
+				F0ED99601C0B9C7F004CA752 /* MIGrey.m in Sources */,
+				F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */,
+				F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */,
+				F0ED99761C0BA70B004CA752 /* CommunicationsManager.m in Sources */,
+				F0ED98DA1C0B969F004CA752 /* main.m in Sources */,
+				F0ED99631C0B9C7F004CA752 /* MIPurple.m in Sources */,
+				F0ED998B1C0BAA04004CA752 /* RegistrationRequestModel.m in Sources */,
+				F0ED996D1C0B9CF3004CA752 /* ControlCenterUtil.m in Sources */,
+				F0ED990B1C0B99F6004CA752 /* MIAudioPlayer.m in Sources */,
+				F0ED99621C0B9C7F004CA752 /* MIPink.m in Sources */,
+				F0ED99771C0BA70B004CA752 /* JSONResponseSerializerWithData.m in Sources */,
+				F0ED995F1C0B9C7F004CA752 /* MIGreen.m in Sources */,
+				F0ED99431C0B9B81004CA752 /* MediaModel.m in Sources */,
+				F0ED99611C0B9C7F004CA752 /* MIOrange.m in Sources */,
+				F0ED998C1C0BAA04004CA752 /* RegistrationResponseModel.m in Sources */,
+				F0ED990C1C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m in Sources */,
+				F0ED997F1C0BA9C6004CA752 /* BaseResponseDataContract.m in Sources */,
+				F0ED997E1C0BA9C6004CA752 /* BaseRequestDataContract.m in Sources */,
+				F0ED994C1C0B9C2D004CA752 /* MIColourFactory.m in Sources */,
+				F0ED990E1C0B99F6004CA752 /* MIAudioPlayerProgress.m in Sources */,
+				F0ED996A1C0B9CC9004CA752 /* FileCacheUtil.m in Sources */,
+				F0ED99421C0B9B81004CA752 /* AudioFile+ext.m in Sources */,
+				F0ED99411C0B9B81004CA752 /* AudioFile.m in Sources */,
+				F0ED99641C0B9C7F004CA752 /* MIRed.m in Sources */,
+				F0ED990D1C0B99F6004CA752 /* MIAudioPlayerItemInformation.m in Sources */,
+				F0ED994D1C0B9C2D004CA752 /* MIColourUtil.m in Sources */,
+				F0ED99701C0B9D0B004CA752 /* TimerUtil.m in Sources */,
+				F0ED99121C0B9A56004CA752 /* MIColour.m in Sources */,
+				F0ED995E1C0B9C7F004CA752 /* MIBlue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0ED98EA1C0B969F004CA752 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0ED98F31C0B969F004CA752 /* MindAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0ED98F01C0B969F004CA752 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0ED98D41C0B969F004CA752 /* MindApp */;
+			targetProxy = F0ED98EF1C0B969F004CA752 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0ED98E11C0B969F004CA752 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0ED98E21C0B969F004CA752 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0ED98F51C0B969F004CA752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F0ED98F61C0B969F004CA752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0ED98F81C0B969F004CA752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F29EF9AFA7DD7E52DFB7F61C /* Pods.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MindApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.mindinsalford.MindApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F0ED98F91C0B969F004CA752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EEB082B7F164FA3E58D04E3 /* Pods.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MindApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.mindinsalford.MindApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F0ED98FB1C0B969F004CA752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MindAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.mindinsalford.MindAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindApp.app/MindApp";
+			};
+			name = Debug;
+		};
+		F0ED98FC1C0B969F004CA752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MindAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.mindinsalford.MindAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindApp.app/MindApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0ED98D01C0B969F004CA752 /* Build configuration list for PBXProject "MindApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0ED98F51C0B969F004CA752 /* Debug */,
+				F0ED98F61C0B969F004CA752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0ED98F71C0B969F004CA752 /* Build configuration list for PBXNativeTarget "MindApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0ED98F81C0B969F004CA752 /* Debug */,
+				F0ED98F91C0B969F004CA752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0ED98FA1C0B969F004CA752 /* Build configuration list for PBXNativeTarget "MindAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0ED98FB1C0B969F004CA752 /* Debug */,
+				F0ED98FC1C0B969F004CA752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0ED98CD1C0B969F004CA752 /* Project object */;
+}

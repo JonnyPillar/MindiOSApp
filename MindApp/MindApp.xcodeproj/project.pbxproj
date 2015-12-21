@@ -20,6 +20,11 @@
 		F026CA9A1C285E6E00E84406 /* ShapeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA991C285E6E00E84406 /* ShapeUtil.m */; };
 		F026CA9D1C285EB200E84406 /* GetMediaFilesResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA9C1C285EB200E84406 /* GetMediaFilesResponseModel.m */; };
 		F026CAA01C285ED800E84406 /* MIInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA9F1C285ED800E84406 /* MIInformationViewController.m */; };
+		F026CAA31C28604300E84406 /* informationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA11C28604300E84406 /* informationIcon.png */; };
+		F026CAA41C28604300E84406 /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA21C28604300E84406 /* menuButton.png */; };
+		F026CAA81C28607600E84406 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA51C28607600E84406 /* pauseButton.png */; };
+		F026CAA91C28607600E84406 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA61C28607600E84406 /* playButton.png */; };
+		F026CAAA1C28607600E84406 /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA71C28607600E84406 /* playIcon.png */; };
 		F0ED98DA1C0B969F004CA752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98D91C0B969F004CA752 /* main.m */; };
 		F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DC1C0B969F004CA752 /* AppDelegate.m */; };
 		F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DF1C0B969F004CA752 /* ViewController.m */; };
@@ -92,6 +97,11 @@
 		F026CA9C1C285EB200E84406 /* GetMediaFilesResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMediaFilesResponseModel.m; sourceTree = "<group>"; };
 		F026CA9E1C285ED800E84406 /* MIInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationViewController.h; sourceTree = "<group>"; };
 		F026CA9F1C285ED800E84406 /* MIInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationViewController.m; sourceTree = "<group>"; };
+		F026CAA11C28604300E84406 /* informationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informationIcon.png; sourceTree = "<group>"; };
+		F026CAA21C28604300E84406 /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
+		F026CAA51C28607600E84406 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		F026CAA61C28607600E84406 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
+		F026CAA71C28607600E84406 /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
 		F0ED98D51C0B969F004CA752 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0ED98D91C0B969F004CA752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0ED98DB1C0B969F004CA752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -308,6 +318,11 @@
 		F0ED98FD1C0B97B4004CA752 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F026CAA51C28607600E84406 /* pauseButton.png */,
+				F026CAA61C28607600E84406 /* playButton.png */,
+				F026CAA71C28607600E84406 /* playIcon.png */,
+				F026CAA11C28604300E84406 /* informationIcon.png */,
+				F026CAA21C28604300E84406 /* menuButton.png */,
 				F0ED98E41C0B969F004CA752 /* Assets.xcassets */,
 				F0ED98FE1C0B97EF004CA752 /* mindLogo.png */,
 			);
@@ -529,6 +544,11 @@
 					F0ED98D41C0B969F004CA752 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 9592QCXLQ4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					F0ED98ED1C0B969F004CA752 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -560,14 +580,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F026CAA91C28607600E84406 /* playButton.png in Resources */,
 				F026CA941C285E3E00E84406 /* MIHomeAudioView.xib in Resources */,
 				F0ED99011C0B9912004CA752 /* LaunchScreen.xib in Resources */,
 				F0ED98FF1C0B97EF004CA752 /* mindLogo.png in Resources */,
+				F026CAA41C28604300E84406 /* menuButton.png in Resources */,
 				F0ED98E51C0B969F004CA752 /* Assets.xcassets in Resources */,
 				F0ED998F1C0BAA9E004CA752 /* Resource.plist in Resources */,
 				F026CA961C285E3E00E84406 /* MiHomeTableViewCell.xib in Resources */,
 				F0ED98E31C0B969F004CA752 /* Main.storyboard in Resources */,
+				F026CAA81C28607600E84406 /* pauseButton.png in Resources */,
+				F026CAA31C28604300E84406 /* informationIcon.png in Resources */,
 				F026CA921C285E3E00E84406 /* MIHomeAudioPlayButton.xib in Resources */,
+				F026CAAA1C28607600E84406 /* playIcon.png in Resources */,
 				F026CA871C285E0C00E84406 /* MIHomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

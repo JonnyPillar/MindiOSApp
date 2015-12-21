@@ -31,6 +31,7 @@ static NSString * const urlScheme = @"stream";
 	if(!(self = [super init])) {}
 	self.delegate = self;
 	[self setUpCacheDelegate];
+	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 	return self;
 }
 

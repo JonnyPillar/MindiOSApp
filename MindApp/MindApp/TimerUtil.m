@@ -18,10 +18,14 @@
 
 +(NSString *)timeFormattedFromInt:(int)totalSecondsInt
 {
-	int seconds = totalSecondsInt % 60;
-	int minutes = (totalSecondsInt / 60) % 60;
+	NSDateFormatter *dateFormatter = [NSDateFormatter new];
+	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
 	
-	return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+	if(totalSecondsInt > 3599) [dateFormatter setDateFormat:@"HH:mm:ss"];
+	else [dateFormatter setDateFormat:@"mm:ss"];
+	
+	NSDate* d = [NSDate dateWithTimeIntervalSince1970:totalSecondsInt];
+	return [dateFormatter stringFromDate:d];
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "AudioFile+ext.h"
+#import "MIAudioPlayerProgress.h"
+#import "MIAudioPlayerItemInformation.h"
 
 @protocol MIAudioPlayerDelegate;
 
@@ -16,20 +18,24 @@
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 
 -(id) init;
--(id) initWithDelegate:(id) delegate;
 
 -(void) playNewPlayerItem:(AudioFile *) newAudioFile;
 -(void) playAudio;
 -(void) pauseAudio;
+-(BOOL) audioPlayerHasPlayerItem;
 -(BOOL) audioPlayerIsPlaying;
 -(float) getAudioTrackDuration;
--(float)getAudioTrackElapsedTime;
+-(float) getAudioTrackElapsedTime;
+-(float) getAudioTrackPlaybackPercentage;
+-(MIAudioPlayerProgress*) getAudioProgress;
 
 @end
 
 @protocol MIAudioPlayerDelegate <NSObject>
 
 @required
+
+-(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
 -(void) updateUIForPlay;
 -(void) updateUIForPause;
 -(void) updateUIProgress;

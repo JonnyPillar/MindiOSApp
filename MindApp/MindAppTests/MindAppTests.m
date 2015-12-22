@@ -2,11 +2,10 @@
 //  MindAppTests.m
 //  MindAppTests
 //
-//  Created by Jonny Pillar on 10/11/2014.
-//  Copyright (c) 2014 Jonny Pillar. All rights reserved.
+//  Created by Jonny Pillar on 29/11/2015.
+//  Copyright © 2015 Mind In Salford. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
 @interface MindAppTests : XCTestCase
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {

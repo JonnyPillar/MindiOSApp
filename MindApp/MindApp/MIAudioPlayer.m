@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "MIAudioPlayer.h"
 #import "MIAudioPlayerCacheDelegate.h"
 #import "HashUtil.h"
 #import "FileCacheUtil.h"
 #import "ControlCenterUtil.h"
-#import <UIKit/UIKit.h>
+#import "TimerUtil.h"
 
 @interface MIAudioPlayer () <MIAudioPlayerDelegate>
 
@@ -30,15 +31,7 @@ static NSString * const urlScheme = @"stream";
 	if(!(self = [super init])) {}
 	self.delegate = self;
 	[self setUpCacheDelegate];
-//	[self setupBackgroundTask];
-	return self;
-}
-
--(id) initWithDelegate:(id) delegate{
-	if(!(self = [super init])){}
-	self.delegate = delegate;
-	[self setUpCacheDelegate];
-//	[self setupBackgroundTask];
+	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 	return self;
 }
 
@@ -47,8 +40,6 @@ static NSString * const urlScheme = @"stream";
 		self.audioPlayerCacheDelegate = [MIAudioPlayerCacheDelegate new];
 	}
 }
-
-
 
 - (NSURL *)getMediaUrlWithStreamingScheme:(NSURL *)mediaItemUrl
 {
@@ -83,8 +74,8 @@ static NSString * const urlScheme = @"stream";
 		
 		AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:mediaItemAsset];
 		[self setAudioPlayerItem:playerItem];
-//		[
 		[self updateControlCenter];
+		[self.delegate updateUIForNewItem:[[MIAudioPlayerItemInformation alloc] initWithAudioFile:newAudioFile]];
 	}
 }
 
@@ -122,7 +113,7 @@ static NSString * const urlScheme = @"stream";
 	_audioTimer = [NSTimer
 				   scheduledTimerWithTimeInterval:1
 				   target:self selector:@selector(updateProgressMethods)
-				   userInfo:nil repeats:YES];
+                    userInfo:nil repeats:YES];
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(playerItemDidReachEnd:)
 												 name:AVPlayerItemDidPlayToEndTimeNotification
@@ -145,11 +136,8 @@ static NSString * const urlScheme = @"stream";
 	return ![_audioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
 }
 
-- (bool)isNewMediaItem:(AVPlayerItem *)playerItem {
-	AVURLAsset *asset1 = (AVURLAsset *)[super.currentItem asset];
-	AVURLAsset *asset2 = (AVURLAsset *)[playerItem asset];
-	
-	return ![asset1.URL isEqual: asset2.URL];
+-(BOOL) audioPlayerHasPlayerItem{
+	return self.currentItem !=  nil;
 }
 
 -(BOOL) audioPlayerIsPlaying{
@@ -164,9 +152,39 @@ static NSString * const urlScheme = @"stream";
 	return CMTimeGetSeconds(self.currentItem.currentTime);
 }
 
+-(float) getAudioTrackRemainingTime{
+    float timeRemaining = [self getAudioTrackDuration] - [self getAudioTrackElapsedTime];
+    if(isnan(timeRemaining)) timeRemaining = 0;
+    return timeRemaining;
+}
+
+-(float) getAudioTrackPlaybackPercentage{
+
+    float currentPercentage = [self getAudioTrackElapsedTime] / [self getAudioTrackDuration];
+    if(isnan(currentPercentage)) currentPercentage = 0.001;
+    return currentPercentage;
+}
+
+-(MIAudioPlayerProgress*) getAudioProgress{
+	MIAudioPlayerProgress* currentProgress = [MIAudioPlayerProgress new];
+
+	currentProgress.AudioCurrentTime = [TimerUtil timeFormattedFromInt:[self getAudioTrackElapsedTime] ];
+	currentProgress.AudioRemaining = [TimerUtil timeFormattedFromInt:[self getAudioTrackRemainingTime] ];
+	currentProgress.AudioProgressPercentage = [self getAudioTrackPlaybackPercentage];
+	currentProgress.AudioTotalTime = [self getAudioTrackDuration];
+	
+	return currentProgress;
+}
+
 -(void) updateProgressMethods{
 	[self updateControlCenterElapsedTime];
 	[self.delegate updateUIProgress];
+    if(![self audioPlayerIsPlaying]){
+    _audioTimer = [NSTimer
+            scheduledTimerWithTimeInterval:1
+                                    target:self selector:@selector(updateProgressMethods)
+                                  userInfo:nil repeats:NO];
+    }
 }
 
 #pragma mark <MIAudioPlayerDelegate>
@@ -180,6 +198,10 @@ static NSString * const urlScheme = @"stream";
 }
 
 -(void) updateUIProgress{
+	//Stub Method
+}
+
+-(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation {
 	//Stub Method
 }
 

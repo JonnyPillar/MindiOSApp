@@ -2,8 +2,8 @@
 //  main.m
 //  MindApp
 //
-//  Created by Jonny Pillar on 10/11/2014.
-//  Copyright (c) 2014 Jonny Pillar. All rights reserved.
+//  Created by Jonny Pillar on 29/11/2015.
+//  Copyright © 2015 Mind In Salford. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -7,14 +7,11 @@
 //
 
 #import "MIAudioPlayerCacheDelegate.h"
-#import <AVFoundation/AVFoundation.h>
-#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface MIAudioPlayerCacheDelegate ()
 
 @property (nonatomic, strong) NSMutableData *songData;
 @property (nonatomic, strong) NSMutableArray *pendingRequests;
-
 @property (nonatomic, strong) NSHTTPURLResponse *response;
 @property (nonatomic, strong) NSURLConnection *connection;
 

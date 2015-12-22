@@ -16,14 +16,17 @@
 -(id)initWithJson:(NSDictionary*)data{
 	self = [super init];
 	if(self){
-		self.Id = [[data objectForKey:@"Id"] integerValue];
-		self.Filename = [data objectForKey:@"FileName"];
-		self.FileUrl = [data objectForKey:@"FileUrl"];
-		self.Description = [data objectForKey:@"Description"];
-		self.ThumbnailUrl = [data objectForKey:@"ThumbnailUrl"];
-		self.ImageUrl = [data objectForKey:@"ImageUrl"];
-		self.MediaType = [[data objectForKey:@"MediaType"] intValue];
-		self.Duration = [data objectForKey:@"Duration"];
+		self.Id = [data[@"Id"] integerValue];
+		self.Filename = data[@"FileName"];
+		self.FileUrl = data[@"FileUrl"];
+		self.Description = data[@"Description"];
+		self.ThumbnailUrl = data[@"ThumbnailUrl"];
+		self.ImageUrl = data[@"ImageUrl"];
+		self.MediaType = (MediaType) [data[@"MediaType"] intValue];
+		self.Duration = data[@"Duration"];
+		self.Title = data[@"Title"];
+		self.BaseColour = data[@"BaseColour"];
+		if(!self.BaseColour) self.BaseColour = @"Green";
 	}
 	return self;
 }
@@ -47,9 +50,10 @@
 	[informationDictionary setValue:@"Mind" forKey:MPMediaItemPropertyArtist];
 	
 	UIImageView *albumArtImg = [UIImageView new];
-	[albumArtImg sd_setImageWithURL:self.GetImageUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
+	[albumArtImg setImage:[UIImage imageNamed:@"mindLogo.png"]];
+//	[albumArtImg sd_setImageWithURL:self.GetImageUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
 	
-	[informationDictionary setObject:[[MPMediaItemArtwork alloc] initWithImage:albumArtImg.image] forKey:MPMediaItemPropertyArtwork];
+	informationDictionary[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"mindLogo.png"]];
 	
 	return informationDictionary;
 }

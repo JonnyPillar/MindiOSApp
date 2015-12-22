@@ -10,7 +10,6 @@
 #import "MIAudioPlayer.h"
 #import "ControlCenterUtil.h"
 #import "TimerUtil.h"
-#import "STKAudioPlayer.h"
 
 @interface MIAudioPlayer ()
 
@@ -24,14 +23,12 @@
 
 -(id) init{
 	[self setupAudioPlayer];
+	self.audioPlayer.delegate = self;
 	return self;
 }
 
 - (void)setupAudioPlayer {
 	self.audioPlayer = [[STKAudioPlayer alloc] init];
-	NSError* error;
-	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 }
 
 -(void) playNewPlayerItem:(AudioFile *) newAudioFile{
@@ -39,9 +36,10 @@
 	if([self isNewAudioFile:newAudioFile])
 	{
 		_audioFile = newAudioFile;
-		[self setAudioPlayerItem:_audioFile];
+		[self.audioPlayer playURL:newAudioFile.GetFileUrlNsUrl];
 		[self updateControlCenter];
 		[self.delegate updateUIForNewItem:[[MIAudioPlayerItemInformation alloc] initWithAudioFile:newAudioFile]];
+		[self updateDuration];
 	}
 }
 
@@ -55,15 +53,6 @@
 
 -(void) updateControlCenterElapsedTime{
 	[ControlCenterUtil updateControlCenterPlayedPosition:@([self getAudioTrackElapsedTime])];
-}
-
-- (void)setAudioPlayerItem:(AudioFile *)playerItem {
-	if(self.audioPlayer.pendingQueueCount == 0){
-		[self.audioPlayer playURL:playerItem.GetFileUrlNsUrl];
-	}
-	else{
-		[self.audioPlayer queueURL:playerItem.GetFileUrlNsUrl];
-	}
 }
 
 #pragma mark Event Methods
@@ -181,5 +170,31 @@
 -(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation {
 	//Stub Method
 }
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didStartPlayingQueueItemId:(NSObject *)queueItemId {
+	NSLog(@"didStartPlayingQueueItemId");
+	[self updateDuration];
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject *)queueItemId {
+	NSLog(@"didFinishBufferingSourceWithQueueItemId");
+
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState {
+	NSLog(@"stateChanged");
+
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishPlayingQueueItemId:(NSObject *)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration {
+	NSLog(@"didFinishPlayingQueueItemId");
+
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode {
+	NSLog(@"unexpectedError");
+
+}
+
 
 @end

@@ -137,9 +137,9 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	
 	if(responseModel.Success){
 		_mediaItems = responseModel.MediaFiles;
-		if(![self.audioPlayer audioPlayerHasPlayerItem]){
-			[self.audioPlayer playNewPlayerItem:[_mediaItems firstObject]];
-		}
+//		if(![self.audioPlayer audioPlayerHasPlayerItem]){
+//			[self.audioPlayer playNewPlayerItem:[_mediaItems firstObject]];
+//		}
 		[self.homeView.mediaTrackTableView reloadData];
 	}
 	else {

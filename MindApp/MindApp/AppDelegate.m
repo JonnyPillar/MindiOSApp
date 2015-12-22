@@ -18,7 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
-
+	NSError* error;
+	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
+	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 	return YES;
 }
 

@@ -10,10 +10,11 @@
 #import "AudioFile+ext.h"
 #import "MIAudioPlayerProgress.h"
 #import "MIAudioPlayerItemInformation.h"
+#import "STKAudioPlayer.h"
 
 @protocol MIAudioPlayerDelegate;
 
-@interface MIAudioPlayer : NSObject
+@interface MIAudioPlayer : NSObject <STKAudioPlayerDelegate>
 
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 

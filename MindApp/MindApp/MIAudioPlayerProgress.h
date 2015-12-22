@@ -10,9 +10,9 @@
 
 @interface MIAudioPlayerProgress : NSObject
 
-@property float AudioProgressPercentage;
+@property double AudioProgressPercentage;
 @property (strong, nonatomic) NSString* AudioCurrentTime;
 @property (strong, nonatomic) NSString* AudioRemaining;
-@property float AudioTotalTime;
+@property double AudioTotalTime;
 
 @end

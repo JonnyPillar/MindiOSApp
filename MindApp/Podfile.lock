@@ -23,13 +23,16 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - StreamingKit (0.1.28)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - SDWebImage (~> 3.7)
+  - StreamingKit (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  StreamingKit: 3b9c78009275ef1caf198bae44cfb982fee65d4d
 
 COCOAPODS: 0.39.0

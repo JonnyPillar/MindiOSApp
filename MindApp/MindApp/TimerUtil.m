@@ -10,7 +10,7 @@
 
 @implementation TimerUtil
 
-+(NSString *) timeFormattedFromFloat:(float)totalSecondsFloat
++(NSString *) timeFormattedFromFloat:(double)totalSecondsFloat
 {
 	int totalSecondsInt = (int) totalSecondsFloat;
 	return [self timeFormattedFromInt:totalSecondsInt];

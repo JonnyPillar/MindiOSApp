@@ -93,7 +93,7 @@
 	
 	[self AddAnimationTo:outerCircle withProgress:progressInformation];
 	[self setCurrentProgress:progressInformation.AudioProgressPercentage];
-	NSLog(@"Current Progress Percent: %f", self.currentProgress);
+//	NSLog(@"Current Progress Percent: %f", self.currentProgress);
 	[self.layer addSublayer:outerCircle];
 } 
 

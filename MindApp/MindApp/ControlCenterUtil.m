@@ -15,11 +15,14 @@
 +(void) updateControlCenterWithAudioFileInfo: (AudioFile*) audioFile andDuration:(NSNumber *) durationInSeconds{
 	
 	NSMutableDictionary* audioFileInfo = [audioFile GetMPInfoCenterInformationDictionary];
-	[[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:audioFileInfo] ;
+	[[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:audioFileInfo];
+	[self updateControlCenterAudioFileDuration:durationInSeconds];
 }
 
 +(void) updateControlCenterAudioFileDuration: (NSNumber *) durationInSeconds{
-	
+
+	NSLog([NSString stringWithFormat:@"Duration: %d", durationInSeconds.doubleValue]);
+
 	MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
 	NSMutableDictionary *playingInfo = [NSMutableDictionary dictionaryWithDictionary:center.nowPlayingInfo];
 	playingInfo[MPMediaItemPropertyPlaybackDuration] = durationInSeconds;

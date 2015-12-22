@@ -13,7 +13,7 @@
 
 @protocol MIAudioPlayerDelegate;
 
-@interface MIAudioPlayer : AVPlayer <AVAudioSessionDelegate>
+@interface MIAudioPlayer : NSObject
 
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 
@@ -22,11 +22,12 @@
 -(void) playNewPlayerItem:(AudioFile *) newAudioFile;
 -(void) playAudio;
 -(void) pauseAudio;
+-(void) toggleAudio;
 -(BOOL) audioPlayerHasPlayerItem;
 -(BOOL) audioPlayerIsPlaying;
--(float) getAudioTrackDuration;
--(float) getAudioTrackElapsedTime;
--(float) getAudioTrackPlaybackPercentage;
+-(double) getAudioTrackDuration;
+-(double) getAudioTrackElapsedTime;
+-(double) getAudioTrackPlaybackPercentage;
 -(MIAudioPlayerProgress*) getAudioProgress;
 
 @end

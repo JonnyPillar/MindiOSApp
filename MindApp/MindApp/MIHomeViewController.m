@@ -203,12 +203,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 }
 
 -(void)audioPlayerPlayButtonClicked:(id)sender{
-	if([_audioPlayer audioPlayerIsPlaying]) {
-		[_audioPlayer pauseAudio];
-	}
-	else{
-		[_audioPlayer playAudio];
-	}
+	[_audioPlayer toggleAudio];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

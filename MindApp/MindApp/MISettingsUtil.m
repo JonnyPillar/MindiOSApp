@@ -1,0 +1,29 @@
+//
+//  MISettingsUtil.m
+//  MindApp
+//
+//  Created by Jonny Pillar on 30/12/2015.
+//  Copyright © 2015 Mind In Salford. All rights reserved.
+//
+
+#import "MISettingsUtil.h"
+#import "MILogUtil.h"
+
+@implementation MISettingsUtil
+
++(NSDictionary *) getSettingDictionary{
+  NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MiSettings" ofType:@"plist"];
+  return [NSDictionary dictionaryWithContentsOfFile:plistPath];
+}
+
++ (BOOL)getBoolSettingWithName:(NSString *)key {
+    NSDictionary * plistDictionary = [self getSettingDictionary];
+
+    if(!plistDictionary) {
+     [MILogUtil logWithText:@"Setting File Doesn't Exist"];
+     return false;
+    }
+    return (BOOL) [plistDictionary valueForKey:key];
+}
+
+@end

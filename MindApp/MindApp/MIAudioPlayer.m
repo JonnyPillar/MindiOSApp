@@ -156,22 +156,4 @@
     }
 }
 
-#pragma mark <MIAudioPlayerDelegate>
-
--(void) updateUIForPlay{
-	//Stub Methods
-}
-
--(void) updateUIForPause{
-	//Stub Methods
-}
-
--(void) updateUIProgress{
-	//Stub Method
-}
-
--(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation {
-	//Stub Method
-}
-
 @end

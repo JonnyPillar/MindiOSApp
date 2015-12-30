@@ -21,7 +21,7 @@
 
 +(void) updateControlCenterAudioFileDuration: (NSNumber *) durationInSeconds{
 
-	NSLog([NSString stringWithFormat:@"Duration: %d", durationInSeconds.doubleValue]);
+	NSLog(@"Duration: %lf", durationInSeconds.doubleValue);
 
 	MPNowPlayingInfoCenter *center = [MPNowPlayingInfoCenter defaultCenter];
 	NSMutableDictionary *playingInfo = [NSMutableDictionary dictionaryWithDictionary:center.nowPlayingInfo];

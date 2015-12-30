@@ -13,9 +13,8 @@
 
 + (void)logWithText:(NSString *)message {
     if([MISettingsUtil getBoolSettingWithName:@"AllowLogging"]){
-        NSLog(message);
+        NSLog(@"%@", message);
     }
 }
-
 
 @end

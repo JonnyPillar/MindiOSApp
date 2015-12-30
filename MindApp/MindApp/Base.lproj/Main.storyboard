@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pRg-fW-wN2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Player-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MIHomeViewController" sceneMemberID="viewController">
+                <viewController title="Player" id="BYZ-38-t0r" customClass="MIHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,16 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Player" image="Music-Transcript-50.png" id="Mgd-6m-F4J"/>
+                    <navigationItem key="navigationItem" id="tXR-A5-OiT"/>
                     <connections>
                         <outlet property="homeView" destination="8bC-Xf-vdC" id="GkB-er-yfp"/>
-                        <segue destination="Lyv-MP-JOf" kind="show" identifier="show_information_page" id="Ib8-1N-DMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="376"/>
+            <point key="canvasLocation" x="464" y="388"/>
         </scene>
-        <!--Information View Controller-->
+        <!--Tab Bar View Controller-->
+        <scene sceneID="lO1-t5-zHy">
+            <objects>
+                <tabBarController id="pRg-fW-wN2" customClass="MITabBarViewController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Hzl-fp-m9P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eIe-6a-bBw"/>
+                        <segue destination="Lyv-MP-JOf" kind="relationship" relationship="viewControllers" id="lLC-3C-olH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97c-za-Zei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-419"/>
+        </scene>
+        <!--Info-->
         <scene sceneID="grI-Na-rYX">
             <objects>
                 <viewController id="Lyv-MP-JOf" customClass="MIInformationViewController" sceneMemberID="viewController">
@@ -40,10 +59,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="Info-Squared.png" id="kIV-mb-COs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-GF-zrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1225" y="388"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Info-Squared.png" width="30" height="30"/>
+        <image name="Music-Transcript-50.png" width="30" height="30"/>
+    </resources>
 </document>

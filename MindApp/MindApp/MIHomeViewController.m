@@ -35,6 +35,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[self setUpMediaAudio];
 	[self setUpPullToRefresh];
 	[self retrieveMediaItemData];
+//	[self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,10 @@
 
 @implementation ShapeUtil
 
++ (double)CalculateArcAngleWithStartAngle:(double)startAngle EndAngle:(double)endAngle CurrentPercentage:(double)currentPercentage {
+	return ((endAngle - startAngle) * (currentPercentage / 100.0) + startAngle);
+}
+
 + (CAShapeLayer *)CreateHollowCircleForView: (CGRect) viewFrame Radius:(int)radius y:(int)y x:(int)x strokeColour:(UIColor *)strokeColour lineWidth:(int) lineWidth {
 	CAShapeLayer *circle = [CAShapeLayer layer];
 	// Make a circular shape
@@ -24,6 +28,26 @@
 	circle.strokeColor = strokeColour.CGColor;
 	circle.lineWidth = lineWidth;
 	return circle;
+}
+
++ (UIBezierPath *) CreateCircleWithRect: (CGRect) rect Radius: (int) radius{
+	UIBezierPath*outerCircle = [UIBezierPath bezierPath];
+	[outerCircle addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
+						   radius:radius
+					   startAngle:0
+						 endAngle:360
+						clockwise:YES];
+	return outerCircle;
+}
+
++ (UIBezierPath *) CreateArcWithRect: (CGRect) rect Radius: (int) radius StartAngle: (CGFloat) startAngle EndAngle: (CGFloat) endAngle{
+	UIBezierPath*outerCircle = [UIBezierPath bezierPath];
+	[outerCircle addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
+						   radius:radius
+					   startAngle:startAngle
+						 endAngle:endAngle
+						clockwise:YES];
+	return outerCircle;
 }
 
 @end

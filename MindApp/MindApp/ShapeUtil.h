@@ -11,6 +11,9 @@
 
 @interface ShapeUtil : NSObject
 
-+ (CAShapeLayer *)CreateHollowCircleForView: (CGRect) viewFrame Radius:(int)radius y:(int)y x:(int)x strokeColour:(UIColor *)strokeColour lineWidth:(int) lineWidth;
++ (double) CalculateArcAngleWithStartAngle: (double) startAngle EndAngle: (double) endAngle CurrentPercentage: (double) currentPercentage;
++ (CAShapeLayer *) CreateHollowCircleForView: (CGRect) viewFrame Radius:(int)radius y:(int)y x:(int)x strokeColour:(UIColor *)strokeColour lineWidth:(int) lineWidth;
++ (UIBezierPath *) CreateCircleWithRect: (CGRect) rect Radius: (int) radius;
++ (UIBezierPath *) CreateArcWithRect: (CGRect) rect Radius: (int) radius StartAngle: (CGFloat) startAngle EndAngle: (CGFloat) endAngle;
 
 @end

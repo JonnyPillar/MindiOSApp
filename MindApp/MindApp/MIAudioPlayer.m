@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "MIAudioPlayer.h"
-#import "ControlCenterUtil.h"
+#import "NowPlayingInfoUtil.h"
 #import "TimerUtil.h"
+#import "RemoteCommandUtil.h"
+#import <MediaPlayer/MPRemoteCommandCenter.h>
+#import <MediaPlayer/MPRemoteCommandEvent.h>
+#import <MediaPlayer/MPRemoteCommand.h>
 
-@interface MIAudioPlayer ()
+@interface MIAudioPlayer () {
+	MPRemoteCommandCenter *commandCenter;
+
+}
 
 @property (nonatomic,strong) AudioFile *audioFile;
 @property (nonatomic, strong) NSTimer* audioTimer;
 @property (nonatomic, strong) STKAudioPlayer* audioPlayer;
+@property (nonatomic, strong) RemoteCommandUtil* remoteCommandUtil;
 
 @end
 
@@ -23,7 +31,16 @@
 
 -(id) init{
 	[self setupAudioPlayer];
+	[self setupRemoteCommandUtil];
+
 	return self;
+}
+
+- (void)setupRemoteCommandUtil {
+
+	self.remoteCommandUtil = [[RemoteCommandUtil alloc] init];
+	[self.remoteCommandUtil registerPlayCommand:self WithAction:@selector(playAudio)];
+	[self.remoteCommandUtil registerPauseCommand:self WithAction:@selector(pauseAudio)];
 }
 
 - (void)setupAudioPlayer {
@@ -43,15 +60,15 @@
 }
 
 -(void) updateControlCenter{
-	[ControlCenterUtil updateControlCenterWithAudioFileInfo:_audioFile andDuration:@([self getAudioTrackDuration])];
+	[NowPlayingInfoUtil updateControlCenterWithAudioFileInfo:_audioFile andDuration:@([self getAudioTrackDuration])];
 }
 
 -(void) updateDuration{
-	[ControlCenterUtil updateControlCenterAudioFileDuration:@([self getAudioTrackDuration])];
+	[NowPlayingInfoUtil updateControlCenterAudioFileDuration:@([self getAudioTrackDuration])];
 }
 
 -(void) updateControlCenterElapsedTime{
-	[ControlCenterUtil updateControlCenterPlayedPosition:@([self getAudioTrackElapsedTime])];
+	[NowPlayingInfoUtil updateControlCenterPlayedPosition:@([self getAudioTrackElapsedTime])];
 }
 
 #pragma mark Event Methods
@@ -67,10 +84,7 @@
 				   scheduledTimerWithTimeInterval:1
 				   target:self selector:@selector(updateProgressMethods)
                     userInfo:nil repeats:YES];
-//	[[NSNotificationCenter defaultCenter] addObserver:self
-//											 selector:@selector(playerItemDidReachEnd:)
-//												 name:AVPlayerItemDidPlayToEndTimeNotification
-//											   object:[super currentItem]];
+
 	[self updateDuration];
 }
 
@@ -144,15 +158,16 @@
 }
 
 -(void) updateProgressMethods{
+	[self updateDuration];
 	[self updateControlCenterElapsedTime];
 	[self.delegate updateUIProgress];
     if(![self audioPlayerIsPlaying]){
 		[_audioTimer invalidate];
 		_audioTimer = nil;
-    _audioTimer = [NSTimer
-            scheduledTimerWithTimeInterval:1
-                                    target:self selector:@selector(updateProgressMethods)
-                                  userInfo:nil repeats:NO];
+		_audioTimer = [NSTimer
+				scheduledTimerWithTimeInterval:1
+										target:self selector:@selector(updateProgressMethods)
+									  userInfo:nil repeats:YES];
     }
 }
 

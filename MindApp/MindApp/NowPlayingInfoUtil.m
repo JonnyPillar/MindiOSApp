@@ -1,16 +1,16 @@
 //
-//  ControlCenterUtil.m
+//  NowPlayingInfoUtil.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 04/01/2015.
 //  Copyright (c) 2015 Jonny Pillar. All rights reserved.
 //
 
-#import "ControlCenterUtil.h"
+#import "NowPlayingInfoUtil.h"
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
 
-@implementation ControlCenterUtil
+@implementation NowPlayingInfoUtil
 
 +(void) updateControlCenterWithAudioFileInfo: (AudioFile*) audioFile andDuration:(NSNumber *) durationInSeconds{
 	

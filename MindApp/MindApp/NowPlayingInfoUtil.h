@@ -1,5 +1,5 @@
 //
-//  ControlCenterUtil.h
+//  NowPlayingInfoUtil.h
 //  MindApp
 //
 //  Created by Jonny Pillar on 04/01/2015.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AudioFile+ext.h"
 
-@interface ControlCenterUtil : NSObject
+@interface NowPlayingInfoUtil : NSObject
 
 +(void) updateControlCenterWithAudioFileInfo: (AudioFile*) audioFile andDuration:(NSNumber *) durationInSeconds;
 +(void) updateControlCenterAudioFileDuration: (NSNumber *) durationInSeconds;

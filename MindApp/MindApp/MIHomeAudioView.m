@@ -105,7 +105,6 @@
 }
 
 - (void)updateProgressBar:(MIAudioPlayerProgress *)progress {
-	NSLog(@"updateProgressBar");
 	if (self.playbutton.percent > 0) {
 		self.playbutton.percent = progress.AudioProgressPercentage;
 	}

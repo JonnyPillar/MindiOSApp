@@ -56,15 +56,13 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 - (void)setUpHomeView {
 	[self.homeView setMediaTableViewDelegate:self];
 	[self.homeView setMediaTableViewDataSource:self];
-	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil PinkMedium]];
+	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-	[self.homeView.menuButton addTarget:self action:@selector(menuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-	[self.homeView.informationButton addTarget:self action:@selector(informationButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)setUpPullToRefresh{
 	self.refreshControl = [[UIRefreshControl alloc] init];
-	self.refreshControl.backgroundColor = [MIColourUtil PinkLight];
+	self.refreshControl.backgroundColor = [MIColourUtil BlueLight];
 	self.refreshControl.tintColor = [UIColor whiteColor];
 	[self.refreshControl addTarget:self
 							action:@selector(retrieveMediaItemData)
@@ -196,14 +194,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[ErrorAlert show];
 }
 
--(void)menuButtonClicked:(id)sender{
-	NSLog(@"Menu Button Clicked");
-}
-
--(void)informationButtonClicked:(id)sender{
-	[self performSegueWithIdentifier:@"show_information_page" sender:sender];
-}
-
 -(void)audioPlayerPlayButtonClicked:(id)sender{
 	[_audioPlayer toggleAudio];
 }
@@ -219,14 +209,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 							 ofObject:object
 							   change:change
 							  context:context];
-	}
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	
-	if ([[segue identifier] isEqualToString:@"show_information_page"])
-	{
-		MIInformationViewController* iVC = [segue destinationViewController];
 	}
 }
 

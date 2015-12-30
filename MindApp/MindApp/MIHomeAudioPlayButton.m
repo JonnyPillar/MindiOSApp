@@ -8,7 +8,7 @@
 
 #import "MIHomeAudioPlayButton.h"
 #import "ShapeUtil.h"
-#import "MIPink.h"
+#import "MIBlue.h"
 
 @interface MIHomeAudioPlayButton () {
 	CGFloat startAngle;
@@ -27,7 +27,7 @@
 
 -(MIColour*) GetButtonColour{
 	if(!_buttonColour){
-		return [MIPink new];
+		return [MIBlue new];
 	}
 	else return _buttonColour;
 }

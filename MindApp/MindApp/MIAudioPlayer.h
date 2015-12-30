@@ -14,7 +14,7 @@
 
 @protocol MIAudioPlayerDelegate;
 
-@interface MIAudioPlayer : NSObject <STKAudioPlayerDelegate>
+@interface MIAudioPlayer : NSObject
 
 @property (nonatomic, strong) id<MIAudioPlayerDelegate> delegate;
 

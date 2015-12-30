@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		513DCCCCBEA43B72D7E29851 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FECC3213E7402344E3EE9F36 /* libPods.a */; };
+		B09E21E85B362FC4B0CC4AC5 /* MIAudioPlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */; };
+		B09E220BE22C7880C53C58EB /* MILogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2BFBB1BDE10D7180B28D /* MILogUtil.m */; };
+		B09E24C8F1A15D3CD115EC9A /* MISettingsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E24964EE38EDF40251CEB /* MISettingsUtil.m */; };
+		B09E2B486F3DBCB09BD2F55C /* MIAudioPlayerItemInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2733B3C21C4AEE5DB4DB /* MIAudioPlayerItemInformation.m */; };
 		F026CA811C285D4A00E84406 /* MIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA801C285D4A00E84406 /* MIHomeViewController.m */; };
 		F026CA861C285E0C00E84406 /* MIHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA841C285E0C00E84406 /* MIHomeView.m */; };
 		F026CA871C285E0C00E84406 /* MIHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F026CA851C285E0C00E84406 /* MIHomeView.xib */; };
@@ -25,9 +29,7 @@
 		F026CAA81C28607600E84406 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA51C28607600E84406 /* pauseButton.png */; };
 		F026CAA91C28607600E84406 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA61C28607600E84406 /* playButton.png */; };
 		F026CAAA1C28607600E84406 /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA71C28607600E84406 /* playIcon.png */; };
-		F090CA4E1C341DF0007ECEC8 /* MILogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F090CA4D1C341DF0007ECEC8 /* MILogUtil.m */; };
 		F090CA501C341E8B007ECEC8 /* MiSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */; };
-		F090CA531C341EFC007ECEC8 /* MISettingsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F090CA521C341EFC007ECEC8 /* MISettingsUtil.m */; };
 		F0ED98DA1C0B969F004CA752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98D91C0B969F004CA752 /* main.m */; };
 		F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DC1C0B969F004CA752 /* AppDelegate.m */; };
 		F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DF1C0B969F004CA752 /* ViewController.m */; };
@@ -37,9 +39,6 @@
 		F0ED98FF1C0B97EF004CA752 /* mindLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F0ED98FE1C0B97EF004CA752 /* mindLogo.png */; };
 		F0ED99011C0B9912004CA752 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0ED99001C0B9912004CA752 /* LaunchScreen.xib */; };
 		F0ED990B1C0B99F6004CA752 /* MIAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */; };
-		F0ED990C1C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99061C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m */; };
-		F0ED990D1C0B99F6004CA752 /* MIAudioPlayerItemInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99081C0B99F6004CA752 /* MIAudioPlayerItemInformation.m */; };
-		F0ED990E1C0B99F6004CA752 /* MIAudioPlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED990A1C0B99F6004CA752 /* MIAudioPlayerProgress.m */; };
 		F0ED99121C0B9A56004CA752 /* MIColour.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99111C0B9A56004CA752 /* MIColour.m */; };
 		F0ED99411C0B9B81004CA752 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED993B1C0B9B81004CA752 /* AudioFile.m */; };
 		F0ED99421C0B9B81004CA752 /* AudioFile+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED993D1C0B9B81004CA752 /* AudioFile+ext.m */; };
@@ -80,6 +79,14 @@
 
 /* Begin PBXFileReference section */
 		2EEB082B7F164FA3E58D04E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B09E24964EE38EDF40251CEB /* MISettingsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISettingsUtil.m; sourceTree = "<group>"; };
+		B09E2508C0B77BA5C9D52D9B /* MILogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILogUtil.h; sourceTree = "<group>"; };
+		B09E2733B3C21C4AEE5DB4DB /* MIAudioPlayerItemInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerItemInformation.m; sourceTree = "<group>"; };
+		B09E27879F9217B8E1CC64BD /* MIAudioPlayerProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerProgress.h; sourceTree = "<group>"; };
+		B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerProgress.m; sourceTree = "<group>"; };
+		B09E29573FA90AC49FD19B33 /* MISettingsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISettingsUtil.h; sourceTree = "<group>"; };
+		B09E2BFBB1BDE10D7180B28D /* MILogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILogUtil.m; sourceTree = "<group>"; };
+		B09E2DBB835399EC6FB32588 /* MIAudioPlayerItemInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerItemInformation.h; sourceTree = "<group>"; };
 		F026CA7F1C285D4A00E84406 /* MIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeViewController.h; sourceTree = "<group>"; };
 		F026CA801C285D4A00E84406 /* MIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeViewController.m; sourceTree = "<group>"; };
 		F026CA831C285E0C00E84406 /* MIHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeView.h; sourceTree = "<group>"; };
@@ -105,11 +112,7 @@
 		F026CAA51C28607600E84406 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
 		F026CAA61C28607600E84406 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		F026CAA71C28607600E84406 /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
-		F090CA4C1C341DF0007ECEC8 /* MILogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILogUtil.h; sourceTree = "<group>"; };
-		F090CA4D1C341DF0007ECEC8 /* MILogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILogUtil.m; sourceTree = "<group>"; };
 		F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MiSettings.plist; sourceTree = "<group>"; };
-		F090CA511C341EFC007ECEC8 /* MISettingsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISettingsUtil.h; sourceTree = "<group>"; };
-		F090CA521C341EFC007ECEC8 /* MISettingsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISettingsUtil.m; sourceTree = "<group>"; };
 		F0ED98D51C0B969F004CA752 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0ED98D91C0B969F004CA752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0ED98DB1C0B969F004CA752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,12 +129,6 @@
 		F0ED99001C0B9912004CA752 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F0ED99031C0B99F6004CA752 /* MIAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayer.h; sourceTree = "<group>"; };
 		F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayer.m; sourceTree = "<group>"; };
-		F0ED99051C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerCacheDelegate.h; sourceTree = "<group>"; };
-		F0ED99061C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerCacheDelegate.m; sourceTree = "<group>"; };
-		F0ED99071C0B99F6004CA752 /* MIAudioPlayerItemInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerItemInformation.h; sourceTree = "<group>"; };
-		F0ED99081C0B99F6004CA752 /* MIAudioPlayerItemInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerItemInformation.m; sourceTree = "<group>"; };
-		F0ED99091C0B99F6004CA752 /* MIAudioPlayerProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerProgress.h; sourceTree = "<group>"; };
-		F0ED990A1C0B99F6004CA752 /* MIAudioPlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerProgress.m; sourceTree = "<group>"; };
 		F0ED99101C0B9A56004CA752 /* MIColour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIColour.h; sourceTree = "<group>"; };
 		F0ED99111C0B9A56004CA752 /* MIColour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIColour.m; sourceTree = "<group>"; };
 		F0ED993A1C0B9B81004CA752 /* AudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFile.h; sourceTree = "<group>"; };
@@ -214,6 +211,35 @@
 				2EEB082B7F164FA3E58D04E3 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B09E21F9F0F62EDAC4378AC4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B09E29573FA90AC49FD19B33 /* MISettingsUtil.h */,
+				B09E24964EE38EDF40251CEB /* MISettingsUtil.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B09E23999DA72D0E5B788BFE /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				B09E2BFBB1BDE10D7180B28D /* MILogUtil.m */,
+				B09E2508C0B77BA5C9D52D9B /* MILogUtil.h */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		B09E2412FFE4BCB784666D17 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				B09E2DBB835399EC6FB32588 /* MIAudioPlayerItemInformation.h */,
+				B09E2733B3C21C4AEE5DB4DB /* MIAudioPlayerItemInformation.m */,
+				B09E27879F9217B8E1CC64BD /* MIAudioPlayerProgress.h */,
+				B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 		E05141D728763B2F28442747 /* Frameworks */ = {
@@ -343,12 +369,7 @@
 			children = (
 				F0ED99031C0B99F6004CA752 /* MIAudioPlayer.h */,
 				F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */,
-				F0ED99051C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.h */,
-				F0ED99061C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m */,
-				F0ED99071C0B99F6004CA752 /* MIAudioPlayerItemInformation.h */,
-				F0ED99081C0B99F6004CA752 /* MIAudioPlayerItemInformation.m */,
-				F0ED99091C0B99F6004CA752 /* MIAudioPlayerProgress.h */,
-				F0ED990A1C0B99F6004CA752 /* MIAudioPlayerProgress.m */,
+				B09E2412FFE4BCB784666D17 /* DTO */,
 			);
 			name = AudioPlayer;
 			sourceTree = "<group>";
@@ -366,10 +387,8 @@
 				F0ED99691C0B9CC9004CA752 /* FileCacheUtil.m */,
 				F0ED99651C0B9CA8004CA752 /* HashUtil.h */,
 				F0ED99661C0B9CA8004CA752 /* HashUtil.m */,
-				F090CA4C1C341DF0007ECEC8 /* MILogUtil.h */,
-				F090CA4D1C341DF0007ECEC8 /* MILogUtil.m */,
-				F090CA511C341EFC007ECEC8 /* MISettingsUtil.h */,
-				F090CA521C341EFC007ECEC8 /* MISettingsUtil.m */,
+				B09E23999DA72D0E5B788BFE /* Logging */,
+				B09E21F9F0F62EDAC4378AC4 /* Settings */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -696,25 +715,24 @@
 				F026CA861C285E0C00E84406 /* MIHomeView.m in Sources */,
 				F026CA9D1C285EB200E84406 /* GetMediaFilesResponseModel.m in Sources */,
 				F0ED998C1C0BAA04004CA752 /* RegistrationResponseModel.m in Sources */,
-				F0ED990C1C0B99F6004CA752 /* MIAudioPlayerCacheDelegate.m in Sources */,
-				F090CA531C341EFC007ECEC8 /* MISettingsUtil.m in Sources */,
 				F0ED997F1C0BA9C6004CA752 /* BaseResponseDataContract.m in Sources */,
 				F0ED997E1C0BA9C6004CA752 /* BaseRequestDataContract.m in Sources */,
 				F0ED994C1C0B9C2D004CA752 /* MIColourFactory.m in Sources */,
-				F0ED990E1C0B99F6004CA752 /* MIAudioPlayerProgress.m in Sources */,
 				F0ED996A1C0B9CC9004CA752 /* FileCacheUtil.m in Sources */,
 				F0ED99421C0B9B81004CA752 /* AudioFile+ext.m in Sources */,
 				F0ED99411C0B9B81004CA752 /* AudioFile.m in Sources */,
 				F026CA911C285E3E00E84406 /* MIHomeAudioPlayButton.m in Sources */,
 				F0ED99641C0B9C7F004CA752 /* MIRed.m in Sources */,
-				F0ED990D1C0B99F6004CA752 /* MIAudioPlayerItemInformation.m in Sources */,
 				F0ED994D1C0B9C2D004CA752 /* MIColourUtil.m in Sources */,
 				F026CAA01C285ED800E84406 /* MIInformationViewController.m in Sources */,
 				F0ED99701C0B9D0B004CA752 /* TimerUtil.m in Sources */,
 				F026CA811C285D4A00E84406 /* MIHomeViewController.m in Sources */,
 				F0ED99121C0B9A56004CA752 /* MIColour.m in Sources */,
-				F090CA4E1C341DF0007ECEC8 /* MILogUtil.m in Sources */,
 				F0ED995E1C0B9C7F004CA752 /* MIBlue.m in Sources */,
+				B09E2B486F3DBCB09BD2F55C /* MIAudioPlayerItemInformation.m in Sources */,
+				B09E21E85B362FC4B0CC4AC5 /* MIAudioPlayerProgress.m in Sources */,
+				B09E220BE22C7880C53C58EB /* MILogUtil.m in Sources */,
+				B09E24C8F1A15D3CD115EC9A /* MISettingsUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

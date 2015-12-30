@@ -86,13 +86,13 @@
 -(void) updateProgress:(MIAudioPlayerProgress*) progressInformation{
 	
 	if(self.totalDurationInSeconds != progressInformation.AudioTotalTime){
-		self.totalDurationInSeconds = progressInformation.AudioTotalTime;
+		self.totalDurationInSeconds = (float) progressInformation.AudioTotalTime;
 	}
 	
 	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:CGRectMake(0, 0, 100, 100) Radius:52 y:0 x:0 strokeColour:[UIColor whiteColor]lineWidth:7];
 	
 	[self AddAnimationTo:outerCircle withProgress:progressInformation];
-	[self setCurrentProgress:progressInformation.AudioProgressPercentage];
+	[self setCurrentProgress:(float) progressInformation.AudioProgressPercentage];
 //	NSLog(@"Current Progress Percent: %f", self.currentProgress);
 	[self.layer addSublayer:outerCircle];
 } 
@@ -109,7 +109,7 @@
 	
 	// Animate from no part of the stroke being drawn to the entire stroke being drawn
 	drawAnimation.fromValue = [NSNumber numberWithFloat:self.currentProgress];
-	drawAnimation.toValue   = [NSNumber numberWithFloat:progress.AudioProgressPercentage];
+	drawAnimation.toValue   = [NSNumber numberWithFloat:(float) progress.AudioProgressPercentage];
 	
 	// Experiment with timing to get the appearence to look the way you want
 	drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];

@@ -23,7 +23,6 @@
 
 -(id) init{
 	[self setupAudioPlayer];
-	self.audioPlayer.delegate = self;
 	return self;
 }
 
@@ -170,31 +169,5 @@
 -(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation {
 	//Stub Method
 }
-
-- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didStartPlayingQueueItemId:(NSObject *)queueItemId {
-	NSLog(@"didStartPlayingQueueItemId");
-	[self updateDuration];
-}
-
-- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject *)queueItemId {
-	NSLog(@"didFinishBufferingSourceWithQueueItemId");
-
-}
-
-- (void)audioPlayer:(STKAudioPlayer *)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState {
-	NSLog(@"stateChanged");
-
-}
-
-- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishPlayingQueueItemId:(NSObject *)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration {
-	NSLog(@"didFinishPlayingQueueItemId");
-
-}
-
-- (void)audioPlayer:(STKAudioPlayer *)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode {
-	NSLog(@"unexpectedError");
-
-}
-
 
 @end

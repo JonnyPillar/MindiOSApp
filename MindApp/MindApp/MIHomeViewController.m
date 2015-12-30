@@ -83,17 +83,21 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	if ([_mediaItems count] > 0) {
 		return 1;
 	}
+	[self renderDefaultBackgroundVIew];
+	return 0;
+}
+
+- (void)renderDefaultBackgroundVIew {
 	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 102)];
-	
+
 	messageLabel.text = @"No data is currently available. Please pull down to refresh.";
 	messageLabel.textColor = [UIColor blackColor];
 	messageLabel.numberOfLines = 0;
 	messageLabel.textAlignment = NSTextAlignmentCenter;
 	[messageLabel sizeToFit];
-	
+
 	self.homeView.mediaTrackTableView.backgroundView = messageLabel;
 	self.homeView.mediaTrackTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -104,12 +108,12 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	
 	static NSString *CellIdentifier = @"Cell";
 	
-	MIHomeTableViewCell *cell = (MIHomeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	MIHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell" owner:self options:nil] lastObject];
 	}
 	
-	AudioFile* audioFile = _mediaItems[indexPath.row];
+	AudioFile* audioFile = _mediaItems[(NSUInteger) indexPath.row];
 	cell.cellAudioFile = audioFile;
 	[cell updateCellIcon];
 	return cell;
@@ -118,7 +122,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"Audio Cell Selected");
-	MIHomeTableViewCell *selectedCell = (MIHomeTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+	MIHomeTableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
 	if(!selectedCell){
 		NSLog(@"No Audio File In Selected Cell");
 	}
@@ -137,9 +141,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	
 	if(responseModel.Success){
 		_mediaItems = responseModel.MediaFiles;
-//		if(![self.audioPlayer audioPlayerHasPlayerItem]){
-//			[self.audioPlayer playNewPlayerItem:[_mediaItems firstObject]];
-//		}
 		[self.homeView.mediaTrackTableView reloadData];
 	}
 	else {
@@ -155,8 +156,8 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 
 -(void) showActivitySpinner
 {
-	//	[_activityIndicator setHidden:NO];
-	//	[_activityIndicator startAnimating];
+//		[_activityIndicator setHidden:NO];
+//		[_activityIndicator startAnimating];
 }
 
 -(void) hideActivitySpinner{

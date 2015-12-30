@@ -20,7 +20,7 @@
     NSDictionary * plistDictionary = [self getSettingDictionary];
 
     if(!plistDictionary) {
-     [MILogUtil logWithText:@"Setting File Doesn't Exist"];
+        [MILogUtil log:@"Setting File Doesn't Exist"];
      return false;
     }
     return (BOOL) [plistDictionary valueForKey:key];

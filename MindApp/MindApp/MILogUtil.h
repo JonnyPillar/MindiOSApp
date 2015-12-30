@@ -10,6 +10,6 @@
 
 @interface MILogUtil : NSObject
 
-+(void) logWithText:(NSString *) message;
++(void)log:(NSString *) message;
 
 @end

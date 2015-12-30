@@ -11,7 +11,7 @@
 
 @implementation MILogUtil
 
-+ (void)logWithText:(NSString *)message {
++ (void)log:(NSString *)message {
     if([MISettingsUtil getBoolSettingWithName:@"AllowLogging"]){
         NSLog(@"%@", message);
     }

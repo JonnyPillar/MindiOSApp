@@ -11,14 +11,9 @@
 #import "NowPlayingInfoUtil.h"
 #import "TimerUtil.h"
 #import "RemoteCommandUtil.h"
-#import <MediaPlayer/MPRemoteCommandCenter.h>
-#import <MediaPlayer/MPRemoteCommandEvent.h>
-#import <MediaPlayer/MPRemoteCommand.h>
+#import "MILogUtil.h"
 
-@interface MIAudioPlayer () {
-	MPRemoteCommandCenter *commandCenter;
-
-}
+@interface MIAudioPlayer ()
 
 @property (nonatomic,strong) AudioFile *audioFile;
 @property (nonatomic, strong) NSTimer* audioTimer;
@@ -75,7 +70,7 @@
 
 -(void) playAudio
 {
-	NSLog(@"Audio Player Playing");
+	[MILogUtil log:(@"Audio Player Playing")];
 	[self.audioPlayer resume];
 	[self.delegate updateUIForPlay];
 	[_audioTimer invalidate];
@@ -89,7 +84,7 @@
 }
 
 -(void) pauseAudio{
-	NSLog(@"Audio Player Pausing");
+	[MILogUtil log:(@"Audio Player Pausing")];
 	[self.audioPlayer pause];
 	[self.audioTimer invalidate];
 	[self.delegate updateUIForPause];

@@ -14,6 +14,7 @@
 #import "MIColourUtil.h"
 #import "MIInformationViewController.h"
 #import "MIColourFactory.h"
+#import "MILogUtil.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
@@ -72,7 +73,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 }
 
 -(void)retrieveMediaItemData {
-	NSLog(@"Retreiving Media Items");
+	[MILogUtil log:@"Retreiving Media Items"];
 	if(!_communicationManager) self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
 	[_communicationManager GetRequest:getMediaFilesUrl withParams:nil];
 }
@@ -121,16 +122,26 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSLog(@"Audio Cell Selected");
 	MIHomeTableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
 	if(!selectedCell){
-		NSLog(@"No Audio File In Selected Cell");
+		[MILogUtil log:@"No Audio File In Selected Cell"];
 	}
 	else {
 		[_audioPlayer playNewPlayerItem:selectedCell.cellAudioFile];
 		[_audioPlayer playAudio];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: selectedCell.cellAudioFile.BaseColour].Light;
 	}
+}
+
+-(void) showActivitySpinner
+{
+//		[_activityIndicator setHidden:NO];
+//		[_activityIndicator startAnimating];
+}
+
+-(void) hideActivitySpinner{
+	//	[_activityIndicator setHidden:YES];
+	//	[_activityIndicator stopAnimating];
 }
 
 #pragma mark Communication Manager Delegate Methods
@@ -152,17 +163,6 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[self.refreshControl endRefreshing];
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:responseModel.Message];
-}
-
--(void) showActivitySpinner
-{
-//		[_activityIndicator setHidden:NO];
-//		[_activityIndicator startAnimating];
-}
-
--(void) hideActivitySpinner{
-	//	[_activityIndicator setHidden:YES];
-	//	[_activityIndicator stopAnimating];
 }
 
 #pragma MiAudioPlayer Delegate Methods
@@ -200,7 +200,7 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 }
 
 -(void)informationButtonClicked:(id)sender{
-	NSLog(@"Information Button Clicked");
+	[self performSegueWithIdentifier:@"show_information_page" sender:sender];
 }
 
 -(void)audioPlayerPlayButtonClicked:(id)sender{

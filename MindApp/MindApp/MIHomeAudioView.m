@@ -56,6 +56,7 @@
 		[self addSubview:view];
 		[self setNeedsUpdateConstraints];
 	}
+	self.playbutton.percent = 0.1;
 }
 
 - (void)updateConstraints
@@ -100,7 +101,22 @@
 
 -(void) updateUIProgress: (MIAudioPlayerProgress*) progress{
 	[self.audioCurrentPositionLabel setText:progress.AudioRemaining];
-	[self.playbutton updateProgress:progress];
+//	[self.playbutton updateProgress:progress];
+	[self decrementSpin:progress];
+}
+
+- (void)decrementSpin:(MIAudioPlayerProgress *)progress {
+	NSLog(@"decrementSpin: %d", (int) self.playbutton.percent);
+
+	// If we can decrement our percentage, do so, and redraw the view
+	if (self.playbutton.percent > 0) {
+		self.playbutton.percent = progress.AudioProgressPercentage;
+		[self.playbutton setNeedsDisplay];
+	}
+//	else {
+//		[m_timer invalidate];
+//		m_timer = nil;
+//	}
 }
 
 - (IBAction)audioPlayButton:(id)sender{

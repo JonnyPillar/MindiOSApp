@@ -65,10 +65,10 @@
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="V0l-XJ-Gi7">
-                            <variation key="widthClass=compact" constant="100"/>
+                            <variation key="widthClass=compact" constant="111"/>
                         </constraint>
                         <constraint firstAttribute="height" constant="120" id="n5a-Ar-kkM">
-                            <variation key="widthClass=compact" constant="100"/>
+                            <variation key="widthClass=compact" constant="111"/>
                         </constraint>
                     </constraints>
                     <state key="normal">

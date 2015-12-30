@@ -125,7 +125,7 @@
 
 -(double) getAudioTrackPlaybackPercentage{
 
-    double currentPercentage = [self getAudioTrackElapsedTime] / [self getAudioTrackDuration];
+    double currentPercentage = ([self getAudioTrackElapsedTime] / [self getAudioTrackDuration]) * 100;
     if(isnan(currentPercentage)) currentPercentage = 0.001;
     return currentPercentage;
 }

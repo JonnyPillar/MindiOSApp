@@ -13,6 +13,8 @@
 
 @interface MIHomeAudioPlayButton : UIButton
 
+@property double percent;
+
 - (void) updateColourScheme:(MIColour*) colourScheme;
 - (void) updateProgress:(MIAudioPlayerProgress*) progressInformation;
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;

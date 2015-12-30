@@ -61,6 +61,8 @@
 	NSLog(@"Audio Player Playing");
 	[self.audioPlayer resume];
 	[self.delegate updateUIForPlay];
+	[_audioTimer invalidate];
+	_audioTimer = nil;
 	_audioTimer = [NSTimer
 				   scheduledTimerWithTimeInterval:1
 				   target:self selector:@selector(updateProgressMethods)
@@ -145,6 +147,8 @@
 	[self updateControlCenterElapsedTime];
 	[self.delegate updateUIProgress];
     if(![self audioPlayerIsPlaying]){
+		[_audioTimer invalidate];
+		_audioTimer = nil;
     _audioTimer = [NSTimer
             scheduledTimerWithTimeInterval:1
                                     target:self selector:@selector(updateProgressMethods)

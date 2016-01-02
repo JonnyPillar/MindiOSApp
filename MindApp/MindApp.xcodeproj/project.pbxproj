@@ -10,7 +10,9 @@
 		513DCCCCBEA43B72D7E29851 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FECC3213E7402344E3EE9F36 /* libPods.a */; };
 		B09E21E85B362FC4B0CC4AC5 /* MIAudioPlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */; };
 		B09E220BE22C7880C53C58EB /* MILogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2BFBB1BDE10D7180B28D /* MILogUtil.m */; };
+		B09E236715A584CE587789B0 /* MIAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E26D8185EB29A7ACCF259 /* MIAPIManager.m */; };
 		B09E24C8F1A15D3CD115EC9A /* MISettingsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E24964EE38EDF40251CEB /* MISettingsUtil.m */; };
+		B09E25FC42005C6A902C1566 /* MIApiConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E297AFD1EDF1E28BEE0E8 /* MIApiConstants.m */; };
 		B09E2718D4F05623F91FFAA8 /* NowPlayingInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2ECB54075F169644DF6A /* NowPlayingInfoUtil.m */; };
 		B09E2B486F3DBCB09BD2F55C /* MIAudioPlayerItemInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2733B3C21C4AEE5DB4DB /* MIAudioPlayerItemInformation.m */; };
 		B09E2F63DA0A407DC11944F2 /* RemoteCommandUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E21E50F42EF16B234A4DB /* RemoteCommandUtil.m */; };
@@ -60,8 +62,8 @@
 		F0ED99671C0B9CA8004CA752 /* HashUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99661C0B9CA8004CA752 /* HashUtil.m */; };
 		F0ED996A1C0B9CC9004CA752 /* FileCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99691C0B9CC9004CA752 /* FileCacheUtil.m */; };
 		F0ED99701C0B9D0B004CA752 /* TimerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED996F1C0B9D0B004CA752 /* TimerUtil.m */; };
-		F0ED99761C0BA70B004CA752 /* CommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99731C0BA70B004CA752 /* CommunicationsManager.m */; };
-		F0ED99771C0BA70B004CA752 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99751C0BA70B004CA752 /* JSONResponseSerializerWithData.m */; };
+		F0ED99761C0BA70B004CA752 /* MICommunicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99731C0BA70B004CA752 /* MICommunicationsManager.m */; };
+		F0ED99771C0BA70B004CA752 /* MIJSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99751C0BA70B004CA752 /* MIJSONResponseSerializerWithData.m */; };
 		F0ED997E1C0BA9C6004CA752 /* BaseRequestDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED997B1C0BA9C6004CA752 /* BaseRequestDataContract.m */; };
 		F0ED997F1C0BA9C6004CA752 /* BaseResponseDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED997D1C0BA9C6004CA752 /* BaseResponseDataContract.m */; };
 		F0ED99891C0BAA04004CA752 /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99821C0BAA04004CA752 /* LoginRequestModel.m */; };
@@ -87,14 +89,18 @@
 		B09E23519A9549A3609F55B7 /* RemoteCommandUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteCommandUtil.h; sourceTree = "<group>"; };
 		B09E24964EE38EDF40251CEB /* MISettingsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISettingsUtil.m; sourceTree = "<group>"; };
 		B09E2508C0B77BA5C9D52D9B /* MILogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILogUtil.h; sourceTree = "<group>"; };
+		B09E26D8185EB29A7ACCF259 /* MIAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAPIManager.m; sourceTree = "<group>"; };
+		B09E27122325CDC61C9D9982 /* MIApiConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIApiConstants.h; sourceTree = "<group>"; };
 		B09E2733B3C21C4AEE5DB4DB /* MIAudioPlayerItemInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerItemInformation.m; sourceTree = "<group>"; };
 		B09E27879F9217B8E1CC64BD /* MIAudioPlayerProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerProgress.h; sourceTree = "<group>"; };
 		B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerProgress.m; sourceTree = "<group>"; };
 		B09E29573FA90AC49FD19B33 /* MISettingsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISettingsUtil.h; sourceTree = "<group>"; };
+		B09E297AFD1EDF1E28BEE0E8 /* MIApiConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIApiConstants.m; sourceTree = "<group>"; };
 		B09E2BC8929598435E3C7202 /* NowPlayingInfoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlayingInfoUtil.h; sourceTree = "<group>"; };
 		B09E2BFBB1BDE10D7180B28D /* MILogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILogUtil.m; sourceTree = "<group>"; };
 		B09E2DBB835399EC6FB32588 /* MIAudioPlayerItemInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerItemInformation.h; sourceTree = "<group>"; };
 		B09E2ECB54075F169644DF6A /* NowPlayingInfoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlayingInfoUtil.m; sourceTree = "<group>"; };
+		B09E2F559C6C885795A0FB9F /* MIAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAPIManager.h; sourceTree = "<group>"; };
 		F026CA7F1C285D4A00E84406 /* MIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeViewController.h; sourceTree = "<group>"; };
 		F026CA801C285D4A00E84406 /* MIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIHomeViewController.m; sourceTree = "<group>"; };
 		F026CA831C285E0C00E84406 /* MIHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIHomeView.h; sourceTree = "<group>"; };
@@ -174,10 +180,10 @@
 		F0ED99691C0B9CC9004CA752 /* FileCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheUtil.m; sourceTree = "<group>"; };
 		F0ED996E1C0B9D0B004CA752 /* TimerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerUtil.h; sourceTree = "<group>"; };
 		F0ED996F1C0B9D0B004CA752 /* TimerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerUtil.m; sourceTree = "<group>"; };
-		F0ED99721C0BA70B004CA752 /* CommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationsManager.h; sourceTree = "<group>"; };
-		F0ED99731C0BA70B004CA752 /* CommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationsManager.m; sourceTree = "<group>"; };
-		F0ED99741C0BA70B004CA752 /* JSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseSerializerWithData.h; sourceTree = "<group>"; };
-		F0ED99751C0BA70B004CA752 /* JSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseSerializerWithData.m; sourceTree = "<group>"; };
+		F0ED99721C0BA70B004CA752 /* MICommunicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MICommunicationsManager.h; sourceTree = "<group>"; };
+		F0ED99731C0BA70B004CA752 /* MICommunicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MICommunicationsManager.m; sourceTree = "<group>"; };
+		F0ED99741C0BA70B004CA752 /* MIJSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIJSONResponseSerializerWithData.h; sourceTree = "<group>"; };
+		F0ED99751C0BA70B004CA752 /* MIJSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIJSONResponseSerializerWithData.m; sourceTree = "<group>"; };
 		F0ED997A1C0BA9C6004CA752 /* BaseRequestDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestDataContract.h; sourceTree = "<group>"; };
 		F0ED997B1C0BA9C6004CA752 /* BaseRequestDataContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestDataContract.m; sourceTree = "<group>"; };
 		F0ED997C1C0BA9C6004CA752 /* BaseResponseDataContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseDataContract.h; sourceTree = "<group>"; };
@@ -259,7 +265,7 @@
 			name = Logging;
 			sourceTree = "<group>";
 		};
-		B09E2412FFE4BCB784666D17 /* DTO */ = {
+		B09E2412FFE4BCB784666D17 /* AudioPlayerEntities */ = {
 			isa = PBXGroup;
 			children = (
 				B09E2DBB835399EC6FB32588 /* MIAudioPlayerItemInformation.h */,
@@ -267,7 +273,7 @@
 				B09E27879F9217B8E1CC64BD /* MIAudioPlayerProgress.h */,
 				B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */,
 			);
-			name = DTO;
+			name = AudioPlayerEntities;
 			sourceTree = "<group>";
 		};
 		E05141D728763B2F28442747 /* Frameworks */ = {
@@ -401,7 +407,7 @@
 			children = (
 				F0ED99031C0B99F6004CA752 /* MIAudioPlayer.h */,
 				F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */,
-				B09E2412FFE4BCB784666D17 /* DTO */,
+				B09E2412FFE4BCB784666D17 /* AudioPlayerEntities */,
 			);
 			name = AudioPlayer;
 			sourceTree = "<group>";
@@ -502,10 +508,14 @@
 		F0ED99711C0BA6E8004CA752 /* Comms */ = {
 			isa = PBXGroup;
 			children = (
-				F0ED99721C0BA70B004CA752 /* CommunicationsManager.h */,
-				F0ED99731C0BA70B004CA752 /* CommunicationsManager.m */,
-				F0ED99741C0BA70B004CA752 /* JSONResponseSerializerWithData.h */,
-				F0ED99751C0BA70B004CA752 /* JSONResponseSerializerWithData.m */,
+				F0ED99721C0BA70B004CA752 /* MICommunicationsManager.h */,
+				F0ED99731C0BA70B004CA752 /* MICommunicationsManager.m */,
+				F0ED99741C0BA70B004CA752 /* MIJSONResponseSerializerWithData.h */,
+				F0ED99751C0BA70B004CA752 /* MIJSONResponseSerializerWithData.m */,
+				B09E26D8185EB29A7ACCF259 /* MIAPIManager.m */,
+				B09E2F559C6C885795A0FB9F /* MIAPIManager.h */,
+				B09E297AFD1EDF1E28BEE0E8 /* MIApiConstants.m */,
+				B09E27122325CDC61C9D9982 /* MIApiConstants.h */,
 			);
 			name = Comms;
 			sourceTree = "<group>";
@@ -733,7 +743,7 @@
 				F0ED99601C0B9C7F004CA752 /* MIGrey.m in Sources */,
 				F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */,
 				F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */,
-				F0ED99761C0BA70B004CA752 /* CommunicationsManager.m in Sources */,
+				F0ED99761C0BA70B004CA752 /* MICommunicationsManager.m in Sources */,
 				F0ED98DA1C0B969F004CA752 /* main.m in Sources */,
 				F0BAE5DE1C3473CE00A6D9A2 /* MITabBarViewController.m in Sources */,
 				F0ED99631C0B9C7F004CA752 /* MIPurple.m in Sources */,
@@ -741,7 +751,7 @@
 				F0ED990B1C0B99F6004CA752 /* MIAudioPlayer.m in Sources */,
 				F026CA931C285E3E00E84406 /* MIHomeAudioView.m in Sources */,
 				F0ED99621C0B9C7F004CA752 /* MIPink.m in Sources */,
-				F0ED99771C0BA70B004CA752 /* JSONResponseSerializerWithData.m in Sources */,
+				F0ED99771C0BA70B004CA752 /* MIJSONResponseSerializerWithData.m in Sources */,
 				F0ED995F1C0B9C7F004CA752 /* MIGreen.m in Sources */,
 				F0ED99431C0B9B81004CA752 /* MediaModel.m in Sources */,
 				F0ED99611C0B9C7F004CA752 /* MIOrange.m in Sources */,
@@ -769,6 +779,8 @@
 				B09E24C8F1A15D3CD115EC9A /* MISettingsUtil.m in Sources */,
 				B09E2718D4F05623F91FFAA8 /* NowPlayingInfoUtil.m in Sources */,
 				B09E2F63DA0A407DC11944F2 /* RemoteCommandUtil.m in Sources */,
+				B09E236715A584CE587789B0 /* MIAPIManager.m in Sources */,
+				B09E25FC42005C6A902C1566 /* MIApiConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

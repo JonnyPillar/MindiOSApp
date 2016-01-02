@@ -8,34 +8,32 @@
 
 #import "MIHomeViewController.h"
 #import "MIAudioPlayer.h"
-#import "CommunicationsManager.h"
+#import "MICommunicationsManager.h"
 #import "GetMediaFilesResponseModel.h"
 #import "MIHomeTableViewCell.h"
 #import "MIColourUtil.h"
-#import "MIInformationViewController.h"
 #import "MIColourFactory.h"
 #import "MILogUtil.h"
+#import "MIAPIManager.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
 @property (strong, nonatomic) NSArray* mediaItems;
-@property (strong,  nonatomic) CommunicationsManager* communicationManager;
+@property (strong,  nonatomic) MIAPIManager* apiManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
 
 @end
 
-static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/getmediafiles";
-
 @implementation MIHomeViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	[self setUpManagers];
 	[self setUpHomeView];
 	[self setUpMediaAudio];
 	[self setUpPullToRefresh];
 	[self retrieveMediaItemData];
-//	[self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,12 +43,10 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 
 #pragma SetUp Methods
 
--(void)setUpMediaAudio{
-	if(!_audioPlayer){
-		_audioPlayer = [MIAudioPlayer new];
-		[_audioPlayer setDelegate:self];
+- (void)setUpManagers {
+	if(!_apiManager) {
+		self.apiManager = [[MIAPIManager alloc] initWithCommuniattionDelegate:self];
 	}
-	_mediaItems = [NSMutableArray new];
 }
 
 - (void)setUpHomeView {
@@ -58,6 +54,14 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)setUpMediaAudio{
+	if(!_audioPlayer){
+		_audioPlayer = [MIAudioPlayer new];
+		[_audioPlayer setDelegate:self];
+	}
+	_mediaItems = [NSMutableArray new];
 }
 
 -(void)setUpPullToRefresh{
@@ -68,13 +72,10 @@ static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/api/media/
 							action:@selector(retrieveMediaItemData)
 				  forControlEvents:UIControlEventValueChanged];
 	[self.homeView.mediaTrackTableView addSubview: self.refreshControl];
-	
 }
 
 -(void)retrieveMediaItemData {
-	[MILogUtil log:@"Retreiving Media Items"];
-	if(!_communicationManager) self.communicationManager = [[CommunicationsManager alloc] initWithDelegate:self];
-	[_communicationManager GetRequest:getMediaFilesUrl withParams:nil];
+	[_apiManager getMediaFiles];
 }
 
 #pragma UITableViewDelegate UITableViewDataSource

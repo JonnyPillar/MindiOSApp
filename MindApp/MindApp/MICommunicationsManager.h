@@ -1,5 +1,5 @@
 //
-//  CommunicationsManager.h
+//  MICommunicationsManager.h
 //  MindApp
 //
 //  Created by Jonny Pillar on 23/12/2014.
@@ -11,7 +11,7 @@
 
 @protocol CommunicationsManagerDelegate;
 
-@interface CommunicationsManager : AFHTTPRequestOperationManager
+@interface MICommunicationsManager : AFHTTPRequestOperationManager
 
 @property (nonatomic, strong) id<CommunicationsManagerDelegate> delegate;
 

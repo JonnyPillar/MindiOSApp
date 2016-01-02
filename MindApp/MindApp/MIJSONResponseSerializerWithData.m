@@ -1,14 +1,14 @@
 //
-//  JSONResponseSerializerWithData.m
+//  MIJSONResponseSerializerWithData.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 25/12/2014.
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
-#import "JSONResponseSerializerWithData.h"
+#import "MIJSONResponseSerializerWithData.h"
 
-@implementation JSONResponseSerializerWithData
+@implementation MIJSONResponseSerializerWithData
 
 - (id)responseObjectForResponse:(NSURLResponse *)response
 						   data:(NSData *)data

@@ -1,5 +1,5 @@
 //
-//  JSONResponseSerializerWithData.h
+//  MIJSONResponseSerializerWithData.h
 //  MindApp
 //
 //  Created by Jonny Pillar on 25/12/2014.
@@ -10,6 +10,7 @@
 
 /// NSError userInfo key that will contain response data
 static NSString * const JSONResponseSerializerWithDataKey = @"mindResponseSerializerKey";
-@interface JSONResponseSerializerWithData : AFJSONResponseSerializer
+
+@interface MIJSONResponseSerializerWithData : AFJSONResponseSerializer
 
 @end

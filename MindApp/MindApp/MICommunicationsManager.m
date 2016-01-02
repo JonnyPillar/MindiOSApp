@@ -1,19 +1,19 @@
 //
-//  CommunicationsManager.m
+//  MICommunicationsManager.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 23/12/2014.
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
-#import "CommunicationsManager.h"
-#import "JSONResponseSerializerWithData.h"
+#import "MICommunicationsManager.h"
+#import "MIJSONResponseSerializerWithData.h"
 
-@interface CommunicationsManager ()
+@interface MICommunicationsManager ()
 
 @end
 
-@implementation CommunicationsManager
+@implementation MICommunicationsManager
 
 static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 
@@ -42,7 +42,7 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 }
 
 -(void) initiliseManager{
-	self.responseSerializer = [JSONResponseSerializerWithData serializer];
+	self.responseSerializer = [MIJSONResponseSerializerWithData serializer];
 	self.requestSerializer = [AFJSONRequestSerializer serializer];
 }
 

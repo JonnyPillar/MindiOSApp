@@ -12,11 +12,12 @@
 #import "TimerUtil.h"
 #import "RemoteCommandUtil.h"
 #import "MILogUtil.h"
+#import "MIAudioTimer.h"
 
 @interface MIAudioPlayer ()
 
 @property (nonatomic,strong) AudioFile *audioFile;
-@property (nonatomic, strong) NSTimer* audioTimer;
+@property (nonatomic, strong) MIAudioTimer* audioTimer;
 @property (nonatomic, strong) STKAudioPlayer* audioPlayer;
 @property (nonatomic, strong) RemoteCommandUtil* remoteCommandUtil;
 
@@ -27,8 +28,12 @@
 -(id) init{
 	[self setupAudioPlayer];
 	[self setupRemoteCommandUtil];
-
+	[self setupTimer];
 	return self;
+}
+
+- (void)setupTimer {
+	self.audioTimer = [[MIAudioTimer  alloc] init];
 }
 
 - (void)setupRemoteCommandUtil {
@@ -73,12 +78,8 @@
 	[MILogUtil log:(@"Audio Player Playing")];
 	[self.audioPlayer resume];
 	[self.delegate updateUIForPlay];
-	[_audioTimer invalidate];
-	_audioTimer = nil;
-	_audioTimer = [NSTimer
-				   scheduledTimerWithTimeInterval:1
-				   target:self selector:@selector(updateProgressMethods)
-                    userInfo:nil repeats:YES];
+
+	[_audioTimer startWithInterval:1 WithTarget:self WithSelector:@selector(updateProgressMethods) AndRepeats:YES];
 
 	[self updateDuration];
 }
@@ -155,12 +156,7 @@
 	[self.delegate updateUIProgress: [self getAudioProgress]];
 
     if(![self audioPlayerIsPlaying]){
-		[_audioTimer invalidate];
-		_audioTimer = nil;
-		_audioTimer = [NSTimer
-				scheduledTimerWithTimeInterval:1
-										target:self selector:@selector(updateProgressMethods)
-									  userInfo:nil repeats:YES];
+		[_audioTimer startWithInterval:1 WithTarget:self WithSelector:@selector(updateProgressMethods) AndRepeats:YES];
     }
 }
 

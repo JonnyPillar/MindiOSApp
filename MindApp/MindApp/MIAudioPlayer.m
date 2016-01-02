@@ -42,7 +42,7 @@
 	self.audioPlayer = [[STKAudioPlayer alloc] init];
 }
 
--(void) playNewPlayerItem:(AudioFile *) newAudioFile{
+-(void)loadNewAudioFile:(AudioFile *) newAudioFile{
 	
 	if([self isNewAudioFile:newAudioFile])
 	{
@@ -109,10 +109,6 @@
 	return ![_audioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
 }
 
--(BOOL) audioPlayerHasPlayerItem{
-	return self.audioPlayer.pendingQueueCount > 0;
-}
-
 -(BOOL) audioPlayerIsPlaying{
 	if(self.audioPlayer.state >= STKAudioPlayerStatePaused){
 		return false;
@@ -155,7 +151,9 @@
 -(void) updateProgressMethods{
 	[self updateDuration];
 	[self updateControlCenterElapsedTime];
-	[self.delegate updateUIProgress];
+
+	[self.delegate updateUIProgress: [self getAudioProgress]];
+
     if(![self audioPlayerIsPlaying]){
 		[_audioTimer invalidate];
 		_audioTimer = nil;

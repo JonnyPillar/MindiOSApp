@@ -31,8 +31,4 @@
 -(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary;
 -(void) handleFailedRequest:(NSDictionary*) responseDictionary;
 
-@optional
--(void) showActivitySpinner;
--(void) hideActivitySpinner;
-
 @end

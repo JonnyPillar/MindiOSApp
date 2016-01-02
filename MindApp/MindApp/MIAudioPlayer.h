@@ -20,16 +20,11 @@
 
 -(id) init;
 
--(void) playNewPlayerItem:(AudioFile *) newAudioFile;
+-(void) loadNewAudioFile:(AudioFile *) newAudioFile;
 -(void) playAudio;
 -(void) pauseAudio;
 -(void) toggleAudio;
--(BOOL) audioPlayerHasPlayerItem;
 -(BOOL) audioPlayerIsPlaying;
--(double) getAudioTrackDuration;
--(double) getAudioTrackElapsedTime;
--(double) getAudioTrackPlaybackPercentage;
--(MIAudioPlayerProgress*) getAudioProgress;
 
 @end
 
@@ -40,6 +35,6 @@
 -(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
 -(void) updateUIForPlay;
 -(void) updateUIForPause;
--(void) updateUIProgress;
+-(void) updateUIProgress:(MIAudioPlayerProgress *) audioPlayerProgress;
 
 @end

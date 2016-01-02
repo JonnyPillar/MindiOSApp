@@ -75,6 +75,8 @@
 }
 
 -(void)retrieveMediaItemData {
+	[self.refreshControl beginRefreshing];
+	[self.homeView.mediaTrackTableView setContentOffset:CGPointMake(0, self.homeView.mediaTrackTableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
 	[_apiManager getMediaFiles];
 }
 
@@ -127,21 +129,10 @@
 		[MILogUtil log:@"No Audio File In Selected Cell"];
 	}
 	else {
-		[_audioPlayer playNewPlayerItem:selectedCell.cellAudioFile];
+		[_audioPlayer loadNewAudioFile:selectedCell.cellAudioFile];
 		[_audioPlayer playAudio];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: selectedCell.cellAudioFile.BaseColour].Light;
 	}
-}
-
--(void) showActivitySpinner
-{
-//		[_activityIndicator setHidden:NO];
-//		[_activityIndicator startAnimating];
-}
-
--(void) hideActivitySpinner{
-	//	[_activityIndicator setHidden:YES];
-	//	[_activityIndicator stopAnimating];
 }
 
 #pragma mark Communication Manager Delegate Methods
@@ -181,8 +172,8 @@
 	[self.homeView updateUIForPause];
 }
 
--(void) updateUIProgress{
-	[self.homeView updateUIProgress:[_audioPlayer getAudioProgress]];
+-(void) updateUIProgress: (MIAudioPlayerProgress *) audioPlayerProgress{
+	[self.homeView updateUIProgress:audioPlayerProgress];
 }
 
 -(void) showErrorAlert:(NSString*) errorMessage

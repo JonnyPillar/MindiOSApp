@@ -15,10 +15,12 @@
 #import "MIColourFactory.h"
 #import "MILogUtil.h"
 #import "MIAPIManager.h"
+#import "MIMediaQueue.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
-@property (strong, nonatomic) NSArray* mediaItems;
+@property (strong, nonatomic) MIMediaQueue *mediaQueue;
+//@property (strong, nonatomic) NSArray* mediaItems;
 @property (strong,  nonatomic) MIAPIManager* apiManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
@@ -61,7 +63,9 @@
 		_audioPlayer = [MIAudioPlayer new];
 		[_audioPlayer setDelegate:self];
 	}
-	_mediaItems = [NSMutableArray new];
+	if(!_mediaQueue){
+		_mediaQueue = [[MIMediaQueue alloc] init];
+	}
 }
 
 -(void)setUpPullToRefresh{
@@ -83,7 +87,7 @@
 #pragma UITableViewDelegate UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if ([_mediaItems count] > 0) {
+	if (_mediaQueue.count > 0) {
 		return 1;
 	}
 	[self renderDefaultBackgroundVIew];
@@ -104,7 +108,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return _mediaItems.count;
+	return _mediaQueue.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,7 +120,7 @@
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell" owner:self options:nil] lastObject];
 	}
 	
-	AudioFile* audioFile = _mediaItems[(NSUInteger) indexPath.row];
+	AudioFile* audioFile = [_mediaQueue getElementAt:indexPath.row];
 	cell.cellAudioFile = audioFile;
 	[cell updateCellIcon];
 	return cell;
@@ -142,7 +146,7 @@
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	
 	if(responseModel.Success){
-		_mediaItems = responseModel.MediaFiles;
+		[_mediaQueue populateWithMediaFiles:responseModel.MediaFiles];
 		[self.homeView.mediaTrackTableView reloadData];
 	}
 	else {

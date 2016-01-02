@@ -15,6 +15,7 @@
 		B09E25FC42005C6A902C1566 /* MIApiConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E297AFD1EDF1E28BEE0E8 /* MIApiConstants.m */; };
 		B09E2718D4F05623F91FFAA8 /* NowPlayingInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2ECB54075F169644DF6A /* NowPlayingInfoUtil.m */; };
 		B09E2B486F3DBCB09BD2F55C /* MIAudioPlayerItemInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2733B3C21C4AEE5DB4DB /* MIAudioPlayerItemInformation.m */; };
+		B09E2D725D851EAF25996BAF /* MIMediaQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E2AC26AE43E68ACC13379 /* MIMediaQueue.m */; };
 		B09E2F63DA0A407DC11944F2 /* RemoteCommandUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B09E21E50F42EF16B234A4DB /* RemoteCommandUtil.m */; };
 		F026CA811C285D4A00E84406 /* MIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA801C285D4A00E84406 /* MIHomeViewController.m */; };
 		F026CA861C285E0C00E84406 /* MIHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F026CA841C285E0C00E84406 /* MIHomeView.m */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		2EEB082B7F164FA3E58D04E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B09E2124A992155353C70072 /* MIMediaQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMediaQueue.h; sourceTree = "<group>"; };
 		B09E21E50F42EF16B234A4DB /* RemoteCommandUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteCommandUtil.m; sourceTree = "<group>"; };
 		B09E23519A9549A3609F55B7 /* RemoteCommandUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteCommandUtil.h; sourceTree = "<group>"; };
 		B09E24964EE38EDF40251CEB /* MISettingsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISettingsUtil.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		B09E28473F6C67661F0EE8EA /* MIAudioPlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAudioPlayerProgress.m; sourceTree = "<group>"; };
 		B09E29573FA90AC49FD19B33 /* MISettingsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISettingsUtil.h; sourceTree = "<group>"; };
 		B09E297AFD1EDF1E28BEE0E8 /* MIApiConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIApiConstants.m; sourceTree = "<group>"; };
+		B09E2AC26AE43E68ACC13379 /* MIMediaQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMediaQueue.m; sourceTree = "<group>"; };
 		B09E2BC8929598435E3C7202 /* NowPlayingInfoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlayingInfoUtil.h; sourceTree = "<group>"; };
 		B09E2BFBB1BDE10D7180B28D /* MILogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILogUtil.m; sourceTree = "<group>"; };
 		B09E2DBB835399EC6FB32588 /* MIAudioPlayerItemInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAudioPlayerItemInformation.h; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 				F0ED99031C0B99F6004CA752 /* MIAudioPlayer.h */,
 				F0ED99041C0B99F6004CA752 /* MIAudioPlayer.m */,
 				B09E2412FFE4BCB784666D17 /* AudioPlayerEntities */,
+				B09E2AC26AE43E68ACC13379 /* MIMediaQueue.m */,
+				B09E2124A992155353C70072 /* MIMediaQueue.h */,
 			);
 			name = AudioPlayer;
 			sourceTree = "<group>";
@@ -781,6 +786,7 @@
 				B09E2F63DA0A407DC11944F2 /* RemoteCommandUtil.m in Sources */,
 				B09E236715A584CE587789B0 /* MIAPIManager.m in Sources */,
 				B09E25FC42005C6A902C1566 /* MIApiConstants.m in Sources */,
+				B09E2D725D851EAF25996BAF /* MIMediaQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,11 +4,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AudioFile.h"
+@class AudioFile;
 
-@interface MIMediaQueue : NSObject
 
--(id) init;
+@interface MIMediaQueueManager : NSObject
+
++ (MIMediaQueueManager*)sharedInstance;
+
 -(void) populateWithMediaFiles: (NSArray* ) fileArray;
 -(NSUInteger) count;
 -(AudioFile *) getElementAt: (NSInteger) index;

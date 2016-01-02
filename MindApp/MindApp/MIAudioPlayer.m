@@ -13,10 +13,12 @@
 #import "RemoteCommandUtil.h"
 #import "MILogUtil.h"
 #import "MIAudioTimer.h"
+#import "MIMediaQueueManager.h"
 
 @interface MIAudioPlayer ()
 
-@property (nonatomic,strong) AudioFile *audioFile;
+@property (nonatomic, strong) MIMediaQueueManager * mediaQueueManager;
+@property (nonatomic, strong) AudioFile *currentAudioFile;
 @property (nonatomic, strong) MIAudioTimer* audioTimer;
 @property (nonatomic, strong) STKAudioPlayer* audioPlayer;
 @property (nonatomic, strong) RemoteCommandUtil* remoteCommandUtil;
@@ -27,9 +29,14 @@
 
 -(id) init{
 	[self setupAudioPlayer];
+	[self setupMediaQueue];
 	[self setupRemoteCommandUtil];
 	[self setupTimer];
 	return self;
+}
+
+- (void)setupMediaQueue {
+	_mediaQueueManager = [MIMediaQueueManager sharedInstance];
 }
 
 - (void)setupTimer {
@@ -47,20 +54,21 @@
 	self.audioPlayer = [[STKAudioPlayer alloc] init];
 }
 
--(void)loadNewAudioFile:(AudioFile *) newAudioFile{
-	
-	if([self isNewAudioFile:newAudioFile])
+-(void)playElementInQueue: (NSInteger) index{
+	AudioFile* nextAudioFile = [_mediaQueueManager getElementAt: index];
+	if([self isNewAudioFile:nextAudioFile])
 	{
-		_audioFile = newAudioFile;
-		[self.audioPlayer playURL:newAudioFile.GetFileUrlNsUrl];
+		_currentAudioFile = nextAudioFile;
+		[self.audioPlayer playURL: _currentAudioFile.GetFileUrlNsUrl];
 		[self updateControlCenter];
-		[self.delegate updateUIForNewItem:[[MIAudioPlayerItemInformation alloc] initWithAudioFile:newAudioFile]];
+		[self.delegate updateUIForNewItem:[[MIAudioPlayerItemInformation alloc] initWithAudioFile:_currentAudioFile]];
 		[self updateDuration];
+		[self playAudio];
 	}
 }
 
 -(void) updateControlCenter{
-	[NowPlayingInfoUtil updateControlCenterWithAudioFileInfo:_audioFile andDuration:@([self getAudioTrackDuration])];
+	[NowPlayingInfoUtil updateControlCenterWithAudioFileInfo:_currentAudioFile andDuration:@([self getAudioTrackDuration])];
 }
 
 -(void) updateDuration{
@@ -107,7 +115,7 @@
 }
 
 -(bool) isNewAudioFile:(AudioFile *) newAudioFile{
-	return ![_audioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
+	return ![_currentAudioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
 }
 
 -(BOOL) audioPlayerIsPlaying{

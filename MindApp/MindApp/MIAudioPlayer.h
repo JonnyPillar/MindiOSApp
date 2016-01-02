@@ -20,7 +20,7 @@
 
 -(id) init;
 
--(void) loadNewAudioFile:(AudioFile *) newAudioFile;
+-(void)playElementInQueue: (NSInteger) index;
 -(void) playAudio;
 -(void) pauseAudio;
 -(void) toggleAudio;

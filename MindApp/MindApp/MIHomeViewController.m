@@ -15,12 +15,11 @@
 #import "MIColourFactory.h"
 #import "MILogUtil.h"
 #import "MIAPIManager.h"
-#import "MIMediaQueue.h"
+#import "MIMediaQueueManager.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
-@property (strong, nonatomic) MIMediaQueue *mediaQueue;
-//@property (strong, nonatomic) NSArray* mediaItems;
+@property (strong, nonatomic) MIMediaQueueManager *mediaQueue;
 @property (strong,  nonatomic) MIAPIManager* apiManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
@@ -41,7 +40,6 @@
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 }
-
 
 #pragma SetUp Methods
 
@@ -64,7 +62,7 @@
 		[_audioPlayer setDelegate:self];
 	}
 	if(!_mediaQueue){
-		_mediaQueue = [[MIMediaQueue alloc] init];
+		_mediaQueue = [MIMediaQueueManager sharedInstance];
 	}
 }
 
@@ -120,9 +118,7 @@
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell" owner:self options:nil] lastObject];
 	}
 	
-	AudioFile* audioFile = [_mediaQueue getElementAt:indexPath.row];
-	cell.cellAudioFile = audioFile;
-	[cell updateCellIcon];
+	[cell setCellAudioFile: [_mediaQueue getElementAt:indexPath.row]];
 	return cell;
 }
 
@@ -133,8 +129,8 @@
 		[MILogUtil log:@"No Audio File In Selected Cell"];
 	}
 	else {
-		[_audioPlayer loadNewAudioFile:selectedCell.cellAudioFile];
-		[_audioPlayer playAudio];
+		[_audioPlayer playElementInQueue: indexPath.row];
+//		[_audioPlayer playAudio];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: selectedCell.cellAudioFile.BaseColour].Light;
 	}
 }

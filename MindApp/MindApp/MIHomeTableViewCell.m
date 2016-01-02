@@ -35,6 +35,7 @@
     UIView* backgroundView = [UIView new];
     backgroundView.backgroundColor = self.cellColour.Light;
     [self setSelectedBackgroundView:backgroundView];
+	[self updateCellIcon];
 }
 
 -(void) updateCellIcon{

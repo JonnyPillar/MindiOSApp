@@ -6,11 +6,8 @@
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
-#import <AVFoundation/AVFoundation.h>
-#import "AudioFile+ext.h"
 #import "MIAudioPlayerProgress.h"
 #import "MIAudioPlayerItemInformation.h"
-#import "STKAudioPlayer.h"
 
 @protocol MIAudioPlayerDelegate;
 

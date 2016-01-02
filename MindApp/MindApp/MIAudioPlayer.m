@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Jonny Pillar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "MIAudioPlayer.h"
+#import "STKAudioPlayer.h"
+#import "MIMediaQueueManager.h"
+#import "MIAudioTimer.h"
+#import "RemoteCommandUtil.h"
 #import "NowPlayingInfoUtil.h"
 #import "TimerUtil.h"
-#import "RemoteCommandUtil.h"
 #import "MILogUtil.h"
-#import "MIAudioTimer.h"
-#import "MIMediaQueueManager.h"
 
-@interface MIAudioPlayer ()
+@interface MIAudioPlayer () <STKAudioPlayerDelegate>
 
 @property (nonatomic, strong) MIMediaQueueManager * mediaQueueManager;
 @property (nonatomic, strong) AudioFile *currentAudioFile;
@@ -52,6 +52,7 @@
 
 - (void)setupAudioPlayer {
 	self.audioPlayer = [[STKAudioPlayer alloc] init];
+	self.audioPlayer.delegate = self;
 }
 
 -(void)playElementInQueue: (NSInteger) index{
@@ -166,6 +167,26 @@
     if(![self audioPlayerIsPlaying]){
 		[_audioTimer startWithInterval:1 WithTarget:self WithSelector:@selector(updateProgressMethods) AndRepeats:YES];
     }
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didStartPlayingQueueItemId:(NSObject *)queueItemId {
+	NSLog(@"didStartPlayingQueueItemId");
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject *)queueItemId {
+	NSLog(@"didFinishBufferingSourceWithQueueItemId");
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState {
+	NSLog(@"stateChanged");
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishPlayingQueueItemId:(NSObject *)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration {
+	NSLog(@"didFinishPlayingQueueItemId");
+}
+
+- (void)audioPlayer:(STKAudioPlayer *)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode {
+	NSLog(@"unexpectedError");
 }
 
 @end

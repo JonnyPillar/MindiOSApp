@@ -21,7 +21,6 @@
 -(void) playAudio;
 -(void) pauseAudio;
 -(void) toggleAudio;
--(BOOL) audioPlayerIsPlaying;
 
 @end
 

@@ -16,4 +16,5 @@
 -(AudioFile *) getElementWithId: (NSInteger) id;
 -(AudioFile *) getElementAt: (NSInteger) index;
 
+- (AudioFile *)getNextAudioFile;
 @end

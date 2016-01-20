@@ -32,7 +32,7 @@
     return self;
 }
 
-- (void)populateWithMediaFiles:(NSArray *)fileArray {
+- (void)populateWithMediaFiles:(NSMutableArray *)fileArray {
     [mediaQueue populateWithMediaFiles:fileArray];
 }
 
@@ -49,4 +49,7 @@
     return [mediaQueue getElementAt:index];
 }
 
+- (AudioFile *)getNextAudioFile {
+    return [mediaQueue getNextAudioFile];
+}
 @end

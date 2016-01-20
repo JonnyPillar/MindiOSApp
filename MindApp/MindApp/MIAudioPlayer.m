@@ -85,6 +85,16 @@
 -(void) playAudio
 {
 	[MILogUtil log:(@"Audio Player Playing")];
+
+	if(!_currentAudioFile){
+		AudioFile* nextAudioFile = [_mediaQueueManager getNextAudioFile];
+		if(!nextAudioFile){
+			return;
+		}
+
+		_currentAudioFile = nextAudioFile;
+	}
+
 	[self.audioPlayer resume];
 	[self.delegate updateUIForPlay];
 	[_audioTimer startWithInterval:1 WithTarget:self WithSelector:@selector(updateProgressMethods) AndRepeats:YES];
@@ -99,7 +109,7 @@
 }
 
 -(void) toggleAudio{
-	if (self.audioPlayer.state == STKAudioPlayerStatePaused)
+	if (self.audioPlayer.state == STKAudioPlayerStatePaused || self.audioPlayer.state == STKAudioPlayerStateStopped)
 	{
 		[self playAudio];
 	}
@@ -111,13 +121,6 @@
 
 -(bool) isNewAudioFile:(AudioFile *) newAudioFile{
 	return ![_currentAudioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
-}
-
--(BOOL) audioPlayerIsPlaying{
-	if(self.audioPlayer.state >= STKAudioPlayerStatePaused){
-		return false;
-	}
-	return self.audioPlayer.state == STKAudioPlayerStateRunning || STKAudioPlayerStatePlaying;
 }
 
 - (double)getAudioTrackDuration {
@@ -174,6 +177,7 @@
 
 - (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishPlayingQueueItemId:(NSObject *)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration {
 	NSLog(@"didFinishPlayingQueueItemId");
+
 }
 
 - (void)audioPlayer:(STKAudioPlayer *)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode {

@@ -33,4 +33,13 @@
     return mediaItems[(NSUInteger) index];
 }
 
+- (AudioFile *)getElementWithId:(NSInteger)id {
+    for (int i = 0; i < mediaItems.count; ++i) {
+        AudioFile *audioFile = mediaItems[i];
+        if(audioFile.Id == id){
+            return audioFile;
+        }
+    }
+    return nil;
+}
 @end

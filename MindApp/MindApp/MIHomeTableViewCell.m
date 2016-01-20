@@ -13,6 +13,7 @@
 
 @interface MIHomeTableViewCell ()
 
+@property (strong,nonatomic) AudioFile *cellAudioFile;
 @property (nonatomic,strong) MIColour* cellColour;
 
 @end
@@ -51,6 +52,14 @@
 
     CAShapeLayer *centerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:2 y:32 x:32 strokeColour:[UIColor whiteColor] lineWidth:3];
     [self.cellIcon.layer addSublayer:centerCircle];
+}
+
+- (NSInteger)getCellId {
+	return _cellAudioFile.Id;
+}
+
+- (NSString *)getCellColour {
+	return _cellAudioFile.BaseColour;
 }
 
 @end

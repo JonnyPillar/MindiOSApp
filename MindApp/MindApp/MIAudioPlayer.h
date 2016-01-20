@@ -17,7 +17,7 @@
 
 -(id) init;
 
--(void)playElementInQueue: (NSInteger) index;
+-(void)playElementInQueueWithId: (NSInteger)mediaItemId;
 -(void) playAudio;
 -(void) pauseAudio;
 -(void) toggleAudio;

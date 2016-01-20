@@ -8,12 +8,12 @@
 
 #import "MISettingsUtil.h"
 #import "MILogUtil.h"
+#import "MIPlistUtil.h"
 
 @implementation MISettingsUtil
 
 +(NSDictionary *) getSettingDictionary{
-  NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MiSettings" ofType:@"plist"];
-  return [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    return [MIPlistUtil getWithName:@"MiSettings"];
 }
 
 + (BOOL)getBoolSettingWithName:(NSString *)key {
@@ -21,7 +21,7 @@
 
     if(!plistDictionary) {
         [MILogUtil log:@"Setting File Doesn't Exist"];
-     return false;
+        return false;
     }
     return (BOOL) [plistDictionary valueForKey:key];
 }

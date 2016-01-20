@@ -11,6 +11,7 @@
 }
 
 - (void)startWithInterval:(int)interval WithTarget:(id)target WithSelector:(SEL)selector AndRepeats:(bool)repeats {
+    [self invalidate];
     audioTimer = [NSTimer
             scheduledTimerWithTimeInterval:interval
                                     target:target selector:selector

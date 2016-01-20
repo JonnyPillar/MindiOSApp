@@ -15,8 +15,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *audioFileTitle;
 @property (strong, nonatomic) IBOutlet UIView *cellIcon;
 
-@property (strong,nonatomic) AudioFile *cellAudioFile;
-
+-(void) setCellAudioFile:(AudioFile *)cellAudioFile;
 -(void) updateCellIcon;
+-(NSInteger) getCellId;
+-(NSString* ) getCellColour;
 
 @end

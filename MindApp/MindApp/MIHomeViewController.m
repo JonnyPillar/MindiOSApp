@@ -20,7 +20,7 @@
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
 @property (strong, nonatomic) MIMediaQueueManager *mediaQueue;
-@property (strong,  nonatomic) MIAPIManager* apiManager;
+@property (strong, nonatomic) MIAPIManager* apiManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
 
@@ -129,9 +129,10 @@
 		[MILogUtil log:@"No Audio File In Selected Cell"];
 	}
 	else {
-		[_audioPlayer playElementInQueue: indexPath.row];
-//		[_audioPlayer playAudio];
-		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: selectedCell.cellAudioFile.BaseColour].Light;
+		[MILogUtil log:[NSString stringWithFormat: @"Selected Cell with Id: %li", (long)selectedCell.getCellId]];
+
+		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
+		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
 	}
 }
 

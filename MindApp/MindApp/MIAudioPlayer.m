@@ -55,8 +55,8 @@
 	self.audioPlayer.delegate = self;
 }
 
--(void)playElementInQueue: (NSInteger) index{
-	AudioFile* nextAudioFile = [_mediaQueueManager getElementAt: index];
+-(void)playElementInQueueWithId: (NSInteger)mediaItemId {
+	AudioFile* nextAudioFile = [_mediaQueueManager getElementWithId:mediaItemId];
 	if([self isNewAudioFile:nextAudioFile])
 	{
 		_currentAudioFile = nextAudioFile;
@@ -87,9 +87,7 @@
 	[MILogUtil log:(@"Audio Player Playing")];
 	[self.audioPlayer resume];
 	[self.delegate updateUIForPlay];
-
 	[_audioTimer startWithInterval:1 WithTarget:self WithSelector:@selector(updateProgressMethods) AndRepeats:YES];
-
 	[self updateDuration];
 }
 
@@ -111,10 +109,6 @@
 	}
 }
 
-- (void)playerItemDidReachEnd:(NSNotification *)notification {
-	[self.delegate updateUIForPause];
-}
-
 -(bool) isNewAudioFile:(AudioFile *) newAudioFile{
 	return ![_currentAudioFile.GetFileUrlNsUrl isEqual:newAudioFile.GetFileUrlNsUrl];
 }
@@ -123,7 +117,7 @@
 	if(self.audioPlayer.state >= STKAudioPlayerStatePaused){
 		return false;
 	}
-	return self.audioPlayer.state >= STKAudioPlayerStateRunning;
+	return self.audioPlayer.state == STKAudioPlayerStateRunning || STKAudioPlayerStatePlaying;
 }
 
 - (double)getAudioTrackDuration {
@@ -163,10 +157,6 @@
 	[self updateControlCenterElapsedTime];
 
 	[self.delegate updateUIProgress: [self getAudioProgress]];
-
-    if(![self audioPlayerIsPlaying]){
-		[_audioTimer startWithInterval:1 WithTarget:self WithSelector:@selector(updateProgressMethods) AndRepeats:YES];
-    }
 }
 
 - (void)audioPlayer:(STKAudioPlayer *)audioPlayer didStartPlayingQueueItemId:(NSObject *)queueItemId {
@@ -178,7 +168,8 @@
 }
 
 - (void)audioPlayer:(STKAudioPlayer *)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState {
-	NSLog(@"stateChanged");
+	NSLog(@"AudioPlayer stateChanged from %u to %u", previousState, state);
+	NSLog(@"Player currently at %f", _audioPlayer.progress);
 }
 
 - (void)audioPlayer:(STKAudioPlayer *)audioPlayer didFinishPlayingQueueItemId:(NSObject *)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration {

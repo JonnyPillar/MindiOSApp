@@ -13,4 +13,5 @@
 -(NSUInteger) count;
 -(AudioFile *) getElementAt: (NSInteger) index;
 
+- (AudioFile *)getElementWithId:(NSInteger)id;
 @end

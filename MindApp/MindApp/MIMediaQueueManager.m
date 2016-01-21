@@ -49,7 +49,15 @@
     return [mediaQueue getElementAt:index];
 }
 
-- (AudioFile *)getNextAudioFile {
-    return [mediaQueue getNextAudioFile];
+- (AudioFile *)playElementWithId:(NSInteger)id {
+	return [mediaQueue playElementWithId:id];
+}
+
+- (AudioFile *)playElementAt:(NSInteger)index {
+	return [mediaQueue playElementAt:index];
+}
+
+- (AudioFile *)playNextAudioFile {
+    return [mediaQueue playNextAudioFile];
 }
 @end

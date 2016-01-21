@@ -8,59 +8,79 @@
 #import "MILogUtil.h"
 
 @implementation MIMediaQueue {
-    NSMutableArray *futureMediaItems;
-    NSMutableArray *playedMediaItems;
+    NSArray *mainQueue;
+    NSMutableArray *playQueue;
 }
 
 -(id) init{
     if (self = [super init] ) {
-       futureMediaItems = [[NSMutableArray alloc] init];
-        playedMediaItems = [[NSMutableArray alloc] init];
+       mainQueue = [[NSArray alloc] init];
+		playQueue = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)populateWithMediaFiles:(NSArray *)fileArray {
-    futureMediaItems = [NSMutableArray arrayWithArray: fileArray];
+    mainQueue = [NSArray arrayWithArray:fileArray];
+	playQueue = [NSMutableArray arrayWithArray:fileArray];
 }
 
 - (NSUInteger)count {
-    return futureMediaItems.count;
+    return mainQueue.count;
 }
 
 - (AudioFile *)getElementAt:(NSInteger)index {
-    if(index >= futureMediaItems.count){
+    if(index >= mainQueue.count){
         [MILogUtil log:@"Warning: Trying to get a item with an index that is greater than the number of items in the array"];
     }
-    AudioFile *audioFile = futureMediaItems[(NSUInteger) index];
-    [self removePreviousElementsInQueue:index];
+    AudioFile *audioFile = mainQueue[(NSUInteger) index];
     return audioFile;
 }
 
 - (AudioFile *)getElementWithId:(NSInteger)id {
-    for (int i = 0; i < futureMediaItems.count; ++i) {
-        AudioFile *audioFile = futureMediaItems[(NSUInteger) i];
+    for (int i = 0; i < mainQueue.count; ++i) {
+        AudioFile *audioFile = mainQueue[(NSUInteger) i];
         if(audioFile.Id == id){
-            [self removePreviousElementsInQueue:i];
             return audioFile;
         }
     }
     return nil;
 }
 
--(void) removePreviousElementsInQueue: (NSInteger) currentIndex{
-    NSArray *previousAudioFiles = [futureMediaItems objectsAtIndexes:[NSIndexSet indexSetWithIndex:(NSUInteger) currentIndex]];
-    [futureMediaItems removeObjectsInArray:previousAudioFiles];
-    [playedMediaItems addObjectsFromArray:previousAudioFiles];
+-(void) updateThePlayQueue: (NSInteger) currentIndex{
+	
+	NSInteger startIndex = currentIndex + 1;
+	NSInteger queueLength = mainQueue.count - startIndex;
+	
+	
+	NSArray *nextSongs = [mainQueue subarrayWithRange:NSMakeRange(startIndex, queueLength)];
+	[playQueue removeAllObjects];
+	[playQueue addObjectsFromArray:nextSongs];
+	NSLog([NSString stringWithFormat:@"Number of items in queue: %lu", (unsigned long)playQueue.count]);
 }
 
-- (AudioFile *)getNextAudioFile {
-    if(futureMediaItems.count == 0) return nil;
+- (AudioFile *)playElementAt:(NSInteger)index {
+	AudioFile *audioFile = [self getElementAt:index];
+	[self updateThePlayQueue:index];
+	return audioFile;
+}
 
-    AudioFile *audioFile = futureMediaItems[0];
-    [futureMediaItems removeObjectAtIndex:0];
-    [playedMediaItems addObject:audioFile];
+- (AudioFile *)playElementWithId:(NSInteger)id {
+	for (int i = 0; i < mainQueue.count; ++i) {
+		AudioFile *audioFile = mainQueue[(NSUInteger) i];
+		if(audioFile.Id == id){
+			[self updateThePlayQueue:i];
+			return audioFile;
+		}
+	}
+	return nil;
+}
+
+- (AudioFile *)playNextAudioFile {
+    if(mainQueue.count == 0) return nil;
+
+    AudioFile *audioFile = playQueue[0];
+	[self updateThePlayQueue:0];
     return audioFile;
-
 }
 @end

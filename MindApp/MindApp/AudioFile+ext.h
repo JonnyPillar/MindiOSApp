@@ -11,6 +11,7 @@
 @interface AudioFile (ext)
 
 -(id) initWithJson: (NSDictionary*)data;
+-(id) initFromCache:(NSData*) cacheData;
 -(NSURL *) GetFileUrlNsUrl;
 -(NSURL *) GetThumbnailUrlNsUrl;
 -(NSURL *) GetImageUrlNsUrl;

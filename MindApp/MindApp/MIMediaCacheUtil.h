@@ -9,6 +9,7 @@
 
 @interface MIMediaCacheUtil : NSObject
 
--(NSDictionary *)getMediaFilesFromCache;
+-(NSArray *)getMediaFilesFromCache;
+-(void)updateMediaCache: (NSDictionary *) mediaArray;
 
 @end

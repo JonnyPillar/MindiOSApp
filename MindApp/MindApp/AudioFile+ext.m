@@ -31,6 +31,10 @@
 	return self;
 }
 
+-(id) initFromCache:(NSData*) cacheData{
+	return [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
+}
+
 -(NSURL *) GetFileUrlNsUrl{
 	return [[NSURL alloc] initWithString:self.FileUrl];
 }

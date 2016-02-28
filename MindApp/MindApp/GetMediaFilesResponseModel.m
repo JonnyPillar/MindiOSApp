@@ -8,6 +8,7 @@
 
 #import "GetMediaFilesResponseModel.h"
 #import "AudioFile+ext.h"
+#import "MediaJsonParser.h"
 
 @implementation GetMediaFilesResponseModel
 
@@ -15,15 +16,8 @@
 	
 	self = [super initWithDictionary:responseDictionary];
 	if(self){
-		
-		NSMutableArray* mediaFileArray = [NSMutableArray new];
-		
-		for (NSDictionary* key in (NSArray*)[responseDictionary objectForKey:@"MediaFiles"]) {
-			
-			[mediaFileArray addObject:[[AudioFile new] initWithJson:key]];
-		}
-		
-		self.MediaFiles = [mediaFileArray copy];
+		NSDictionary *mediaFileDictionary = responseDictionary[@"MediaFiles"];
+		self.MediaFiles = [[MediaJsonParser parseMediaJson:mediaFileDictionary] copy];
 	}
 	return self;
 }

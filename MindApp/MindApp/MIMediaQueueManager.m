@@ -6,11 +6,12 @@
 #import "MIMediaQueueManager.h"
 #import "AudioFile.h"
 #import "MIMediaQueue.h"
-
+#import "MIMediaCacheUtil.h"
 
 //TODO probably done the singleton wrong, but in a rush. Fix
 @implementation MIMediaQueueManager {
     MIMediaQueue* mediaQueue;
+    MIMediaCacheUtil *mediaCacheUtil;
 }
 
 + (MIMediaQueueManager* )sharedInstance {
@@ -28,6 +29,8 @@
     self = [super init];
     if (self) {
         mediaQueue = [[MIMediaQueue alloc] init];
+        mediaCacheUtil = [[MIMediaCacheUtil alloc] init];
+        [mediaQueue populateWithMediaFiles:[mediaCacheUtil getMediaFilesFromCache]];
     }
     return self;
 }

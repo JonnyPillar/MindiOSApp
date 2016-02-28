@@ -5,44 +5,33 @@
 
 #import "MIMediaCacheUtil.h"
 #import "MIPlistUtil.h"
-#import "AudioFile.h"
+#import "AudioFile+ext.h"
+#import "MediaJsonParser.h"
 
 static NSString *const mediaCacheFileName = @"MediaCache";
 
 @implementation MIMediaCacheUtil{
-    NSMutableDictionary *mediaCache;
+    NSArray *mediaCache;
 }
-
 
 -(NSDictionary *)getMediaCache {
 
     if(!mediaCache){
-        mediaCache = [[NSMutableDictionary alloc] initWithDictionary:[MIPlistUtil getWithName:mediaCacheFileName]];
+        mediaCache = [[NSArray alloc] initWithArray:[MIPlistUtil getWithName:mediaCacheFileName]];
     }
 
     return mediaCache;
 }
 
--(void) updateMediaCache {
-    [MIPlistUtil updateWithName:mediaCacheFileName AndDictionary:mediaCache];
+-(NSArray *) getMediaFilesFromCache {
+    NSDictionary *mediaCacheDataDictionary = [self getMediaCache];
+    NSArray* audioFiles = [MediaJsonParser parseMediaJson:mediaCacheDataDictionary];
+    NSLog(@"Cache Count = %tu", audioFiles.count);
+    return audioFiles;
 }
 
-
--(NSDictionary *) getMediaFilesFromCache {
-    return [self getMediaCache];
-}
-
--(void) updateMediaCacheWithArray: (NSArray *) mediaArray{
-
-    if(!mediaCache){
-        [self getMediaCache];
-    }
-
-    for (int i = 0; i < mediaArray.count; ++i) {
-
-        AudioFile *audioFile = mediaArray[(NSUInteger) i];
-        mediaCache[@(audioFile.Id)] = audioFile; //TODO Make more efficient
-    }
+-(void)updateMediaCache: (NSDictionary *) mediaDictionary{
+    [MIPlistUtil updateWithName:mediaCacheFileName AndDictionary:mediaDictionary];
 }
 
 @end

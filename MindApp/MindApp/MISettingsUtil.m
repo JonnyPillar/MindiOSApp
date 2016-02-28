@@ -13,7 +13,9 @@
 @implementation MISettingsUtil
 
 +(NSDictionary *) getSettingDictionary{
-    return [MIPlistUtil getWithName:@"MiSettings"];
+
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MiSettings" ofType:@"plist"];
+    return [NSDictionary dictionaryWithContentsOfFile:plistPath];
 }
 
 + (BOOL)getBoolSettingWithName:(NSString *)key {

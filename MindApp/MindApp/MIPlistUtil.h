@@ -8,7 +8,7 @@
 
 @interface MIPlistUtil : NSObject
 
-+(NSDictionary *)getWithName: (NSString *) fileName;
-+ (void)updateWithName:(NSString *)fileName AndDictionary:(NSMutableDictionary *)dictionary;
++(NSArray *)getWithName: (NSString *) fileName;
++ (void)updateWithName:(NSString *)fileName AndDictionary:(NSDictionary *)dictionary;
 
 @end

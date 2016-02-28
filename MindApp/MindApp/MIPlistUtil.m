@@ -9,18 +9,19 @@
 @implementation MIPlistUtil
 
 + (NSString *)getString:(NSString *)fileName {
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
-    return plistPath;
+	NSString *libraryDir = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
+	NSString *cacheDir = [libraryDir stringByAppendingPathComponent:@"Caches"];
+	return [cacheDir stringByAppendingString:[NSString stringWithFormat:@"/%@.plist", fileName]];
 }
 
-+ (NSDictionary *)getWithName:(NSString *)fileName {
++ (NSArray *)getWithName:(NSString *)fileName {
     NSString *plistPath = [self getString:fileName];
-    return [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    return [NSArray arrayWithContentsOfFile:plistPath];
 }
 
-+ (void)updateWithName:(NSString *)fileName AndDictionary:(NSMutableDictionary *)dictionary {
++ (void)updateWithName:(NSString *)fileName AndDictionary:(NSDictionary *)dictionary {
     NSString *plistPath = [self getString:fileName];
-    [dictionary writeToFile:plistPath atomically: YES];
+    BOOL success = [dictionary writeToFile:plistPath atomically: YES];
 }
 
 @end

@@ -16,6 +16,7 @@
 #import "MILogUtil.h"
 #import "MIAPIManager.h"
 #import "MIMediaQueueManager.h"
+#import "MIMediaCacheUtil.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) MIAPIManager* apiManager;
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
+@property (strong, nonatomic) MIMediaCacheUtil *mediaCacheUtil;
 
 @end
 
@@ -46,6 +48,7 @@
 - (void)setUpManagers {
 	if(!_apiManager) {
 		self.apiManager = [[MIAPIManager alloc] initWithCommuniattionDelegate:self];
+		self.mediaCacheUtil = [[MIMediaCacheUtil alloc] init];
 	}
 }
 
@@ -63,6 +66,7 @@
 	}
 	if(!_mediaQueue){
 		_mediaQueue = [MIMediaQueueManager sharedInstance];
+		[_mediaQueue populateWithMediaFiles:[_mediaCacheUtil getMediaFilesFromCache]];
 	}
 }
 
@@ -71,9 +75,13 @@
 	self.refreshControl.backgroundColor = [MIColourUtil BlueLight];
 	self.refreshControl.tintColor = [UIColor whiteColor];
 	[self.refreshControl addTarget:self
-							action:@selector(retrieveMediaItemData)
+							action:@selector(temp)
 				  forControlEvents:UIControlEventValueChanged];
 	[self.homeView.mediaTrackTableView addSubview: self.refreshControl];
+}
+
+-(void) temp {
+	[_mediaCacheUtil getMediaFilesFromCache];
 }
 
 -(void)retrieveMediaItemData {
@@ -141,8 +149,10 @@
 -(void) handleSuccessfulRequest:(NSDictionary*) responseDictionary{
 	[self.refreshControl endRefreshing];
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
-	
 	if(responseModel.Success){
+		[_mediaCacheUtil updateMediaCache:responseDictionary[@"MediaFiles"]];
+
+//		[_mediaQueue populateWithMediaFiles:[[_mediaCacheUtil getMediaFilesFromCache] allValues]];
 		[_mediaQueue populateWithMediaFiles:responseModel.MediaFiles];
 		[self.homeView.mediaTrackTableView reloadData];
 	}
@@ -155,6 +165,9 @@
 	[self.refreshControl endRefreshing];
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	[self showErrorAlert:responseModel.Message];
+	[_mediaQueue populateWithMediaFiles:[_mediaCacheUtil getMediaFilesFromCache]];
+	[self.homeView.mediaTrackTableView reloadData];
+
 }
 
 #pragma MiAudioPlayer Delegate Methods

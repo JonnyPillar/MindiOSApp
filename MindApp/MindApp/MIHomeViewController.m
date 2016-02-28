@@ -75,18 +75,13 @@
 	self.refreshControl.backgroundColor = [MIColourUtil BlueLight];
 	self.refreshControl.tintColor = [UIColor whiteColor];
 	[self.refreshControl addTarget:self
-							action:@selector(temp)
+							action:@selector(retrieveMediaItemData)
 				  forControlEvents:UIControlEventValueChanged];
 	[self.homeView.mediaTrackTableView addSubview: self.refreshControl];
 }
 
--(void) temp {
-	[_mediaCacheUtil getMediaFilesFromCache];
-}
-
 -(void)retrieveMediaItemData {
 	[self.refreshControl beginRefreshing];
-	[self.homeView.mediaTrackTableView setContentOffset:CGPointMake(0, self.homeView.mediaTrackTableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
 	[_apiManager getMediaFiles];
 }
 

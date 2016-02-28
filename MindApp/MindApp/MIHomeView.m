@@ -64,7 +64,6 @@
 		[self addSubview:view];
 		[self setNeedsUpdateConstraints];
 	}
-	
 	[self.mediaTrackTableView setSeparatorColor:[UIColor clearColor]];
 }
 

@@ -21,7 +21,6 @@
 @implementation MIHomeTableViewCell
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-	NSLog(@"Cell Selected");
     [super setSelected:selected animated:animated];
 }
 

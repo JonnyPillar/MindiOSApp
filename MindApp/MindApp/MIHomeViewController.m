@@ -45,7 +45,7 @@
 - (void)adjustTableViewForTabBar {
 	self.edgesForExtendedLayout = UIRectEdgeAll;
 	UIEdgeInsets adjustForTabBarInsets = UIEdgeInsetsMake(0, 0, 95, 0);
-	self.homeView.mediaTrackTableView.contentInset = adjustForTabBarInsets;
+//	self.homeView.mediaTrackTableView.contentInset = adjustForTabBarInsets;
 	self.homeView.mediaTrackTableView.scrollIndicatorInsets = adjustForTabBarInsets;
 }
 
@@ -146,11 +146,14 @@
 	else {
 		[MILogUtil log:[NSString stringWithFormat: @"Selected Cell with Id: %li", (long)selectedCell.getCellId]];
 
+		[UIView animateWithDuration:0.2 animations:^{
+			[selectedCell setHighlighted:YES animated:YES];
+		}];
+
 		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
 
 		MITabBarViewController* temp = (MITabBarViewController *) self.parentViewController;
-
 		[temp setBackgroundColour:[MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light];
 	}
 

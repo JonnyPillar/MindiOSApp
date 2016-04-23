@@ -101,7 +101,12 @@
 		for (CALayer *layer in self.layer.sublayers) {
 			[layer removeAllAnimations];
 		}
-		[self setNeedsDisplay];
+
+		[UIView transitionWithView:self duration:0.2
+						   options:UIViewAnimationOptionTransitionCrossDissolve
+						animations:^{
+							[self setNeedsDisplay];
+						} completion:nil];
 	}
 }
 

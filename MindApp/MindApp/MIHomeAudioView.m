@@ -81,8 +81,10 @@
 	[super updateConstraints];
 }
 
-- (void) updateBackgroundColour: (UIColor*) colour{ //TODO Remove
-	[self.backgroundView setBackgroundColor:colour];
+- (void) updateBackgroundColour: (UIColor*) colour {
+	[UIView animateWithDuration:0.2 animations:^{
+		_containerView.backgroundColor = colour;
+	}];
 }
 
 -(void) updateUIForPlay{
@@ -95,7 +97,7 @@
 }
 
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
-	[_containerView setBackgroundColor:[itemInformation.itemColour Medium]];
+	[self updateBackgroundColour:[itemInformation.itemColour Medium]];
 	[self.playbutton updateUIForNewItem:itemInformation];
 }
 

@@ -17,6 +17,7 @@
 #import "MIAPIManager.h"
 #import "MIMediaQueueManager.h"
 #import "MIMediaCacheUtil.h"
+#import "MITabBarViewController.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
@@ -57,6 +58,7 @@
 	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
 }
 
 -(void)setUpMediaAudio{
@@ -116,7 +118,7 @@
 	
 	static NSString *CellIdentifier = @"Cell";
 	
-	MIHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	MIHomeTableViewCell *cell = (MIHomeTableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell" owner:self options:nil] lastObject];
 	}
@@ -127,7 +129,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	MIHomeTableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+	MIHomeTableViewCell *selectedCell = (MIHomeTableViewCell *) [tableView cellForRowAtIndexPath:indexPath];
 	if(!selectedCell){
 		[MILogUtil log:@"No Audio File In Selected Cell"];
 	}
@@ -136,7 +138,12 @@
 
 		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
+
+		MITabBarViewController* temp = (MITabBarViewController *) self.parentViewController;
+
+		[temp setBackgroundColour:[MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light];
 	}
+
 }
 
 #pragma mark Communication Manager Delegate Methods

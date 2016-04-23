@@ -12,7 +12,7 @@
 
 +(UIColor *) GenerateRGBRed:(float) red Green: (float) green Blue: (float) blue Opactity: (float) opacity
 {
-	return [UIColor colorWithRed:(red/255.0) green:(green/255.0) blue:(blue/255.0) alpha:opacity];
+	return [UIColor colorWithRed:(CGFloat) (red / 255.0) green:(CGFloat) (green / 255.0) blue:(CGFloat) (blue / 255.0) alpha:opacity];
 }
 
 #pragma Pink
@@ -27,7 +27,6 @@
 
 +(UIColor *) PinkLight{
 	return [self GenerateRGBRed:249 Green:194 Blue:219 Opactity:1];
-//	return [self Pink:0.3];
 }
 
 +(UIColor *) Pink:(float) opacity
@@ -47,7 +46,6 @@
 
 +(UIColor *) PurpleLight{
 	return [self GenerateRGBRed:224 Green:199 Blue:223 Opactity:1];
-//	return [self Purple:0.3];
 }
 
 +(UIColor *) Purple:(float) opacity
@@ -68,7 +66,6 @@
 
 +(UIColor *) BlueLight{
 	return [self GenerateRGBRed:195 Green:232 Blue:247 Opactity:1];
-//	return [self Blue:0.3];
 }
 
 
@@ -88,7 +85,6 @@
 
 +(UIColor *) OrangeLight{
 	return [self GenerateRGBRed:253 Green:233 Blue:204 Opactity:1];
-//	return [self Orange:0.3];
 }
 
 +(UIColor *) Orange: (float) opacity{
@@ -107,7 +103,6 @@
 
 +(UIColor *) RedLight{
 	return [self GenerateRGBRed:249 Green:203 Blue:201 Opactity:1];
-//	return [self Red:0.4];
 }
 
 +(UIColor *) Red: (float) opacity{
@@ -126,7 +121,6 @@
 
 +(UIColor *) GreenLight{
 	return [self GenerateRGBRed:224 Green:238 Blue:204 Opactity:1];
-//	return [self Green:0.3];
 }
 
 +(UIColor *) Green: (float) opacity{

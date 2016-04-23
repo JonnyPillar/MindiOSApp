@@ -26,6 +26,7 @@
 
 -(void) setCellAudioFile:(AudioFile *)cellAudioFile{
 	_cellAudioFile = cellAudioFile;
+	[self setTag:cellAudioFile.Id];
 	[self.audioFileTitle setText:_cellAudioFile.Title];
 	[self.audioFileTitle setTextColor:[MIColourUtil Grey]];
 	[self.audioFileDuration setText:_cellAudioFile.Duration];

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class MIColour;
+
 @interface MITabBarViewController : UITabBarController
+
+-(void) setBackgroundColour: (UIColor *) colour;
 
 @end

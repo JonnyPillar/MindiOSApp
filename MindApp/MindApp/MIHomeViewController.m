@@ -38,6 +38,15 @@
 	[self setUpMediaAudio];
 	[self setUpPullToRefresh];
 	[self retrieveMediaItemData];
+
+//	self.homeView.mediaTrackTableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
+}
+
+- (void)adjustTableViewForTabBar {
+	self.edgesForExtendedLayout = UIRectEdgeAll;
+	UIEdgeInsets adjustForTabBarInsets = UIEdgeInsetsMake(0, 0, 95, 0);
+	self.homeView.mediaTrackTableView.contentInset = adjustForTabBarInsets;
+	self.homeView.mediaTrackTableView.scrollIndicatorInsets = adjustForTabBarInsets;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +68,7 @@
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
+	[self adjustTableViewForTabBar];
 }
 
 -(void)setUpMediaAudio{

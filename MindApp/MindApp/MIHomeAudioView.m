@@ -86,12 +86,12 @@
 }
 
 -(void) updateUIForPlay{
-	[self.playbutton setBackgroundImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+
+	[self.playbutton setBackgroundImage:@"pauseButton.png"];
 }
 
 -(void) updateUIForPause{
-	
-	[self.playbutton setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+	[self.playbutton setBackgroundImage:@"playButton.png"];
 }
 
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{

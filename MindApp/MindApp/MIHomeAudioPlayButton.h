@@ -17,5 +17,6 @@
 
 - (void) updateColourScheme:(MIColour*) colourScheme;
 - (void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation;
+- (void) setBackgroundImage:(NSString *)imageName;
 
 @end

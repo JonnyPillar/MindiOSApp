@@ -64,9 +64,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if (self) {
-		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
-		startAngle = (CGFloat) (M_PI * 1.5);
-		endAngle = (CGFloat) (startAngle + (M_PI * 2));
+	[self commonInit];
 	}
 	return self;
 }
@@ -75,11 +73,21 @@
 {
 	self = [super initWithFrame:frame];
 	if (self) {
-		[self setBackgroundImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
-		startAngle = (CGFloat) (M_PI * 1.5);
-		endAngle = (CGFloat) (startAngle + (M_PI * 2));
+		[self commonInit];
 	}
 	return self;
+}
+
+-(void) commonInit{
+	[self setBackgroundImage:@"playButton.png"];
+
+	startAngle = (CGFloat) (M_PI * 1.5);
+	endAngle = (CGFloat) (startAngle + (M_PI * 2));
+}
+
+-(void)setBackgroundImage:(NSString *)imageName {
+	UIImage* backgroundImage = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+	[self setImage: backgroundImage forState:UIControlStateNormal];
 }
 
 - (void) setHighlighted:(BOOL)highlighted {

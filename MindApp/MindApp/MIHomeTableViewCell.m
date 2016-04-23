@@ -22,18 +22,13 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+	UIView* backgroundView = [UIView new];
 
-	if(selected){
-		UIView* backgroundView = [UIView new];
-		backgroundView.backgroundColor = self.cellColour.Light;
-		[self setSelectedBackgroundView:backgroundView];
-	}
-	else{
-		UIView* backgroundView = [UIView new];
-		backgroundView.backgroundColor = [UIColor clearColor];
-		[self setSelectedBackgroundView:backgroundView];
-	}
+	backgroundView.backgroundColor = selected
+			? self.cellColour.Light
+			: [UIColor clearColor];
 
+	[self setSelectedBackgroundView:backgroundView];
 }
 
 -(void) setCellAudioFile:(AudioFile *)cellAudioFile{
@@ -44,7 +39,6 @@
 	[self.audioFileDuration setText:_cellAudioFile.Duration];
 	[self.audioFileDuration setTextColor:[MIColourUtil Grey]];
 	self.cellColour = [MIColourFactory GetColourFromString: cellAudioFile.BaseColour];
-
 
 	[self updateCellIcon];
 }

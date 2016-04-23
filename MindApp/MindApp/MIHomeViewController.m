@@ -101,11 +101,11 @@
 	if (_mediaQueue.count > 0) {
 		return 1;
 	}
-	[self renderDefaultBackgroundVIew];
+	[self renderTableViewNoDataView];
 	return 0;
 }
 
-- (void)renderDefaultBackgroundVIew {
+- (void)renderTableViewNoDataView {
 	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 102)];
 
 	messageLabel.text = @"No data is currently available. Please pull down to refresh.";
@@ -154,7 +154,6 @@
 		MITabBarViewController* temp = (MITabBarViewController *) self.parentViewController;
 		[temp setBackgroundColour:[MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light];
 	}
-
 }
 
 #pragma mark Communication Manager Delegate Methods
@@ -180,7 +179,6 @@
 	[self showErrorAlert:responseModel.Message];
 	[_mediaQueue populateWithMediaFiles:[_mediaCacheUtil getMediaFilesFromCache]];
 	[self.homeView.mediaTrackTableView reloadData];
-
 }
 
 #pragma MiAudioPlayer Delegate Methods

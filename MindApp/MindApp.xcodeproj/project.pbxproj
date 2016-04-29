@@ -41,6 +41,7 @@
 		F026CAA91C28607600E84406 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA61C28607600E84406 /* playButton.png */; };
 		F026CAAA1C28607600E84406 /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F026CAA71C28607600E84406 /* playIcon.png */; };
 		F090CA501C341E8B007ECEC8 /* MiSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */; };
+		F095C74D1CD40F80002F8991 /* calmer-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F095C74C1CD40F80002F8991 /* calmer-logo.png */; };
 		F0BAE5DE1C3473CE00A6D9A2 /* MITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */; };
 		F0BAE5E21C34762800A6D9A2 /* Music-Transcript-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */; };
 		F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */; };
@@ -147,6 +148,7 @@
 		F026CAA61C28607600E84406 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		F026CAA71C28607600E84406 /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
 		F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MiSettings.plist; sourceTree = "<group>"; };
+		F095C74C1CD40F80002F8991 /* calmer-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calmer-logo.png"; sourceTree = "<group>"; };
 		F0BAE5DC1C3473CE00A6D9A2 /* MITabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITabBarViewController.h; sourceTree = "<group>"; };
 		F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITabBarViewController.m; sourceTree = "<group>"; };
 		F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music-Transcript-50.png"; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 		F0ED98FD1C0B97B4004CA752 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F095C74C1CD40F80002F8991 /* calmer-logo.png */,
 				F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */,
 				F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */,
 				F026CAA51C28607600E84406 /* pauseButton.png */,
@@ -720,6 +723,7 @@
 				F0017B251C4037CD00BE27E7 /* MediaCache.plist in Resources */,
 				F0ED98E51C0B969F004CA752 /* Assets.xcassets in Resources */,
 				F0ED998F1C0BAA9E004CA752 /* Resource.plist in Resources */,
+				F095C74D1CD40F80002F8991 /* calmer-logo.png in Resources */,
 				F026CA961C285E3E00E84406 /* MiHomeTableViewCell.xib in Resources */,
 				F0ED98E31C0B969F004CA752 /* Main.storyboard in Resources */,
 				F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */,

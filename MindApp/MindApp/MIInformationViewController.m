@@ -14,25 +14,14 @@
 
 @implementation MIInformationViewController
 
-static NSString * const getMediaFilesUrl = @"https://mind-1.apphb.com/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[self.informationWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:getMediaFilesUrl]]];
+	self.informationTextView.scrollEnabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

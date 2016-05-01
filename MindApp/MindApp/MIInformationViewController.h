@@ -10,6 +10,6 @@
 
 @interface MIInformationViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIWebView *informationWebView;
+@property (strong, nonatomic) IBOutlet UITextView *informationTextView;
 
 @end

@@ -85,44 +85,23 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ag-mh-mIJ">
-                                <rect key="frame" x="20" y="175" width="560" height="376"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Mind in Salford is an independent, user focused charity providing quality services to make a positive difference to the wellbeing and mental health of the people of Salford.  The core services we provide are:
-
-Advocacy
-Helping you express your views and concerns, access information and services, explore choices and options, and defending and promoting your rights.  
-
-Welfare Rights and Debt Advice
-Free, independent and impartial advice helping you with all aspects of benefits and debts.  
-
-Mindfulness
-Courses on types of meditation involving focussing your mind on the present, which have been shown to have positive effects on those suffering with mental health difficulties.  
-
-Training
-We run rights and wellbeing courses for organisations and service users  
-
-Garden Needs
-A mental wellbeing garden centre offering drop-ins and volunteering opportunities for people with experience of mental or emotional distress.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJl-3k-xta">
+                                <rect key="frame" x="0.0" y="175" width="600" height="376"/>
+                                <color key="backgroundColor" red="0.2487784348" green="1" blue="0.079457805310000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5ag-mh-mIJ" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leadingMargin" id="3VS-Jb-hpe"/>
-                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="5ag-mh-mIJ" secondAttribute="bottom" id="5a3-K7-eoz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GJl-3k-xta" secondAttribute="trailing" constant="-20" id="DD9-wv-OXV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="2ad-M6-OHi" secondAttribute="leading" constant="20" id="GyZ-9I-xqy"/>
-                            <constraint firstItem="5ag-mh-mIJ" firstAttribute="top" secondItem="2ad-M6-OHi" secondAttribute="bottom" id="QS3-i2-gTy"/>
+                            <constraint firstItem="GJl-3k-xta" firstAttribute="top" secondItem="2ad-M6-OHi" secondAttribute="bottom" id="Pcz-PL-4mg"/>
                             <constraint firstItem="2ad-M6-OHi" firstAttribute="top" secondItem="d9R-uY-yC5" secondAttribute="bottom" constant="-20" id="bEO-nv-izO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5ag-mh-mIJ" secondAttribute="trailing" id="qRW-7h-mdN"/>
+                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="GJl-3k-xta" secondAttribute="bottom" id="e8j-ac-Gm9"/>
+                            <constraint firstItem="GJl-3k-xta" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leadingMargin" constant="-20" id="lUt-lc-KsX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2ad-M6-OHi" secondAttribute="trailing" constant="-20" id="ymS-bb-gpd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="Info-Squared.png" id="kIV-mb-COs"/>
-                    <connections>
-                        <outlet property="informationTextView" destination="5ag-mh-mIJ" id="GsA-Q1-NpP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-GF-zrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

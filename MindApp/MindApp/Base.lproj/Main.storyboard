@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pRg-fW-wN2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pRg-fW-wN2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -85,23 +85,26 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJl-3k-xta">
+                            <webView contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXa-FN-oxB">
                                 <rect key="frame" x="0.0" y="175" width="600" height="376"/>
-                                <color key="backgroundColor" red="0.2487784348" green="1" blue="0.079457805310000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </scrollView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="GJl-3k-xta" secondAttribute="trailing" constant="-20" id="DD9-wv-OXV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="2ad-M6-OHi" secondAttribute="leading" constant="20" id="GyZ-9I-xqy"/>
-                            <constraint firstItem="GJl-3k-xta" firstAttribute="top" secondItem="2ad-M6-OHi" secondAttribute="bottom" id="Pcz-PL-4mg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JXa-FN-oxB" secondAttribute="trailingMargin" id="NwG-RM-oVB"/>
+                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="JXa-FN-oxB" secondAttribute="bottom" id="WVo-h2-7lO"/>
                             <constraint firstItem="2ad-M6-OHi" firstAttribute="top" secondItem="d9R-uY-yC5" secondAttribute="bottom" constant="-20" id="bEO-nv-izO"/>
-                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="GJl-3k-xta" secondAttribute="bottom" id="e8j-ac-Gm9"/>
-                            <constraint firstItem="GJl-3k-xta" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leadingMargin" constant="-20" id="lUt-lc-KsX"/>
+                            <constraint firstItem="JXa-FN-oxB" firstAttribute="top" secondItem="2ad-M6-OHi" secondAttribute="bottom" id="kDb-hM-8zl"/>
+                            <constraint firstItem="JXa-FN-oxB" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leading" id="pEX-C6-bj3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2ad-M6-OHi" secondAttribute="trailing" constant="-20" id="ymS-bb-gpd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="Info-Squared.png" id="kIV-mb-COs"/>
+                    <connections>
+                        <outlet property="informationWebView" destination="JXa-FN-oxB" id="OYD-D1-HBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-GF-zrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

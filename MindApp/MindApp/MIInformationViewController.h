@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIInformationViewController : UIViewController
+@interface MIInformationViewController : UIViewController <UIWebViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextView *informationTextView;
+@property (strong, nonatomic) IBOutlet UIWebView *informationWebView;
 
 @end

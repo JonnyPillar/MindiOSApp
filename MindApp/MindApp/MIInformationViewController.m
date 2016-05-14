@@ -12,7 +12,7 @@
 
 @end
 
-static NSString * const infoPageUrl = @"https://mind-1.apphb.com/info/";
+static NSString * const infoPageUrl = @"https://mind-1.apphb.com/information/";
 
 @implementation MIInformationViewController
 

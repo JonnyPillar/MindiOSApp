@@ -35,10 +35,11 @@
         <scene sceneID="lO1-t5-zHy">
             <objects>
                 <tabBarController id="pRg-fW-wN2" customClass="MITabBarViewController" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Hzl-fp-m9P">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Hzl-fp-m9P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eIe-6a-bBw"/>
@@ -58,7 +59,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eQE-uk-QNF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DCZ-l4-Rw3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ad-M6-OHi">

@@ -66,7 +66,7 @@ UIView* loadingView;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    [loadingView setHidden:YES];
+    [loadingView setHidden:YES];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {

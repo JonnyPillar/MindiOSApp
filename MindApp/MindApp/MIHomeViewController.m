@@ -152,7 +152,7 @@
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
 
 		MITabBarViewController* temp = (MITabBarViewController *) self.parentViewController;
-		[temp setBackgroundColour:[MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light];
+		[temp setBackgroundColour:[MIColourFactory GetColourFromString: [selectedCell getCellColour]].Medium];
 	}
 }
 

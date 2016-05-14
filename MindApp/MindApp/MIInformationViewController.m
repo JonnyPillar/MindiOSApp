@@ -48,6 +48,10 @@ UIView* loadingView;
 
     [self.view addSubview:loadingView];
 
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.informationWebView.scrollView addSubview:refreshControl]; //<- this is point to use. Add "scrollView" property.
+
 }
 
 - (void)setupWebView {
@@ -56,14 +60,21 @@ UIView* loadingView;
     [self.informationWebView loadRequest:pageRequest];
 }
 
+-(void)handleRefresh:(UIRefreshControl *)refresh {
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:[self getPageUrl]];
+    [self.informationWebView loadRequest:requestObj];
+    [refresh endRefreshing];
+}
+
 -(NSURL*) getPageUrl {
-    NSString *informationPageUrl =[NSString stringWithFormat:infoPageUrl];
-    return [NSURL URLWithString:informationPageUrl];
+    return [NSURL URLWithString:infoPageUrl];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark Web View Delegate Methods
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [loadingView setHidden:YES];

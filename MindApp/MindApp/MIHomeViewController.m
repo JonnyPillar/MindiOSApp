@@ -80,7 +80,7 @@
 	}
 }
 
--(void)setUpPullToRefresh{
+-(void)setUpPullToRefresh {
 	self.refreshControl = [[UIRefreshControl alloc] init];
 	self.refreshControl.backgroundColor = [MIColourUtil BlueLight];
 	self.refreshControl.tintColor = [UIColor whiteColor];
@@ -151,8 +151,8 @@
 		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
 
-		MITabBarViewController* temp = (MITabBarViewController *) self.parentViewController;
-		[temp setBackgroundColour:[MIColourFactory GetColourFromString: [selectedCell getCellColour]].Medium];
+		MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
+		[tabBarController setBackgroundColour:[MIColourFactory GetColourFromString:[selectedCell getCellColour]].Medium];
 	}
 }
 

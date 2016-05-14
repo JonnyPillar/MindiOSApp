@@ -176,7 +176,7 @@
 }
 
 - (void)audioPlayer:(STKAudioPlayer *)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState {
-	NSLog(@"AudioPlayer stateChanged from %u to %u", previousState, state);
+	NSLog(@"AudioPlayer stateChanged from %ld to %ld", (long)previousState, (long)state);
 	NSLog(@"Player currently at %f", _audioPlayer.progress);
 }
 

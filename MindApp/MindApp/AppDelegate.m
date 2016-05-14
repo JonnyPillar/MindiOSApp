@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+@import HockeySDK;
 
 @interface AppDelegate ()
 
@@ -18,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	[[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"3dea26cd74834f709552cdd0a8345c44"];
+	// Do some additional configuration if needed here
+	[[BITHockeyManager sharedHockeyManager] startManager];
+	[[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
+
 	NSError* error;
 	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
 	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];

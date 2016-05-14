@@ -25,9 +25,6 @@ UIView* loadingView;
 }
 
 - (void)addLoadingView {
-
-    CGRect rect = self.informationWebView.frame;
-
     loadingView = [[UIView alloc] initWithFrame:CGRectMake(0,0, 80, 80)];
     loadingView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.6];
     loadingView.layer.cornerRadius = 5;

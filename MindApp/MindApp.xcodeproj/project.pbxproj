@@ -638,6 +638,7 @@
 				F0ED98D31C0B969F004CA752 /* Resources */,
 				AE71DFC25ACC955BC1F39BE6 /* Embed Pods Frameworks */,
 				8AFFD86F7CB5948C079EEE79 /* Copy Pods Resources */,
+				F02414F61CE741BA00F2DB68 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -790,6 +791,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		F02414F61CE741BA00F2DB68 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

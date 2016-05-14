@@ -20,6 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HockeySDK (4.0.1):
+    - HockeySDK/AllFeaturesLib (= 4.0.1)
+  - HockeySDK/AllFeaturesLib (4.0.1)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -27,11 +30,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - HockeySDK (~> 4.0.1)
   - SDWebImage (~> 3.7)
   - StreamingKit (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  HockeySDK: 1b69a82782f6a3d4a1c0b1f04dca4bca83fc8c82
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   StreamingKit: 3b9c78009275ef1caf198bae44cfb982fee65d4d
 

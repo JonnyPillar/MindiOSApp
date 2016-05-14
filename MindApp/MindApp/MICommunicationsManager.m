@@ -38,7 +38,7 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 }
 
 -(void) clearAuthorizationToken{
-	[self.requestSerializer setValue:@"Authorization" forHTTPHeaderField:nil];
+	[self.requestSerializer setValue:@"Authorization" forHTTPHeaderField:@""];
 }
 
 -(void) initiliseManager{

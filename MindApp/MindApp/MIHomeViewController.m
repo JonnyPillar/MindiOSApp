@@ -203,12 +203,13 @@
 
 -(void) showErrorAlert:(NSString*) errorMessage
 {
-	UIAlertView *ErrorAlert = [[UIAlertView alloc] initWithTitle:@""
-														 message:errorMessage
-														delegate:nil
-											   cancelButtonTitle:@"OK"
-											   otherButtonTitles:nil, nil];
-	[ErrorAlert show];
+	UIAlertController* errorAlert = [[UIAlertController alloc] init];
+	errorAlert.title = @"Opps something went wrong";
+	errorAlert.message = errorMessage;
+
+	UIAlertAction* alertCancelAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+	[errorAlert addAction:alertCancelAction];
+	[self presentViewController:errorAlert animated:YES completion:nil];
 }
 
 -(void)audioPlayerPlayButtonClicked:(id)sender{

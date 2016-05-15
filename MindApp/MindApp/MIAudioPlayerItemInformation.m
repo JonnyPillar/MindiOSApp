@@ -13,6 +13,7 @@
 
 -(id) initWithAudioFile:(AudioFile*) audioFile{
 	if(!(self = [super init])) {}
+	[self setOrder:audioFile.Order];
 	[self setItemColour:[MIColourFactory GetColourFromString:audioFile.BaseColour]];
 	[self setItemDuration:audioFile.Duration];
 	return self;

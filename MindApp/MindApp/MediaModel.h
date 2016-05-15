@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString* Title;
 @property (strong, nonatomic) NSString* Duration;
 @property (strong, nonatomic) NSString* BaseColour;
+@property (assign) NSInteger Order;
 @property (nonatomic) MediaType MediaType;
 
 @end

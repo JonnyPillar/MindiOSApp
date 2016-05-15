@@ -151,8 +151,7 @@
 		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
 		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
 
-		MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
-		[tabBarController setBackgroundColour:[MIColourFactory GetColourFromString:[selectedCell getCellColour]].Medium];
+		[self updateNavigationBarColour:[MIColourFactory GetColourFromString:[selectedCell getCellColour]]];
 	}
 }
 
@@ -186,6 +185,10 @@
 -(void) updateUIForNewItem:(MIAudioPlayerItemInformation *) itemInformation{
 	NSLog(@"Update UI For New Item");
 	[self.homeView updateUIForNewItem:itemInformation];
+	[self updateNavigationBarColour:itemInformation.itemColour];
+
+	NSIndexPath* path = [NSIndexPath indexPathForRow:itemInformation.order inSection:0];
+	[self.homeView.mediaTrackTableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(void) updateUIForPlay{
@@ -199,6 +202,13 @@
 
 -(void) updateUIProgress: (MIAudioPlayerProgress *) audioPlayerProgress{
 	[self.homeView updateUIProgress:audioPlayerProgress];
+}
+
+#pragma MIHomeViewController Methods
+
+-(void) updateNavigationBarColour: (MIColour *) colour {
+	MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
+	[tabBarController setBackgroundColour:colour.Medium];
 }
 
 -(void) showErrorAlert:(NSString*) errorMessage

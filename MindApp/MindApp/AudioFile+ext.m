@@ -26,6 +26,7 @@
 		self.Duration = data[@"Duration"];
 		self.Title = data[@"Title"];
 		self.BaseColour = data[@"BaseColour"];
+		self.Order = [data[@"Order"] integerValue] - 1;
 		if(!self.BaseColour) self.BaseColour = @"Green";
 	}
 	return self;
@@ -55,8 +56,6 @@
 	
 	UIImageView *albumArtImg = [UIImageView new];
 	[albumArtImg setImage:[UIImage imageNamed:@"mindLogo.png"]];
-//	[albumArtImg sd_setImageWithURL:self.GetImageUrlNsUrl placeholderImage:[UIImage imageNamed: @"playIcon.png"]];
-	
 	informationDictionary[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"mindLogo.png"]];
 	
 	return informationDictionary;

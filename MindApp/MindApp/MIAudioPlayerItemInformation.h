@@ -12,6 +12,7 @@
 
 @interface MIAudioPlayerItemInformation : NSObject
 
+@property (nonatomic) NSInteger order;
 @property (nonatomic, strong) MIColour* itemColour;
 @property (nonatomic, strong) NSString* itemDuration;
 

@@ -79,6 +79,7 @@
 		F0ED998B1C0BAA04004CA752 /* RegistrationRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99861C0BAA04004CA752 /* RegistrationRequestModel.m */; };
 		F0ED998C1C0BAA04004CA752 /* RegistrationResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED99881C0BAA04004CA752 /* RegistrationResponseModel.m */; };
 		F0ED998F1C0BAA9E004CA752 /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0ED998E1C0BAA9E004CA752 /* Resource.plist */; };
+		F0FDA6651CE8AF34008CC7C3 /* tab-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FDA6641CE8AF34008CC7C3 /* tab-logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		F0ED99871C0BAA04004CA752 /* RegistrationResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationResponseModel.h; sourceTree = "<group>"; };
 		F0ED99881C0BAA04004CA752 /* RegistrationResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationResponseModel.m; sourceTree = "<group>"; };
 		F0ED998E1C0BAA9E004CA752 /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resource.plist; sourceTree = "<group>"; };
+		F0FDA6641CE8AF34008CC7C3 /* tab-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-logo.png"; sourceTree = "<group>"; };
 		F29EF9AFA7DD7E52DFB7F61C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FECC3213E7402344E3EE9F36 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -439,6 +441,7 @@
 		F0ED98FD1C0B97B4004CA752 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F0FDA6641CE8AF34008CC7C3 /* tab-logo.png */,
 				F095C74C1CD40F80002F8991 /* calmer-logo.png */,
 				F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */,
 				F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */,
@@ -727,6 +730,7 @@
 				F095C74D1CD40F80002F8991 /* calmer-logo.png in Resources */,
 				F026CA961C285E3E00E84406 /* MiHomeTableViewCell.xib in Resources */,
 				F0ED98E31C0B969F004CA752 /* Main.storyboard in Resources */,
+				F0FDA6651CE8AF34008CC7C3 /* tab-logo.png in Resources */,
 				F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */,
 				F026CAA81C28607600E84406 /* pauseButton.png in Resources */,
 				F026CAA31C28604300E84406 /* informationIcon.png in Resources */,

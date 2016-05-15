@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Player" image="Music-Transcript-50.png" id="Mgd-6m-F4J"/>
+                    <tabBarItem key="tabBarItem" title="Mind" image="tab-logo.png" id="Mgd-6m-F4J"/>
                     <navigationItem key="navigationItem" id="tXR-A5-OiT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
@@ -114,7 +114,7 @@
     </scenes>
     <resources>
         <image name="Info-Squared.png" width="30" height="30"/>
-        <image name="Music-Transcript-50.png" width="30" height="30"/>
         <image name="mindLogo.png" width="764" height="764"/>
+        <image name="tab-logo.png" width="30" height="30"/>
     </resources>
 </document>

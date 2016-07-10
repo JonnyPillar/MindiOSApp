@@ -40,6 +40,12 @@
 	[self retrieveMediaItemData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //Hack hack hack
+    [self updateNavigationBarColourWithColor:self.refreshControl.tintColor];
+}
+
 - (void)adjustTableViewForTabBar {
 	self.edgesForExtendedLayout = UIRectEdgeAll;
 	UIEdgeInsets adjustForTabBarInsets = UIEdgeInsetsMake(0, 0, 95, 0);
@@ -83,7 +89,7 @@
 -(void)setUpPullToRefresh {
 	self.refreshControl = [[UIRefreshControl alloc] init];
 	self.refreshControl.backgroundColor = [MIColourUtil BlueLight];
-	self.refreshControl.tintColor = [UIColor whiteColor];
+	self.refreshControl.tintColor = [MIColourUtil BlueMedium];
 	[self.refreshControl addTarget:self
 							action:@selector(retrieveMediaItemData)
 				  forControlEvents:UIControlEventValueChanged];
@@ -207,8 +213,12 @@
 #pragma MIHomeViewController Methods
 
 -(void) updateNavigationBarColour: (MIColour *) colour {
-	MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
-	[tabBarController setBackgroundColour:colour.Medium];
+    [self updateNavigationBarColourWithColor:colour.Medium];
+}
+
+-(void) updateNavigationBarColourWithColor: (UIColor *) colour {
+    MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
+    [tabBarController setBackgroundColour:colour];
 }
 
 -(void) showErrorAlert:(NSString*) errorMessage

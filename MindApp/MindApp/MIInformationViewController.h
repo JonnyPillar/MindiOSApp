@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIInformationViewController : UIViewController <UIWebViewDelegate>
+@interface MIInformationViewController : UIViewController <UIWebViewDelegate, UIScrollViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIView *informationPageControl;
-- (IBAction)pageChangeAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

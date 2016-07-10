@@ -45,6 +45,7 @@
 		F0BAE5DE1C3473CE00A6D9A2 /* MITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */; };
 		F0BAE5E21C34762800A6D9A2 /* Music-Transcript-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */; };
 		F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */; };
+		F0BFE3C11D32E97400DD052C /* text.html in Resources */ = {isa = PBXBuildFile; fileRef = F0BFE3C01D32E97400DD052C /* text.html */; };
 		F0ED98DA1C0B969F004CA752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98D91C0B969F004CA752 /* main.m */; };
 		F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DC1C0B969F004CA752 /* AppDelegate.m */; };
 		F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DF1C0B969F004CA752 /* ViewController.m */; };
@@ -154,6 +155,7 @@
 		F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITabBarViewController.m; sourceTree = "<group>"; };
 		F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music-Transcript-50.png"; sourceTree = "<group>"; };
 		F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-Squared.png"; sourceTree = "<group>"; };
+		F0BFE3C01D32E97400DD052C /* text.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = text.html; sourceTree = "<group>"; };
 		F0ED98D51C0B969F004CA752 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0ED98D91C0B969F004CA752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0ED98DB1C0B969F004CA752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 		F0ED98D71C0B969F004CA752 /* MindApp */ = {
 			isa = PBXGroup;
 			children = (
+				F0BFE3C01D32E97400DD052C /* text.html */,
 				F026CA821C285E0200E84406 /* Views */,
 				F0ED99711C0BA6E8004CA752 /* Comms */,
 				F0ED99021C0B99BF004CA752 /* AudioPlayer */,
@@ -729,6 +732,7 @@
 				F0ED998F1C0BAA9E004CA752 /* Resource.plist in Resources */,
 				F095C74D1CD40F80002F8991 /* calmer-logo.png in Resources */,
 				F026CA961C285E3E00E84406 /* MiHomeTableViewCell.xib in Resources */,
+				F0BFE3C11D32E97400DD052C /* text.html in Resources */,
 				F0ED98E31C0B969F004CA752 /* Main.storyboard in Resources */,
 				F0FDA6651CE8AF34008CC7C3 /* tab-logo.png in Resources */,
 				F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */,

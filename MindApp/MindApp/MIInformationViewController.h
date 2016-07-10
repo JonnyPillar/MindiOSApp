@@ -10,6 +10,8 @@
 
 @interface MIInformationViewController : UIViewController <UIWebViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIWebView *informationWebView;
+@property (strong, nonatomic) IBOutlet UIView *informationPageControl;
+- (IBAction)pageChangeAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

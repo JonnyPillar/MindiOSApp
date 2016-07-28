@@ -21,7 +21,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Player" image="tab-logo.png" selectedImage="tab-logo-colour.png" id="Mgd-6m-F4J"/>
+                    <tabBarItem key="tabBarItem" title="Player" image="tab-logo-colour.png" selectedImage="tab-logo-colour.png" id="Mgd-6m-F4J"/>
                     <navigationItem key="navigationItem" id="tXR-A5-OiT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
@@ -40,7 +40,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eIe-6a-bBw"/>
@@ -103,7 +103,7 @@
                             <constraint firstItem="KgJ-hw-mIr" firstAttribute="top" secondItem="d9R-uY-yC5" secondAttribute="bottom" id="l4D-3D-CAD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" image="Info-Squared.png" selectedImage="Info-Squared old.png" id="kIV-mb-COs"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="Info-Squared old.png" selectedImage="Info-Squared black.png" id="kIV-mb-COs"/>
                     <connections>
                         <outlet property="aboutUsTitle" destination="2cw-YS-qTD" id="kR0-9S-CYK"/>
                         <outlet property="scrollView" destination="qQu-Kt-xZO" id="oLJ-kc-5Fi"/>
@@ -116,9 +116,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Info-Squared black.png" width="30" height="30"/>
         <image name="Info-Squared old.png" width="30" height="30"/>
-        <image name="Info-Squared.png" width="30" height="30"/>
         <image name="tab-logo-colour.png" width="30" height="30"/>
-        <image name="tab-logo.png" width="30" height="30"/>
     </resources>
 </document>

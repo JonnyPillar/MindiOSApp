@@ -8,6 +8,7 @@
 
 #import "MITabBarViewController.h"
 #import "MIColour.h"
+#import "MIBlue.h"
 
 @interface MITabBarViewController ()
 
@@ -19,16 +20,17 @@
     [super viewDidLoad];
 
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
-            NSForegroundColorAttributeName : [UIColor whiteColor]
+            NSForegroundColorAttributeName : [MIBlue new].Dark
     } forState:UIControlStateSelected];
 
 
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
-            NSForegroundColorAttributeName : [UIColor whiteColor]
+            NSForegroundColorAttributeName : [UIColor blackColor]
     } forState:UIControlStateNormal];
 
 
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:[MIBlue new].Medium];
+//    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
 
     for (UITabBarItem *tbi in self.tabBar.items) {
         tbi.image = [tbi.image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

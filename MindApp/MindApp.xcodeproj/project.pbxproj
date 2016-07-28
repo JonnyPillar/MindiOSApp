@@ -46,6 +46,7 @@
 		F090CA501C341E8B007ECEC8 /* MiSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */; };
 		F095C74D1CD40F80002F8991 /* calmer-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F095C74C1CD40F80002F8991 /* calmer-logo.png */; };
 		F0B518521D49DF80008A9628 /* tab-logo-colour.png in Resources */ = {isa = PBXBuildFile; fileRef = F0B518511D49DF80008A9628 /* tab-logo-colour.png */; };
+		F0B518541D49E296008A9628 /* Info-Squared black.png in Resources */ = {isa = PBXBuildFile; fileRef = F0B518531D49E296008A9628 /* Info-Squared black.png */; };
 		F0BAE5DE1C3473CE00A6D9A2 /* MITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */; };
 		F0BAE5E21C34762800A6D9A2 /* Music-Transcript-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */; };
 		F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */; };
@@ -159,6 +160,7 @@
 		F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MiSettings.plist; sourceTree = "<group>"; };
 		F095C74C1CD40F80002F8991 /* calmer-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calmer-logo.png"; sourceTree = "<group>"; };
 		F0B518511D49DF80008A9628 /* tab-logo-colour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-logo-colour.png"; sourceTree = "<group>"; };
+		F0B518531D49E296008A9628 /* Info-Squared black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-Squared black.png"; sourceTree = "<group>"; };
 		F0BAE5DC1C3473CE00A6D9A2 /* MITabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITabBarViewController.h; sourceTree = "<group>"; };
 		F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITabBarViewController.m; sourceTree = "<group>"; };
 		F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music-Transcript-50.png"; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 		F0ED98FD1C0B97B4004CA752 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F0B518531D49E296008A9628 /* Info-Squared black.png */,
 				F0B518511D49DF80008A9628 /* tab-logo-colour.png */,
 				F02871DA1D3C160F008176FF /* logo-circle.png */,
 				F02871D41D3C11EC008176FF /* mindTextLogo.png */,
@@ -757,6 +760,7 @@
 				F026CAAA1C28607600E84406 /* playIcon.png in Resources */,
 				F0B518521D49DF80008A9628 /* tab-logo-colour.png in Resources */,
 				F090CA501C341E8B007ECEC8 /* MiSettings.plist in Resources */,
+				F0B518541D49E296008A9628 /* Info-Squared black.png in Resources */,
 				F026CA871C285E0C00E84406 /* MIHomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

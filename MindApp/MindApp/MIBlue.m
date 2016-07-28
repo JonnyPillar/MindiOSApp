@@ -15,6 +15,10 @@
 	return [MIColourUtil Blue];
 }
 
+-(UIColor*) MediumLight{
+	return [MIColourUtil BlueMediumLight];
+}
+
 -(UIColor*) Medium{
 	return [MIColourUtil BlueMedium];
 }

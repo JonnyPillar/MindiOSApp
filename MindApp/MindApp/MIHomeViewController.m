@@ -18,6 +18,7 @@
 #import "MIMediaQueueManager.h"
 #import "MIMediaCacheUtil.h"
 #import "MITabBarViewController.h"
+#import "MIBlue.h"
 
 @interface MIHomeViewController () <UITableViewDelegate, UITableViewDataSource, CommunicationsManagerDelegate, MIAudioPlayerDelegate>
 
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) MIAudioPlayer *audioPlayer;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
 @property (strong, nonatomic) MIMediaCacheUtil *mediaCacheUtil;
+@property (nonatomic, strong) MIColour *cellColour;
 
 @end
 
@@ -43,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     //Hack hack hack
-    [self updateNavigationBarColourWithColor:self.refreshControl.tintColor];
+	[self updateNavigationBarColourWithColor:self.cellColour.Dark];
 }
 
 - (void)adjustTableViewForTabBar {
@@ -71,8 +73,9 @@
 	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
+//	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
 	[self adjustTableViewForTabBar];
+	self.cellColour = [MIBlue new];
 }
 
 -(void)setUpMediaAudio{
@@ -155,8 +158,8 @@
 		}];
 
 		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
-		self.refreshControl.backgroundColor = [MIColourFactory GetColourFromString: [selectedCell getCellColour]].Light;
-
+		self.cellColour = [MIColourFactory GetColourFromString: [selectedCell getCellColour]];
+		[self.refreshControl setBackgroundColor:self.cellColour.Light];
 		[self updateNavigationBarColour:[MIColourFactory GetColourFromString:[selectedCell getCellColour]]];
 	}
 }
@@ -218,7 +221,8 @@
 
 -(void) updateNavigationBarColourWithColor: (UIColor *) colour {
     MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
-    [tabBarController setBackgroundColour:colour];
+//	[tabBarController setBackgroundColour:colour];
+//	[self.tabBarController.tabBar setBackgroundColor:colour];
 }
 
 -(void) showErrorAlert:(NSString*) errorMessage

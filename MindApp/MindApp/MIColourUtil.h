@@ -23,6 +23,7 @@
 
 +(UIColor *) Blue;
 +(UIColor *) BlueMedium;
++(UIColor *) BlueMediumLight;
 +(UIColor *) BlueLight;
 +(UIColor *) Blue: (float) opacity;
 

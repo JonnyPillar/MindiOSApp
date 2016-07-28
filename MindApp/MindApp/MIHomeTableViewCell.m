@@ -38,7 +38,7 @@
 	[self.audioFileTitle setTextColor:[MIColourUtil Grey]];
 	[self.audioFileDuration setText:_cellAudioFile.Duration];
 	[self.audioFileDuration setTextColor:[MIColourUtil Grey]];
-	self.cellColour = [MIColourFactory GetColourFromString: cellAudioFile.BaseColour];
+	[self setCellColour:[MIColourFactory GetColourFromString: cellAudioFile.BaseColour]];
 
 	[self updateCellIcon];
 }

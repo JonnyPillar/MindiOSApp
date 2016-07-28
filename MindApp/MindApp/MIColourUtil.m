@@ -59,6 +59,9 @@
 	return [self Blue:1];
 }
 
++(UIColor *) BlueMediumLight{
+	return [self GenerateRGBRed:142 Green:211 Blue:244 Opactity:1];
+}
 
 +(UIColor *) BlueMedium{
 	return [self Blue:0.7];

@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[UIButton appearance] setTintColor:[UIColor greenColor]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
             NSForegroundColorAttributeName : [UIColor whiteColor]
     } forState:UIControlStateSelected];
@@ -27,6 +26,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
             NSForegroundColorAttributeName : [UIColor whiteColor]
     } forState:UIControlStateNormal];
+
 
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
 

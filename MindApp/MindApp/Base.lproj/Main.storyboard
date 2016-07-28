@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Player" image="tab-logo.png" id="Mgd-6m-F4J"/>
+                    <tabBarItem key="tabBarItem" title="Player" image="tab-logo.png" selectedImage="tab-logo-colour.png" id="Mgd-6m-F4J"/>
                     <navigationItem key="navigationItem" id="tXR-A5-OiT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
@@ -62,42 +63,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cw-YS-qTD">
+                                <rect key="frame" x="0.0" y="20" width="300" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="dws-Nc-iNb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <state key="normal" title="About Us"/>
+                                <connections>
+                                    <action selector="aboutUsClicked:" destination="Lyv-MP-JOf" eventType="touchUpInside" id="4Zm-gj-jyF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgJ-hw-mIr">
+                                <rect key="frame" x="300" y="20" width="300" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="7Nr-yN-h6O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <state key="normal" title="T &amp; C"/>
+                                <connections>
+                                    <action selector="termsConditionsClicked:" destination="Lyv-MP-JOf" eventType="touchUpInside" id="QmF-PN-yGC"/>
+                                </connections>
+                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qQu-Kt-xZO">
-                                <rect key="frame" x="4" y="94" width="600" height="457"/>
+                                <rect key="frame" x="0.0" y="88" width="600" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-4s-5c9">
-                                <rect key="frame" x="281" y="506" width="39" height="37"/>
-                            </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-Qs-ULZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="6Ax-O7-0Ps"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="Cb6-Qs-ULZ" secondAttribute="leading" constant="20" id="4ID-Nq-WeP"/>
-                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="qQu-Kt-xZO" secondAttribute="bottom" id="ApK-ez-Kpf"/>
-                            <constraint firstItem="qQu-Kt-xZO" firstAttribute="top" secondItem="Cb6-Qs-ULZ" secondAttribute="bottom" id="AxA-lu-8lW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cb6-Qs-ULZ" secondAttribute="trailing" constant="-20" id="JFp-jc-LnO"/>
-                            <constraint firstItem="CkN-4s-5c9" firstAttribute="centerX" secondItem="DCZ-l4-Rw3" secondAttribute="centerX" id="N5B-bD-pPa"/>
-                            <constraint firstItem="qQu-Kt-xZO" firstAttribute="width" secondItem="DCZ-l4-Rw3" secondAttribute="width" id="WbG-4g-i10"/>
-                            <constraint firstItem="qQu-Kt-xZO" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leadingMargin" constant="-16" id="XDf-Uz-IPh"/>
-                            <constraint firstItem="Cb6-Qs-ULZ" firstAttribute="top" secondItem="d9R-uY-yC5" secondAttribute="bottom" constant="-20" id="ndl-bb-rll"/>
-                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="CkN-4s-5c9" secondAttribute="bottom" constant="8" id="q9L-tw-Fmo"/>
+                            <constraint firstItem="eQE-uk-QNF" firstAttribute="top" secondItem="qQu-Kt-xZO" secondAttribute="bottom" constant="-23" id="ApK-ez-Kpf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qQu-Kt-xZO" secondAttribute="trailing" constant="-20" id="EEy-4O-IlU"/>
+                            <constraint firstItem="2cw-YS-qTD" firstAttribute="top" secondItem="d9R-uY-yC5" secondAttribute="bottom" id="FUR-zM-Jyf"/>
+                            <constraint firstItem="qQu-Kt-xZO" firstAttribute="top" secondItem="2cw-YS-qTD" secondAttribute="bottom" constant="3" id="W6L-EG-tBC"/>
+                            <constraint firstItem="qQu-Kt-xZO" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leadingMargin" constant="-20" id="XDf-Uz-IPh"/>
+                            <constraint firstItem="2cw-YS-qTD" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="leadingMargin" constant="-20" id="Z64-VQ-Noq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KgJ-hw-mIr" secondAttribute="trailing" constant="-20" id="agD-98-ewz"/>
+                            <constraint firstItem="KgJ-hw-mIr" firstAttribute="leading" secondItem="DCZ-l4-Rw3" secondAttribute="centerXWithinMargins" id="htj-rQ-dME"/>
+                            <constraint firstItem="2cw-YS-qTD" firstAttribute="trailing" secondItem="DCZ-l4-Rw3" secondAttribute="centerXWithinMargins" id="j25-w0-JD2"/>
+                            <constraint firstItem="KgJ-hw-mIr" firstAttribute="top" secondItem="d9R-uY-yC5" secondAttribute="bottom" id="l4D-3D-CAD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" image="Info-Squared.png" id="kIV-mb-COs"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="Info-Squared.png" selectedImage="Info-Squared old.png" id="kIV-mb-COs"/>
                     <connections>
-                        <outlet property="pageControl" destination="CkN-4s-5c9" id="gQV-fe-kQl"/>
+                        <outlet property="aboutUsTitle" destination="2cw-YS-qTD" id="kR0-9S-CYK"/>
                         <outlet property="scrollView" destination="qQu-Kt-xZO" id="oLJ-kc-5Fi"/>
-                        <outlet property="titleLabel" destination="Cb6-Qs-ULZ" id="c7n-8i-RlR"/>
+                        <outlet property="termsConditionsTitle" destination="KgJ-hw-mIr" id="b14-14-1jR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-GF-zrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,7 +116,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Info-Squared old.png" width="30" height="30"/>
         <image name="Info-Squared.png" width="30" height="30"/>
+        <image name="tab-logo-colour.png" width="30" height="30"/>
         <image name="tab-logo.png" width="30" height="30"/>
     </resources>
 </document>

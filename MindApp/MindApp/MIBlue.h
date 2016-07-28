@@ -13,6 +13,7 @@
 
 -(UIColor*) Dark;
 -(UIColor*) Medium;
+-(UIColor*) MediumLight;
 -(UIColor*) Light;
 
 @end

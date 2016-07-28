@@ -10,8 +10,11 @@
 
 @interface MIInformationViewController : UIViewController <UIWebViewDelegate, UIScrollViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIButton *aboutUsTitle;
+@property (strong, nonatomic) IBOutlet UIButton *termsConditionsTitle;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+- (IBAction)aboutUsClicked:(id)sender;
+- (IBAction)termsConditionsClicked:(id)sender;
+
 
 @end

@@ -73,7 +73,7 @@
 	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-//	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
+	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
 	[self adjustTableViewForTabBar];
 	self.cellColour = [MIBlue new];
 }
@@ -221,8 +221,8 @@
 
 -(void) updateNavigationBarColourWithColor: (UIColor *) colour {
     MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
-//	[tabBarController setBackgroundColour:colour];
-//	[self.tabBarController.tabBar setBackgroundColor:colour];
+	[tabBarController setBackgroundColour:colour];
+	[self.tabBarController.tabBar setBackgroundColor:colour];
 }
 
 -(void) showErrorAlert:(NSString*) errorMessage

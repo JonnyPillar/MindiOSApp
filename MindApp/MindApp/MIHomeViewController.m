@@ -117,7 +117,7 @@
 - (void)renderTableViewNoDataView {
 	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 102)];
 
-	messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+	messageLabel.text = @"No data is currently available.\n\n Please pull down to refresh.";
 	messageLabel.textColor = [UIColor blackColor];
 	messageLabel.numberOfLines = 0;
 	messageLabel.textAlignment = NSTextAlignmentCenter;
@@ -132,10 +132,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	static NSString *CellIdentifier = @"Cell";
-	
-	MIHomeTableViewCell *cell = (MIHomeTableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	MIHomeTableViewCell *cell = (MIHomeTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 	if (cell == nil) {
 		cell = [[[NSBundle mainBundle] loadNibNamed:@"MiHomeTableViewCell" owner:self options:nil] lastObject];
 	}

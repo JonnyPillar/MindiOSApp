@@ -54,6 +54,7 @@
 		F0BBE7741D4E70FF00236450 /* MIInformationNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7731D4E70FF00236450 /* MIInformationNavigationViewController.m */; };
 		F0BBE7771D4E755800236450 /* MITermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7761D4E755800236450 /* MITermsViewController.m */; };
 		F0BFE3C11D32E97400DD052C /* text.html in Resources */ = {isa = PBXBuildFile; fileRef = F0BFE3C01D32E97400DD052C /* text.html */; };
+		F0E813011D4F2876000DE58E /* MITheAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E813001D4F2876000DE58E /* MITheAppViewController.m */; };
 		F0ED98DA1C0B969F004CA752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98D91C0B969F004CA752 /* main.m */; };
 		F0ED98DD1C0B969F004CA752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DC1C0B969F004CA752 /* AppDelegate.m */; };
 		F0ED98E01C0B969F004CA752 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ED98DF1C0B969F004CA752 /* ViewController.m */; };
@@ -176,6 +177,8 @@
 		F0BBE7751D4E755800236450 /* MITermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITermsViewController.h; sourceTree = "<group>"; };
 		F0BBE7761D4E755800236450 /* MITermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITermsViewController.m; sourceTree = "<group>"; };
 		F0BFE3C01D32E97400DD052C /* text.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = text.html; sourceTree = "<group>"; };
+		F0E812FF1D4F2876000DE58E /* MITheAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITheAppViewController.h; sourceTree = "<group>"; };
+		F0E813001D4F2876000DE58E /* MITheAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITheAppViewController.m; sourceTree = "<group>"; };
 		F0ED98D51C0B969F004CA752 /* MindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0ED98D91C0B969F004CA752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0ED98DB1C0B969F004CA752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -374,6 +377,8 @@
 				F0BBE7731D4E70FF00236450 /* MIInformationNavigationViewController.m */,
 				F0BBE7751D4E755800236450 /* MITermsViewController.h */,
 				F0BBE7761D4E755800236450 /* MITermsViewController.m */,
+				F0E812FF1D4F2876000DE58E /* MITheAppViewController.h */,
+				F0E813001D4F2876000DE58E /* MITheAppViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -882,6 +887,7 @@
 				F0ED997F1C0BA9C6004CA752 /* BaseResponseDataContract.m in Sources */,
 				F0BBE76E1D4E596F00236450 /* InformationTableViewController.m in Sources */,
 				F0ED997E1C0BA9C6004CA752 /* BaseRequestDataContract.m in Sources */,
+				F0E813011D4F2876000DE58E /* MITheAppViewController.m in Sources */,
 				F0ED994C1C0B9C2D004CA752 /* MIColourFactory.m in Sources */,
 				F0ED996A1C0B9CC9004CA752 /* FileCacheUtil.m in Sources */,
 				F0ED99421C0B9B81004CA752 /* AudioFile+ext.m in Sources */,

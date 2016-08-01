@@ -40,7 +40,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -53,6 +53,8 @@
 
     if(indexPath == [NSIndexPath indexPathForItem:0 inSection:0]){
         [cell.textLabel setText:@"About Us"];
+    } else if(indexPath == [NSIndexPath indexPathForItem:1 inSection:0]) {
+        [cell.textLabel setText:@"The App"];
     } else {
         [cell.textLabel setText:@"Terms And Conditions"];
     }

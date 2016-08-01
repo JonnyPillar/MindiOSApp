@@ -22,12 +22,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+	[self setSelectedBackground];
+}
+
+- (void)setSelectedBackground {
 	UIView* backgroundView = [UIView new];
-
-	backgroundView.backgroundColor = selected
-			? self.cellColour.Light
-			: [UIColor clearColor];
-
+	[backgroundView setBackgroundColor:self.cellColour.Light];
 	[self setSelectedBackgroundView:backgroundView];
 }
 
@@ -45,16 +45,16 @@
 
 -(void) updateCellIcon{
 	
-	CAShapeLayer *circle =[ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:17 y:32 x:32 strokeColour:[_cellColour Dark] lineWidth:21];
+	CAShapeLayer *circle =[ShapeUtil CreateHollowCircleForView:self.cellIcon.bounds Radius:17 y:0 x:0 strokeColour:[_cellColour Dark] lineWidth:21];
 	[self.cellIcon.layer addSublayer:circle];
 	
-	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:28 y:32 x:32 strokeColour:[_cellColour Light]lineWidth:3];
+	CAShapeLayer *outerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.bounds Radius:28 y:0 x:0 strokeColour:[_cellColour Light]lineWidth:3];
 	[self.cellIcon.layer addSublayer:outerCircle];
 	
-	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:5 y:32 x:32 strokeColour:[_cellColour Light] lineWidth:5];
+	CAShapeLayer *innerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.bounds Radius:5 y:0 x:0 strokeColour:[_cellColour Light] lineWidth:5];
 	[self.cellIcon.layer addSublayer:innerCircle];
 
-    CAShapeLayer *centerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.frame Radius:2 y:32 x:32 strokeColour:[UIColor whiteColor] lineWidth:3];
+    CAShapeLayer *centerCircle = [ShapeUtil CreateHollowCircleForView:self.cellIcon.bounds Radius:2 y:0 x:0 strokeColour:[UIColor whiteColor] lineWidth:3];
     [self.cellIcon.layer addSublayer:centerCircle];
 }
 

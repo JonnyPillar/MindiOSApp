@@ -78,6 +78,7 @@
                     <connections>
                         <segue destination="IO4-vv-ORo" kind="show" identifier="aboutUsSegue" id="QeC-xe-chn"/>
                         <segue destination="lSH-97-YNi" kind="show" identifier="termsAndConditionsSegue" id="69Y-z8-W70"/>
+                        <segue destination="oYY-0O-quA" kind="show" identifier="theAppSegue" id="Znz-ta-8Cx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiO-Au-TuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,6 +102,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbI-cx-q8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1450" y="-419"/>
+        </scene>
+        <!--The App View Controller-->
+        <scene sceneID="qlb-eB-XnC">
+            <objects>
+                <viewController id="oYY-0O-quA" customClass="MITheAppViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9xj-VF-3wr"/>
+                        <viewControllerLayoutGuide type="bottom" id="3IP-Dk-s9B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BCA-IZ-XZM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sM-ba-E5w">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8sM-ba-E5w" secondAttribute="trailing" constant="-20" id="7kw-S1-g5n"/>
+                            <constraint firstItem="8sM-ba-E5w" firstAttribute="leading" secondItem="BCA-IZ-XZM" secondAttribute="leadingMargin" constant="-20" id="Cwu-qO-G39"/>
+                            <constraint firstItem="8sM-ba-E5w" firstAttribute="top" secondItem="9xj-VF-3wr" secondAttribute="bottom" id="Hgd-Hd-Suz"/>
+                            <constraint firstItem="3IP-Dk-s9B" firstAttribute="top" secondItem="8sM-ba-E5w" secondAttribute="bottom" id="a5X-Ns-pbF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="8sM-ba-E5w" id="eL9-kX-Yn4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vj-Qr-eJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="-1086"/>
         </scene>
         <!--Information Second View Controller-->
         <scene sceneID="Qa1-71-x3Z">

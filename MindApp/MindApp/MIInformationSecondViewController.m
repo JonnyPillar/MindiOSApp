@@ -35,7 +35,7 @@
 
     UITextView *textView = [[UITextView alloc] initWithFrame:size2];
 
-    [textView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:17]];
+    [textView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
     [textView setEditable: NO];
     [textView setSelectable: NO];
 

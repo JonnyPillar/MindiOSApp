@@ -147,16 +147,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Mind In Salford" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-RQ-c9T">
+                                <rect key="frame" x="0.0" y="64" width="600" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="tQk-qn-qmb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-c3-kev">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XbR-c3-kev" secondAttribute="trailing" constant="-20" id="2xs-sC-WPP"/>
-                            <constraint firstItem="XbR-c3-kev" firstAttribute="top" secondItem="VIz-y1-Ltx" secondAttribute="bottom" id="CK3-kl-zkT"/>
+                            <constraint firstItem="Jdc-RQ-c9T" firstAttribute="top" secondItem="VIz-y1-Ltx" secondAttribute="bottom" id="8b1-jW-gxj"/>
                             <constraint firstItem="XbR-c3-kev" firstAttribute="leading" secondItem="RG9-1b-Vdb" secondAttribute="leadingMargin" constant="-20" id="D9s-St-qQV"/>
                             <constraint firstItem="Qrq-zU-kOA" firstAttribute="top" secondItem="XbR-c3-kev" secondAttribute="bottom" id="KHk-bB-ccW"/>
+                            <constraint firstItem="Jdc-RQ-c9T" firstAttribute="leading" secondItem="RG9-1b-Vdb" secondAttribute="leadingMargin" constant="-20" id="dZy-xv-jed"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jdc-RQ-c9T" secondAttribute="trailing" constant="-20" id="eUo-zs-AqW"/>
+                            <constraint firstItem="XbR-c3-kev" firstAttribute="top" secondItem="Jdc-RQ-c9T" secondAttribute="bottom" id="zWJ-oy-TI6"/>
                         </constraints>
                     </view>
                     <connections>

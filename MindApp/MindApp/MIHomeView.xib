@@ -58,9 +58,6 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="HJw-Na-cyL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-162" id="2K7-ke-T2R">
-                    <variation key="widthClass=compact" constant="0.0"/>
-                </constraint>
                 <constraint firstItem="s1e-Qq-F1D" firstAttribute="top" secondItem="HJw-Na-cyL" secondAttribute="bottom" id="4Ic-p4-8V6"/>
                 <constraint firstAttribute="centerX" secondItem="HJw-Na-cyL" secondAttribute="centerX" id="58X-oW-tlj"/>
                 <constraint firstItem="HJw-Na-cyL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8FV-cJ-gV4"/>
@@ -69,11 +66,7 @@
                 <constraint firstItem="s1e-Qq-F1D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="162" id="Gd1-ia-9o7">
                     <variation key="heightClass=regular-widthClass=compact" constant="175"/>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="HJw-Na-cyL" secondAttribute="trailing" id="HIi-RQ-cit"/>
                 <constraint firstItem="HJw-Na-cyL" firstAttribute="trailing" secondItem="s1e-Qq-F1D" secondAttribute="trailing" id="Jd9-Su-CbS"/>
-                <constraint firstItem="s1e-Qq-F1D" firstAttribute="top" secondItem="HJw-Na-cyL" secondAttribute="bottom" id="cfG-yH-5tx">
-                    <variation key="widthClass=compact" constant="200"/>
-                </constraint>
                 <constraint firstItem="s1e-Qq-F1D" firstAttribute="leading" secondItem="HJw-Na-cyL" secondAttribute="leading" id="cnr-x6-QIY"/>
                 <constraint firstAttribute="bottom" secondItem="s1e-Qq-F1D" secondAttribute="bottom" id="nMg-Wu-v6d"/>
                 <constraint firstAttribute="bottom" secondItem="s1e-Qq-F1D" secondAttribute="bottom" id="sy5-Ye-gHu"/>
@@ -83,11 +76,8 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="2K7-ke-T2R"/>
                     <exclude reference="58X-oW-tlj"/>
-                    <exclude reference="HIi-RQ-cit"/>
                     <exclude reference="Gd1-ia-9o7"/>
-                    <exclude reference="cfG-yH-5tx"/>
                     <exclude reference="nMg-Wu-v6d"/>
                     <exclude reference="wA5-QA-akd"/>
                     <exclude reference="xCM-vP-YIS"/>
@@ -96,16 +86,13 @@
             </variation>
             <variation key="widthClass=compact">
                 <mask key="constraints">
-                    <include reference="2K7-ke-T2R"/>
                     <include reference="58X-oW-tlj"/>
                     <exclude reference="8FV-cJ-gV4"/>
                     <exclude reference="AL2-ra-jHb"/>
-                    <exclude reference="HIi-RQ-cit"/>
                     <exclude reference="Jd9-Su-CbS"/>
                     <exclude reference="4Ic-p4-8V6"/>
                     <exclude reference="EpN-dn-iAS"/>
                     <include reference="Gd1-ia-9o7"/>
-                    <exclude reference="cfG-yH-5tx"/>
                     <exclude reference="cnr-x6-QIY"/>
                     <include reference="nMg-Wu-v6d"/>
                     <exclude reference="sy5-Ye-gHu"/>

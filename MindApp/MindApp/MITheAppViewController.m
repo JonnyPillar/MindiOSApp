@@ -30,7 +30,7 @@
 
 - (UITextView *)createTextView:(NSString *)text withPageNumber: (NSInteger) pageNumber{
     CGRect frame = self.scrollView.bounds;
-    CGRect size2 = CGRectMake(frame.origin.x + (frame.size.width * pageNumber) + 17, frame.origin.y + 15, frame.size.width - 34, frame.size.height);
+    CGRect size2 = CGRectMake(frame.origin.x + (frame.size.width * pageNumber) + 17, frame.origin.y, frame.size.width - 34, frame.size.height);
     UITextView *textView = [[UITextView alloc] initWithFrame:size2];
 
     [textView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:17]];

@@ -10,6 +10,7 @@
 #import "MIInformationSecondViewController.h"
 #import "MITermsViewController.h"
 #import "MIBlue.h"
+#import "MITheAppViewController.h"
 
 @interface InformationTableViewController ()
 
@@ -66,6 +67,8 @@
 {
     if(indexPath == [NSIndexPath indexPathForItem:0 inSection:0]){
         [self performSegueWithIdentifier:@"aboutUsSegue" sender:self];
+    } else if(indexPath == [NSIndexPath indexPathForItem:1 inSection:0]) {
+        [self performSegueWithIdentifier:@"theAppSegue" sender:self];
     } else {
         [self performSegueWithIdentifier:@"termsAndConditionsSegue" sender:self];
     }
@@ -75,11 +78,14 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"testing"])
+    if ([[segue identifier] isEqualToString:@"aboutUsSegue"])
     {
-        MIInformationSecondViewController *vc = [segue destinationViewController];
-    } else {
-        MITermsViewController *vc = [segue destinationViewController];
+        MIInformationSecondViewController *vc = (MIInformationSecondViewController *) [segue destinationViewController];
+    } else if ([[segue identifier] isEqualToString:@"theAppSegue"]) {
+        MITheAppViewController *vc = (MITheAppViewController *) [segue destinationViewController];
+    }
+    else if ([[segue identifier] isEqualToString:@"termsAndConditionsSegue"]) {
+        MITermsViewController *vc = (MITermsViewController *) [segue destinationViewController];
     }
 }
 

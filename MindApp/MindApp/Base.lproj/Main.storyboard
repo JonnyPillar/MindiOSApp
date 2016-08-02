@@ -116,15 +116,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sM-ba-E5w">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3Y-eO-DlT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4FB-pi-pBe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8sM-ba-E5w" firstAttribute="top" secondItem="u3Y-eO-DlT" secondAttribute="bottom" id="2Ox-9F-aRd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8sM-ba-E5w" secondAttribute="trailing" constant="-20" id="7kw-S1-g5n"/>
                             <constraint firstItem="8sM-ba-E5w" firstAttribute="leading" secondItem="BCA-IZ-XZM" secondAttribute="leadingMargin" constant="-20" id="Cwu-qO-G39"/>
-                            <constraint firstItem="8sM-ba-E5w" firstAttribute="top" secondItem="9xj-VF-3wr" secondAttribute="bottom" id="Hgd-Hd-Suz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u3Y-eO-DlT" secondAttribute="trailing" constant="-20" id="Qu6-ww-u8y"/>
+                            <constraint firstItem="u3Y-eO-DlT" firstAttribute="top" secondItem="9xj-VF-3wr" secondAttribute="bottom" id="Raw-sL-A51"/>
                             <constraint firstItem="3IP-Dk-s9B" firstAttribute="top" secondItem="8sM-ba-E5w" secondAttribute="bottom" id="a5X-Ns-pbF"/>
+                            <constraint firstItem="u3Y-eO-DlT" firstAttribute="leading" secondItem="BCA-IZ-XZM" secondAttribute="leadingMargin" constant="-20" id="a6f-Nj-dyc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -147,6 +158,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-c3-kev">
+                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Mind In Salford" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-RQ-c9T">
                                 <rect key="frame" x="0.0" y="64" width="600" height="70"/>
                                 <constraints>
@@ -155,9 +169,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-c3-kev">
-                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,15 +203,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZM-fD-fdf">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQo-R1-bx9">
+                                <rect key="frame" x="0.0" y="64" width="600" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="hwp-jJ-CNO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TQo-R1-bx9" secondAttribute="trailing" constant="-20" id="7sD-Jx-yFD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bZM-fD-fdf" secondAttribute="trailing" constant="-20" id="Ohx-xY-Skz"/>
                             <constraint firstItem="JCZ-NN-3V2" firstAttribute="top" secondItem="bZM-fD-fdf" secondAttribute="bottom" id="VlV-3D-uYs"/>
-                            <constraint firstItem="bZM-fD-fdf" firstAttribute="top" secondItem="LP7-i1-WhE" secondAttribute="bottom" id="bLX-Pz-XcA"/>
+                            <constraint firstItem="TQo-R1-bx9" firstAttribute="leading" secondItem="0sx-4a-9Ne" secondAttribute="leadingMargin" constant="-20" id="b8n-W5-tmQ"/>
+                            <constraint firstItem="bZM-fD-fdf" firstAttribute="top" secondItem="TQo-R1-bx9" secondAttribute="bottom" id="kkc-OP-y8G"/>
                             <constraint firstItem="bZM-fD-fdf" firstAttribute="leading" secondItem="0sx-4a-9Ne" secondAttribute="leadingMargin" constant="-20" id="rrR-X4-ZYU"/>
+                            <constraint firstItem="TQo-R1-bx9" firstAttribute="top" secondItem="LP7-i1-WhE" secondAttribute="bottom" id="zIl-YH-ASx"/>
                         </constraints>
                     </view>
                     <connections>

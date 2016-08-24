@@ -56,7 +56,6 @@
 	NSArray *nextSongs = [mainQueue subarrayWithRange:NSMakeRange(startIndex, queueLength)];
 	[playQueue removeAllObjects];
 	[playQueue addObjectsFromArray:nextSongs];
-	NSLog([NSString stringWithFormat:@"Number of items in queue: %lu", (unsigned long)playQueue.count]);
 }
 
 - (AudioFile *)playElementAt:(NSInteger)index {

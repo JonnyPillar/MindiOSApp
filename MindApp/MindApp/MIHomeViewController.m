@@ -49,7 +49,7 @@
 }
 
 - (void)adjustTableViewForTabBar {
-	self.edgesForExtendedLayout = UIRectEdgeAll;
+	[self setEdgesForExtendedLayout:UIRectEdgeAll];
 	UIEdgeInsets adjustForTabBarInsets = UIEdgeInsetsMake(0, 0, 95, 0);
 	self.homeView.mediaTrackTableView.contentInset = adjustForTabBarInsets;
 	self.homeView.mediaTrackTableView.scrollIndicatorInsets = adjustForTabBarInsets;
@@ -91,11 +91,12 @@
 
 -(void)setUpPullToRefresh {
 	self.refreshControl = [[UIRefreshControl alloc] init];
-	self.refreshControl.backgroundColor = [MIColourUtil BlueLight];
-	self.refreshControl.tintColor = [MIColourUtil BlueMedium];
+	[self.refreshControl setBackgroundColor:[MIColourUtil BlueLight]];
+	[self.refreshControl setTintColor:[MIColourUtil BlueMedium]];
 	[self.refreshControl addTarget:self
 							action:@selector(retrieveMediaItemData)
 				  forControlEvents:UIControlEventValueChanged];
+	[self.refreshControl beginRefreshing];
 	[self.homeView.mediaTrackTableView addSubview: self.refreshControl];
 }
 

@@ -19,8 +19,8 @@ static NSString *const mediaCacheFileName = @"MediaCache";
     if(!mediaCache){
         mediaCache = [[NSArray alloc] initWithArray:[MIPlistUtil getWithName:mediaCacheFileName]];
     }
-
-    return mediaCache;
+	return [NSDictionary new];
+//    return mediaCache;
 }
 
 -(NSArray *) getMediaFilesFromCache {

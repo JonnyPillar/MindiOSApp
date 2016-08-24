@@ -26,18 +26,19 @@
 
     [termsAndConditionsTextView setAttributedText:termsAndConditionsText];
     [termsAndConditionsTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
+    [termsAndConditionsTextView setDataDetectorTypes:UIDataDetectorTypeLink];
     [self.scrollView addSubview:termsAndConditionsTextView];
 }
 
 - (UITextView *)createTextView:(NSString *)textw withPageNumber: (NSInteger) pageNumber{
     CGRect frame = self.scrollView.bounds;
-    CGRect size2 = CGRectMake(frame.origin.x + (frame.size.width * pageNumber) + 17, frame.origin.y, frame.size.width - 34, frame.size.height);
+    CGRect size2 = CGRectMake(frame.origin.x + (frame.size.width * pageNumber) + 17, frame.origin.y, frame.size.width - 25, frame.size.height);
 
     UITextView *textView = [[UITextView alloc] initWithFrame:size2];
 
     [textView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:17]];
     [textView setEditable: NO];
-    [textView setSelectable: NO];
+    [textView setSelectable: YES];
 
     return textView;
 }

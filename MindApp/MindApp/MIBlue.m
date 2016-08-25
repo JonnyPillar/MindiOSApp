@@ -27,4 +27,8 @@
 	return [MIColourUtil BlueLight];
 }
 
+-(UIColor *) BlueText{
+	return [MIColourUtil BlueText];
+}
+
 @end

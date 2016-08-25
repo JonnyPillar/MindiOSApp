@@ -22,6 +22,7 @@
 +(UIColor *) Purple:(float) opacity;
 
 +(UIColor *) Blue;
++(UIColor *) BlueText;
 +(UIColor *) BlueMedium;
 +(UIColor *) BlueMediumLight;
 +(UIColor *) BlueLight;

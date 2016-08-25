@@ -27,7 +27,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [[self.navigationController navigationBar] setTintColor: [UIColor whiteColor]];
-    [self.tabBarController.tabBar setBarTintColor:[MIBlue new].Dark];
+    [self.tabBarController.tabBar setBarTintColor:[MIBlue new].Light];
 }
 
 - (void)didReceiveMemoryWarning {

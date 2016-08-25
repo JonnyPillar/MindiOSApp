@@ -8,6 +8,7 @@
 
 #import "MITabBarViewController.h"
 #import "MIColour.h"
+#import "MIBlue.h"
 
 @interface MITabBarViewController ()
 
@@ -18,21 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
-            NSForegroundColorAttributeName : [UIColor whiteColor]
-    } forState:UIControlStateSelected];
+    [self setNormalTabBarItemApperance];
+    [self setSelectedTabBarItemApperance];
 
 
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
-            NSForegroundColorAttributeName : [UIColor whiteColor]
-    } forState:UIControlStateNormal];
-
-
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:[MIBlue new].Dark];
 
     for (UITabBarItem *tbi in self.tabBar.items) {
         tbi.image = [tbi.image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
+}
+
+-(void) setNormalTabBarItemApperance{
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+            NSForegroundColorAttributeName : [UIColor grayColor]
+    } forState:UIControlStateNormal];
+}
+
+-(void) setSelectedTabBarItemApperance{
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+														NSForegroundColorAttributeName : [MIBlue new].Dark
+    } forState:UIControlStateSelected];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +47,13 @@
 }
 
 - (void)setBackgroundColour:(UIColor *)colour {
-    [self.tabBar setTranslucent: false];
     [self.tabBar setBarTintColor:colour];
+}
+
+- (void)setSelectedColour:(UIColor *)colour {
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+            NSForegroundColorAttributeName : colour
+    } forState:UIControlStateSelected];
 }
 
 @end

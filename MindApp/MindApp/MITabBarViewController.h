@@ -13,5 +13,6 @@
 @interface MITabBarViewController : UITabBarController
 
 -(void) setBackgroundColour: (UIColor *) colour;
+-(void) setSelectedColour: (UIColor *) colour;
 
 @end

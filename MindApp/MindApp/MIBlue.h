@@ -15,5 +15,6 @@
 -(UIColor*) Medium;
 -(UIColor*) MediumLight;
 -(UIColor*) Light;
+-(UIColor*) BlueText;
 
 @end

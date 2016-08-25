@@ -42,6 +42,8 @@
 		F02871D31D3C0AD2008176FF /* Info-Squared old.png in Resources */ = {isa = PBXBuildFile; fileRef = F02871D21D3C0AD2008176FF /* Info-Squared old.png */; };
 		F02871D51D3C11EC008176FF /* mindTextLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F02871D41D3C11EC008176FF /* mindTextLogo.png */; };
 		F02871DB1D3C160F008176FF /* logo-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = F02871DA1D3C160F008176FF /* logo-circle.png */; };
+		F02F4E3A1D6F5D76000EDF54 /* Info-Squared-old.png in Resources */ = {isa = PBXBuildFile; fileRef = F02F4E391D6F5D76000EDF54 /* Info-Squared-old.png */; };
+		F02F4E3C1D6F5F26000EDF54 /* tab-logo-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = F02F4E3B1D6F5F26000EDF54 /* tab-logo-grey.png */; };
 		F090CA501C341E8B007ECEC8 /* MiSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */; };
 		F095C74D1CD40F80002F8991 /* calmer-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F095C74C1CD40F80002F8991 /* calmer-logo.png */; };
 		F0B518521D49DF80008A9628 /* tab-logo-colour.png in Resources */ = {isa = PBXBuildFile; fileRef = F0B518511D49DF80008A9628 /* tab-logo-colour.png */; };
@@ -158,6 +160,8 @@
 		F02871D21D3C0AD2008176FF /* Info-Squared old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-Squared old.png"; sourceTree = "<group>"; };
 		F02871D41D3C11EC008176FF /* mindTextLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mindTextLogo.png; sourceTree = "<group>"; };
 		F02871DA1D3C160F008176FF /* logo-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-circle.png"; sourceTree = "<group>"; };
+		F02F4E391D6F5D76000EDF54 /* Info-Squared-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-Squared-old.png"; sourceTree = "<group>"; };
+		F02F4E3B1D6F5F26000EDF54 /* tab-logo-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-logo-grey.png"; sourceTree = "<group>"; };
 		F090CA4F1C341E8B007ECEC8 /* MiSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MiSettings.plist; sourceTree = "<group>"; };
 		F095C74C1CD40F80002F8991 /* calmer-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calmer-logo.png"; sourceTree = "<group>"; };
 		F0B518511D49DF80008A9628 /* tab-logo-colour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-logo-colour.png"; sourceTree = "<group>"; };
@@ -472,6 +476,8 @@
 		F0ED98FD1C0B97B4004CA752 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F02F4E3B1D6F5F26000EDF54 /* tab-logo-grey.png */,
+				F02F4E391D6F5D76000EDF54 /* Info-Squared-old.png */,
 				F0B518511D49DF80008A9628 /* tab-logo-colour.png */,
 				F02871DA1D3C160F008176FF /* logo-circle.png */,
 				F02871D41D3C11EC008176FF /* mindTextLogo.png */,
@@ -776,8 +782,10 @@
 				F026CA921C285E3E00E84406 /* MIHomeAudioPlayButton.xib in Resources */,
 				F026CAAA1C28607600E84406 /* playIcon.png in Resources */,
 				F0B518521D49DF80008A9628 /* tab-logo-colour.png in Resources */,
+				F02F4E3A1D6F5D76000EDF54 /* Info-Squared-old.png in Resources */,
 				F090CA501C341E8B007ECEC8 /* MiSettings.plist in Resources */,
 				F026CA871C285E0C00E84406 /* MIHomeView.xib in Resources */,
+				F02F4E3C1D6F5F26000EDF54 /* tab-logo-grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,8 +44,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //Hack hack hack
-	[self updateNavigationBarColourWithColor:self.cellColour.Dark];
+	[self updateNavigationBarColourWithColor:self.cellColour.Light];
 }
 
 - (void)adjustTableViewForTabBar {
@@ -73,9 +72,9 @@
 	[self.homeView setMediaTableViewDataSource:self];
 	[self.homeView.audioPlayerView updateBackgroundColour:[MIColourUtil BlueMedium]];
 	[self.homeView.audioPlayerView.playbutton addTarget:self action:@selector(audioPlayerPlayButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-	[(MITabBarViewController *) self.parentViewController setBackgroundColour:[MIColourUtil Blue]];
+	[(MITabBarViewController *) self.tabBarController setBackgroundColour:[MIColourUtil BlueLight]];
 	[self adjustTableViewForTabBar];
-	self.cellColour = [MIBlue new];
+	[self setCellColour:[MIBlue new]];
 }
 
 -(void)setUpMediaAudio{
@@ -109,23 +108,37 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	if (_mediaQueue.count > 0) {
+		[self.homeView.mediaTrackTableView setBackgroundView:[UIView new]];
 		return 1;
 	}
-	[self renderTableViewNoDataView];
+	else {
+		[self renderTableViewNoDataView];
+	}
 	return 0;
 }
 
 - (void)renderTableViewNoDataView {
-	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 102)];
+	UIView *backgroundView = [UIView new];
 
-	messageLabel.text = @"No data is currently available.\n\n Please pull down to refresh.";
-	messageLabel.textColor = [UIColor blackColor];
-	messageLabel.numberOfLines = 0;
-	messageLabel.textAlignment = NSTextAlignmentCenter;
-	[messageLabel sizeToFit];
+	UIImage *logo = [UIImage imageNamed:@"mindLogo"];
+	UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,40, self.view.bounds.size.width, 150)];
+	[imageView setImage:logo];
+	[imageView setContentMode:UIViewContentModeScaleAspectFit];
+	[imageView setOpaque:YES];
+	[imageView setAlpha:0.4];
 
-	self.homeView.mediaTrackTableView.backgroundView = messageLabel;
-	self.homeView.mediaTrackTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 50)];
+	[messageLabel setText:@"Loading"];
+	[messageLabel setTextColor:[[MIBlue new] Dark]];
+	[messageLabel setNumberOfLines:0];
+	[messageLabel setTextAlignment:NSTextAlignmentCenter];
+	[messageLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:23]];
+
+	[backgroundView addSubview:imageView];
+	[backgroundView addSubview:messageLabel];
+
+	[self.homeView.mediaTrackTableView setBackgroundView:backgroundView];
+	[self.homeView.mediaTrackTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -214,13 +227,12 @@
 #pragma MIHomeViewController Methods
 
 -(void) updateNavigationBarColour: (MIColour *) colour {
-    [self updateNavigationBarColourWithColor:colour.Medium];
+    [self updateNavigationBarColourWithColor:colour.Light];
 }
 
 -(void) updateNavigationBarColourWithColor: (UIColor *) colour {
     MITabBarViewController*tabBarController = (MITabBarViewController *) self.parentViewController;
 	[tabBarController setBackgroundColour:colour];
-	[self.tabBarController.tabBar setBackgroundColor:colour];
 }
 
 -(void) showErrorAlert:(NSString*) errorMessage

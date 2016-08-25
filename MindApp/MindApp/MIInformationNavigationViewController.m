@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationBar setBarTintColor:[MIBlue new].Dark];
-    [self.navigationBar setBarTintColor:[MIBlue new].Dark];
     [self.navigationController.navigationBar setHidden:NO];
     [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil]];
 }

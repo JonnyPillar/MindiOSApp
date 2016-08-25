@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Player" image="tab-logo.png" selectedImage="tab-logo-colour.png" id="Mgd-6m-F4J"/>
+                    <tabBarItem key="tabBarItem" title="Player" image="tab-logo-grey.png" selectedImage="tab-logo-colour.png" id="Mgd-6m-F4J"/>
                     <navigationItem key="navigationItem" id="tXR-A5-OiT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
@@ -88,7 +88,7 @@
         <scene sceneID="RMo-6e-dRR">
             <objects>
                 <navigationController id="8Vk-2v-0yM" customClass="MIInformationNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Information" image="Info-Squared.png" id="Ryi-p3-wUi"/>
+                    <tabBarItem key="tabBarItem" title="Information" image="Info-Squared-old.png" selectedImage="Info-Squared old.png" id="Ryi-p3-wUi"/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="CW8-jk-n0V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -235,8 +235,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Info-Squared.png" width="30" height="30"/>
+        <image name="Info-Squared old.png" width="30" height="30"/>
+        <image name="Info-Squared-old.png" width="30" height="30"/>
         <image name="tab-logo-colour.png" width="30" height="30"/>
-        <image name="tab-logo.png" width="30" height="30"/>
+        <image name="tab-logo-grey.png" width="30" height="30"/>
     </resources>
 </document>

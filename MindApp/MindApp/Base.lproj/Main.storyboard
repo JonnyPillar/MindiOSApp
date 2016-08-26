@@ -114,9 +114,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sM-ba-E5w">
-                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
-                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3Y-eO-DlT">
                                 <rect key="frame" x="0.0" y="64" width="600" height="70"/>
                                 <constraints>
@@ -125,30 +122,37 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k9W-u5-6cm">
+                                <rect key="frame" x="20" y="134" width="560" height="417"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8sM-ba-E5w" firstAttribute="top" secondItem="u3Y-eO-DlT" secondAttribute="bottom" id="2Ox-9F-aRd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8sM-ba-E5w" secondAttribute="trailing" constant="-20" id="7kw-S1-g5n"/>
-                            <constraint firstItem="8sM-ba-E5w" firstAttribute="leading" secondItem="BCA-IZ-XZM" secondAttribute="leadingMargin" constant="-20" id="Cwu-qO-G39"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u3Y-eO-DlT" secondAttribute="trailing" constant="-20" id="Qu6-ww-u8y"/>
                             <constraint firstItem="u3Y-eO-DlT" firstAttribute="top" secondItem="9xj-VF-3wr" secondAttribute="bottom" id="Raw-sL-A51"/>
-                            <constraint firstItem="3IP-Dk-s9B" firstAttribute="top" secondItem="8sM-ba-E5w" secondAttribute="bottom" id="a5X-Ns-pbF"/>
+                            <constraint firstItem="k9W-u5-6cm" firstAttribute="leading" secondItem="BCA-IZ-XZM" secondAttribute="leadingMargin" id="SKW-s5-VFy"/>
                             <constraint firstItem="u3Y-eO-DlT" firstAttribute="leading" secondItem="BCA-IZ-XZM" secondAttribute="leadingMargin" constant="-20" id="a6f-Nj-dyc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k9W-u5-6cm" secondAttribute="trailing" id="cZo-Lx-37g"/>
+                            <constraint firstItem="k9W-u5-6cm" firstAttribute="top" secondItem="u3Y-eO-DlT" secondAttribute="bottom" id="mD0-xw-iCF"/>
+                            <constraint firstItem="3IP-Dk-s9B" firstAttribute="top" secondItem="k9W-u5-6cm" secondAttribute="bottom" id="ywO-Ob-2ZC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="8sM-ba-E5w" id="eL9-kX-Yn4"/>
+                        <outlet property="textView" destination="k9W-u5-6cm" id="yyk-Lf-MFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vj-Qr-eJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3146" y="-1086"/>
         </scene>
-        <!--Information Second View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="Qa1-71-x3Z">
             <objects>
-                <viewController id="IO4-vv-ORo" customClass="MIInformationSecondViewController" sceneMemberID="viewController">
+                <viewController id="IO4-vv-ORo" customClass="MIAboutUsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VIz-y1-Ltx"/>
                         <viewControllerLayoutGuide type="bottom" id="Qrq-zU-kOA"/>
@@ -157,9 +161,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-c3-kev">
-                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
-                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Mind In Salford" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-RQ-c9T">
                                 <rect key="frame" x="0.0" y="64" width="600" height="70"/>
                                 <constraints>
@@ -168,21 +169,28 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PfH-Z9-WWr">
+                                <rect key="frame" x="20" y="134" width="560" height="417"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.12549019610000001" green="0.59999999999999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="XbR-c3-kev" secondAttribute="trailing" constant="-20" id="2xs-sC-WPP"/>
+                            <constraint firstItem="PfH-Z9-WWr" firstAttribute="top" secondItem="Jdc-RQ-c9T" secondAttribute="bottom" id="8ND-bb-Nx0"/>
                             <constraint firstItem="Jdc-RQ-c9T" firstAttribute="top" secondItem="VIz-y1-Ltx" secondAttribute="bottom" id="8b1-jW-gxj"/>
-                            <constraint firstItem="XbR-c3-kev" firstAttribute="leading" secondItem="RG9-1b-Vdb" secondAttribute="leadingMargin" constant="-20" id="D9s-St-qQV"/>
-                            <constraint firstItem="Qrq-zU-kOA" firstAttribute="top" secondItem="XbR-c3-kev" secondAttribute="bottom" id="KHk-bB-ccW"/>
+                            <constraint firstItem="PfH-Z9-WWr" firstAttribute="leading" secondItem="RG9-1b-Vdb" secondAttribute="leadingMargin" id="Jja-9E-BBj"/>
+                            <constraint firstItem="Qrq-zU-kOA" firstAttribute="top" secondItem="PfH-Z9-WWr" secondAttribute="bottom" id="N63-4P-gaf"/>
                             <constraint firstItem="Jdc-RQ-c9T" firstAttribute="leading" secondItem="RG9-1b-Vdb" secondAttribute="leadingMargin" constant="-20" id="dZy-xv-jed"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jdc-RQ-c9T" secondAttribute="trailing" constant="-20" id="eUo-zs-AqW"/>
-                            <constraint firstItem="XbR-c3-kev" firstAttribute="top" secondItem="Jdc-RQ-c9T" secondAttribute="bottom" id="zWJ-oy-TI6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PfH-Z9-WWr" secondAttribute="trailing" id="s1b-bX-e6h"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="XbR-c3-kev" id="aYe-Yy-e3v"/>
+                        <outlet property="textView" destination="PfH-Z9-WWr" id="RQN-ed-6In"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYf-XD-VBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,9 +209,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZM-fD-fdf">
-                                <rect key="frame" x="0.0" y="134" width="600" height="417"/>
-                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQo-R1-bx9">
                                 <rect key="frame" x="0.0" y="64" width="600" height="70"/>
                                 <constraints>
@@ -213,20 +218,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RFl-x9-NBh">
+                                <rect key="frame" x="20" y="134" width="560" height="417"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="TQo-R1-bx9" secondAttribute="trailing" constant="-20" id="7sD-Jx-yFD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bZM-fD-fdf" secondAttribute="trailing" constant="-20" id="Ohx-xY-Skz"/>
-                            <constraint firstItem="JCZ-NN-3V2" firstAttribute="top" secondItem="bZM-fD-fdf" secondAttribute="bottom" id="VlV-3D-uYs"/>
+                            <constraint firstItem="RFl-x9-NBh" firstAttribute="leading" secondItem="0sx-4a-9Ne" secondAttribute="leadingMargin" id="X7E-xm-jpc"/>
                             <constraint firstItem="TQo-R1-bx9" firstAttribute="leading" secondItem="0sx-4a-9Ne" secondAttribute="leadingMargin" constant="-20" id="b8n-W5-tmQ"/>
-                            <constraint firstItem="bZM-fD-fdf" firstAttribute="top" secondItem="TQo-R1-bx9" secondAttribute="bottom" id="kkc-OP-y8G"/>
-                            <constraint firstItem="bZM-fD-fdf" firstAttribute="leading" secondItem="0sx-4a-9Ne" secondAttribute="leadingMargin" constant="-20" id="rrR-X4-ZYU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RFl-x9-NBh" secondAttribute="trailing" id="hLA-57-mcZ"/>
+                            <constraint firstItem="JCZ-NN-3V2" firstAttribute="top" secondItem="RFl-x9-NBh" secondAttribute="bottom" id="rWY-xJ-HTj"/>
+                            <constraint firstItem="RFl-x9-NBh" firstAttribute="top" secondItem="TQo-R1-bx9" secondAttribute="bottom" id="sDB-Pf-wYx"/>
                             <constraint firstItem="TQo-R1-bx9" firstAttribute="top" secondItem="LP7-i1-WhE" secondAttribute="bottom" id="zIl-YH-ASx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="bZM-fD-fdf" id="o44-tY-cSa"/>
+                        <outlet property="textView" destination="RFl-x9-NBh" id="eN1-ZQ-b8Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtP-R3-E6f" userLabel="First Responder" sceneMemberID="firstResponder"/>

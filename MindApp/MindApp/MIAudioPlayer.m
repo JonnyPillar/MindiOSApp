@@ -44,8 +44,7 @@
 }
 
 - (void)setupRemoteCommandUtil {
-
-	self.remoteCommandUtil = [[RemoteCommandUtil alloc] init];
+	self.remoteCommandUtil = [[RemoteCommandUtil new] init];
 	[self.remoteCommandUtil registerPlayCommand:self WithAction:@selector(playAudio)];
 	[self.remoteCommandUtil registerPauseCommand:self WithAction:@selector(pauseAudio)];
 }

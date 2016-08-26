@@ -7,7 +7,7 @@
 //
 
 #import "MIInformationTableViewController.h"
-#import "MIInformationSecondViewController.h"
+#import "MIAboutUsViewController.h"
 #import "MITermsViewController.h"
 #import "MIBlue.h"
 #import "MITheAppViewController.h"
@@ -77,10 +77,11 @@
 }
 
 #pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"aboutUsSegue"])
     {
-        MIInformationSecondViewController *vc = (MIInformationSecondViewController *) [segue destinationViewController];
+        MIAboutUsViewController *vc = (MIAboutUsViewController *) [segue destinationViewController];
     } else if ([[segue identifier] isEqualToString:@"theAppSegue"]) {
         MITheAppViewController *vc = (MITheAppViewController *) [segue destinationViewController];
     }

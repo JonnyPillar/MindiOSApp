@@ -8,6 +8,7 @@
 
 @interface MediaJsonParser : NSObject
 
-+(NSArray *) parseMediaJson: (NSDictionary *) mediaJson;
++(NSArray *)parseMediaJsonDictionary: (NSDictionary *) mediaJson;
++(NSArray *)parseMediaJsonArray:(NSArray *)mediaJsonArray;
 
 @end

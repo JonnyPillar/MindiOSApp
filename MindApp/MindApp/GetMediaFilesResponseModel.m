@@ -17,7 +17,7 @@
 	self = [super initWithDictionary:responseDictionary];
 	if(self){
 		NSDictionary *mediaFileDictionary = responseDictionary[@"MediaFiles"];
-		self.MediaFiles = [[MediaJsonParser parseMediaJson:mediaFileDictionary] copy];
+		self.MediaFiles = [[MediaJsonParser parseMediaJsonDictionary:mediaFileDictionary] copy];
 	}
 	return self;
 }

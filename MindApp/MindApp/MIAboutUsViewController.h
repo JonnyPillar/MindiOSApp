@@ -1,5 +1,5 @@
 //
-//  MITermsViewController.h
+//  MIAboutUsViewController.h
 //  MindApp
 //
 //  Created by Jonny Pillar on 31/07/2016.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MITermsViewController : UIViewController
+@interface MIAboutUsViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 

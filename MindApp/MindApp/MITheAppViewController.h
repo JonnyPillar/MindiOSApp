@@ -10,6 +10,6 @@
 
 @interface MITheAppViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end

@@ -14,18 +14,17 @@ static NSString *const mediaCacheFileName = @"MediaCache";
     NSArray *mediaCache;
 }
 
--(NSDictionary *)getMediaCache {
+-(NSArray *)getMediaCache {
 
     if(!mediaCache){
         mediaCache = [[NSArray alloc] initWithArray:[MIPlistUtil getWithName:mediaCacheFileName]];
     }
-	return [NSDictionary new];
-//    return mediaCache;
+    return mediaCache;
 }
 
 -(NSArray *) getMediaFilesFromCache {
-    NSDictionary *mediaCacheDataDictionary = [self getMediaCache];
-    NSArray* audioFiles = [MediaJsonParser parseMediaJson:mediaCacheDataDictionary];
+    NSArray *mediaCacheDataDictionary = [self getMediaCache];
+    NSArray* audioFiles = [MediaJsonParser parseMediaJsonArray:mediaCacheDataDictionary];
     NSLog(@"Cache Count = %tu", audioFiles.count);
     return audioFiles;
 }

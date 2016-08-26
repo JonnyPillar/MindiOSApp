@@ -51,7 +51,7 @@
 		F0BAE5E21C34762800A6D9A2 /* Music-Transcript-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */; };
 		F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */; };
 		F0BBE76E1D4E596F00236450 /* MIInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE76D1D4E596F00236450 /* MIInformationTableViewController.m */; };
-		F0BBE7711D4E60A600236450 /* MIInformationSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7701D4E60A600236450 /* MIInformationSecondViewController.m */; };
+		F0BBE7711D4E60A600236450 /* MIAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7701D4E60A600236450 /* MIAboutUsViewController.m */; };
 		F0BBE7741D4E70FF00236450 /* MIInformationNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7731D4E70FF00236450 /* MIInformationNavigationViewController.m */; };
 		F0BBE7771D4E755800236450 /* MITermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7761D4E755800236450 /* MITermsViewController.m */; };
 		F0BFE3C11D32E97400DD052C /* text.html in Resources */ = {isa = PBXBuildFile; fileRef = F0BFE3C01D32E97400DD052C /* text.html */; };
@@ -171,8 +171,8 @@
 		F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-Squared.png"; sourceTree = "<group>"; };
 		F0BBE76C1D4E596F00236450 /* MIInformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationTableViewController.h; sourceTree = "<group>"; };
 		F0BBE76D1D4E596F00236450 /* MIInformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationTableViewController.m; sourceTree = "<group>"; };
-		F0BBE76F1D4E60A600236450 /* MIInformationSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationSecondViewController.h; sourceTree = "<group>"; };
-		F0BBE7701D4E60A600236450 /* MIInformationSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationSecondViewController.m; sourceTree = "<group>"; };
+		F0BBE76F1D4E60A600236450 /* MIAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIAboutUsViewController.h; sourceTree = "<group>"; };
+		F0BBE7701D4E60A600236450 /* MIAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIAboutUsViewController.m; sourceTree = "<group>"; };
 		F0BBE7721D4E70FF00236450 /* MIInformationNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationNavigationViewController.h; sourceTree = "<group>"; };
 		F0BBE7731D4E70FF00236450 /* MIInformationNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationNavigationViewController.m; sourceTree = "<group>"; };
 		F0BBE7751D4E755800236450 /* MITermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITermsViewController.h; sourceTree = "<group>"; };
@@ -370,8 +370,8 @@
 				F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */,
 				F0BBE76C1D4E596F00236450 /* MIInformationTableViewController.h */,
 				F0BBE76D1D4E596F00236450 /* MIInformationTableViewController.m */,
-				F0BBE76F1D4E60A600236450 /* MIInformationSecondViewController.h */,
-				F0BBE7701D4E60A600236450 /* MIInformationSecondViewController.m */,
+				F0BBE76F1D4E60A600236450 /* MIAboutUsViewController.h */,
+				F0BBE7701D4E60A600236450 /* MIAboutUsViewController.m */,
 				F0BBE7721D4E70FF00236450 /* MIInformationNavigationViewController.h */,
 				F0BBE7731D4E70FF00236450 /* MIInformationNavigationViewController.m */,
 				F0BBE7751D4E755800236450 /* MITermsViewController.h */,
@@ -899,7 +899,7 @@
 				F026CA911C285E3E00E84406 /* MIHomeAudioPlayButton.m in Sources */,
 				F0ED99641C0B9C7F004CA752 /* MIRed.m in Sources */,
 				F0ED994D1C0B9C2D004CA752 /* MIColourUtil.m in Sources */,
-				F0BBE7711D4E60A600236450 /* MIInformationSecondViewController.m in Sources */,
+				F0BBE7711D4E60A600236450 /* MIAboutUsViewController.m in Sources */,
 				F0ED99701C0B9D0B004CA752 /* TimerUtil.m in Sources */,
 				F026CA811C285D4A00E84406 /* MIHomeViewController.m in Sources */,
 				F0ED99121C0B9A56004CA752 /* MIColour.m in Sources */,

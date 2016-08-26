@@ -130,10 +130,12 @@
 
 	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 185, self.view.bounds.size.width, 50)];
 	[messageLabel setText:@"Loading..."];
-	[messageLabel setTextColor:[[MIBlue new] Dark]];
+	[messageLabel setTextColor:[MIColourUtil Blue]];
 	[messageLabel setNumberOfLines:0];
 	[messageLabel setTextAlignment:NSTextAlignmentCenter];
 	[messageLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:23]];
+	[messageLabel setOpaque:YES];
+	[messageLabel setAlpha:0.5];
 
 	[backgroundView addSubview:imageView];
 	[backgroundView addSubview:messageLabel];

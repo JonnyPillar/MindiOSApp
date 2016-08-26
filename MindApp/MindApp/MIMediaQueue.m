@@ -14,8 +14,8 @@
 
 -(id) init{
     if (self = [super init] ) {
-       mainQueue = [[NSArray alloc] init];
-		playQueue = [[NSMutableArray alloc] init];
+        mainQueue = [[NSArray alloc] init];
+        playQueue = [[NSMutableArray alloc] init];
     }
     return self;
 }

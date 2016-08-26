@@ -49,9 +49,10 @@
 
 - (void)adjustTableViewForTabBar {
 	[self setEdgesForExtendedLayout:UIRectEdgeAll];
+
 	UIEdgeInsets adjustForTabBarInsets = UIEdgeInsetsMake(0, 0, 95, 0);
-	self.homeView.mediaTrackTableView.contentInset = adjustForTabBarInsets;
-	self.homeView.mediaTrackTableView.scrollIndicatorInsets = adjustForTabBarInsets;
+	[self.homeView.mediaTrackTableView setContentInset:adjustForTabBarInsets];
+	[self.homeView.mediaTrackTableView setScrollIndicatorInsets:adjustForTabBarInsets];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,7 +63,7 @@
 
 - (void)setUpManagers {
 	if(!_apiManager) {
-		self.apiManager = [[MIAPIManager alloc] initWithCommuniattionDelegate:self];
+		self.apiManager = [[MIAPIManager alloc] initWithCommunicationDelegate:self];
 		self.mediaCacheUtil = [[MIMediaCacheUtil alloc] init];
 	}
 }
@@ -121,14 +122,14 @@
 	UIView *backgroundView = [UIView new];
 
 	UIImage *logo = [UIImage imageNamed:@"mindLogo"];
-	UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,40, self.view.bounds.size.width, 150)];
+	UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,40, self.view.bounds.size.width, 125)];
 	[imageView setImage:logo];
 	[imageView setContentMode:UIViewContentModeScaleAspectFit];
 	[imageView setOpaque:YES];
-	[imageView setAlpha:0.4];
+	[imageView setAlpha:0.2];
 
-	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 50)];
-	[messageLabel setText:@"Loading"];
+	UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 185, self.view.bounds.size.width, 50)];
+	[messageLabel setText:@"Loading..."];
 	[messageLabel setTextColor:[[MIBlue new] Dark]];
 	[messageLabel setNumberOfLines:0];
 	[messageLabel setTextAlignment:NSTextAlignmentCenter];
@@ -136,6 +137,7 @@
 
 	[backgroundView addSubview:imageView];
 	[backgroundView addSubview:messageLabel];
+	[self runSpinAnimationOnView:imageView duration:0.1 rotations:M_PI_4 repeat:1000];
 
 	[self.homeView.mediaTrackTableView setBackgroundView:backgroundView];
 	[self.homeView.mediaTrackTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -155,6 +157,17 @@
 	return cell;
 }
 
+- (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;
+{
+	CABasicAnimation* rotationAnimation;
+	rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+	rotationAnimation.toValue = [NSNumber numberWithFloat: rotations * 2.0 /* full rotation*/ * rotations * duration ];
+	rotationAnimation.duration = duration;
+	rotationAnimation.cumulative = YES;
+	rotationAnimation.repeatCount = repeat;
+	[view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	MIHomeTableViewCell *selectedCell = (MIHomeTableViewCell *) [tableView cellForRowAtIndexPath:indexPath];
@@ -169,7 +182,7 @@
 		}];
 
 		[_audioPlayer playElementInQueueWithId:[selectedCell getCellId]];
-		self.cellColour = [MIColourFactory GetColourFromString: [selectedCell getCellColour]];
+		[self setCellColour:[MIColourFactory GetColourFromString:[selectedCell getCellColour]]];
 		[self.refreshControl setBackgroundColor:self.cellColour.Light];
 		[self updateNavigationBarColour:[MIColourFactory GetColourFromString:[selectedCell getCellColour]]];
 	}
@@ -182,8 +195,6 @@
 	GetMediaFilesResponseModel *responseModel = [[GetMediaFilesResponseModel alloc] initWithDictionary:responseDictionary];
 	if(responseModel.Success){
 		[_mediaCacheUtil updateMediaCache:responseDictionary[@"MediaFiles"]];
-
-//		[_mediaQueue populateWithMediaFiles:[[_mediaCacheUtil getMediaFilesFromCache] allValues]];
 		[_mediaQueue populateWithMediaFiles:responseModel.MediaFiles];
 		[self.homeView.mediaTrackTableView reloadData];
 	}

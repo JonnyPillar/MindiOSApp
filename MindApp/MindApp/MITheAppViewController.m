@@ -16,9 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
     UITextView *termsAndConditionsTextView = [self createTextView:@"" withPageNumber: 0];
     NSURL *htmlString = [[NSBundle mainBundle] URLForResource: @"text" withExtension:@"html"];
     NSAttributedString *termsAndConditionsText = [[NSAttributedString alloc] initWithURL:htmlString options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
@@ -26,6 +23,17 @@
     [termsAndConditionsTextView setAttributedText:termsAndConditionsText];
     [termsAndConditionsTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
     [self.scrollView addSubview:termsAndConditionsTextView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:<#(BOOL)animated#>];
+//    UITextView *termsAndConditionsTextView = [self createTextView:@"" withPageNumber: 0];
+//    NSURL *htmlString = [[NSBundle mainBundle] URLForResource: @"text" withExtension:@"html"];
+//    NSAttributedString *termsAndConditionsText = [[NSAttributedString alloc] initWithURL:htmlString options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+//
+//    [termsAndConditionsTextView setAttributedText:termsAndConditionsText];
+//    [termsAndConditionsTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
+//    [self.scrollView addSubview:termsAndConditionsTextView];
 }
 
 - (UITextView *)createTextView:(NSString *)text withPageNumber: (NSInteger) pageNumber{

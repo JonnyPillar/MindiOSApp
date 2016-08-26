@@ -8,7 +8,7 @@
 
 @interface MIAPIManager : NSObject
 
--(id) initWithCommuniattionDelegate: (id) delegate;
+-(id)initWithCommunicationDelegate: (id) delegate;
 -(void) getMediaFiles;
 
 @end

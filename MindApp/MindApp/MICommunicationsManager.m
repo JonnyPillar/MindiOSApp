@@ -28,7 +28,7 @@ static NSString * const mindErrorUserInfoKey = @"mindResponseSerializerKey";
 	
 	if ( self = [super init] ) {
 		[self initiliseManager];
-		self.delegate = delegate;
+		[self setDelegate:delegate];
 	}
 	return self;
 }

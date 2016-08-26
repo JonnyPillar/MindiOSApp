@@ -53,7 +53,7 @@
         <!--Root View Controller-->
         <scene sceneID="1UH-PD-ErL">
             <objects>
-                <tableViewController id="uMM-be-f4T" customClass="InformationTableViewController" sceneMemberID="viewController">
+                <tableViewController id="uMM-be-f4T" customClass="MIInformationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="fy7-1S-sGf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

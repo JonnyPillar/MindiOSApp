@@ -18,6 +18,6 @@
 
 -(AudioFile *) playElementWithId: (NSInteger) id;
 -(AudioFile *) playElementAt: (NSInteger) index;
-- (AudioFile *)playNextAudioFile;
+-(AudioFile *)playNextAudioFile;
 
 @end

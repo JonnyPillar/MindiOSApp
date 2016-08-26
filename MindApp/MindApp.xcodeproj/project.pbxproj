@@ -50,7 +50,7 @@
 		F0BAE5DE1C3473CE00A6D9A2 /* MITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */; };
 		F0BAE5E21C34762800A6D9A2 /* Music-Transcript-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */; };
 		F0BAE5E41C3476CC00A6D9A2 /* Info-Squared.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */; };
-		F0BBE76E1D4E596F00236450 /* InformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE76D1D4E596F00236450 /* InformationTableViewController.m */; };
+		F0BBE76E1D4E596F00236450 /* MIInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE76D1D4E596F00236450 /* MIInformationTableViewController.m */; };
 		F0BBE7711D4E60A600236450 /* MIInformationSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7701D4E60A600236450 /* MIInformationSecondViewController.m */; };
 		F0BBE7741D4E70FF00236450 /* MIInformationNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7731D4E70FF00236450 /* MIInformationNavigationViewController.m */; };
 		F0BBE7771D4E755800236450 /* MITermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBE7761D4E755800236450 /* MITermsViewController.m */; };
@@ -169,8 +169,8 @@
 		F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITabBarViewController.m; sourceTree = "<group>"; };
 		F0BAE5E11C34762800A6D9A2 /* Music-Transcript-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Music-Transcript-50.png"; sourceTree = "<group>"; };
 		F0BAE5E31C3476CC00A6D9A2 /* Info-Squared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-Squared.png"; sourceTree = "<group>"; };
-		F0BBE76C1D4E596F00236450 /* InformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationTableViewController.h; sourceTree = "<group>"; };
-		F0BBE76D1D4E596F00236450 /* InformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationTableViewController.m; sourceTree = "<group>"; };
+		F0BBE76C1D4E596F00236450 /* MIInformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationTableViewController.h; sourceTree = "<group>"; };
+		F0BBE76D1D4E596F00236450 /* MIInformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationTableViewController.m; sourceTree = "<group>"; };
 		F0BBE76F1D4E60A600236450 /* MIInformationSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationSecondViewController.h; sourceTree = "<group>"; };
 		F0BBE7701D4E60A600236450 /* MIInformationSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIInformationSecondViewController.m; sourceTree = "<group>"; };
 		F0BBE7721D4E70FF00236450 /* MIInformationNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIInformationNavigationViewController.h; sourceTree = "<group>"; };
@@ -368,8 +368,8 @@
 				F026CA801C285D4A00E84406 /* MIHomeViewController.m */,
 				F0BAE5DC1C3473CE00A6D9A2 /* MITabBarViewController.h */,
 				F0BAE5DD1C3473CE00A6D9A2 /* MITabBarViewController.m */,
-				F0BBE76C1D4E596F00236450 /* InformationTableViewController.h */,
-				F0BBE76D1D4E596F00236450 /* InformationTableViewController.m */,
+				F0BBE76C1D4E596F00236450 /* MIInformationTableViewController.h */,
+				F0BBE76D1D4E596F00236450 /* MIInformationTableViewController.m */,
 				F0BBE76F1D4E60A600236450 /* MIInformationSecondViewController.h */,
 				F0BBE7701D4E60A600236450 /* MIInformationSecondViewController.m */,
 				F0BBE7721D4E70FF00236450 /* MIInformationNavigationViewController.h */,
@@ -888,7 +888,7 @@
 				F026CA9D1C285EB200E84406 /* GetMediaFilesResponseModel.m in Sources */,
 				F0ED998C1C0BAA04004CA752 /* RegistrationResponseModel.m in Sources */,
 				F0ED997F1C0BA9C6004CA752 /* BaseResponseDataContract.m in Sources */,
-				F0BBE76E1D4E596F00236450 /* InformationTableViewController.m in Sources */,
+				F0BBE76E1D4E596F00236450 /* MIInformationTableViewController.m in Sources */,
 				F0ED997E1C0BA9C6004CA752 /* BaseRequestDataContract.m in Sources */,
 				F0E813011D4F2876000DE58E /* MITheAppViewController.m in Sources */,
 				F0ED994C1C0B9C2D004CA752 /* MIColourFactory.m in Sources */,

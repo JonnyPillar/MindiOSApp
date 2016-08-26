@@ -1,22 +1,22 @@
 //
-//  InformationTableViewController.m
+//  MIInformationTableViewController.m
 //  MindApp
 //
 //  Created by Jonny Pillar on 31/07/2016.
 //  Copyright © 2016 Mind In Salford. All rights reserved.
 //
 
-#import "InformationTableViewController.h"
+#import "MIInformationTableViewController.h"
 #import "MIInformationSecondViewController.h"
 #import "MITermsViewController.h"
 #import "MIBlue.h"
 #import "MITheAppViewController.h"
 
-@interface InformationTableViewController ()
+@interface MIInformationTableViewController ()
 
 @end
 
-@implementation InformationTableViewController
+@implementation MIInformationTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

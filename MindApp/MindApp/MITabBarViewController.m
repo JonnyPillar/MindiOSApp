@@ -25,8 +25,8 @@
 
     [[UITabBar appearance] setTintColor:[MIBlue new].Dark];
 
-    for (UITabBarItem *tbi in self.tabBar.items) {
-        tbi.image = [tbi.image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    for (UITabBarItem *tabBarItem in self.tabBar.items) {
+        [tabBarItem setImage:[tabBarItem.image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
 }
 
@@ -48,12 +48,6 @@
 
 - (void)setBackgroundColour:(UIColor *)colour {
     [self.tabBar setBarTintColor:colour];
-}
-
-- (void)setSelectedColour:(UIColor *)colour {
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
-            NSForegroundColorAttributeName : colour
-    } forState:UIControlStateSelected];
 }
 
 @end

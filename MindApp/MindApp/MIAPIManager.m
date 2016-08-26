@@ -12,7 +12,7 @@
     MICommunicationsManager * communicationManager;
 }
 
--(id) initWithCommuniattionDelegate: (id) delegate{
+-(id)initWithCommunicationDelegate: (id) delegate{
     if (self = [super init] ) {
         if(!communicationManager){
             communicationManager = [[MICommunicationsManager alloc] initWithDelegate:delegate];

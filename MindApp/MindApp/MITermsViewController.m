@@ -19,7 +19,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    UITextView *termsAndConditionsTextView = [self createTextView:@"" withPageNumber: 0];
+    UITextView *termsAndConditionsTextView = [self createTextViewWithPageNumber: 0];
     NSURL *htmlString = [[NSBundle mainBundle] URLForResource: @"text" withExtension:@"html"];
 
     NSAttributedString *termsAndConditionsText = [[NSAttributedString alloc] initWithURL:htmlString options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
@@ -30,7 +30,7 @@
     [self.scrollView addSubview:termsAndConditionsTextView];
 }
 
-- (UITextView *)createTextView:(NSString *)textw withPageNumber: (NSInteger) pageNumber{
+- (UITextView *)createTextViewWithPageNumber: (NSInteger) pageNumber{
     CGRect frame = self.scrollView.bounds;
     CGRect size2 = CGRectMake(frame.origin.x + (frame.size.width * pageNumber) + 17, frame.origin.y, frame.size.width - 25, frame.size.height);
 

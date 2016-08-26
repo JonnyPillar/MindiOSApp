@@ -52,7 +52,7 @@
 
 - (void)setupAudioPlayer {
 	self.audioPlayer = [[STKAudioPlayer alloc] init];
-	self.audioPlayer.delegate = self;
+	[self.audioPlayer setDelegate:self];
 }
 
 - (void)updateUIForMediaItemChange {
@@ -152,10 +152,10 @@
 -(MIAudioPlayerProgress*) getAudioProgress{
 	MIAudioPlayerProgress* currentProgress = [MIAudioPlayerProgress new];
 
-	currentProgress.AudioCurrentTime = [TimerUtil timeFormattedFromInt:(int) [self getAudioTrackElapsedTime]];
-	currentProgress.AudioRemaining = [TimerUtil timeFormattedFromInt:(int) [self getAudioTrackRemainingTime]];
-	currentProgress.AudioProgressPercentage = [self getAudioTrackPlaybackPercentage];
-	currentProgress.AudioTotalTime = [self getAudioTrackDuration];
+	[currentProgress setAudioCurrentTime:[TimerUtil timeFormattedFromInt:(int) [self getAudioTrackElapsedTime]]];
+	[currentProgress setAudioRemaining:[TimerUtil timeFormattedFromInt:(int) [self getAudioTrackRemainingTime]]];
+	[currentProgress setAudioProgressPercentage:[self getAudioTrackPlaybackPercentage]];
+	[currentProgress setAudioTotalTime:[self getAudioTrackDuration]];
 	
 	return currentProgress;
 }

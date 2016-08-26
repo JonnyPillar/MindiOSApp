@@ -12,9 +12,8 @@
 -(void) populateWithMediaFiles: (NSArray* ) fileArray;
 -(NSUInteger) count;
 -(AudioFile *) getElementAt: (NSInteger) index;
-- (AudioFile *)getElementWithId:(NSInteger)id;
-
-- (AudioFile *)playElementAt:(NSInteger)index;
-- (AudioFile *)playElementWithId:(NSInteger)id;
-- (AudioFile *)playNextAudioFile;
+-(AudioFile *) getElementWithId:(NSInteger)id;
+-(AudioFile *) playElementAt:(NSInteger)index;
+-(AudioFile *) playElementWithId:(NSInteger)id;
+-(AudioFile *) playNextAudioFile;
 @end

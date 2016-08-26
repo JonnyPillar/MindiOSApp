@@ -47,7 +47,6 @@
     return [mediaQueue getElementWithId: id];
 }
 
-
 - (AudioFile *)getElementAt:(NSInteger)index {
     return [mediaQueue getElementAt:index];
 }

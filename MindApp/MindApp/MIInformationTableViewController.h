@@ -1,5 +1,5 @@
 //
-//  InformationTableViewController.h
+//  MIInformationTableViewController.h
 //  MindApp
 //
 //  Created by Jonny Pillar on 31/07/2016.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InformationTableViewController : UITableViewController
+@interface MIInformationTableViewController : UITableViewController
 
 @end

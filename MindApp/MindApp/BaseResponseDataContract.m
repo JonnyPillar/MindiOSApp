@@ -14,8 +14,8 @@
 	
 	self = [super init];
 	if(self){
-		self.Success = [[responseDictionary objectForKey:@"Success"] boolValue];
-		self.Message = [responseDictionary objectForKey:@"Message"];
+		[self setSuccess:[responseDictionary[@"Success"] boolValue]];
+		[self setMessage:responseDictionary[@"Message"]];
 	}
 	return self;
 }
